@@ -1,6 +1,6 @@
 import { createRequire } from 'module';
 import { bookGeo } from './books-geo.mjs';
-import { uxHead, uxScripts } from './study-ux-embed.mjs';
+import { uxHeadFor, uxScriptsFor } from './study-ux-embed.mjs';
 
 const require = createRequire(import.meta.url);
 const LOC = require('../../3D地圖/bible-maps/tools/bible-locations.js');
@@ -34,7 +34,8 @@ export function resolvePlaces(cfg) {
   });
 }
 
-const MAP_BASE = '../../../3D地圖/bible-maps';
+/** Default for books at 經卷/{舊約|新約}/{category}/{book}/ (4 levels up to repo root). */
+const MAP_BASE = '../../../../3D地圖/bible-maps';
 
 /**
  * @param {string} slug - book or topic slug
@@ -46,6 +47,7 @@ export function buildMapEmbed(slug, opts = {}) {
 
   const places = resolvePlaces(cfg);
   const base = opts.mapBase || MAP_BASE;
+  const uxBase = `${base}/shared`;
   const sectionNum = opts.sectionNum || '六';
   const sectionTitle = opts.sectionTitle || `${sectionNum}、歷史地理互動地圖`;
   const fullMapLink = cfg.fullMap
@@ -79,11 +81,11 @@ export function buildMapEmbed(slug, opts = {}) {
 
   const head = `
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
-  <link rel="stylesheet" href="${base}/shared/book-map.css">${uxHead}`;
+  <link rel="stylesheet" href="${base}/shared/book-map.css">${uxHeadFor(uxBase)}`;
 
   const scripts = `
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="${base}/shared/book-map.js"></script>${uxScripts}
+  <script src="${base}/shared/book-map.js"></script>${uxScriptsFor(uxBase)}
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       BookMap.init({ places: ${JSON.stringify(places)} });

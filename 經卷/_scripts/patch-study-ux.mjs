@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { uxHead, uxScripts } from './study-ux-embed.mjs';
+import { sharedUxBaseFrom, uxHeadFor, uxScriptsFor } from './study-ux-embed.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -21,10 +21,34 @@ function walk(dir, files = []) {
   return files;
 }
 
-function patchHtml(html) {
-  if (!html.includes('sec-btn') && !html.includes('checklist')) return null;
+function patchHtml(html, file) {
+  if (!html.includes('sec-btn') && !html.includes('checklist') && !html.includes('verse-card')) {
+    return null;
+  }
+
+  const base = sharedUxBaseFrom(file, ROOT);
+  const uxHead = uxHeadFor(base);
+  const uxScripts = uxScriptsFor(base);
 
   let out = html;
+
+  // Normalize any wrong-depth shared asset paths
+  out = out.replace(
+    /(?:\.\.\/)+3D地圖\/bible-maps\/shared\/book-study-ux\.css/g,
+    `${base}/book-study-ux.css`
+  );
+  out = out.replace(
+    /(?:\.\.\/)+3D地圖\/bible-maps\/shared\/book-study-ux\.js/g,
+    `${base}/book-study-ux.js`
+  );
+  out = out.replace(
+    /(?:\.\.\/)+3D地圖\/bible-maps\/shared\/book-map\.css/g,
+    `${base}/book-map.css`
+  );
+  out = out.replace(
+    /(?:\.\.\/)+3D地圖\/bible-maps\/shared\/book-map\.js/g,
+    `${base}/book-map.js`
+  );
 
   if (!out.includes('book-study-ux.css')) {
     out = out.replace('</head>', `${uxHead}\n</head>`);
@@ -62,7 +86,6 @@ function patchHtml(html) {
     ''
   );
 
-  // Upgrade old map sections without toolbar
   if (out.includes('book-map-layout') && !out.includes('book-map-toolbar')) {
     out = out.replace(
       /(<p class="text-sm text-slate-600 mb-4 leading-relaxed">[^<]*<\/p>\s*)(<div class="book-map-layout">)/,
@@ -84,7 +107,7 @@ const files = walk(ROOT);
 let n = 0;
 for (const file of files) {
   const html = fs.readFileSync(file, 'utf8');
-  const patched = patchHtml(html);
+  const patched = patchHtml(html, file);
   if (patched) {
     fs.writeFileSync(file, patched, 'utf8');
     n++;

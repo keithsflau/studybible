@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html class="site-theme" lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- site-theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../../shared/tailwind-theme.js"></script>
+  <!-- /site-theme -->
+<script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../visit-counter.css">
   <link rel="stylesheet" href="../_shared/topic.css">
   <style>
@@ -99,6 +105,9 @@
     .locus-section { scroll-margin-top: 6rem; }
     .prose-zh p { line-height: 1.85; }
   </style>
+<!-- site-theme-css -->
+  <link rel="stylesheet" href="../../shared/site.css">
+  <!-- /site-theme-css -->
 </head>
 <body class="topic-shell" data-slug="index">
   <a class="skip" href="#content">跳到正文</a>
@@ -115,7 +124,6 @@
   </header>
 
   <section class="hero" aria-label="異端">
-    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
     <div class="hero-shade"></div>
     <div class="hero-inner">
       <div class="eyebrow">Heresy and the Apostolic Gospel</div>
@@ -149,7 +157,6 @@
           
         </nav>
         <article id="content" class="essay">
-          <figure class="topic-figure"><img src="images/hero.png" alt=""></figure>
           <p class="essay-kicker">專論總覽</p>
           
           
@@ -159,7 +166,7 @@
           </div>
           <div class="chapter-grid">
         <a class="chapter-card" href="question.html">
-          <div class="media"><img src="images/question.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 9.5L20 19v2h-3l-2-2 2-2-2-2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15l2 2"/></svg></div>
           <div class="body">
             <div class="num">01</div>
             <h3 class="serif">問題意識</h3>
@@ -168,7 +175,7 @@
           </div>
         </a>
         <a class="chapter-card" href="warnings.html">
-          <div class="media"><img src="images/warnings.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l9 16H3L12 3z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v4M12 17h.01"/></svg></div>
           <div class="body">
             <div class="num">02</div>
             <h3 class="serif">假先知與警戒</h3>
@@ -177,7 +184,7 @@
           </div>
         </a>
         <a class="chapter-card" href="apostles.html">
-          <div class="media"><img src="images/apostles.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19c3-2 5-6 8-6s5 4 8 6"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 8a2 2 0 11.01 0M16 6a2 2 0 11.01 0"/></svg></div>
           <div class="body">
             <div class="num">03</div>
             <h3 class="serif">使徒行傳與保羅</h3>
@@ -186,7 +193,7 @@
           </div>
         </a>
         <a class="chapter-card" href="tests.html">
-          <div class="media"><img src="images/tests.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v13M7 21h10"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8h12"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8l-3 6h6L6 8zM18 8l-3 6h6l-3-6z"/></svg></div>
           <div class="body">
             <div class="num">04</div>
             <h3 class="serif">檢驗真道</h3>
@@ -195,7 +202,7 @@
           </div>
         </a>
         <a class="chapter-card" href="ancient.html">
-          <div class="media"><img src="images/ancient.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21V11M12 21V9M17 21V12"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8c.8-1.4.2-2.8 1.2-4M12 6c.8-1.6.2-3 1.2-4.2M17 9c.8-1.4.2-2.8 1.2-4"/></svg></div>
           <div class="body">
             <div class="num">05</div>
             <h3 class="serif">古代異端</h3>
@@ -204,7 +211,7 @@
           </div>
         </a>
         <a class="chapter-card" href="modern.html">
-          <div class="media"><img src="images/modern.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21h18M5 21V10h4v11M9 21V6h6v15M15 21V12h4v9"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 9h2M11 13h2M17 15h.01"/></svg></div>
           <div class="body">
             <div class="num">06</div>
             <h3 class="serif">近現代團體</h3>
@@ -213,7 +220,7 @@
           </div>
         </a>
         <a class="chapter-card" href="close.html">
-          <div class="media"><img src="images/close.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h8l-1 1H9l-1-1z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21c0-4 1.6-5.4 2.2-8M15 21c0-4-1.6-5.4-2.2-8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V8M10.2 6c-.8-2 .4-3.4 1.2-4.4M13.8 7c.8-1.6.2-3 1.2-4.2"/></svg></div>
           <div class="body">
             <div class="num">07</div>
             <h3 class="serif">分辨與牧養</h3>

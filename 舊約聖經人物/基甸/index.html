@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-HK">
+<html class="site-theme" lang="zh-HK">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,13 @@
     name="description"
     content="從士師記 6–8 章研讀基甸的一生：從懼怕的打麥者，到憑信心打敗米甸，卻在晚年跌入偶像和權力的陷阱。"
   />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- site-theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../../shared/tailwind-theme.js"></script>
+  <!-- /site-theme -->
+<script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -63,8 +69,15 @@
     @keyframes fadeInUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
   </style>
     <link rel="stylesheet" href="../../../visit-counter.css">
+<!-- site-theme-css -->
+  <link rel="stylesheet" href="../../shared/site.css">
+  <!-- /site-theme-css -->
 </head>
 <body class="antialiased text-slate-900 bg-gradient-to-br from-emerald-50 via-white to-sky-50 min-h-screen">
+<!-- site-topbar -->
+<header class="site-topbar"><a class="site-topbar-back" href="../../index.html"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>主頁</a><div class="site-topbar-title">基甸人物研讀</div></header>
+<!-- /site-topbar -->
+
   <div class="relative min-h-screen overflow-hidden">
     <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
     <div class="relative z-10">

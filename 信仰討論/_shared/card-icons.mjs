@@ -1,0 +1,146 @@
+/** Compact stroke icons for topic overview cards. Unique per slug. */
+
+const PATHS = {
+  book: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h7a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7h7a2 2 0 012 2v10a2 2 0 01-2 2h-5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11h4M7 14h3"/>',
+  keys: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 9.5L20 19v2h-3l-2-2 2-2-2-2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15l2 2"/>',
+  alert: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l9 16H3L12 3z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v4M12 17h.01"/>',
+  path: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19c3-2 5-6 8-6s5 4 8 6"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 8a2 2 0 11.01 0M16 6a2 2 0 11.01 0"/>',
+  scales: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v13M7 21h10"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8h12"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8l-3 6h6L6 8zM18 8l-3 6h6l-3-6z"/>',
+  candles: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21V11M12 21V9M17 21V12"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8c.8-1.4.2-2.8 1.2-4M12 6c.8-1.6.2-3 1.2-4.2M17 9c.8-1.4.2-2.8 1.2-4"/>',
+  city: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21h18M5 21V10h4v11M9 21V6h6v15M15 21V12h4v9"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 9h2M11 13h2M17 15h.01"/>',
+  lamp: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h8l-1 1H9l-1-1z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21c0-4 1.6-5.4 2.2-8M15 21c0-4-1.6-5.4-2.2-8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V8M10.2 6c-.8-2 .4-3.4 1.2-4.4M13.8 7c.8-1.6.2-3 1.2-4.2"/>',
+  scroll: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4h8a2 2 0 012 2v11"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h9a2 2 0 012 2v10H7a2 2 0 01-2-2V7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11h5M8 14h4"/>',
+  compass: '<circle cx="12" cy="12" r="9" fill="none" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7l2 5-5 2 3-7z"/>',
+  fork: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V11M12 11L5 4M12 11l7-7M5 4H3M19 4h2"/>',
+  beams: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16M5 12h14"/><circle cx="12" cy="12" r="3" fill="none" stroke-width="2"/>',
+  table: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16M6 10v9M18 10v9M8 6h5v4H8z"/><circle cx="16" cy="7.5" r="1.6" fill="none" stroke-width="2"/>',
+  heart: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20s-7-4.4-7-10a4 4 0 017-2 4 4 0 017 2c0 5.6-7 10-7 10z"/>',
+  door: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 21V7l6-4 6 4v14H6z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7v14M14.2 13.5h.01"/>',
+  fountain: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19h14M11 19V9h2v10"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6c-2 2-3.2 3.4-4.4 5M12 6c2 2 3.2 3.4 4.4 5"/><circle cx="12" cy="5" r="1.2"/>',
+  hands: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13.5c-2.2 0-4 1.6-4 3.6V21h5.2v-5.2M16 13.5c2.2 0 4 1.6 4 3.6V21h-5.2v-5.2M9.6 16.6h4.8M9 8.2a3 3 0 116 0"/>',
+  vine: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19c3-4 5-2 7-7 2-5 4-2 7-8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13c-1.2.2-2 .8-2.6 1.6M13 10c1 .1 1.8.6 2.4 1.4"/>',
+  tares: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21V8M16 21V11"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10.2L5.4 7M8 10.2L10.6 7M16 13.2c-2-2 1.8-3.4 0-6"/>',
+  wheat: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21V8M16 21V11"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10.2L5.4 7M8 10.2L10.6 7M8 14.2l-2.2-2M8 14.2l2.2-2M16 13.2c-2-2 1.8-3.4 0-6"/>',
+  seal: '<circle cx="9" cy="12" r="4.2" fill="none" stroke-width="2" stroke-dasharray="3 2"/><circle cx="15" cy="12" r="4.2" fill="none" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M15 9.4v5.2M12.6 12h4.8"/>',
+  chapel: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l8 6v12H4V9l8-6z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 21v-6h4v6"/>',
+  flame: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c2.6 3.2 5 6.6 5 10a5 5 0 11-10 0c0-3.4 2.4-6.8 5-10z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.2 1.4 1.8 2.6 1.8 3.8A1.8 1.8 0 0112 16.6"/>',
+  rings: '<circle cx="9" cy="13" r="4.4" fill="none" stroke-width="2"/><circle cx="15" cy="13" r="4.4" fill="none" stroke-width="2"/>',
+  dome: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 20V13h14v7M7 13a5 5 0 0110 0"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16h2v4h-2z"/>',
+  lamb: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 14c0-3 2.4-5.5 6-5.5s6 2.5 6 5.5-2 5-6 5-6-2-6-5z"/><circle cx="16.2" cy="11.2" r="2.1" fill="none" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M8 16c-1 1.4-.6 3 .8 4"/>',
+  globe: '<circle cx="12" cy="12" r="9" fill="none" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M3 12h18M12 3c3.2 3.8 3.2 13.2 0 18M12 3c-3.2 3.8-3.2 13.2 0 18"/>',
+  tools: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.2 8.2l2.8-2.8 2 2-2.8 2.8-2-2zM6.2 6.8l2.6-2.4M14 6.6h6.4v3.2H14zM13 9.8h8.4v9.4H13zM16.2 14h2.2"/>',
+  ear: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12c0-3.3 2.2-6 5-6 2.2 0 3.5 1.6 3.5 3.6 0 2-1.2 3-1.2 4.4M8 12c0 2 1 3.5 3 4.2"/>',
+  wing: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 13c3.4-2 6.6-2 8 0 1.4-2 4.6-2 8 0M12 7.6V20M7.2 11c-2.4-3-3.4-5.4-1.8-7.4M16.8 11c2.4-3 3.4-5.4 1.8-7.4"/>',
+  dawn: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v2M5.6 6.6l1.5 1.5M18.4 6.6l-1.5 1.5M4 13h2M18 13h2M8 15a4 4 0 018 0M3 19h18"/>',
+  steps: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h6v6H4V5zM14 5h6v6h-6V5zM4 13h6v6H4v-6zM14 13h6v6h-6v-6z"/>'
+};
+
+const SLUG_ICON = {
+  question: "keys",
+  warnings: "alert",
+  apostles: "path",
+  tests: "scales",
+  ancient: "candles",
+  modern: "city",
+  close: "lamp",
+  intro: "scroll",
+  principles: "book",
+  examples: "path",
+  method: "compass",
+  cautions: "keys",
+  reflect: "table",
+  summary: "beams",
+  "law-love": "heart",
+  "law-sin": "fork",
+  "law-christ": "beams",
+  "law-receive": "door",
+  after: "fountain",
+  next: "path",
+  scripture: "scroll",
+  definition: "book",
+  "not-works": "seal",
+  "faith-works": "hands",
+  history: "candles",
+  practice: "path",
+  questions: "keys",
+  positions: "fork",
+  "our-position": "beams",
+  image: "vine",
+  creation: "vine",
+  fallen: "tares",
+  sovereignty: "scales",
+  christ: "fountain",
+  distinction: "compass",
+  pastoral: "lamp",
+  timeline: "candles",
+  table: "table",
+  stance: "compass",
+  quiz: "keys",
+  unity: "rings",
+  map: "dome",
+  fundamentalist: "seal",
+  evangelical: "path",
+  charismatic: "flame",
+  other: "keys",
+  beginnings: "hands",
+  psalms: "scroll",
+  "temple-exile": "chapel",
+  jesus: "beams",
+  church: "fountain",
+  word: "book",
+  worship: "flame",
+  union: "vine",
+  fall: "tares",
+  law: "scroll",
+  prophets: "heart",
+  paul: "book",
+  torah: "scroll",
+  office: "keys",
+  discern: "scales",
+  commission: "path",
+  content: "book",
+  acts: "path",
+  sabbath: "dawn",
+  "law-wisdom": "scroll",
+  exile: "city",
+  gospel: "beams",
+  ot: "scroll",
+  son: "beams",
+  spirit: "flame",
+  testing: "scales",
+  ordinary: "lamp",
+  judaism: "scroll",
+  islam: "dome",
+  catholicism: "chapel",
+  protestant: "book",
+  comparison: "scales",
+  overview: "globe",
+  worldview: "compass",
+  "god-creation": "vine",
+  human: "hands",
+  salvation: "beams",
+  takeaways: "beams",
+  cherubim: "wing",
+  lukeacts: "path",
+  doctrine: "seal",
+  position: "beams"
+};
+
+const FALLBACK = ["book", "keys", "path", "scales", "lamp", "scroll", "compass", "fork", "beams", "heart", "chapel", "flame", "globe", "tools", "wing"];
+
+function hashSlug(slug) {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  return h;
+}
+
+export function iconNameForSlug(slug) {
+  if (SLUG_ICON[slug]) return SLUG_ICON[slug];
+  return FALLBACK[hashSlug(slug) % FALLBACK.length];
+}
+
+export function iconMarkup(slug) {
+  const name = iconNameForSlug(slug);
+  const paths = PATHS[name] || PATHS.book;
+  return `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">${paths}</svg>`;
+}

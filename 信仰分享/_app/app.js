@@ -359,12 +359,23 @@
     const hits = q ? searchAll(q) : [];
     const state = loadState();
     return `
+      <header class="site-topbar">
+        <a class="site-topbar-back" href="../index.html">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          主頁
+        </a>
+        <div class="site-topbar-title">信仰分享</div>
+      </header>
+      <section class="site-hero" aria-label="信仰分享">
+        <div class="site-hero-shade"></div>
+        <div class="site-hero-inner">
+          <div class="site-eyebrow">Faith Sharing</div>
+          <h1>信仰分享<em>原文 · 研究 · 解釋</em></h1>
+          <p class="site-hero-lead">以「人論」為內容深度與模板：原文、詳細研究、解釋；並按正典敘事走聖經神學——從應許到應驗、從出埃及到新出埃及。按聖經與福音派認信整理六大教義。遇有不同理解，分開對照，不強行合併。</p>
+        </div>
+      </section>
       <div class="faith-fade max-w-6xl mx-auto px-4 py-8 space-y-10">
         <section class="text-center space-y-4">
-          <p><a href="../index.html" class="text-sm text-slate-500 hover:text-slate-800">← 返回主頁</a></p>
-          <p class="faith-chip faith-chip-shared mx-auto">原文 · 研究 · 解釋</p>
-          <h1 class="text-4xl md:text-5xl font-bold">信仰分享</h1>
-          <p class="text-slate-600 max-w-2xl mx-auto">以「人論」為內容深度與模板：原文、詳細研究、解釋；並按正典敘事走聖經神學——從應許到應驗、從出埃及到新出埃及。按聖經與福音派認信整理六大教義。遇有不同理解，分開對照，不強行合併。</p>
           <label class="block max-w-xl mx-auto">
             <span class="sr-only">搜尋</span>
             <input type="search" data-global-search value="${esc(q)}" placeholder="搜尋原文、教義、經文…" class="w-full rounded-full border border-slate-200 px-5 py-3 shadow-sm">

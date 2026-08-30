@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html class="site-theme" lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- site-theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../../shared/tailwind-theme.js"></script>
+  <!-- /site-theme -->
+<script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../visit-counter.css">
   <link rel="stylesheet" href="../_shared/topic.css">
   <style>
@@ -229,6 +235,9 @@
             border-bottom-color: #1d4ed8;
         }
     </style>
+<!-- site-theme-css -->
+  <link rel="stylesheet" href="../../shared/site.css">
+  <!-- /site-theme-css -->
 </head>
 <body class="topic-shell" data-slug="index">
   <a class="skip" href="#content">跳到正文</a>
@@ -245,7 +254,6 @@
   </header>
 
   <section class="hero" aria-label="千禧論">
-    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
     <div class="hero-shade"></div>
     <div class="hero-inner">
       <div class="eyebrow">Millennialism</div>
@@ -276,7 +284,6 @@
           
         </nav>
         <article id="content" class="essay">
-          <figure class="topic-figure"><img src="images/hero.png" alt=""></figure>
           <p class="essay-kicker">專論總覽</p>
           
           
@@ -286,7 +293,7 @@
           </div>
           <div class="chapter-grid">
         <a class="chapter-card" href="intro.html">
-          <div class="media"><img src="images/intro.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4h8a2 2 0 012 2v11"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h9a2 2 0 012 2v10H7a2 2 0 01-2-2V7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11h5M8 14h4"/></svg></div>
           <div class="body">
             <div class="num">01</div>
             <h3 class="serif">引言</h3>
@@ -295,7 +302,7 @@
           </div>
         </a>
         <a class="chapter-card" href="positions.html">
-          <div class="media"><img src="images/positions.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V11M12 11L5 4M12 11l7-7M5 4H3M19 4h2"/></svg></div>
           <div class="body">
             <div class="num">02</div>
             <h3 class="serif">三大立場</h3>
@@ -304,7 +311,7 @@
           </div>
         </a>
         <a class="chapter-card" href="timeline.html">
-          <div class="media"><img src="images/timeline.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21V11M12 21V9M17 21V12"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8c.8-1.4.2-2.8 1.2-4M12 6c.8-1.6.2-3 1.2-4.2M17 9c.8-1.4.2-2.8 1.2-4"/></svg></div>
           <div class="body">
             <div class="num">03</div>
             <h3 class="serif">時間線比較</h3>
@@ -313,7 +320,7 @@
           </div>
         </a>
         <a class="chapter-card" href="table.html">
-          <div class="media"><img src="images/table.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16M6 10v9M18 10v9M8 6h5v4H8z"/><circle cx="16" cy="7.5" r="1.6" fill="none" stroke-width="2"/></svg></div>
           <div class="body">
             <div class="num">04</div>
             <h3 class="serif">對照表</h3>
@@ -322,7 +329,7 @@
           </div>
         </a>
         <a class="chapter-card" href="scripture.html">
-          <div class="media"><img src="images/scripture.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4h8a2 2 0 012 2v11"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h9a2 2 0 012 2v10H7a2 2 0 01-2-2V7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11h5M8 14h4"/></svg></div>
           <div class="body">
             <div class="num">05</div>
             <h3 class="serif">關鍵經文</h3>
@@ -331,7 +338,7 @@
           </div>
         </a>
         <a class="chapter-card" href="stance.html">
-          <div class="media"><img src="images/stance.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7l2 5-5 2 3-7z"/></svg></div>
           <div class="body">
             <div class="num">06</div>
             <h3 class="serif">立場</h3>
@@ -340,7 +347,7 @@
           </div>
         </a>
         <a class="chapter-card" href="quiz.html">
-          <div class="media"><img src="images/quiz.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 9.5L20 19v2h-3l-2-2 2-2-2-2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15l2 2"/></svg></div>
           <div class="body">
             <div class="num">07</div>
             <h3 class="serif">認知測驗</h3>

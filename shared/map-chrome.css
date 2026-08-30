@@ -1,0 +1,9 @@
+/* 3D map canvas pages: fonts + gold only. Do not change layout or scene. */
+body {
+  font-family: "Source Sans 3", "Microsoft JhengHei", "PingFang TC", sans-serif;
+}
+
+#title h1,
+#caption .ttl {
+  font-family: "Noto Serif TC", "Source Han Serif TC", serif;
+}

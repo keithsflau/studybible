@@ -1,16 +1,11 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { renderSvg, motifNames, PALETTES } from "../_shared/svg-motifs.mjs";
+import { iconMarkup } from "../_shared/card-icons.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const REPO = path.resolve(ROOT, "..");
-const ASSETS = "C:/Users/keith/.cursor/projects/c-Users-keith-OneDrive-Desktop-studybible/assets";
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec";
-
-const MOTIFS = motifNames();
-const PALETTE_KEYS = Object.keys(PALETTES);
 
 function esc(s) {
   return String(s)
@@ -493,26 +488,11 @@ function ensureSource(topicDir) {
   return src;
 }
 
-function copyHero(topic) {
-  const destDir = path.join(ROOT, topic.dir, "images");
-  fs.mkdirSync(destDir, { recursive: true });
-  const dest = path.join(destDir, "hero.png");
-  const from = path.join(ASSETS, topic.heroFile);
-  if (fs.existsSync(from)) fs.copyFileSync(from, dest);
-  else {
-    const svg = renderSvg(topic.chapters[0].motif, topic.palette);
-    fs.writeFileSync(path.join(destDir, "hero.svg"), svg);
+function chapterFigure(topic, ch) {
+  if (ch.img && /\.jpe?g$/i.test(ch.img) && fs.existsSync(path.join(ROOT, topic.dir, ch.img))) {
+    return ch.img;
   }
-  return fs.existsSync(dest) ? "images/hero.png" : "images/hero.svg";
-}
-
-function writeChapterSvg(topic, ch) {
-  const destDir = path.join(ROOT, topic.dir, "images");
-  fs.mkdirSync(destDir, { recursive: true });
-  if (ch.img && fs.existsSync(path.join(ROOT, topic.dir, ch.img))) return ch.img;
-  const file = `images/${ch.slug}.svg`;
-  fs.writeFileSync(path.join(ROOT, topic.dir, file), renderSvg(ch.motif, topic.palette));
-  return file;
+  return "";
 }
 
 function navHtml(topic, currentSlug) {
@@ -544,7 +524,6 @@ function pageShell(opts) {
     slug,
     pageTitle,
     description,
-    heroSrc,
     figureSrc,
     kicker,
     heading,
@@ -586,7 +565,6 @@ function pageShell(opts) {
   </header>
 
   <section class="hero" aria-label="${esc(topic.title)}">
-    <div class="hero-media"><img src="${heroSrc}" alt="" width="1600" height="900"></div>
     <div class="hero-shade"></div>
     <div class="hero-inner">
       <div class="eyebrow">${esc(topic.en)}</div>
@@ -716,21 +694,18 @@ function buildTopic(topic) {
   const extraWidgets = (topic.extraIds || []).map((id) => extractById(raw, id)).join("\n");
   const extraScripts = scripts.map((js) => `<script>try{\n${js}\n}catch(e){console.warn(e)}</script>`).join("\n");
 
-  const heroSrc = copyHero(topic);
-  topic.heroSrc = heroSrc;
-
-  const imgDir = path.join(ROOT, topic.dir, "images");
-  fs.mkdirSync(imgDir, { recursive: true });
-
   const cards = topic.chapters
     .map((ch, i) => {
-      const fig = writeChapterSvg(topic, ch);
+      const fig = chapterFigure(topic, ch);
       ch.fig = fig;
       const kids = ch.children && ch.children.length
         ? `<ul class="kids">${ch.children.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>`
         : "";
+      const media = fig
+        ? `<div class="media"><img src="${fig}" alt=""></div>`
+        : `<div class="media media-icon">${iconMarkup(ch.slug)}</div>`;
       return `<a class="chapter-card" href="${ch.slug}.html">
-          <div class="media"><img src="${fig}" alt=""></div>
+          ${media}
           <div class="body">
             <div class="num">${String(i + 1).padStart(2, "0")}</div>
             <h3 class="serif">${esc(ch.nav)}</h3>
@@ -755,8 +730,7 @@ function buildTopic(topic) {
     slug: "index",
     pageTitle: `${topic.title}｜${topic.en}`,
     description: desc,
-    heroSrc,
-    figureSrc: heroSrc,
+    figureSrc: "",
     kicker: "專論總覽",
     heading: topic.title,
     sub: lead,
@@ -776,7 +750,6 @@ function buildTopic(topic) {
       slug: ch.slug,
       pageTitle: `${ch.nav}｜${topic.title}`,
       description: `${topic.title}：${ch.nav}。${ch.blurb}`,
-      heroSrc,
       figureSrc: ch.fig,
       kicker: `分題 ${String(i + 1).padStart(2, "0")} / ${String(topic.chapters.length).padStart(2, "0")}`,
       heading: ch.nav,
@@ -802,33 +775,14 @@ function buildTopic(topic) {
   return anchorMap;
 }
 
-function patchCatalog(maps) {
+function patchCatalog() {
   const indexPath = path.join(ROOT, "index.html");
   let html = fs.readFileSync(indexPath, "utf8");
-  if (!html.includes("topic.img")) {
-    html = html.replace(
-      '<img src="\' + cat.img + \'" alt="">',
-      '<img src="\' + (topic.img || cat.img) + \'" alt="">'
-    );
-    html = html.replace(
-      /'<div class="card-media"><img src="' \+ cat\.img \+ '" alt="">/g,
-      `'<div class="card-media"><img src="' + (topic.img || cat.img) + '" alt="">`
-    );
-  }
-  for (const topic of TOPICS) {
-    const img = `${topic.dir}/images/hero.png`;
-    const re = new RegExp(`(href: "${topic.dir.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/index\\.html"[^}]*)(\\})`);
-    if (html.includes(`href: "${topic.dir}/index.html"`) && !html.includes(`href: "${topic.dir}/index.html"`) === false) {
-      // add img field if missing near this topic
-    }
-    const lineRe = new RegExp(
-      `(\\{ cat: "[^"]+", href: "${topic.dir.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/index\\.html")([^}]*)(\\})`
-    );
-    html = html.replace(lineRe, (all, a, mid, z) => {
-      if (/img:/.test(mid)) return all;
-      return `${a}, img: "${img}"${mid}${z}`;
-    });
-  }
+  html = html.replace(
+    /'<div class="card-media" style="--card-tone:' \+ topic\.tone \+ '"><img src="' \+ \(topic\.img \|\| cat\.img\) \+ '" alt=""><div class="card-wash"><\/div><div class="card-icon">' \+ iconSvg\(topic\.icon\) \+ "<\/div><\/div>" \+/g,
+    `'<div class="card-media" style="--card-tone:' + topic.tone + '"><div class="card-wash"></div><div class="card-icon">' + iconSvg(topic.icon) + "</div></div>" +`
+  );
+  html = html.replace(/, img: "[^"]+\/images\/hero\.png"/g, "");
   fs.writeFileSync(indexPath, html);
 }
 
@@ -847,24 +801,7 @@ function main() {
       fs.writeFileSync(p, html);
     }
   }
-  const catalog = path.join(ROOT, "index.html");
-  let cat = fs.readFileSync(catalog, "utf8");
-  if (cat.includes("topic.img || cat.img") === false && cat.includes("cat.img")) {
-    cat = cat.replace(
-      `'<div class="card-media"><img src="' + cat.img + '" alt="">`,
-      `'<div class="card-media"><img src="' + (topic.img || cat.img) + '" alt="">`
-    );
-  }
-  for (const topic of TOPICS) {
-    const img = `${topic.dir}/images/hero.png`;
-    const escaped = topic.dir.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const lineRe = new RegExp(`(\\{ cat: "[^"]+", href: "${escaped}/index\\.html")([^\\}]*)(\\})`);
-    cat = cat.replace(lineRe, (all, a, mid, z) => {
-      if (/\\bimg:/.test(mid) || /img:/.test(mid)) return all;
-      return `${a}, img: "${img}"${mid}${z}`;
-    });
-  }
-  fs.writeFileSync(catalog, cat);
+  patchCatalog();
   fs.writeFileSync(path.join(ROOT, "_tools", "section-map.json"), JSON.stringify({ topics: TOPICS.map((t) => ({ dir: t.dir, chapters: t.chapters.map((c) => ({ slug: c.slug, nav: c.nav, children: c.children || [], from: c.from })) })), maps }, null, 2));
   console.log("done");
 }

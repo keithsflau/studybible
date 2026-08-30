@@ -69,31 +69,25 @@ body.topic-shell {
 
 .hero {
   position: relative;
-  min-height: 16rem;
-  display: grid;
-  place-items: end stretch;
+  min-height: 0;
+  padding: 1.55rem 0 1.35rem;
   color: #fff;
   overflow: hidden;
+  background: #0c1222;
 }
-.hero-media { position: absolute; inset: 0; }
-.hero-media img,
-.hero-media svg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.hero-media { display: none; }
 .hero-shade {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(12, 18, 34, 0.2) 0%, rgba(12, 18, 34, 0.78) 100%),
+    linear-gradient(180deg, rgba(12, 18, 34, 0.15) 0%, rgba(12, 18, 34, 0.35) 100%),
     radial-gradient(circle at 75% 20%, rgba(196, 163, 90, 0.18), transparent 36%);
 }
 .hero-inner {
   position: relative;
   z-index: 1;
   width: min(1120px, calc(100% - 2.4rem));
-  margin: 0 auto 1.8rem;
+  margin: 0 auto;
 }
 .eyebrow {
   display: inline-flex;
@@ -196,6 +190,7 @@ body.topic-shell {
   border: 1px solid var(--line);
   background: #f3ead4;
 }
+.topic-figure:empty { display: none; }
 .topic-figure img,
 .topic-figure svg {
   width: 100%;
@@ -297,11 +292,27 @@ body.topic-shell {
   overflow: hidden;
   background: #efe6d2;
 }
-.chapter-card .media img,
-.chapter-card .media svg {
+.chapter-card .media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.chapter-card:has(.media-icon) {
+  flex-direction: row;
+  align-items: stretch;
+}
+.chapter-card .media.media-icon {
+  height: auto;
+  width: 4.35rem;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #1b2436;
+  color: #e4cf96;
+}
+.chapter-card .media.media-icon svg {
+  width: 1.7rem;
+  height: 1.7rem;
 }
 .chapter-card .body { padding: 0.95rem 1.05rem 1.1rem; }
 .chapter-card .num {
@@ -337,6 +348,18 @@ body.topic-shell {
 }
 .topic-footer p { margin: 0.35rem 0; }
 
+.bible-verse {
+  position: relative;
+  padding-left: 1rem;
+  border-left: 2px solid var(--gold);
+  color: var(--ink-soft);
+  font-style: italic;
+  line-height: 1.75;
+}
+.bible-verse:hover {
+  border-left-color: var(--gold);
+}
+
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
   .sidenav { position: static; }
@@ -360,7 +383,7 @@ body.topic-shell {
 }
 
 @media (max-width: 640px) {
-  .hero { min-height: 14rem; }
+  .hero { padding: 1.25rem 0 1.1rem; }
   .pager { flex-direction: column; }
   .pager .next { text-align: left; }
 }

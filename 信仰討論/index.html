@@ -1,6 +1,13 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-HK">
+<html class="site-theme" lang="zh-HK">
 <head>
+  <!-- site-theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../shared/tailwind-theme.js"></script>
+  <!-- /site-theme -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>討論 | Theological Discussions - Bible Study</title>
@@ -362,7 +369,7 @@
     }
     .card-media {
       position: relative;
-      height: 8.4rem;
+      height: 6.2rem;
       overflow: hidden;
       background: var(--card-tone, #1b2436);
     }
@@ -516,6 +523,9 @@
       .reveal { opacity: 1; transform: none; }
     }
   </style>
+<!-- site-theme-css -->
+  <link rel="stylesheet" href="../shared/site.css">
+  <!-- /site-theme-css -->
 </head>
 <body>
   <a class="skip" href="#topics">跳到主題</a>
@@ -642,26 +652,26 @@
     };
 
     const TOPICS = [
-      { cat: "scripture", href: "以經解經/index.html", img: "以經解經/images/hero.png", icon: "texts", tone: "linear-gradient(135deg,#3d4f3a,#8b7355)", title: "以經解經", en: "Scripture Interprets Scripture", desc: "聖經詮釋的核心原則：用清晰的經文解釋模糊的經文，建立正確的解經方法。", keys: "hermeneutics 解經 詮釋" },
-      { cat: "scripture", href: "四律/index.html", img: "四律/images/hero.png", icon: "steps", tone: "linear-gradient(135deg,#1e3a5f,#4a7c9b)", title: "四律", en: "Four Laws", desc: "傳福音的實用工具：神愛世人、人有罪、耶穌是解決、必須接受。", keys: "福音 傳講 four spiritual laws" },
-      { cat: "doctrine", href: "因信稱義/index.html", img: "因信稱義/images/hero.png", icon: "crossShield", tone: "linear-gradient(135deg,#4c1d95,#7c3aed)", title: "因信稱義", en: "Justification by Faith", desc: "恩典、信心與救恩：我們如何在神面前被視為義，以及這真理如何塑造生活。", keys: "稱義 恩典 救恩 luther" },
-      { cat: "doctrine", href: "預定論/index.html", img: "預定論/images/hero.png", icon: "crownPath", tone: "linear-gradient(135deg,#1e293b,#64748b)", title: "預定論", en: "Predestination", desc: "神的主權與人的責任：預定、揀選，以及與自由意志的關係。", keys: "揀選 加爾文 calvin" },
-      { cat: "doctrine", href: "神人合作說/index.html", img: "神人合作說/images/hero.png", icon: "hands", tone: "linear-gradient(135deg,#0f766e,#14b8a6)", title: "神人合作說", en: "Synergism", desc: "神的主動恩典與人的回應：救恩中恩典與信心如何並行。", keys: "synergism 合作 恩典" },
-      { cat: "doctrine", href: "自由意志/index.html", img: "自由意志/images/hero.png", icon: "fork", tone: "linear-gradient(135deg,#3730a3,#818cf8)", title: "自由意志", en: "Free Will", desc: "墮落後意志的轄制、神主權與人責任並行，以及在基督裏的真自由。", keys: "free will 選擇 責任" },
-      { cat: "doctrine", href: "千禧論/index.html", img: "千禧論/images/hero.png", icon: "dawn", tone: "linear-gradient(135deg,#b45309,#f59e0b)", title: "千禧論", en: "Millennialism", desc: "基督再來與千禧年國度：前千禧、後千禧、無千禧等立場。", keys: "末世 啟示錄 millennium" },
-      { cat: "history", href: "教會歷史/index.html", img: "教會歷史/images/hero.png", icon: "timeline", tone: "linear-gradient(135deg,#7c2d12,#c2410c)", title: "教會歷史", en: "Church History", desc: "從使徒時代到現代：教會如何持守真理、傳揚福音，並從歷史學習。", keys: "教父 改革 會議" },
-      { cat: "history", href: "基督教各宗派/index.html", img: "基督教各宗派/images/hero.png", icon: "branches", tone: "linear-gradient(135deg,#312e81,#6366f1)", title: "基督教各宗派", en: "Christian Traditions", desc: "天主教、東正教、更正教，以及基要派、福音派、靈恩派。評價標準是使徒福音。", keys: "天主教 東正教 更正教 宗派" },
-      { cat: "life", href: "祈禱/index.html", img: "祈禱/images/hero.png", icon: "incense", tone: "linear-gradient(135deg,#9a3412,#ea580c)", title: "祈禱", en: "Prayer", desc: "按救贖歷史讀祈禱：從呼求主名、詩篇，到耶穌的「然而」與教會的恆切。", keys: "禱告 prayer 詩篇" },
-      { cat: "life", href: "靈修學/index.html", img: "靈修學/images/hero.png", icon: "dawnBible", tone: "linear-gradient(135deg,#0e7490,#67e8f9)", title: "靈修學", en: "Christian Spirituality", desc: "聖言默想、敬拜、十架跟從與聖靈引導。靈修是聽見而活，不是技巧消費。", keys: "靈修 默想 spirituality" },
-      { cat: "life", href: "婚姻/index.html", img: "婚姻/images/hero.png", icon: "rings", tone: "linear-gradient(135deg,#9f1239,#fb7185)", title: "婚姻", en: "Marriage", desc: "創造中的一體、盟約隱喻，以及耶穌與保羅的教導。獨身同樣是恩賜。", keys: "家庭 盟約 marriage" },
-      { cat: "life", href: "興學傳道/index.html", img: "興學傳道/images/hero.png", icon: "lampBook", tone: "linear-gradient(135deg,#854d0e,#ca8a04)", title: "興學傳道", en: "Teaching in the Service of the Word", desc: "聖約教導與使徒傳承：興學為了傳道與守道，不是學位換得救。", keys: "教育 神學 教導" },
-      { cat: "life", href: "傳福音策略/index.html", img: "傳福音策略/images/hero.png", icon: "hornWorld", tone: "linear-gradient(135deg,#1d4ed8,#38bdf8)", title: "傳福音策略", en: "Evangelistic Witness", desc: "按使徒行傳思想見證：忠於基督的死與復活，並因對象調整言語。", keys: "宣教 見證 evangelism" },
-      { cat: "life", href: "基督教職場倫理/index.html", img: "基督教職場倫理/images/hero.png", icon: "tools", tone: "linear-gradient(135deg,#115e59,#a8a29e)", title: "基督教職場倫理", en: "Christian Workplace Ethics", desc: "修理看守、安息界限、工價與瑪門。工作可榮耀神，救恩不來自績效。", keys: "工作 倫理 workplace" },
-      { cat: "life", href: "辨別神的聲音/index.html", img: "辨別神的聲音/images/hero.png", icon: "earFlame", tone: "linear-gradient(135deg,#5b21b6,#c026d3)", title: "辨別神的聲音", en: "Discerning the Voice of God", desc: "以已成文的聖經為最高可檢驗標準。謙卑比敏感更安全。", keys: "引導 先知 試驗諸靈" },
-      { cat: "compare", href: "猶大教、回教、天主教、基督教比較/index.html", img: "猶大教、回教、天主教、基督教比較/images/hero.png", icon: "pillars", tone: "linear-gradient(135deg,#3f6212,#84cc16)", title: "宗教比較", en: "Religious Comparisons", desc: "比較猶太教、伊斯蘭教、天主教與基督教：核心信仰、歷史與主要差異。", keys: "猶太 伊斯蘭 天主教 亞伯拉罕" },
-      { cat: "compare", href: "基督教與世界宗教比較/index.html", img: "基督教與世界宗教比較/images/hero.png", icon: "globe", tone: "linear-gradient(135deg,#0c4a6e,#0284c7)", title: "世界宗教比較", en: "Christianity and World Religions", desc: "以創造、神論、人論、來世與經典為座標，比較各大宗教。", keys: "佛教 印度教 儒道 民間宗教" },
-      { cat: "compare", href: "天使/index.html", img: "天使/images/hero.png", icon: "messenger", tone: "linear-gradient(135deg,#0369a1,#94a3b8)", title: "天使", en: "Angels as Messengers", desc: "受造的使者與服役的靈：指向神的作為，不搶基督的榮耀。", keys: "使者 屬靈 angel" },
-      { cat: "compare", href: "異端/index.html", img: "異端/images/hero.png", icon: "wheat", tone: "linear-gradient(135deg,#881337,#64748b)", title: "異端", en: "Heresy and the Apostolic Gospel", desc: "異端不是「跟我不一樣的宗派」。先定義聖經自己的詞語，再用使徒見證檢驗。含古代與近現代主要異端分析。", keys: "假先知 另一個福音 敵基督 古代異端 近現代" }
+      { cat: "scripture", href: "以經解經/index.html", icon: "texts", tone: "linear-gradient(135deg,#3d4f3a,#8b7355)", title: "以經解經", en: "Scripture Interprets Scripture", desc: "聖經詮釋的核心原則：用清晰的經文解釋模糊的經文，建立正確的解經方法。", keys: "hermeneutics 解經 詮釋" },
+      { cat: "scripture", href: "四律/index.html", icon: "steps", tone: "linear-gradient(135deg,#1e3a5f,#4a7c9b)", title: "四律", en: "Four Laws", desc: "傳福音的實用工具：神愛世人、人有罪、耶穌是解決、必須接受。", keys: "福音 傳講 four spiritual laws" },
+      { cat: "doctrine", href: "因信稱義/index.html", icon: "crossShield", tone: "linear-gradient(135deg,#4c1d95,#7c3aed)", title: "因信稱義", en: "Justification by Faith", desc: "恩典、信心與救恩：我們如何在神面前被視為義，以及這真理如何塑造生活。", keys: "稱義 恩典 救恩 luther" },
+      { cat: "doctrine", href: "預定論/index.html", icon: "crownPath", tone: "linear-gradient(135deg,#1e293b,#64748b)", title: "預定論", en: "Predestination", desc: "神的主權與人的責任：預定、揀選，以及與自由意志的關係。", keys: "揀選 加爾文 calvin" },
+      { cat: "doctrine", href: "神人合作說/index.html", icon: "hands", tone: "linear-gradient(135deg,#0f766e,#14b8a6)", title: "神人合作說", en: "Synergism", desc: "神的主動恩典與人的回應：救恩中恩典與信心如何並行。", keys: "synergism 合作 恩典" },
+      { cat: "doctrine", href: "自由意志/index.html", icon: "fork", tone: "linear-gradient(135deg,#3730a3,#818cf8)", title: "自由意志", en: "Free Will", desc: "墮落後意志的轄制、神主權與人責任並行，以及在基督裏的真自由。", keys: "free will 選擇 責任" },
+      { cat: "doctrine", href: "千禧論/index.html", icon: "dawn", tone: "linear-gradient(135deg,#b45309,#f59e0b)", title: "千禧論", en: "Millennialism", desc: "基督再來與千禧年國度：前千禧、後千禧、無千禧等立場。", keys: "末世 啟示錄 millennium" },
+      { cat: "history", href: "教會歷史/index.html", icon: "timeline", tone: "linear-gradient(135deg,#7c2d12,#c2410c)", title: "教會歷史", en: "Church History", desc: "從使徒時代到現代：教會如何持守真理、傳揚福音，並從歷史學習。", keys: "教父 改革 會議" },
+      { cat: "history", href: "基督教各宗派/index.html", icon: "branches", tone: "linear-gradient(135deg,#312e81,#6366f1)", title: "基督教各宗派", en: "Christian Traditions", desc: "天主教、東正教、更正教，以及基要派、福音派、靈恩派。評價標準是使徒福音。", keys: "天主教 東正教 更正教 宗派" },
+      { cat: "life", href: "祈禱/index.html", icon: "incense", tone: "linear-gradient(135deg,#9a3412,#ea580c)", title: "祈禱", en: "Prayer", desc: "按救贖歷史讀祈禱：從呼求主名、詩篇，到耶穌的「然而」與教會的恆切。", keys: "禱告 prayer 詩篇" },
+      { cat: "life", href: "靈修學/index.html", icon: "dawnBible", tone: "linear-gradient(135deg,#0e7490,#67e8f9)", title: "靈修學", en: "Christian Spirituality", desc: "聖言默想、敬拜、十架跟從與聖靈引導。靈修是聽見而活，不是技巧消費。", keys: "靈修 默想 spirituality" },
+      { cat: "life", href: "婚姻/index.html", icon: "rings", tone: "linear-gradient(135deg,#9f1239,#fb7185)", title: "婚姻", en: "Marriage", desc: "創造中的一體、盟約隱喻，以及耶穌與保羅的教導。獨身同樣是恩賜。", keys: "家庭 盟約 marriage" },
+      { cat: "life", href: "興學傳道/index.html", icon: "lampBook", tone: "linear-gradient(135deg,#854d0e,#ca8a04)", title: "興學傳道", en: "Teaching in the Service of the Word", desc: "聖約教導與使徒傳承：興學為了傳道與守道，不是學位換得救。", keys: "教育 神學 教導" },
+      { cat: "life", href: "傳福音策略/index.html", icon: "hornWorld", tone: "linear-gradient(135deg,#1d4ed8,#38bdf8)", title: "傳福音策略", en: "Evangelistic Witness", desc: "按使徒行傳思想見證：忠於基督的死與復活，並因對象調整言語。", keys: "宣教 見證 evangelism" },
+      { cat: "life", href: "基督教職場倫理/index.html", icon: "tools", tone: "linear-gradient(135deg,#115e59,#a8a29e)", title: "基督教職場倫理", en: "Christian Workplace Ethics", desc: "修理看守、安息界限、工價與瑪門。工作可榮耀神，救恩不來自績效。", keys: "工作 倫理 workplace" },
+      { cat: "life", href: "辨別神的聲音/index.html", icon: "earFlame", tone: "linear-gradient(135deg,#5b21b6,#c026d3)", title: "辨別神的聲音", en: "Discerning the Voice of God", desc: "以已成文的聖經為最高可檢驗標準。謙卑比敏感更安全。", keys: "引導 先知 試驗諸靈" },
+      { cat: "compare", href: "猶大教、回教、天主教、基督教比較/index.html", icon: "pillars", tone: "linear-gradient(135deg,#3f6212,#84cc16)", title: "宗教比較", en: "Religious Comparisons", desc: "比較猶太教、伊斯蘭教、天主教與基督教：核心信仰、歷史與主要差異。", keys: "猶太 伊斯蘭 天主教 亞伯拉罕" },
+      { cat: "compare", href: "基督教與世界宗教比較/index.html", icon: "globe", tone: "linear-gradient(135deg,#0c4a6e,#0284c7)", title: "世界宗教比較", en: "Christianity and World Religions", desc: "以創造、神論、人論、來世與經典為座標，比較各大宗教。", keys: "佛教 印度教 儒道 民間宗教" },
+      { cat: "compare", href: "天使/index.html", icon: "messenger", tone: "linear-gradient(135deg,#0369a1,#94a3b8)", title: "天使", en: "Angels as Messengers", desc: "受造的使者與服役的靈：指向神的作為，不搶基督的榮耀。", keys: "使者 屬靈 angel" },
+      { cat: "compare", href: "異端/index.html", icon: "wheat", tone: "linear-gradient(135deg,#881337,#64748b)", title: "異端", en: "Heresy and the Apostolic Gospel", desc: "異端不是「跟我不一樣的宗派」。先定義聖經自己的詞語，再用使徒見證檢驗。含古代與近現代主要異端分析。", keys: "假先知 另一個福音 敵基督 古代異端 近現代" }
     ];
 
     const catMap = Object.fromEntries(CATS.map((c) => [c.id, c]));
@@ -683,7 +693,7 @@
         '<a class="card" data-cat="' + topic.cat + '" data-q="' +
         (topic.title + " " + topic.en + " " + topic.desc + " " + topic.keys).toLowerCase() +
         '" href="' + topic.href + '">' +
-          '<div class="card-media" style="--card-tone:' + topic.tone + '"><img src="' + (topic.img || cat.img) + '" alt=""><div class="card-wash"></div><div class="card-icon">' + iconSvg(topic.icon) + "</div></div>" +
+          '<div class="card-media" style="--card-tone:' + topic.tone + '"><div class="card-wash"></div><div class="card-icon">' + iconSvg(topic.icon) + "</div></div>" +
           '<div class="card-body">' +
             '<h3 class="serif">' + topic.title + "</h3>" +
             '<p class="en latin">' + topic.en + "</p>" +

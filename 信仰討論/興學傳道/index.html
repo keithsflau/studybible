@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html class="site-theme" lang="zh-HK">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- site-theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../../shared/tailwind-theme.js"></script>
+  <!-- /site-theme -->
+<script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../../visit-counter.css">
   <link rel="stylesheet" href="../_shared/topic.css">
   <style>
@@ -100,6 +106,9 @@
     .prose-body p { margin-bottom: 1.05rem; }
     .prose-body p:last-child { margin-bottom: 0; }
   </style>
+<!-- site-theme-css -->
+  <link rel="stylesheet" href="../../shared/site.css">
+  <!-- /site-theme-css -->
 </head>
 <body class="topic-shell" data-slug="index">
   <a class="skip" href="paul.html#content">跳到正文</a>
@@ -116,7 +125,6 @@
   </header>
 
   <section class="hero" aria-label="興學傳道">
-    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
     <div class="hero-shade"></div>
     <div class="hero-inner">
       <div class="eyebrow">Teaching in the Service of the Word</div>
@@ -149,7 +157,6 @@
           
         </nav>
         <article id="content" class="essay">
-          <figure class="topic-figure"><img src="images/hero.png" alt=""></figure>
           <p class="essay-kicker">專論總覽</p>
           
           
@@ -159,7 +166,7 @@
           </div>
           <div class="chapter-grid">
         <a class="chapter-card" href="question.html">
-          <div class="media"><img src="images/question.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 9.5L20 19v2h-3l-2-2 2-2-2-2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15l2 2"/></svg></div>
           <div class="body">
             <div class="num">01</div>
             <h3 class="serif">問題意識</h3>
@@ -168,7 +175,7 @@
           </div>
         </a>
         <a class="chapter-card" href="torah.html">
-          <div class="media"><img src="images/torah.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4h8a2 2 0 012 2v11"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h9a2 2 0 012 2v10H7a2 2 0 01-2-2V7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11h5M8 14h4"/></svg></div>
           <div class="body">
             <div class="num">02</div>
             <h3 class="serif">妥拉與智慧</h3>
@@ -177,7 +184,7 @@
           </div>
         </a>
         <a class="chapter-card" href="office.html">
-          <div class="media"><img src="images/office.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11a3.5 3.5 0 110-7 3.5 3.5 0 010 7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.5 9.5L20 19v2h-3l-2-2 2-2-2-2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15l2 2"/></svg></div>
           <div class="body">
             <div class="num">03</div>
             <h3 class="serif">教導的職分</h3>
@@ -186,7 +193,7 @@
           </div>
         </a>
         <a class="chapter-card" href="jesus.html">
-          <div class="media"><img src="images/jesus.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16M5 12h14"/><circle cx="12" cy="12" r="3" fill="none" stroke-width="2"/></svg></div>
           <div class="body">
             <div class="num">04</div>
             <h3 class="serif">夫子與使徒</h3>
@@ -195,7 +202,7 @@
           </div>
         </a>
         <a class="chapter-card" href="paul.html">
-          <div class="media"><img src="images/paul.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h7a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7h7a2 2 0 012 2v10a2 2 0 01-2 2h-5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11h4M7 14h3"/></svg></div>
           <div class="body">
             <div class="num">05</div>
             <h3 class="serif">保羅與內容</h3>
@@ -204,7 +211,7 @@
           </div>
         </a>
         <a class="chapter-card" href="discern.html">
-          <div class="media"><img src="images/discern.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v13M7 21h10"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8h12"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8l-3 6h6L6 8zM18 8l-3 6h6l-3-6z"/></svg></div>
           <div class="body">
             <div class="num">06</div>
             <h3 class="serif">張力與分辨</h3>
@@ -213,7 +220,7 @@
           </div>
         </a>
         <a class="chapter-card" href="pastoral.html">
-          <div class="media"><img src="images/pastoral.svg" alt=""></div>
+          <div class="media media-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h8l-1 1H9l-1-1z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21c0-4 1.6-5.4 2.2-8M15 21c0-4-1.6-5.4-2.2-8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V8M10.2 6c-.8-2 .4-3.4 1.2-4.4M13.8 7c.8-1.6.2-3 1.2-4.2"/></svg></div>
           <div class="body">
             <div class="num">07</div>
             <h3 class="serif">牧養結論</h3>

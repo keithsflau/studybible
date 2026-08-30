@@ -1,0 +1,577 @@
+/* Site-wide academic glass theme — tokens from 信仰討論 */
+:root {
+  --ink: #0c1222;
+  --ink-soft: #1b2436;
+  --gold: #c4a35a;
+  --gold-2: #e4cf96;
+  --parchment: #f6f1e6;
+  --paper: #fbf7ef;
+  --muted: #5c6574;
+  --line: rgba(196, 163, 90, 0.28);
+  --shadow: 0 22px 50px -28px rgba(12, 18, 34, 0.55);
+  --gold-text: #8a6d28;
+}
+
+html.site-theme {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.8rem;
+}
+
+html.site-theme body:not(:has(#scene)) {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper) !important;
+  background-image: none !important;
+  font-family: "Source Sans 3", "PingFang HK", "Microsoft JhengHei", sans-serif;
+  overflow-x: hidden;
+}
+
+html.site-theme .serif,
+html.site-theme .serif-font,
+html.site-theme .faith-serif {
+  font-family: "Noto Serif TC", "Source Han Serif TC", serif !important;
+}
+
+html.site-theme .latin {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+}
+
+/* --- Common leftover classes --- */
+html.site-theme .gradient-bg {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(196, 163, 90, 0.16), transparent 36%),
+    radial-gradient(circle at 82% 0%, rgba(228, 207, 150, 0.12), transparent 32%),
+    radial-gradient(circle at 50% 86%, rgba(12, 18, 34, 0.06), transparent 34%) !important;
+  filter: blur(48px);
+  opacity: 0.85;
+  animation: none !important;
+}
+
+html.site-theme .glass-card,
+html.site-theme .content-panel,
+html.site-theme .faith-card {
+  backdrop-filter: blur(12px);
+  background: #fff !important;
+  border: 1px solid rgba(12, 18, 34, 0.08) !important;
+  box-shadow: 0 10px 28px -22px rgba(12, 18, 34, 0.5);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+html.site-theme a.glass-card:hover,
+html.site-theme a.faith-card:hover,
+html.site-theme .category-card.glass-card:hover {
+  background: #fff !important;
+  border-color: rgba(196, 163, 90, 0.55) !important;
+  transform: translateY(-6px);
+  box-shadow: 0 24px 40px -24px rgba(12, 18, 34, 0.55);
+}
+
+html.site-theme .section-title-bar,
+html.site-theme .category-line {
+  background: linear-gradient(90deg, var(--gold), transparent) !important;
+}
+
+html.site-theme .bible-verse {
+  position: relative;
+  padding-left: 1rem;
+  border-left: 2px solid var(--gold) !important;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+html.site-theme .bible-verse:hover {
+  border-left-color: var(--gold) !important;
+  transform: none;
+}
+
+html.site-theme .progress-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--ink), var(--gold)) !important;
+  border-radius: 2px;
+}
+
+html.site-theme .toc-link.active {
+  background: var(--ink) !important;
+  color: var(--gold-2) !important;
+}
+
+html.site-theme .scripture-pill {
+  border-color: var(--line) !important;
+  background: #f3ead4 !important;
+  color: var(--gold-text);
+}
+
+html.site-theme .scripture-pill:hover {
+  background: #efe6d2 !important;
+  box-shadow: 0 8px 18px rgba(196, 163, 90, 0.18);
+}
+
+html.site-theme .modal-card {
+  border-color: var(--line) !important;
+  box-shadow: var(--shadow);
+}
+
+/* Dark study headers → ink hero */
+html.site-theme header.bg-gradient-to-r,
+html.site-theme header.bg-gradient-to-br,
+html.site-theme header[class*="from-"],
+html.site-theme .ux-header {
+  background: #0c1222 !important;
+  background-image:
+    linear-gradient(180deg, rgba(12, 18, 34, 0.15) 0%, rgba(12, 18, 34, 0.35) 100%),
+    radial-gradient(circle at 75% 20%, rgba(196, 163, 90, 0.18), transparent 36%) !important;
+  color: #f6f1e6 !important;
+}
+
+html.site-theme header.bg-gradient-to-r a,
+html.site-theme header.bg-gradient-to-br a,
+html.site-theme .ux-header a {
+  color: #d7cba8 !important;
+}
+
+html.site-theme header.bg-gradient-to-r a:hover,
+html.site-theme header.bg-gradient-to-br a:hover,
+html.site-theme .ux-header a:hover {
+  color: #fff !important;
+}
+
+html.site-theme .bg-clip-text.text-transparent,
+html.site-theme [class*="bg-clip-text"] {
+  background-image: none !important;
+  -webkit-text-fill-color: var(--gold-2);
+  color: var(--gold-2) !important;
+}
+
+/* --- Shell: topbar / hero / cards / footer --- */
+.site-skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 80;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.4rem;
+}
+.site-skip:focus { top: 1rem; }
+
+.site-topbar,
+html.site-theme header.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem 1rem;
+  padding: 0.7rem 1.25rem;
+  background: rgba(12, 18, 34, 0.9);
+  color: #f6f1e6;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(228, 207, 150, 0.16);
+}
+
+.site-topbar a,
+html.site-theme .topbar a,
+.site-topbar-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #d7cba8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-topbar a:hover,
+html.site-theme .topbar a:hover,
+.site-topbar-back:hover { color: #fff; }
+
+.site-topbar-title,
+html.site-theme .topbar-title {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.site-topbar-sep { color: #8b7350; }
+
+.site-hero {
+  position: relative;
+  padding: 1.55rem 0 1.35rem;
+  color: #fff;
+  overflow: hidden;
+  background: #0c1222;
+}
+
+.site-hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 18, 34, 0.15) 0%, rgba(12, 18, 34, 0.35) 100%),
+    radial-gradient(circle at 75% 20%, rgba(196, 163, 90, 0.18), transparent 36%);
+}
+
+.site-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 2.4rem));
+  margin: 0 auto;
+}
+
+.site-eyebrow,
+html.site-theme .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--gold-2);
+}
+
+.site-eyebrow::before,
+html.site-theme .eyebrow::before {
+  content: "";
+  width: 2.2rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+.site-hero h1 {
+  margin: 0.45rem 0 0.25rem;
+  font-size: clamp(1.9rem, 4.5vw, 3.1rem);
+  line-height: 1.15;
+  font-weight: 700;
+  font-family: "Noto Serif TC", serif;
+}
+
+.site-hero h1 em {
+  display: block;
+  margin-top: 0.15rem;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.48em;
+  color: var(--gold-2);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.site-hero-lead {
+  max-width: 40rem;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #e8e2d4;
+}
+
+.site-hero-verse {
+  margin-top: 1.1rem;
+  max-width: 34rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--gold);
+  color: #d7cba8;
+  font-style: italic;
+}
+
+.site-hero-verse cite {
+  display: block;
+  margin-top: 0.35rem;
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-2);
+}
+
+.site-wrap {
+  width: min(1120px, calc(100% - 2.4rem));
+  margin: 0 auto;
+}
+
+.site-intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 2.4rem 0 1.2rem;
+}
+
+.site-rule {
+  width: 3.4rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.site-intro h2 {
+  margin: 0.4rem 0 0.7rem;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-family: "Noto Serif TC", serif;
+}
+
+.site-intro p {
+  color: var(--muted);
+  line-height: 1.85;
+  margin: 0 0 0.9rem;
+}
+
+.site-intro-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.site-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(12, 18, 34, 0.08);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 28px -22px rgba(12, 18, 34, 0.5);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.site-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(196, 163, 90, 0.55);
+  box-shadow: 0 24px 40px -24px rgba(12, 18, 34, 0.55);
+}
+
+.site-card-media {
+  position: relative;
+  height: 6.2rem;
+  overflow: hidden;
+  background: var(--card-tone, #1b2436);
+}
+
+.site-card-wash {
+  position: absolute;
+  inset: 0;
+  background: var(--card-tone, #1b2436);
+  mix-blend-mode: multiply;
+  opacity: 0.62;
+}
+
+.site-card-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.15rem;
+  height: 3.15rem;
+  border-radius: 0.85rem;
+  display: grid;
+  place-items: center;
+  background: rgba(12, 18, 34, 0.78);
+  backdrop-filter: blur(8px);
+  color: #f6edd4;
+  box-shadow: 0 8px 20px -12px rgba(12, 18, 34, 0.7);
+}
+
+.site-card-icon svg { width: 1.7rem; height: 1.7rem; }
+
+.site-card-body {
+  padding: 1rem 1.05rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.site-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-family: "Noto Serif TC", serif;
+  transition: color 0.2s;
+}
+
+.site-card:hover h3 { color: var(--gold-text); }
+
+.site-card .en {
+  margin: 0.15rem 0 0.55rem;
+  color: #8b7350;
+  font-size: 0.86rem;
+  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.site-card .excerpt {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.site-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--gold-text);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.site-cta svg { width: 0.95rem; height: 0.95rem; transition: transform 0.2s; }
+.site-card:hover .site-cta svg { transform: translateX(4px); }
+
+.site-footer,
+html.site-theme footer.topic-footer,
+html.site-theme body:not(:has(#scene)) > footer,
+html.site-theme .relative.z-10 + footer,
+html.site-theme main + footer {
+  margin-top: 3rem;
+  padding: 2rem 1.2rem 5.5rem;
+  text-align: center;
+  color: #6b7280;
+  border-top: 1px solid rgba(12, 18, 34, 0.06);
+}
+
+.site-footer p,
+html.site-theme .site-footer p { margin: 0.35rem 0; }
+
+.site-footer .verse { font-style: italic; color: #4b5563; }
+
+html.site-theme .category-card [class*="bg-gradient-to-br"].w-14,
+html.site-theme .category-card [class*="bg-gradient-to-br"].w-16,
+html.site-theme a.glass-card [class*="bg-gradient-to-br"].w-14,
+html.site-theme a.glass-card [class*="bg-gradient-to-br"].w-16 {
+  background: #0c1222 !important;
+  color: #e4cf96 !important;
+}
+
+/* Character list avatars → ink / gold */
+html.site-theme .glass-card .rounded-full {
+  background: #f3ead4 !important;
+  color: var(--gold-text) !important;
+}
+
+html.site-theme .group:hover .glass-card .rounded-full,
+html.site-theme .glass-card.group:hover .rounded-full {
+  background: var(--ink) !important;
+  color: var(--gold-2) !important;
+}
+
+html.site-theme .category-title h3 {
+  color: var(--ink) !important;
+  font-family: "Noto Serif TC", serif;
+}
+
+/* 靈修 SPA chrome */
+html.site-theme #sidebar,
+html.site-theme aside.bg-stone-900 {
+  background: #0c1222 !important;
+  border-color: rgba(228, 207, 150, 0.16) !important;
+  color: #d7cba8 !important;
+}
+
+html.site-theme header.bg-stone-900 {
+  background: rgba(12, 18, 34, 0.94) !important;
+}
+
+html.site-theme .nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border-left-color: var(--gold) !important;
+}
+
+html.site-theme .nav-item.active {
+  background-color: #1b2436 !important;
+  color: var(--gold-2) !important;
+  border-left-color: var(--gold) !important;
+}
+
+html.site-theme body.bg-stone-50 {
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+}
+
+/* 查經 / 經卷 white panels */
+html.site-theme section.bg-white,
+html.site-theme .bg-white.rounded-2xl {
+  border-color: var(--line) !important;
+  box-shadow: var(--shadow);
+}
+
+html.site-theme .match-card.selected {
+  outline-color: var(--gold) !important;
+  background: #f3ead4 !important;
+}
+
+/* Faith share shell alignment */
+html.site-theme .faith-topbar {
+  background: rgba(12, 18, 34, 0.94) !important;
+  border-bottom: 1px solid rgba(228, 207, 150, 0.16);
+}
+
+html.site-theme .faith-aside {
+  background: #0c1222 !important;
+}
+
+html.site-theme .faith-nav-btn.is-active {
+  background: rgba(196, 163, 90, 0.18) !important;
+  color: var(--gold-2) !important;
+  box-shadow: inset 0 0 0 1px rgba(196, 163, 90, 0.35);
+}
+
+html.site-theme .faith-verse {
+  border-left: 2px solid var(--gold);
+  background: linear-gradient(90deg, #f3ead4, #fff);
+}
+
+html.site-theme .faith-original {
+  background: #0c1222;
+}
+
+html.site-theme .faith-hymn-action {
+  background: var(--ink);
+  color: var(--gold-2);
+}
+
+html.site-theme .faith-hymn-action.is-ghost {
+  background: #fff;
+  color: var(--gold-text);
+  border-color: var(--line);
+}
+
+html.site-theme .faith-progress > span {
+  background: linear-gradient(90deg, var(--gold), var(--gold-2));
+}
+
+/* 2D map listing already parchment — tighten tokens when themed */
+html.site-theme body.site-maps {
+  background: var(--paper);
+}
+
+@media (max-width: 900px) {
+  .site-intro, .site-grid { grid-template-columns: 1fr; }
+  .site-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .site-grid { grid-template-columns: 1fr; }
+  .site-hero { padding: 1.25rem 0 1.1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.site-theme .site-card,
+  html.site-theme .glass-card,
+  html.site-theme .reveal,
+  html.site-theme .fade-in-up,
+  html.site-theme .category-card {
+    animation: none !important;
+    transition: none;
+  }
+  html.site-theme .reveal,
+  html.site-theme .fade-in-up,
+  html.site-theme .category-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

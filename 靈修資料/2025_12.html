@@ -1,10 +1,16 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-HK">
+<html class="site-theme" lang="zh-HK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025年12月 每日靈修：道成肉身與歲首年終</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- site-theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="../shared/tailwind-theme.js"></script>
+  <!-- /site-theme -->
+<script src="https://cdn.tailwindcss.com"></script>
     <!-- Chosen Palette: Festive Warmth (Stone/Rose) -->
     <!-- Application Structure Plan: A responsive SPA with a sidebar navigation and main content area. The sidebar groups the 28 devotionals (Dec 4 - Dec 31) into their thematic weeks as defined in the source report. This structure allows users to easily jump between themes (like "Prophecy" vs "Christmas") or specific dates. The main content area dynamically updates to display the selected devotional's date, verse, title, and body text. A Javascript function automatically loads the entry for the current date on startup, enhancing usability. -->
     <!-- Visualization & Content Choices: Source Info: Daily textual devotionals. Goal: Reading and contemplation. Presentation Method: Clean typography in a master-detail layout. Interaction: Click-to-read, persistent navigation state. Justification: Text-heavy content requires excellent readability (typography) and easy access (sidebar) without distraction. No quantitative data exists for charts. -->
@@ -53,8 +59,15 @@
         }
     </style>
     <link rel="stylesheet" href="../../visit-counter.css">
+<!-- site-theme-css -->
+  <link rel="stylesheet" href="../shared/site.css">
+  <!-- /site-theme-css -->
 </head>
 <body class="bg-stone-50 text-stone-800 h-screen flex flex-col md:flex-row overflow-hidden">
+<!-- site-topbar -->
+<header class="site-topbar"><a class="site-topbar-back" href="../index.html"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>主頁</a><div class="site-topbar-title">2025年12月 每日靈修：道成肉身與歲首年終</div></header>
+<!-- /site-topbar -->
+
 
     <!-- Mobile Header -->
     <header class="md:hidden bg-stone-900 text-white p-4 flex justify-between items-center shadow-md z-30 shrink-0">

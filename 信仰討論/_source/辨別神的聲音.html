@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>辨別神的聲音 | Discerning the Voice of God</title>
+  <meta name="description" content="以聖經為最高可檢驗標準，討論如何辨別神的聲音：先知職分、成文妥拉、終末的兒子、聖靈引導、試驗諸靈、聖經充足，以及良心與環境印證的限度。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(99, 102, 241, 0.18);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(79, 70, 229, 0.85);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(79, 70, 229, 0.6), rgba(14, 165, 233, 0.5));
+      border-radius: 2px;
+    }
+    .toc-link { transition: all 0.2s ease; white-space: nowrap; }
+    .toc-link.active {
+      background: linear-gradient(135deg, #4f46e5 0%, #0284c7 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-zh p { line-height: 1.85; }
+    .priority-step {
+      border-left: 4px solid rgba(79, 70, 229, 0.45);
+    }
+  </style>
+  <link rel="stylesheet" href="../../../visit-counter.css">
+</head>
+<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 min-h-screen overflow-x-hidden">
+  <div class="relative min-h-screen overflow-hidden">
+    <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
+
+    <div class="relative z-10">
+
+      <header class="px-6 py-12 sm:py-16">
+        <div class="mx-auto max-w-7xl">
+          <div class="text-center space-y-6">
+            <a href="../index.html" class="inline-block mb-4 text-slate-600 hover:text-slate-900 transition-colors fade-in-up" style="animation-delay: 0.1s;">
+              <svg class="w-6 h-6 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              返回討論主頁
+            </a>
+            <div class="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg fade-in-up" style="background:linear-gradient(135deg,#5b21b6,#c026d3);animation-delay:0.15s">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12c0-3.3 2.2-6 5-6 2.2 0 3.5 1.6 3.5 3.6 0 2-1.2 3-1.2 4.4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12c0 2 1 3.5 3 4.2"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.6 8.4c.3 1.7-1 2.8-1.9 3.4 1.3.6 2.3 1.9 2.3 3.4A3.1 3.1 0 0114 18.4c-1.1 0-1.9-.6-1.9-1.6 0-1.1.9-1.9 1.9-2.8 1.1-1.8 2-3.5 2.6-5.6z"/>
+              </svg>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight float-animation serif-font fade-in-up" style="animation-delay: 0.2s;">
+              辨別神的聲音
+              <span class="block mt-2 bg-gradient-to-r from-indigo-600 via-sky-600 to-violet-700 bg-clip-text text-transparent pulse-animation">
+                Discerning the Voice of God
+              </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.3s;">
+              神的自我啟示、成文的道，與試驗一切聲音的責任
+            </p>
+            <div class="w-full max-w-md mx-auto mt-6 fade-in-up" style="animation-delay: 0.4s;">
+              <div class="progress-bar" style="width: 0%;" id="reading-progress"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-indigo-100 shadow-sm" aria-label="專論目錄">
+        <div class="mx-auto max-w-7xl px-3 sm:px-6">
+          <div class="flex gap-2 overflow-x-auto py-3 text-sm">
+            <a href="#intro" class="toc-link active px-3 py-2 rounded-lg bg-indigo-50 text-indigo-800 font-medium">問題意識</a>
+            <a href="#ot-prophet" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">先知職分</a>
+            <a href="#written-torah" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">成文妥拉</a>
+            <a href="#the-son" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">聽子</a>
+            <a href="#spirit" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">聖靈</a>
+            <a href="#testing" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">試驗</a>
+            <a href="#sufficiency" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">聖經充足</a>
+            <a href="#ordinary" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">日常引導</a>
+            <a href="#pastoral" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">牧養警告</a>
+            <a href="#conclusion" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">優先序</a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="px-6 pb-16">
+        <div class="mx-auto max-w-6xl prose-zh">
+
+          <section id="intro" class="locus-section mb-16 fade-in-up" style="animation-delay: 0.45s;">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">一、問題意識：神的聲音首先是啟示，不是音頻</h2>
+              <p class="text-lg text-slate-700 mb-5">
+                在華人教會裡，「神對我說」幾乎成了一種屬靈貨幣。一端，有人把內心感動、異象、先知預言直接等同於不可質疑的「神說」；另一端，因看見濫用，乾脆否認神仍以任何聖經以外的方式引導祂的子民。兩邊都觸及真實的經文，卻往往沒有把經文放回其文學體裁與救贖歷史的位置。本篇不提供「聽神聲音三步驟」，也不以冷嘲靈恩來換取安全感。張力要留給經文自己。
+              </p>
+              <p class="text-lg text-slate-700 mb-5">
+                「神的聲音」在聖經中首先不是一種主觀音頻，而是神的<strong class="text-indigo-700">自我啟示</strong>（self-revelation）。神說話，因為祂是活的神；但祂說話的方式，在正典敘事中並不單一，也從不把門徒從「試驗」的責任中釋放。有假先知，也有自欺。耶利米說「人心比萬物都詭詐，壞到極處」（耶 17:9）；雅各勸人「不要看錯了」（雅 1:16），並要「行道，不要單單聽道」（雅 1:22）。因此辨別不是少數「敏感」之人的表演，而是跟隨基督的群體必須學習的門徒職分。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「一切的靈，你們不可都信，總要試驗那些靈是出於神的不是；因為世上有許多假先知已經出來了。」</p>
+                <p class="text-sm text-slate-600">— 約翰一書 4:1</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                約翰把問題說得很清楚：超自然現象的存在，本身不能證明來源。辨別的起點不是「我有沒有感覺」，而是「這聲音把人帶到哪一位神、哪一個福音面前」。約翰福音 10:27「我的羊聽我的聲音」常被抽成內在聽音的憑據；在該卷的論證裡，羊聽牧人，是認出那位為羊捨命、從死裡復活的子，而不是把主觀印象提升為新的正典。
+              </p>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p>禱告如何向神陳明，見本站「<a href="../祈禱/index.html" class="text-indigo-700 font-medium hover:underline">祈禱</a>」；靈修與默想的日常節奏，可與本站「<a href="../靈修學/index.html" class="text-indigo-700 font-medium hover:underline">靈修學</a>」對讀。本篇專攻：如何分辨、何謂神話語、假先知、良心，以及環境「印證」的限度。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="ot-prophet" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">二、舊約：神說話與先知職分</h2>
+              <p class="text-lg text-slate-700 mb-5">
+                舊約從不否認神用異象、夢、先知、烏陵土明，甚至在關鍵時刻以特殊顯現說話。這些敘事是神在以色列歷史中真實的作為。問題在於：敘事記載了甚麼，並不自動等於今日人人可複製的方法。先知職分不是民主化的「人人都有私訊熱線」；它是神在特定時代、為着盟約百姓而設立的職事，並且從一開始就帶着嚴格的試驗標準。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">應驗與名：申命記 18:15–22</h3>
+              <p class="text-lg text-slate-700 mb-5">
+                摩西應許「耶和華你的神要從你們弟兄中間給你興起一位先知，像我」（申 18:15）。這應許在救贖歷史中指向那更大的先知（參徒 3:22–23），同時也為當時的先知職分設下界線。百姓可以問、也必須問：「耶和華所未曾吩咐的話，我們怎能知道呢？」（申 18:21）
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「先知託耶和華的名說話，所說的若不成就，也無效驗，這就是耶和華所未曾吩咐的，是那先知擅自說的，你不要怕他。」</p>
+                <p class="text-sm text-slate-600">— 申命記 18:22</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                試驗有兩面：是否奉耶和華的名，以及所說的是否應驗。擅自說話的人，百姓「不要怕他」。把未經驗證的私言抬到與聖經同等的地位，舊約已經判為越權。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">即使神蹟顯出：申命記 13:1–5</h3>
+              <p class="text-lg text-slate-700 mb-5">
+                申命記立刻補上第二道篩子，比「準不準」更根本。若有先知或作夢的起來，顯神蹟奇事，<strong class="text-indigo-700">而且那神蹟也應驗了</strong>，卻說「我們去隨從你素來所不認識的別神」，仍必須棄絕（申 13:1–3）。準確的預測、可見的奇事，都不能蓋過對獨一真神的忠誠。神甚至說這是在「試驗」你們愛祂是否盡心盡性。辨別的核心不是能力，是敬拜的對象。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">出於己心的異象：耶利米書 23；以西結書 13</h3>
+              <p class="text-lg text-slate-700 mb-5">
+                被擄前後的先知書，把「神說」的通貨膨脹寫成牧養災難。耶利米聽見的不是技術問題，而是神學問題：有人用自己的夢冒充神的口。
+              </p>
+              <div class="bible-verse mb-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「這些先知向你們說預言，你們不要聽他們的話。他們以虛空教訓你們，所說的異象是出於自己的心，不是出於耶和華的口。」</p>
+                <p class="text-sm text-slate-600">— 耶利米書 23:16</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                耶 23:21 更刺耳：「我沒有打發那些先知，他們竟自奔跑；我沒有對他們說話，他們竟自預言。」以西結則罵粉飾的工作：「愚頑的先知有禍了，他們隨從自己的心意，卻一無所見。」（結 13:3）粉飾裂牆（結 13:10–12），就是用「平安」的話掩蓋當受的審判。今日若有人以「神告訴我你要嫁他／你要奉獻／你要服從我」來塗平裂縫，經文的診斷仍然適用。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">撒母耳學會辨認：撒母耳記上 3</h3>
+              <p class="text-lg text-slate-700 mb-5">
+                「當那些日子，耶和華的言語稀少，不常有默示。」（撒上 3:1）撒母耳三次聽見呼喚，三次以為是以利。以利後來才教他說：「請說，耶和華啊，僕人敬聽！」（撒上 3:9–10）這段常被講成「學習聽音」的範本。文本自己卻更克制：這是在言語稀少的時代，一位孩童被呼召進入先知職分的<strong class="text-indigo-700">就職敘事</strong>。他學會辨認，是因為神確實呼叫他，並且有年長的祭司在旁幫助核對——不是一套人人每晚可操作的技巧。所領受的話，也不是私密的舒適感，而是對以利家審判的公開信息。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">微小的聲音：列王紀上 19</h3>
+              <p class="text-lg text-slate-700 mb-5">
+                以利亞在迦密得勝後逃亡，求死。風、地震、火相繼而過，「耶和華卻不在其中」；然後有「微小的聲音」（王上 19:11–12）。和合本這譯法容易被讀成一種內在靜聽的操練。貼近文本，重點不是教人一套「比神蹟更屬靈」的技巧。西奈式的威嚴沒有再以奇觀重複；神以細微的方式重新差遣一個絕望的先知：去膏君王、選以利沙，並記念「在以色列人中為自己留下七千人」（王上 19:15–18）。聲音的內容是使命與餘民，不是「如何更敏感」。把這章變成聽音工作坊，是把敘事的牧養重量抽走了。
+              </p>
+            </div>
+          </section>
+
+          <section id="written-torah" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">三、律法已寫下：以色列不靠天天新啟示過日子</h2>
+              <p class="text-lg text-slate-700 mb-5">
+                舊約固然有特殊啟示的高峯，但以色列日常的忠誠，不是等下一則神諭，而是活在已經賜下的妥拉裡。摩西在生命末端把這點說死：
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「我今日所吩咐你的誡命不是你難行的，也不是離你遠的……這話卻離你甚近，就在你口中，在你心裡，使你可以遵行。」</p>
+                <p class="text-sm text-slate-600">— 申命記 30:11、14</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                「近」的不是內在的神秘音頻，而是已經宣講、可以口誦心維的誡命。約書亞記開卷把同一邏輯交給新一代的領袖：「這律法書不可離開你的口，總要晝夜思想，好使你謹守遵行這書上所寫的一切話。」（書 1:8）智慧傳統亦然：敬畏耶和華是智慧的開端（箴 1:7），不是另開一條繞過成文訓誨的捷徑。以賽亞的判準同樣公開：「人當以訓誨和法度為標準；他們所說的，若不與此相符，必不得見晨光。」（賽 8:20）
+              </p>
+              <p class="text-lg text-slate-700">
+                這不是說神此後不再行動，而是說神子民的常態，是領受、記念、遵行已經說出的話。特殊引導若真出於神，必不與祂已說的話為敵。把「新的一句」放在「已寫的整本」之上，是舊約已經拒絕的道路。
+              </p>
+            </div>
+          </section>
+
+          <section id="the-son" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">四、耶穌是終極的「神的話」</h2>
+              <p class="text-lg text-slate-700 mb-5">
+                新約沒有把「神說話」取消，而是把它帶到終點。約翰開卷不以聽覺經驗起筆，而以基督論起筆：「太初有道，道與神同在，道就是神。……道成了肉身，住在我們中間。」（約 1:1、14）神的話不是一段可被我們操控的信息，而是一位來到世上的子。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「神既在古時藉着眾先知多次多方的曉諭列祖，就在這末世藉着他兒子曉諭我們。」</p>
+                <p class="text-sm text-slate-600">— 希伯來書 1:1–2</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                「多次多方」承認舊約啟示的多樣性：異象、夢、律法、先知神諭。希伯來書的重點卻在對比：那多樣性在「這末世」匯聚於兒子。此後一切自稱「神說」的話，都必須站在這位兒子面前受審。變化山上的聲音把方向說死了：「這是我的愛子，我所喜悅的。你們要聽他！」（太 17:5）門徒想搭三座棚，把摩西、以利亞與耶穌並列；父的話把並列拆掉。聽子，是新約辨別的第一誡。
+              </p>
+              <p class="text-lg text-slate-700">
+                因此，若有聲音——無論多溫柔、多有能力——把人從子的福音、十字架與復活旁邊拉開，或把子降為眾多屬靈資源之一，那聲音即使自稱基督的名，也已經走偏。使徒甚至設下極端的假設：「無論是我們，是天上來的使者，若傳福音給你們，與我們所傳給你們的不同，他就應當被咒詛。」（加 1:8）天使級的來源，也不能越過使徒的福音。
+              </p>
+            </div>
+          </section>
+
+          <section id="spirit" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">五、聖靈的工作：叫人想起耶穌的話，榮耀基督</h2>
+              <p class="text-lg text-slate-700 mb-5">
+                新約確實強調聖靈引導。否認這一點，是虧欠約翰福音與使徒行傳。但聖靈的工作在耶穌自己的應許裡，有清楚的方向，不是另立一套與福音無關的私訊系統。
+              </p>
+              <div class="bible-verse mb-6 bg-sky-50 p-6 rounded-lg border border-sky-100">
+                <p class="text-lg italic text-slate-800 mb-2">「但保惠師，就是父因我的名所要差來的聖靈，他要將一切的事指教你們，並且要叫你們想起我對你們所說的一切話。」</p>
+                <p class="text-sm text-slate-600">— 約翰福音 14:26</p>
+              </div>
+              <div class="bible-verse mb-6 bg-sky-50 p-6 rounded-lg border border-sky-100">
+                <p class="text-lg italic text-slate-800 mb-2">「只等真理的聖靈來了，他要引導你們明白一切的真理……他要榮耀我，因為他要將受於我的告訴你們。」</p>
+                <p class="text-sm text-slate-600">— 約翰福音 16:13–14</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                「想起我對你們所說的一切話」「榮耀我」：聖靈的職事是基督中心的。祂不是來頒布與耶穌無關、又不得被教會檢驗的第二套正典。路加—使徒行傳裡，聖靈確實禁止、差遣、充滿（徒 13:2；16:6–7），但那引導服務於<strong class="text-indigo-700">道（ὁ λόγος）向外邦推進</strong>，而不是把使徒的福音相對化。聖靈與聖道不是兩條互不統屬的軌道。
+              </p>
+              <p class="text-lg text-slate-700 mb-5">
+                羅馬書 8:14–16 同樣常被讀成日常決策的內在導航：「凡被神的靈引導的，都是神的兒子。」「聖靈與我們的心同證我們是神的兒女。」上下文卻是兒子的名分、治死身體的惡行、在苦難中呼叫「阿爸，父」。同證的核心是身份與盼望，不是每週行程表。把「同證」窄化成「我心裡很平安所以這就是神旨」，既膨脹了經文，也忽略同一章對肉體心思的警戒（羅 8:5–8）。
+              </p>
+              <p class="text-lg text-slate-700">
+                承認聖靈今日仍工作，與堅持祂的工作必榮耀基督、必叫人活在已經賜下的話語裡，二者必須同時成立。抽掉任何一端，辨別都會歪。
+              </p>
+            </div>
+          </section>
+
+          <section id="testing" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">六、試驗：不要消滅，也不要照單全收</h2>
+              <p class="text-lg text-slate-700 mb-5">
+                新約最不允許的，是把「屬靈」與「不可檢驗」畫等號。試驗不是不信，是順服。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">認成了肉身來的基督：約翰一書 4:1–3</h3>
+              <p class="text-lg text-slate-700 mb-5">
+                「凡靈認耶穌基督是成了肉身來的，就是出於神的」（約壹 4:2）。試驗的第一題是基督論，不是氣氛、人數或醫治案例。約翰面對的是否認肉身的靈：一種把耶穌「屬靈化」到不再是真正進入歷史、進入身體的救主。今日的變體不一定重述第一世紀的術語，卻可以同樣把基督從肉身、十架、復活的福音裡抽空，只留下一種能量或靈感。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「所以我告訴你們，被神的靈感動的，沒有說耶穌是可咒詛的；若不是被聖靈感動的，也沒有能說耶穌是主的。」</p>
+                <p class="text-sm text-slate-600">— 哥林多前書 12:3</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                林前 12:3 把認信「耶穌是主」放在恩賜討論的入口。口號可以背，真正的「主」卻意味着降服。被聖靈感動，不是證明某人擁有特權頻道，而是把人帶到這一位主面前。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">先知講道要讓別人審察：哥林多前書 14:29</h3>
+              <p class="text-lg text-slate-700 mb-5">
+                「至於作先知講道的，只好兩個人或是三個人，其餘的就當慎思明辨。」（林前 14:29）即使承認先知講道在哥林多的聚會中真實發生，保羅仍把它放在秩序與群體審察之下。講的人不是最後權威；「其餘的」要辨明。個人領受若拒絕肢體、拒絕以已成文的福音來核對，已經偏離這節的結構。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">帖撒羅尼迦前書 5:19–21 的張力必須留下</h3>
+              <div class="bible-verse mb-6 bg-violet-50 p-6 rounded-lg border border-violet-100">
+                <p class="text-lg italic text-slate-800 mb-2">「不要消滅聖靈的感動；不要藐視先知的講論。但要凡事察驗，善美的要持守，各樣的惡事要禁戒不作。」</p>
+                <p class="text-sm text-slate-600">— 帖撒羅尼迦前書 5:19–22</p>
+              </div>
+              <p class="text-lg text-slate-700">
+                這幾節不應被拆成兩個對立的陣營口號。一端只讀「不要消滅」「不要藐視」，把一切質疑當成屬靈的罪；另一端只讀「凡事察驗」，把一切先知講論先當成可笑。保羅兩面都寫了。消滅聖靈是罪；藐視講論是罪；不察驗也是罪。張力留下，辨別才是活的。察驗之後，「善美的要持守」——不是甚麼都不信，而是信得有根據。
+              </p>
+            </div>
+          </section>
+
+          <section id="sufficiency" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">七、聖經的充足與功用</h2>
+              <p class="text-lg text-slate-700 mb-5">
+                已成文的聖經是最高、可公開檢驗的「神的話」。這不是貶低聖靈，而是承認聖靈所默示、教會所領受的正典，正是神為祂百姓預備的常態憑據。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「並且知道你是從小明白聖經，這聖經能使你因信基督耶穌，有得救的智慧。聖經都是神所默示的，於教訓、督責、使人歸正、教導人學義都是有益的，叫屬神的人得以完全，預備行各樣的善事。」</p>
+                <p class="text-sm text-slate-600">— 提摩太後書 3:15–17</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                「各樣的善事」把充足說到牧養的實處：神沒有欠我們一本額外的密信，才讓我們能過聖潔、忠信的生活。詩篇 119:105「你的話是我腳前的燈，是我路上的光」——燈與光是已經賜下的話，不是等待下一閃才舉步。庇哩亞人「天天考查聖經，要曉得這道是與不是」（徒 17:11）；連使徒的講論，他們也用已有的經文來核對。這是敬虔，不是傲慢。
+              </p>
+              <p class="text-lg text-slate-700">
+                因此任何感動、異象、預言、良心催促，若牴觸聖經已啟示的道德與福音——誠實、貞潔、不可貪、不可作假見證、不可另傳一個福音——就必須放下，不論當事人多有把握。聖經的充足，不是說神不再護理、不再應允禱告，而是說我們沒有權柄把私言抬到與正典同等，更沒有權柄用私言修改正典。
+              </p>
+            </div>
+          </section>
+
+          <section id="ordinary" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">八、引導的日常形態：智慧、肢體、環境、良心</h2>
+              <p class="text-lg text-slate-700 mb-5">
+                若把「神的引導」只想像成可聽見的句子，舊約智慧書與新約書信的大部分都會變得不可理解。神引導祂的百姓，常常藉着已寫的話所塑造的智慧、謀士、教會肢體、環境中的開門關門，以及（有限度的）良心。這些形態需要被承認，也需要被限制。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">謀士與智慧</h3>
+              <div class="bible-verse mb-6 bg-slate-50 p-6 rounded-lg border border-slate-200">
+                <p class="text-lg italic text-slate-800 mb-2">「不先商議，所謀無效；謀士眾多，所謀乃成。」</p>
+                <p class="text-sm text-slate-600">— 箴言 15:22（參箴 11:14）</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                箴言預設：許多人生抉擇是在敬畏神的前提下，用智慧與商議去行，而不是每天領一則新神諭。拒絕諮詢、只宣稱「神已經告訴我」，常常不是信心，而是逃避察驗。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">環境的開門關門：使徒行傳 16:6–10 需謹慎</h3>
+              <p class="text-lg text-slate-700 mb-5">
+                「聖靈既然禁止他們在亞細亞講道……耶穌的靈卻不許」；隨後保羅看見馬其頓的異象，眾人「以為神召我們傳福音給那裡的人去」（徒 16:6–10）。路加記載的是宣教敘事中，聖靈為着福音推進而作的具體禁止與差遣。值得注意的是：他們「以為」（συμβιβάζοντες，放在一起推論）——異象仍經過群體的理解，不是一人獨斷。
+              </p>
+              <p class="text-lg text-slate-700 mb-5">
+                把「凡關門都是神旨、凡開門都是呼召」變成通則，是把敘事讀成公式。門徒後來在哥林多仍有「又寬大又有功效的門」，同時也有「許多敵人」（林前 16:9）。環境是資料，不是判官。順利可以來自機會，也可以來自試探；受阻可以來自神的禁止，也可以來自罪或愚昧。環境必須被聖經與福音解釋，而不能反過來解釋聖經。
+              </p>
+
+              <h3 class="text-2xl font-semibold mb-4 serif-font text-indigo-800">良心會污穢，也能被丟棄</h3>
+              <p class="text-lg text-slate-700 mb-5">
+                良心是神放在人裡面的道德知覺，卻不是無誤的聲音。保羅承認有人「良心既然軟弱，也就污穢了」（林前 8:7）。命令的目的是「從清潔的心和無虧的良心、無偽的信心生出來的」愛（提前 1:5）；有人「丟棄良心，就在真道上如同船破壞了一般」（提前 1:19）。因此「我良心很安」不能自動等於「神說可以」。被福音與聖經更新的良心，是幫助；未更新、或被文化與慾望磨圓了的良心，會為罪背書。良心要被話語校準，而不是取代話語。
+              </p>
+              <p class="text-lg text-slate-700">
+                個人的平安感覺同樣有限。福音可以在受苦中賜平安（約 14:27；腓 4:7），但先知書裡真神的話常常叫人不平安。以平安作為唯一印證，舊約的真先知多數會不及格。
+              </p>
+            </div>
+          </section>
+
+          <section id="pastoral" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">九、牧養警告：不可妄稱主名</h2>
+              <div class="bible-verse mb-6 bg-rose-50 p-6 rounded-lg border border-rose-100">
+                <p class="text-lg italic text-slate-800 mb-2">「不可妄稱耶和華你神的名；因為妄稱耶和華名的，耶和華必不以他為無罪。」</p>
+                <p class="text-sm text-slate-600">— 出埃及記 20:7</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                把「我聽見神說」用作操控婚姻、金錢、權柄的工具，是直接觸碰第三誡。神的名一旦被徵用，對方就難以拒絕而不顯得「悖逆神」。這種修辭在親密關係與教會權柄裡特別危險。若有人用私言規定你必須嫁娶某人或交出某筆財產，正確的回應不是先懷疑自己不夠屬靈，而是把那句話放在聖經明文、使徒福音與群體審察之下。神不必靠無法核對的句子來成就祂在聖經裡已經說清楚的旨意。
+              </p>
+              <p class="text-lg text-slate-700 mb-5">
+                另一方面，未蒙應允的禱告，不是「你沒聽見」。詩篇充滿未獲即時解答的呼求；保羅三次求刺離開，主的回答是「我的恩典夠你用的」（林後 12:8–9）。把禱告生活簡化成收訊成敗，既虧待祈禱，也虧待神的父性。神的旨意在聖經中已有道德清楚處：誠實、貞潔、不可貪、不可報復、要傳福音、要愛仇敵。這些不必等「聲音」才決定要不要做。等待聲音才決定是否順服明文，本身已經是一種拖延。
+              </p>
+              <p class="text-lg text-slate-700">
+                牧者與教師更當謹慎。講台上「神今天告訴我」若沒有公開的經文根據，會訓練會眾把權威從聖經轉移到講員的主觀。講道的能力在於解明已寫的道（尼 8:8；提後 4:2），不在於製造無法覆核的新句。
+              </p>
+            </div>
+          </section>
+
+          <section id="conclusion" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">十、結論：辨別的優先序</h2>
+              <p class="text-lg text-slate-700 mb-6">
+                聖經記載神曾用許多方式說話；新約也承認聖靈引導、先知講論需要被聽見。這些都不應被冷嘲。同時，正典把試驗寫成命令，把兒子寫成終末的曉諭，把成文的聖經寫成叫人得以完全的器具。把兩端同時說出來，比選一邊作口號更接近經文。
+              </p>
+              <div class="space-y-4 mb-8">
+                <div class="priority-step bg-indigo-50 rounded-xl p-5">
+                  <p class="font-semibold text-indigo-900 serif-font mb-1">1. 聖經明文</p>
+                  <p class="text-slate-700">已成文、可公開考查的神的話，是最高標準。任何感動不得牴觸其中的福音與道德。</p>
+                </div>
+                <div class="priority-step bg-sky-50 rounded-xl p-5">
+                  <p class="font-semibold text-sky-900 serif-font mb-1">2. 使徒福音的檢驗</p>
+                  <p class="text-slate-700">是否認耶穌基督成了肉身而來、是否稱祂為主、是否與加拉太書所守的福音相符。</p>
+                </div>
+                <div class="priority-step bg-violet-50 rounded-xl p-5">
+                  <p class="font-semibold text-violet-900 serif-font mb-1">3. 教會群體的審察</p>
+                  <p class="text-slate-700">先知講道要讓其餘的人慎思明辨；謀士眾多，所謀乃成。拒絕察驗的「神說」，當被拒絕。</p>
+                </div>
+                <div class="priority-step bg-slate-50 rounded-xl p-5">
+                  <p class="font-semibold text-slate-900 serif-font mb-1">4. 個人平安與環境</p>
+                  <p class="text-slate-700">良心、平安、開門關門是次級資料，必須被以上三層解釋。它們可以印證，不能立法。</p>
+                </div>
+              </div>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「你的話是我腳前的燈，是我路上的光。」</p>
+                <p class="text-sm text-slate-600">— 詩篇 119:105</p>
+              </div>
+              <p class="text-lg text-slate-700 mb-5">
+                謙卑比敏感更安全。敏感若不服在已寫的道之下，只會讓自欺加速；謙卑的人寧可把把握說小一點，把聖經說重一點，把肢體的勸戒聽進去。神沒有欠我們一套私密頻道，才作我們的父。祂已經在兒子裡曉諭，又把聖經賜下，叫屬神的人得以完全。行在光中的人，不必懼怕自己「聽得不夠多」；倒要懼怕把己心的聲音，妄稱為祂的名。
+              </p>
+              <div class="bg-gradient-to-r from-indigo-50 to-sky-50 border border-indigo-100 rounded-xl p-6 text-slate-700 leading-relaxed">
+                <p class="mb-3">若要繼續思想如何向這位已說話的神呼求，請讀「<a href="../祈禱/index.html" class="text-indigo-700 font-medium hover:underline">祈禱</a>」。若要在日常中以話語塑造心思，可與「<a href="../靈修學/index.html" class="text-indigo-700 font-medium hover:underline">靈修學</a>」及本站「<a href="../../靈修資料/2025_12.html" class="text-indigo-700 font-medium hover:underline">靈修資料</a>」對讀。解經的方法，見「<a href="../以經解經/index.html" class="text-indigo-700 font-medium hover:underline">以經解經</a>」。</p>
+                <p>本篇是釋經專論，不是操作手冊。能把「神的話」首先指向聖經與福音，又肯在群體中試驗自己的感動——這一課就沒有白讀。</p>
+              </div>
+            </div>
+          </section>
+
+          <div id="visit-counter-container"></div>
+        </div>
+      </main>
+
+      <footer class="text-center py-4 text-slate-500 text-sm">
+        <p class="italic mb-1">
+          But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his
+          understanding. Jeremiah 10:12
+        </p>
+        <p class="text-xs mb-1 mt-2">
+          「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」 耶利米書 10:12
+        </p>
+        <p class="text-xs mt-2 pt-2 border-t border-slate-300">
+          @ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.opacity = '1';
+      });
+    }, observerOptions);
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    function setActiveToc(id) {
+      tocLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', isActive);
+        link.classList.toggle('bg-slate-50', !isActive);
+        link.classList.toggle('text-slate-700', !isActive);
+      });
+    }
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const match = sections.find(item => item.el === entry.target);
+        if (match) setActiveToc(match.id);
+      });
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+      if (scrollTop < 120) setActiveToc('intro');
+    });
+  </script>
+  <script src="../../../visit-counter.js"></script>
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec';
+    if (window.VisitCounter) {
+      VisitCounter.init('bible_study/信仰討論/辨別神的聲音/index', {
+        scriptUrl: SCRIPT_URL,
+        containerId: 'visit-counter-container'
+      });
+    }
+  </script>
+</body>
+</html>

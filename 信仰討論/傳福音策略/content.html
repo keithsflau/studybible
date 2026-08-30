@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>內容與聖靈｜傳福音策略</title>
+  <meta name="description" content="傳福音策略：內容與聖靈。六、內容不可刪：刪掉冒犯，就不再是福音 使徒行傳二章的回應，給了我們一份不可刪減的清單：悔改、奉耶穌基督的名受洗、罪得赦免、領受聖靈，以及進入使徒的教訓、相交、擘餅與祈禱（徒 …">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(217, 119, 6, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.10), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(217, 119, 6, 0.08), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.14), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.14), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(217, 119, 6, 0.10), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(217, 119, 6, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.18), 0 10px 10px -5px rgba(99, 102, 241, 0.08);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .category-card:nth-child(6) { animation-delay: 0.6s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(217, 119, 6, 0.55);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(180, 83, 9, 0.85);
+      transform: translateX(5px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.6), rgba(99, 102, 241, 0.55));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #d97706 0%, #4f46e5 100%);
+      color: white;
+    }
+    .locus-section {
+      scroll-margin-top: 6rem;
+    }
+    .prose-essay p {
+      margin-bottom: 1.1rem;
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="content">
+  <a class="skip" href="content.html#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">傳福音策略</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">內容與聖靈</div>
+  </header>
+
+  <section class="hero" aria-label="傳福音策略">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Evangelistic Witness</div>
+      <h1 class="serif">內容與聖靈<em class="latin">傳福音策略</em></h1>
+      <p class="hero-lead">六、內容不可刪：刪掉冒犯，就不再是福音 使徒行傳二章的回應，給了我們一份不可刪減的清單：悔改、奉耶穌基督的名受洗、罪得赦免、領受聖靈，以及進入使徒的教訓、相交、擘餅與祈禱（徒 …</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">問題意識</a>
+        <a href="commission.html" data-nav-slug="commission">大使命與權柄</a>
+        <a href="jesus.html" data-nav-slug="jesus">耶穌的宣講</a>
+        <a href="acts.html" data-nav-slug="acts">使徒行傳的策略</a>
+        <a href="paul.html" data-nav-slug="paul">保羅的自我說明</a>
+        <a href="content.html" data-nav-slug="content" class="is-on">內容與聖靈</a>
+        <ul class="sub"><li>內容不可刪</li><li>聖靈、禱告、品格</li></ul>
+        <a href="close.html" data-nav-slug="close">方法與牧養</a>
+        <ul class="sub"><li>對方法的分辨</li><li>牧養結論</li></ul>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回傳福音策略總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/content.svg" alt=""></figure>
+          <p class="essay-kicker">分題 06 / 07</p>
+          <h2 class="page-title serif">內容與聖靈</h2>
+          <div class="topic-body"><section id="content" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">六、內容不可刪：刪掉冒犯，就不再是福音</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                使徒行傳二章的回應，給了我們一份不可刪減的清單：悔改、奉耶穌基督的名受洗、罪得赦免、領受聖靈，以及進入使徒的教訓、相交、擘餅與祈禱（徒 2:38–42）。把這清單與林前 15、路 24、徒 17 疊在一起，至少包括以下幾項：<strong>罪、審判、十字架、復活、悔改、信心、教會</strong>。策略若為了降低門檻而拿掉其中任何一項，所剩下的就可能是宗教安慰，而不是使徒所傳的福音。
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-rose-50 border border-rose-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-rose-900 mb-2">常被刪的</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">審判與悔改（徒 17:30–31）；釘十字架的羞恥（林前 1:23）；罪的指證（徒 2:36）；進入教會與受教（徒 2:42）；「除他以外，別無拯救」（徒 4:12）。</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-emerald-900 mb-2">必須留下的</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">基督按聖經而死、埋葬、復活（林前 15:3–4）；奉祂的名赦罪（路 24:47）；信心與呼求（羅 10:9–13）；成為門徒並遵守主所吩咐的（太 28:19–20）。</p>
+                </div>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700 mb-0">
+                十字架本是絆腳石與愚拙（林前 1:23）。若一種策略以「去掉絆腳石」為成功定義，它就與保羅對福音的理解衝突。我們可以調整入口的故事、語言、場合與時間長度；我們不能調整那一位被釘、復活、將要審判的主。內容的完整性，是策略的第一條倫理。
+              </p>
+            </div>
+          </section>
+<section id="spirit" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">七、聖靈、禱告、品格：主自己禁止某條路</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                使徒行傳裏，最重要的「策略會議」往往是禱告會。四章三十一節：「禱告完了，聚會的地方震動，他們就都被聖靈充滿，放膽講論神的道。」十三章二至三節，是在敬拜與禁食中，聖靈說「要為我分派巴拿巴和掃羅」；教會禁食禱告、按手，才打發他們出去。差遣的主詞再次是聖靈，教會是順服的器皿。
+              </p>
+              <div class="bible-verse mb-6 bg-violet-50 p-6 rounded-lg border border-violet-100">
+                <p class="text-lg italic text-slate-800 mb-2">「聖靈既然禁止他們在亞西亞講道，他們就經過弗呂家、加拉太一帶地方。到了每西亞的邊界，他們想要往庇推尼去，耶穌的靈卻不許。」</p>
+                <p class="text-sm text-slate-600">— 使徒行傳 16:6–7（參 16:6–10）</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                接着才是馬其頓的異象。路加要我們看見：正確的方向，有時是先被關閉。今日若把一切關門都解釋成「方法不夠創新」，就可能把聖靈的禁止當成必須克服的市場障礙。規劃仍有地位——保羅確實「想要」往庇推尼——但規劃服在主的靈之下。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700 mb-0">
+                傳福音與祈禱、聖潔生活相連，不是附加的屬靈裝飾。彼得前書把辯護（ἀπολογία）放在敬畏與良心裏：「只要心裏尊主基督為聖。有人問你們心中盼望的緣由，就要常作準備，以溫柔、敬畏的心回答各人，存着無虧的良心」（彼前 3:15–16）。策略若培養伶牙俐齒，卻不培養尊主為聖的心，見證就會變成表演。品格是信息的一部分，因為所傳的是一位使人成聖的主。
+              </p>
+            </div>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="paul.html"><span class="dir">上一題</span><span class="serif">保羅的自我說明</span></a>
+        <a class="next" href="close.html"><span class="dir">下一題</span><span class="serif">方法與牧養</span></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up, .category-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          link.classList.add('bg-slate-50', 'text-slate-700');
+        });
+        const match = sections.find(item => item.el === entry.target);
+        if (match) {
+          match.link.classList.add('active');
+          match.link.classList.remove('bg-slate-50', 'text-slate-700');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/傳福音策略/content", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天使｜Angels as Messengers</title>
+  <meta name="description" content="天使專論：以經解經讀聖經中的使者與服役的靈。天使是受造者，指向神的聖潔、審判與拯救，不搶基督的榮耀。路加—使徒行傳中，天使服事福音推進，不另立啟示中心。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.10), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.14), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.14), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(71, 85, 105, 0.10), transparent 30%);
+      }
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(14, 165, 233, 0.16);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(14, 165, 233, 0.4);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(14, 165, 233, 0.55);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(79, 70, 229, 0.85);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(14, 165, 233, 0.6), rgba(99, 102, 241, 0.5));
+      border-radius: 2px;
+    }
+    .toc-link { transition: all 0.2s ease; white-space: nowrap; }
+    .toc-link.active {
+      background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-essay p { margin-bottom: 1.1rem; }
+    .prose-essay p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body class="topic-shell" data-slug="index">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">天使</a>
+    
+  </header>
+
+  <section class="hero" aria-label="天使">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Angels as Messengers</div>
+      <h1 class="serif">天使<em class="latin">Angels as Messengers</em></h1>
+      <p class="hero-lead">受造的使者與服役的靈：以經解經讀救贖敘事中的天使</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index" class="is-on">總覽</a>
+        <a href="question.html" data-nav-slug="question">問題意識</a>
+        <a href="word.html" data-nav-slug="word">詞與創造</a>
+        <ul class="sub"><li>本義是使者</li><li>萬有藉基督而造</li></ul>
+        <a href="cherubim.html" data-nav-slug="cherubim">聖所異象</a>
+        <a href="ot.html" data-nav-slug="ot">舊約敘事</a>
+        <a href="lukeacts.html" data-nav-slug="lukeacts">路加行傳</a>
+        <a href="christ.html" data-nav-slug="christ">基督與服役</a>
+        <ul class="sub"><li>兒子遠超過天使</li><li>效力不是迷信</li></ul>
+        <a href="close.html" data-nav-slug="close">墮落與牧養</a>
+        <ul class="sub"><li>墮落的使者</li><li>牧養結論</li></ul>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/hero.png" alt=""></figure>
+          <p class="essay-kicker">專論總覽</p>
+          
+          
+          <div class="overview-lead">
+            <p>受造的使者與服役的靈：以經解經讀救贖敘事中的天使</p>
+            <p>本篇已按原有標題拆成可獨立閱讀的分題。請選一題進入；正文未經改寫，只把長頁分開。</p>
+          </div>
+          <div class="chapter-grid">
+        <a class="chapter-card" href="question.html">
+          <div class="media"><img src="images/question.svg" alt=""></div>
+          <div class="body">
+            <div class="num">01</div>
+            <h3 class="serif">問題意識</h3>
+            <p>一、問題意識：天使是受造的服役者 一提起「天使」，當代想像往往比聖經更快：守護天使商品、新紀元的「光之存有」、中世紀九級階級表被當成教義，甚至把過世的親人說成「變成天使」。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="word.html">
+          <div class="media"><img src="images/word.svg" alt=""></div>
+          <div class="body">
+            <div class="num">02</div>
+            <h3 class="serif">詞與創造</h3>
+            <p>二、詞與職分：本義是「使者」 希伯來文 מַלְאָךְ （malʾāḵ）與希臘文 ἄγγελος（angelos）的本義都是 使者 ：被差去傳達、執行、護衛。</p>
+            <ul class="kids"><li>本義是使者</li><li>萬有藉基督而造</li></ul>
+          </div>
+        </a>
+        <a class="chapter-card" href="cherubim.html">
+          <div class="media"><img src="images/cherubim.svg" alt=""></div>
+          <div class="body">
+            <div class="num">03</div>
+            <h3 class="serif">聖所異象</h3>
+            <p>四、基路伯、撒拉弗、異象中的活物 聖經用幾組特殊名稱，描繪聖所與寶座前的受造物，但這些名稱首先是 聖潔的象徵語言 ，不是供人繪製完整編制表的素材。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="ot.html">
+          <div class="media"><img src="images/ot.svg" alt=""></div>
+          <div class="body">
+            <div class="num">04</div>
+            <h3 class="serif">舊約敘事</h3>
+            <p>五、舊約敘事：神在歷史中差遣 族長敘事裡，使者一次又一次把應許從「聽說」變成「臨到」。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="lukeacts.html">
+          <div class="media"><img src="images/lukeacts.svg" alt=""></div>
+          <div class="body">
+            <div class="num">05</div>
+            <h3 class="serif">路加行傳</h3>
+            <p>六、路加—使徒行傳：天使服事福音推進 路加以聖殿與應許起筆。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="christ.html">
+          <div class="media"><img src="images/christ.svg" alt=""></div>
+          <div class="body">
+            <div class="num">06</div>
+            <h3 class="serif">基督與服役</h3>
+            <p>七、基督與天使：兒子遠超過天使 希伯來書開篇就把層級釘死。</p>
+            <ul class="kids"><li>兒子遠超過天使</li><li>效力不是迷信</li></ul>
+          </div>
+        </a>
+        <a class="chapter-card" href="close.html">
+          <div class="media"><img src="images/close.svg" alt=""></div>
+          <div class="body">
+            <div class="num">07</div>
+            <h3 class="serif">墮落與牧養</h3>
+            <p>九、墮落的使者：承認張力，不建神話 聖經同樣承認：並非所有使者都忠心。</p>
+            <ul class="kids"><li>墮落的使者</li><li>牧養結論</li></ul>
+          </div>
+        </a>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/天使/index", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

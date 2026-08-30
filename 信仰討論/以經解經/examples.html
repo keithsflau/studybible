@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>實踐範例｜以經解經</title>
+  <meta name="description" content="以經解經：實踐範例。實踐範例 1 理解「重生」的意義 問題： 約翰福音3:3提到「重生」，這是什麼意思？">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.12), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.12), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% { 
+        background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.12), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.12), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1), transparent 30%);
+      }
+      50% { 
+        background: radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.18), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.18), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.15), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.1);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+    .interactive-card {
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .interactive-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+    .interactive-card.active {
+      border-color: rgba(59, 130, 246, 0.6);
+      background: rgba(59, 130, 246, 0.15);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(59, 130, 246, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(59, 130, 246, 0.8);
+      transform: translateX(5px);
+      background: rgba(59, 130, 246, 0.05);
+    }
+    .expandable-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+      opacity: 0;
+    }
+    .expandable-content.expanded {
+      max-height: 2000px;
+      opacity: 1;
+    }
+    .principle-card {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .principle-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    .principle-card:hover::before {
+      left: 100%;
+    }
+    .example-box {
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+    .example-box:hover {
+      border-left-color: rgba(59, 130, 246, 0.6);
+      background: rgba(59, 130, 246, 0.05);
+      transform: translateX(5px);
+    }
+    .highlight-text {
+      background: linear-gradient(120deg, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.1) 100%);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      transition: all 0.3s ease;
+    }
+    .highlight-text:hover {
+      background: linear-gradient(120deg, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0.2) 100%);
+      transform: scale(1.05);
+    }
+    .progress-indicator {
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.8), rgba(99, 102, 241, 0.8));
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    .interactive-quiz {
+      transition: all 0.3s ease;
+    }
+    .quiz-option {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .quiz-option:hover {
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateX(5px);
+    }
+    .quiz-option.selected {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.6);
+    }
+    .quiz-option.correct {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: rgba(34, 197, 94, 0.6);
+    }
+    .quiz-option.incorrect {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.6);
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="examples">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">以經解經</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">實踐範例</div>
+  </header>
+
+  <section class="hero" aria-label="以經解經">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Scripture Interprets Scripture</div>
+      <h1 class="serif">實踐範例<em class="latin">以經解經</em></h1>
+      <p class="hero-lead">實踐範例 1 理解「重生」的意義 問題： 約翰福音3:3提到「重生」，這是什麼意思？</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">引言</a>
+        <a href="principles.html" data-nav-slug="principles">核心原則</a>
+        <a href="examples.html" data-nav-slug="examples" class="is-on">實踐範例</a>
+        <a href="method.html" data-nav-slug="method">方法論指引</a>
+        <a href="cautions.html" data-nav-slug="cautions">注意事項與挑戰</a>
+        <a href="reflect.html" data-nav-slug="reflect">互動思考</a>
+        <a href="summary.html" data-nav-slug="summary">總結</a>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回以經解經總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/examples.svg" alt=""></figure>
+          <p class="essay-kicker">分題 03 / 07</p>
+          <h2 class="page-title serif">實踐範例</h2>
+          <div class="topic-body"><section class="space-y-8">
+            <h2 class="text-3xl font-bold serif-font text-center text-blue-400 fade-in-up">實踐範例</h2>
+            
+            <div class="space-y-6">
+              
+              <!-- Example 1 -->
+              <div class="example-box glass-card rounded-xl p-6 slide-in-left">
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold">
+                      1
+                    </div>
+                    <h3 class="text-xl font-semibold serif-font text-blue-300">理解「重生」的意義</h3>
+                  </div>
+                  <div class="space-y-3 text-slate-800">
+                    <p><strong>問題：</strong>約翰福音3:3提到「重生」，這是什麼意思？</p>
+                    <p><strong>以經解經的方法：</strong></p>
+                    <div class="ml-6 space-y-2">
+                      <p>1. 查看同一段落的解釋（約3:5-8）</p>
+                      <p>2. 尋找其他相關經文：</p>
+                      <ul class="list-disc list-inside ml-4 space-y-1">
+                        <li>提多書3:5：「他便救了我們；並不是因我們自己所行的義，乃是照他的憐憫，藉著重生的洗和聖靈的更新。」</li>
+                        <li>彼得前書1:23：「你們蒙了重生，不是由於能壞的種子，乃是由於不能壞的種子，是藉著神活潑常存的道。」</li>
+                        <li>約翰一書3:9：「凡從神生的，就不犯罪，因神的道存在他心裡；他也不能犯罪，因為他是由神生的。」</li>
+                      </ul>
+                    </div>
+                    <div class="bible-verse mt-4 p-4 rounded-lg bg-white/5">
+                      <p class="text-sm italic text-blue-300">「耶穌回答說：『我實實在在地告訴你，人若不重生，就不能見神的國。』」</p>
+                      <p class="text-xs mt-1 text-slate-600">約翰福音 3:3</p>
+                    </div>
+                    <p class="mt-3"><strong>結論：</strong>通過對比這些經文，我們明白「重生」是指聖靈在人心中的工作，使人從神的道得到新生命，成為神的兒女。</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Example 2 -->
+              <div class="example-box glass-card rounded-xl p-6 slide-in-right">
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold">
+                      2
+                    </div>
+                    <h3 class="text-xl font-semibold serif-font text-indigo-300">理解「稱義」的含義</h3>
+                  </div>
+                  <div class="space-y-3 text-slate-800">
+                    <p><strong>問題：</strong>羅馬書3:28說「人稱義是因著信」，這是什麼意思？</p>
+                    <p><strong>以經解經的方法：</strong></p>
+                    <div class="ml-6 space-y-2">
+                      <p>1. 查看羅馬書的上下文（羅3:21-31）</p>
+                      <p>2. 對比其他書卷的教導：</p>
+                      <ul class="list-disc list-inside ml-4 space-y-1">
+                        <li>加拉太書2:16：「既知道人稱義不是因行律法，乃是因信耶穌基督，連我們也信了基督耶穌，使我們因信基督稱義，不因行律法稱義；因為凡有血氣的，沒有一人因行律法稱義。」</li>
+                        <li>以弗所書2:8-9：「你們得救是本乎恩，也因著信；這並不是出於自己，乃是神所賜的；也不是出於行為，免得有人自誇。」</li>
+                        <li>雅各書2:24：「這樣看來，人稱義是因著行為，不是單因著信。」（需要理解雅各書的上下文）</li>
+                      </ul>
+                    </div>
+                    <div class="bible-verse mt-4 p-4 rounded-lg bg-white/5">
+                      <p class="text-sm italic text-indigo-300">「所以我們看定了：人稱義是因著信，不在乎遵行律法。」</p>
+                      <p class="text-xs mt-1 text-slate-600">羅馬書 3:28</p>
+                    </div>
+                    <p class="mt-3"><strong>結論：</strong>通過對比，我們明白「稱義」是神因著人的信心，將基督的義歸算給人，這完全是神的恩典，不是靠人的行為。雅各書強調的是信心必須有行為的表現，兩者並不矛盾。</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Example 3 -->
+              <div class="example-box glass-card rounded-xl p-6 slide-in-left">
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-bold">
+                      3
+                    </div>
+                    <h3 class="text-xl font-semibold serif-font text-purple-300">理解舊約預表的實現</h3>
+                  </div>
+                  <div class="space-y-3 text-slate-800">
+                    <p><strong>問題：</strong>出埃及記中的逾越節羔羊如何指向基督？</p>
+                    <p><strong>以經解經的方法：</strong></p>
+                    <div class="ml-6 space-y-2">
+                      <p>1. 查看舊約的記載（出12:1-13）</p>
+                      <p>2. 查看新約的解釋：</p>
+                      <ul class="list-disc list-inside ml-4 space-y-1">
+                        <li>約翰福音1:29：「看哪，神的羔羊，除去世人罪孽的！」</li>
+                        <li>哥林多前書5:7：「因為我們逾越節的羔羊基督已經被殺獻祭了。」</li>
+                        <li>彼得前書1:18-19：「知道你們得贖，脫去你們祖宗所傳流虛妄的行為，不是憑著能壞的金銀等物，乃是憑著基督的寶血，如同無瑕疵、無玷污的羔羊之血。」</li>
+                        <li>啟示錄5:6-9：描述基督是「被殺的羔羊」</li>
+                      </ul>
+                    </div>
+                    <div class="bible-verse mt-4 p-4 rounded-lg bg-white/5">
+                      <p class="text-sm italic text-purple-300">「你們要按著家庭取羔羊，一家一隻。」</p>
+                      <p class="text-xs mt-1 text-slate-600">出埃及記 12:3</p>
+                    </div>
+                    <p class="mt-3"><strong>結論：</strong>新約明確指出，舊約的逾越節羔羊預表了基督的救贖工作。正如羔羊的血拯救以色列人脫離死亡，基督的寶血也拯救我們脫離罪的審判。</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="principles.html"><span class="dir">上一題</span><span class="serif">核心原則</span></a>
+        <a class="next" href="method.html"><span class="dir">下一題</span><span class="serif">方法論指引</span></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    // Expandable content functionality
+    function expandContent(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById('arrow' + id.slice(-1));
+      
+      content.classList.toggle('expanded');
+      if (arrow) {
+        arrow.style.transform = content.classList.contains('expanded') ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    }
+
+    // Quiz functionality
+    const correctAnswers = {
+      'q1': 'b',
+      'q2': 'b',
+      'q3': 'b'
+    };
+
+    function selectOption(element, questionId, answer) {
+      // Remove previous selections
+      const options = element.parentElement.querySelectorAll('.quiz-option');
+      options.forEach(opt => {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+      });
+
+      // Mark selected option
+      element.classList.add('selected');
+
+      // Check answer
+      const feedback = document.getElementById(questionId + '-feedback');
+      if (answer === correctAnswers[questionId]) {
+        element.classList.add('correct');
+        feedback.className = 'mt-3 p-4 rounded-lg bg-green-500/20 border border-green-500/50';
+        feedback.innerHTML = '<p class="text-green-300 font-semibold">✓ 正確！</p><p class="text-slate-700 text-sm mt-1">這正是「以經解經」的核心方法。</p>';
+      } else {
+        element.classList.add('incorrect');
+        feedback.className = 'mt-3 p-4 rounded-lg bg-red-500/20 border border-red-500/50';
+        feedback.innerHTML = '<p class="text-red-300 font-semibold">✗ 不正確</p><p class="text-slate-700 text-sm mt-1">請再思考一下「以經解經」的核心原則。</p>';
+      }
+      feedback.classList.remove('hidden');
+    }
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right, .scale-in');
+      animatedElements.forEach(el => observer.observe(el));
+    });
+
+    // Progress indicator on scroll
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.querySelector('.progress-indicator');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/以經解經/examples", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

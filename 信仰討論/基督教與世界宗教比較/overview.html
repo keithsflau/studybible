@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宗教導覽｜世界宗教比較</title>
+  <meta name="description" content="世界宗教比較：宗教導覽。一、宗教導覽 先建立地圖，再進入論題比較 參照傳統 基督教 Christianity 從第二聖殿猶太教中興起，認耶穌為基督與主。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.12), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.08), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.1);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .category-card:nth-child(6) { animation-delay: 0.6s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(99, 102, 241, 0.8);
+      transform: translateX(5px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .comparison-table {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .comparison-table table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      vertical-align: top;
+    }
+    .comparison-table th {
+      background: rgba(99, 102, 241, 0.15);
+      font-weight: 600;
+      color: rgba(79, 70, 229, 0.95);
+    }
+    .comparison-table tr:hover {
+      background: rgba(99, 102, 241, 0.08);
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+      color: white;
+    }
+    .locus-section {
+      scroll-margin-top: 6rem;
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="overview">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">世界宗教比較</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">宗教導覽</div>
+  </header>
+
+  <section class="hero" aria-label="世界宗教比較">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Christianity and World Religions</div>
+      <h1 class="serif">宗教導覽<em class="latin">世界宗教比較</em></h1>
+      <p class="hero-lead">一、宗教導覽 先建立地圖，再進入論題比較 參照傳統 基督教 Christianity 從第二聖殿猶太教中興起，認耶穌為基督與主。</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">導論</a>
+        <a href="overview.html" data-nav-slug="overview" class="is-on">宗教導覽</a>
+        <a href="worldview.html" data-nav-slug="worldview">核心理論</a>
+        <a href="god-creation.html" data-nav-slug="god-creation">創造與神論</a>
+        <ul class="sub"><li>創造論</li><li>神論</li></ul>
+        <a href="human.html" data-nav-slug="human">人論與來世</a>
+        <ul class="sub"><li>人論</li><li>來世</li></ul>
+        <a href="salvation.html" data-nav-slug="salvation">得救</a>
+        <a href="scripture.html" data-nav-slug="scripture">經典典籍</a>
+        <a href="takeaways.html" data-nav-slug="takeaways">課堂與牧養結語</a>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回世界宗教比較總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/overview.svg" alt=""></figure>
+          <p class="essay-kicker">分題 02 / 08</p>
+          <h2 class="page-title serif">宗教導覽</h2>
+          <div class="topic-body"><section id="overview" class="locus-section mb-16">
+            <div class="text-center mb-8 fade-in-up">
+              <h2 class="text-3xl sm:text-4xl font-semibold serif-font text-slate-900">一、宗教導覽</h2>
+              <p class="text-slate-600 mt-2">先建立地圖，再進入論題比較</p>
+            </div>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <a href="#rel-christianity" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-indigo-600 mb-1">參照傳統</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">基督教</h3>
+                <p class="text-sm text-slate-600 mb-3">Christianity</p>
+                <p class="text-sm text-slate-700 leading-relaxed">從第二聖殿猶太教中興起，認耶穌為基督與主。核心敘事是創造—墮落—救贖—新天新地。</p>
+              </a>
+              <a href="#rel-judaism" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-blue-600 mb-1">亞伯拉罕傳統</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">猶太教</h3>
+                <p class="text-sm text-slate-600 mb-3">Judaism</p>
+                <p class="text-sm text-slate-700 leading-relaxed">以妥拉、聖約與選民身份為中心。拉比猶太教在聖殿被毀後，以口傳律法延續敬拜與倫理。</p>
+              </a>
+              <a href="#rel-islam" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-emerald-600 mb-1">亞伯拉罕傳統</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">伊斯蘭教</h3>
+                <p class="text-sm text-slate-600 mb-3">Islam</p>
+                <p class="text-sm text-slate-700 leading-relaxed">七世紀阿拉伯半島興起。核心是認主獨一（tawḥīd）與降服（islām）。穆罕默德被視為封印先知。</p>
+              </a>
+              <a href="#rel-buddhism" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-amber-600 mb-1">印度起源</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">佛教</h3>
+                <p class="text-sm text-slate-600 mb-3">Buddhism</p>
+                <p class="text-sm text-slate-700 leading-relaxed">釋迦牟尼教導四聖諦與緣起。一般不以人格創造主為終極；解脫指向涅槃，而非與神和好。</p>
+              </a>
+              <a href="#rel-hinduism" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-rose-600 mb-1">印度起源</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">印度教</h3>
+                <p class="text-sm text-slate-600 mb-3">Hinduism</p>
+                <p class="text-sm text-slate-700 leading-relaxed">極為多元的文明宗教。共同座標常是法（dharma）、業、輪迴與解脫（mokṣa），而非單一信經。</p>
+              </a>
+              <a href="#rel-chinese" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-teal-600 mb-1">華人處境</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">儒、道、民間宗教</h3>
+                <p class="text-sm text-slate-600 mb-3">Chinese traditions</p>
+                <p class="text-sm text-slate-700 leading-relaxed">儒家重倫理秩序，道教重道與養生，民間宗教則常儒釋道合流，並以祖先與神明崇拜為日常。</p>
+              </a>
+            </div>
+
+            <div class="grid gap-6 mt-8">
+              <article id="rel-christianity" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-indigo-800 mb-3">基督教：參照點</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">基督教認獨一上帝在耶穌基督裡自我啟示。父、子、聖靈是同一本質的三位；子成為人，死而復活，使罪人因信稱義，並等候身體復活與新創造。教會是被召出的群體，聖經是規範信仰與生活的正典。</p>
+                <p class="text-sm text-slate-600">內部提醒：更正教強調「唯獨聖經、唯獨恩典、唯獨信心」；天主教與東正教同時重視聖傳與教會訓導。見本站「宗教比較」單元。</p>
+              </article>
+              <article id="rel-judaism" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-blue-800 mb-3">猶太教：聖約的子民</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">猶太教是基督教的母體傳統。申命記 6:4 的「示瑪」宣告上主獨一無二。身份不首先是「個人靈魂得救」，而是與亞伯拉罕、摩西之約連在一起的民族敬拜與妥拉生活。第一世紀有法利賽、撒都該、愛色尼等；聖殿於公元 70 年被毀後，拉比猶太教成為主流。</p>
+                <p class="text-sm text-slate-600">今日可見正統派、保守派、改革派等。對耶穌是否彌賽亞的否定，是與教會最尖銳的歷史分歧；同時，兩約聖經中的上帝、妥拉與先知，仍是共同的記憶。</p>
+              </article>
+              <article id="rel-islam" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-emerald-800 mb-3">伊斯蘭教：認主獨一與降服</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">「伊斯蘭」意即降服於真主。六大信仰（真主、天使、經典、先知、末日、前定）與五功（念、禮、齋、課、朝）構成生活骨架。古蘭經尊崇爾撒（耶穌）為先知與彌賽亞，卻明確否定他是上帝之子，也否定釘十字架的救贖意義（參古蘭 4:157 的傳統詮釋）。</p>
+                <p class="text-sm text-slate-600">遜尼派約佔多數；什葉派強調阿里及其後裔的伊瑪目職分；蘇菲傳統重內在道路。與基督教對話時，「三位一體是否三神」幾乎總是第一個誤解，必須耐心澄清。</p>
+              </article>
+              <article id="rel-buddhism" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-amber-800 mb-3">佛教：苦、集、滅、道</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">佛陀診斷人生為苦（dukkha），苦因於渴愛與無明；滅苦之路是八正道。緣起與「無我」（anātman）否定一個常住、獨立的靈魂實體。上座部強調阿羅漢的自我解脫；大乘提出菩薩道與空性；淨土宗則強調他力——稱念阿彌陀佛名號，往生極樂。</p>
+                <p class="text-sm text-slate-600">華人教會常遇見的，不是巴利藏的哲學討論，而是寺廟、超度、功德與「信佛保平安」。比較時要同時看見經典佛教與民間佛教。</p>
+              </article>
+              <article id="rel-hinduism" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-rose-800 mb-3">印度教：法、業、輪迴、解脫</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">「印度教」是現代總稱，涵蓋吠陀祭祀、奧義書哲思、毗濕奴／濕婆／女神虔信，以及無數地方神明。不二吠檀多視終極為梵（Brahman），個我（ātman）與其不異；虔信傳統則敬拜人格神（如 Krishna），以恩寵與奉獻求親近。</p>
+                <p class="text-sm text-slate-600">不可簡單標籤為「多神教」或「泛神論」——兩種描述都只抓住部分。對華人讀者，印度教較遠，但瑜伽、業力、轉世等觀念已滲入流行文化。</p>
+              </article>
+              <article id="rel-chinese" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-teal-800 mb-3">中華傳統：儒、道、民間宗教</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">儒家以仁、禮、孝與修身齊家治國為主軸，較少發展系統來世論，卻以「天」為道德與秩序的超越參照。道家（哲學）言道生萬物、無為；道教（宗教）則有神仙體系、科儀與內丹。民間宗教常把祖先、土地、關帝、觀音、天后放在同一屋簷下，講求靈驗、和諧與家族延續。</p>
+                <p class="text-sm text-slate-600">對華人教會，這不是「外國宗教課」，而是祖父母的神龕與喪禮。比較時要有牧養敏感：孝不是偶像，但祭祖的宗教含義需要分辨。</p>
+              </article>
+            </div>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="intro.html"><span class="dir">上一題</span><span class="serif">導論</span></a>
+        <a class="next" href="worldview.html"><span class="dir">下一題</span><span class="serif">核心理論</span></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up, .category-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    function setActiveToc(id) {
+      tocLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', isActive);
+        link.classList.toggle('bg-slate-50', !isActive);
+        link.classList.toggle('text-slate-700', !isActive);
+      });
+    }
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const match = sections.find(item => item.el === entry.target);
+        if (match) setActiveToc(match.id);
+      });
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+      if (scrollTop < 120) setActiveToc('intro');
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/基督教與世界宗教比較/overview", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

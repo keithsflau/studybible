@@ -1,0 +1,1563 @@
+{
+  "topics": [
+    {
+      "dir": "以經解經",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "引言",
+          "children": [],
+          "from": [
+            "~引言"
+          ]
+        },
+        {
+          "slug": "principles",
+          "nav": "核心原則",
+          "children": [],
+          "from": [
+            "~核心原則"
+          ]
+        },
+        {
+          "slug": "examples",
+          "nav": "實踐範例",
+          "children": [],
+          "from": [
+            "~實踐範例"
+          ]
+        },
+        {
+          "slug": "method",
+          "nav": "方法論指引",
+          "children": [],
+          "from": [
+            "~方法論指引"
+          ]
+        },
+        {
+          "slug": "cautions",
+          "nav": "注意事項與挑戰",
+          "children": [],
+          "from": [
+            "~注意事項"
+          ]
+        },
+        {
+          "slug": "reflect",
+          "nav": "互動思考",
+          "children": [],
+          "from": [
+            "~互動思考"
+          ]
+        },
+        {
+          "slug": "summary",
+          "nav": "總結",
+          "children": [],
+          "from": [
+            "~總結"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "四律",
+      "chapters": [
+        {
+          "slug": "law-love",
+          "nav": "第一律：神的愛",
+          "children": [],
+          "from": [
+            "~神愛你"
+          ]
+        },
+        {
+          "slug": "law-sin",
+          "nav": "第二律：罪的隔絕",
+          "children": [],
+          "from": [
+            "~人因有罪"
+          ]
+        },
+        {
+          "slug": "law-christ",
+          "nav": "第三律：唯一救法",
+          "children": [],
+          "from": [
+            "~耶穌基督是神"
+          ]
+        },
+        {
+          "slug": "law-receive",
+          "nav": "第四律：必須接受",
+          "children": [],
+          "from": [
+            "~必須親自接受"
+          ]
+        },
+        {
+          "slug": "after",
+          "nav": "接受之後",
+          "children": [],
+          "from": [
+            "~現在您已經接受"
+          ]
+        },
+        {
+          "slug": "next",
+          "nav": "還有什麼呢",
+          "children": [],
+          "from": [
+            "~還有什麼"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "因信稱義",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "引言",
+          "children": [],
+          "from": [
+            "~引言"
+          ]
+        },
+        {
+          "slug": "scripture",
+          "nav": "聖經基礎",
+          "children": [],
+          "from": [
+            "~聖經基礎"
+          ]
+        },
+        {
+          "slug": "definition",
+          "nav": "神學定義與內涵",
+          "children": [],
+          "from": [
+            "~神學定義"
+          ]
+        },
+        {
+          "slug": "not-works",
+          "nav": "不是因行為稱義",
+          "children": [],
+          "from": [
+            "~不是因行為"
+          ]
+        },
+        {
+          "slug": "faith-works",
+          "nav": "信心與行為",
+          "children": [],
+          "from": [
+            "~信心與行為"
+          ]
+        },
+        {
+          "slug": "history",
+          "nav": "歷史發展",
+          "children": [],
+          "from": [
+            "~歷史發展"
+          ]
+        },
+        {
+          "slug": "practice",
+          "nav": "實際應用",
+          "children": [],
+          "from": [
+            "~實際應用"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "思考與結論",
+          "children": [
+            "互動思考題",
+            "結論"
+          ],
+          "from": [
+            "~互動思考",
+            "~結論"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "預定論",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "引言",
+          "children": [],
+          "from": [
+            "~引言"
+          ]
+        },
+        {
+          "slug": "questions",
+          "nav": "核心問題",
+          "children": [],
+          "from": [
+            "~核心問題"
+          ]
+        },
+        {
+          "slug": "scripture",
+          "nav": "聖經基礎",
+          "children": [],
+          "from": [
+            "~聖經基礎"
+          ]
+        },
+        {
+          "slug": "positions",
+          "nav": "主要神學立場",
+          "children": [],
+          "from": [
+            "~主要神學立場"
+          ]
+        },
+        {
+          "slug": "our-position",
+          "nav": "我們的立場",
+          "children": [],
+          "from": [
+            "~我們的立場"
+          ]
+        },
+        {
+          "slug": "practice",
+          "nav": "實踐意義",
+          "children": [],
+          "from": [
+            "~實踐意義"
+          ]
+        },
+        {
+          "slug": "reflect",
+          "nav": "互動思考",
+          "children": [],
+          "from": [
+            "~互動思考"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "結語",
+          "children": [],
+          "from": [
+            "~結語"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "神人合作說",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "引言",
+          "children": [],
+          "from": [
+            "^0"
+          ]
+        },
+        {
+          "slug": "questions",
+          "nav": "核心問題",
+          "children": [],
+          "from": [
+            "^1"
+          ]
+        },
+        {
+          "slug": "image",
+          "nav": "神人合作的圖像",
+          "children": [],
+          "from": [
+            "^2"
+          ]
+        },
+        {
+          "slug": "scripture",
+          "nav": "聖經基礎",
+          "children": [],
+          "from": [
+            "^3"
+          ]
+        },
+        {
+          "slug": "positions",
+          "nav": "立場比較",
+          "children": [],
+          "from": [
+            "^4"
+          ]
+        },
+        {
+          "slug": "our-position",
+          "nav": "我們的立場",
+          "children": [],
+          "from": [
+            "^5"
+          ]
+        },
+        {
+          "slug": "practice",
+          "nav": "實踐意義",
+          "children": [],
+          "from": [
+            "^6"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "思考與結語",
+          "children": [
+            "互動思考",
+            "結語"
+          ],
+          "from": [
+            "^7",
+            "^8"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "自由意志",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "引言與核心問題",
+          "children": [],
+          "from": [
+            "#intro",
+            "~核心問題"
+          ]
+        },
+        {
+          "slug": "question",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#question"
+          ]
+        },
+        {
+          "slug": "creation",
+          "nav": "創造與形象",
+          "children": [],
+          "from": [
+            "#creation"
+          ]
+        },
+        {
+          "slug": "fallen",
+          "nav": "墮落後的意志",
+          "children": [],
+          "from": [
+            "#fallen"
+          ]
+        },
+        {
+          "slug": "sovereignty",
+          "nav": "主權與責任",
+          "children": [],
+          "from": [
+            "#sovereignty"
+          ]
+        },
+        {
+          "slug": "christ",
+          "nav": "真自由與聖靈",
+          "children": [
+            "基督與釋放",
+            "聖靈與更新的意志"
+          ],
+          "from": [
+            "#christ",
+            "#spirit"
+          ]
+        },
+        {
+          "slug": "distinction",
+          "nav": "不是絕對自主",
+          "children": [],
+          "from": [
+            "#distinction"
+          ]
+        },
+        {
+          "slug": "pastoral",
+          "nav": "牧養與結語",
+          "children": [],
+          "from": [
+            "#pastoral",
+            "~實踐意義",
+            "~互動思考",
+            "~相關討論",
+            "~結語"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "千禧論",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "引言",
+          "children": [],
+          "from": [
+            "~引言"
+          ]
+        },
+        {
+          "slug": "positions",
+          "nav": "三大立場",
+          "children": [
+            "前千禧年論",
+            "後千禧年論",
+            "無千禧年論"
+          ],
+          "from": [
+            "~三大千禧年論立場",
+            "#detail-section"
+          ]
+        },
+        {
+          "slug": "timeline",
+          "nav": "時間線比較",
+          "children": [],
+          "from": [
+            "~時間線比較"
+          ]
+        },
+        {
+          "slug": "table",
+          "nav": "對照表",
+          "children": [],
+          "from": [
+            "~三大立場對照"
+          ]
+        },
+        {
+          "slug": "scripture",
+          "nav": "關鍵經文",
+          "children": [],
+          "from": [
+            "~關鍵經文"
+          ]
+        },
+        {
+          "slug": "stance",
+          "nav": "立場",
+          "children": [],
+          "from": [
+            "~立場"
+          ]
+        },
+        {
+          "slug": "quiz",
+          "nav": "認知測驗",
+          "children": [],
+          "from": [
+            "~互動練習"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "教會歷史",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "引言",
+          "children": [],
+          "from": [
+            "~引言"
+          ]
+        },
+        {
+          "slug": "questions",
+          "nav": "核心問題",
+          "children": [],
+          "from": [
+            "~核心問題"
+          ]
+        },
+        {
+          "slug": "timeline",
+          "nav": "歷史時間軸",
+          "children": [],
+          "from": [
+            "~教會歷史時間軸"
+          ]
+        },
+        {
+          "slug": "doctrine",
+          "nav": "重要教義的確立",
+          "children": [],
+          "from": [
+            "~重要教義"
+          ]
+        },
+        {
+          "slug": "position",
+          "nav": "我們的立場",
+          "children": [],
+          "from": [
+            "~我們的立場"
+          ]
+        },
+        {
+          "slug": "practice",
+          "nav": "實踐意義",
+          "children": [],
+          "from": [
+            "~實踐意義"
+          ]
+        },
+        {
+          "slug": "reflect",
+          "nav": "互動思考",
+          "children": [],
+          "from": [
+            "~互動思考"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "結語",
+          "children": [],
+          "from": [
+            "~結語"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "基督教各宗派",
+      "chapters": [
+        {
+          "slug": "question",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#question"
+          ]
+        },
+        {
+          "slug": "unity",
+          "nav": "合一與界限",
+          "children": [],
+          "from": [
+            "#unity"
+          ]
+        },
+        {
+          "slug": "map",
+          "nav": "大公傳統簡圖",
+          "children": [],
+          "from": [
+            "#map"
+          ]
+        },
+        {
+          "slug": "fundamentalist",
+          "nav": "基要派",
+          "children": [],
+          "from": [
+            "#fundamentalist"
+          ]
+        },
+        {
+          "slug": "evangelical",
+          "nav": "福音派",
+          "children": [],
+          "from": [
+            "#evangelical"
+          ]
+        },
+        {
+          "slug": "charismatic",
+          "nav": "靈恩派與五旬節",
+          "children": [],
+          "from": [
+            "#charismatic"
+          ]
+        },
+        {
+          "slug": "other",
+          "nav": "華人教會張力",
+          "children": [],
+          "from": [
+            "#other"
+          ]
+        },
+        {
+          "slug": "pastoral",
+          "nav": "牧養結論",
+          "children": [],
+          "from": [
+            "#pastoral"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "祈禱",
+      "chapters": [
+        {
+          "slug": "question",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#question"
+          ]
+        },
+        {
+          "slug": "beginnings",
+          "nav": "呼求與摔跤",
+          "children": [
+            "創造與呼求",
+            "族長與出埃及"
+          ],
+          "from": [
+            "#creation",
+            "#patriarchs"
+          ]
+        },
+        {
+          "slug": "psalms",
+          "nav": "詩篇：祈禱的學校",
+          "children": [],
+          "from": [
+            "#psalms"
+          ]
+        },
+        {
+          "slug": "temple-exile",
+          "nav": "聖殿與被擄",
+          "children": [
+            "聖殿、祭與代求",
+            "先知與被擄"
+          ],
+          "from": [
+            "#temple",
+            "#exile"
+          ]
+        },
+        {
+          "slug": "jesus",
+          "nav": "耶穌的祈禱",
+          "children": [],
+          "from": [
+            "#jesus"
+          ]
+        },
+        {
+          "slug": "church",
+          "nav": "教會與保羅",
+          "children": [
+            "教會的祈禱",
+            "兒子的呼叫"
+          ],
+          "from": [
+            "#church",
+            "#paul"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "張力與牧養",
+          "children": [
+            "未蒙應允",
+            "牧養結論"
+          ],
+          "from": [
+            "#tension",
+            "#pastoral"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "靈修學",
+      "chapters": [
+        {
+          "slug": "question",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#question"
+          ]
+        },
+        {
+          "slug": "word",
+          "nav": "同行與默想",
+          "children": [
+            "與神同行",
+            "聖言的默想"
+          ],
+          "from": [
+            "#walk",
+            "#word"
+          ]
+        },
+        {
+          "slug": "worship",
+          "nav": "敬拜與真敬虔",
+          "children": [
+            "詩篇與敬拜",
+            "先知的批判"
+          ],
+          "from": [
+            "#psalms",
+            "#prophets"
+          ]
+        },
+        {
+          "slug": "jesus",
+          "nav": "耶穌的生命",
+          "children": [],
+          "from": [
+            "#jesus"
+          ]
+        },
+        {
+          "slug": "union",
+          "nav": "在基督裡",
+          "children": [],
+          "from": [
+            "#union"
+          ]
+        },
+        {
+          "slug": "practice",
+          "nav": "操練與分辨",
+          "children": [
+            "操練的位置",
+            "試驗諸靈"
+          ],
+          "from": [
+            "#disciplines",
+            "#discernment"
+          ]
+        },
+        {
+          "slug": "pastoral",
+          "nav": "牧養結論",
+          "children": [],
+          "from": [
+            "#pastoral"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "婚姻",
+      "chapters": [
+        {
+          "slug": "question",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#s1"
+          ]
+        },
+        {
+          "slug": "creation",
+          "nav": "創造秩序",
+          "children": [],
+          "from": [
+            "#s2"
+          ]
+        },
+        {
+          "slug": "fall",
+          "nav": "墮落的扭曲",
+          "children": [],
+          "from": [
+            "#s3"
+          ]
+        },
+        {
+          "slug": "law",
+          "nav": "律法與智慧",
+          "children": [],
+          "from": [
+            "#s4"
+          ]
+        },
+        {
+          "slug": "prophets",
+          "nav": "先知的婚姻隱喻",
+          "children": [],
+          "from": [
+            "#s5"
+          ]
+        },
+        {
+          "slug": "jesus",
+          "nav": "耶穌的教導",
+          "children": [],
+          "from": [
+            "#s6"
+          ]
+        },
+        {
+          "slug": "paul",
+          "nav": "保羅書信",
+          "children": [],
+          "from": [
+            "#s7"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "終末與牧養",
+          "children": [
+            "終末視野",
+            "牧養結論",
+            "經文索引"
+          ],
+          "from": [
+            "#s8",
+            "#s9",
+            "#trailing"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "興學傳道",
+      "chapters": [
+        {
+          "slug": "question",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#question"
+          ]
+        },
+        {
+          "slug": "torah",
+          "nav": "妥拉與智慧",
+          "children": [
+            "家中教導",
+            "智慧傳統"
+          ],
+          "from": [
+            "#torah",
+            "#wisdom"
+          ]
+        },
+        {
+          "slug": "office",
+          "nav": "教導的職分",
+          "children": [],
+          "from": [
+            "#office"
+          ]
+        },
+        {
+          "slug": "jesus",
+          "nav": "夫子與使徒",
+          "children": [
+            "耶穌為夫子",
+            "使徒的教訓"
+          ],
+          "from": [
+            "#jesus",
+            "#apostles"
+          ]
+        },
+        {
+          "slug": "paul",
+          "nav": "保羅與內容",
+          "children": [
+            "學房與交託",
+            "所教的是基督"
+          ],
+          "from": [
+            "#paul",
+            "#content"
+          ]
+        },
+        {
+          "slug": "discern",
+          "nav": "張力與分辨",
+          "children": [],
+          "from": [
+            "#discern"
+          ]
+        },
+        {
+          "slug": "pastoral",
+          "nav": "牧養結論",
+          "children": [],
+          "from": [
+            "#pastoral"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "傳福音策略",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#intro"
+          ]
+        },
+        {
+          "slug": "commission",
+          "nav": "大使命與權柄",
+          "children": [],
+          "from": [
+            "#commission"
+          ]
+        },
+        {
+          "slug": "jesus",
+          "nav": "耶穌的宣講",
+          "children": [],
+          "from": [
+            "#jesus"
+          ]
+        },
+        {
+          "slug": "acts",
+          "nav": "使徒行傳的策略",
+          "children": [],
+          "from": [
+            "#acts"
+          ]
+        },
+        {
+          "slug": "paul",
+          "nav": "保羅的自我說明",
+          "children": [],
+          "from": [
+            "#paul"
+          ]
+        },
+        {
+          "slug": "content",
+          "nav": "內容與聖靈",
+          "children": [
+            "內容不可刪",
+            "聖靈、禱告、品格"
+          ],
+          "from": [
+            "#content",
+            "#spirit"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "方法與牧養",
+          "children": [
+            "對方法的分辨",
+            "牧養結論"
+          ],
+          "from": [
+            "#methods",
+            "#pastoral"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "基督教職場倫理",
+      "chapters": [
+        {
+          "slug": "question",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#question"
+          ]
+        },
+        {
+          "slug": "creation",
+          "nav": "創造中的工作",
+          "children": [],
+          "from": [
+            "#creation"
+          ]
+        },
+        {
+          "slug": "sabbath",
+          "nav": "安息與界限",
+          "children": [],
+          "from": [
+            "#sabbath"
+          ]
+        },
+        {
+          "slug": "law-wisdom",
+          "nav": "律法與智慧",
+          "children": [
+            "經濟倫理",
+            "智慧傳統"
+          ],
+          "from": [
+            "#law",
+            "#wisdom"
+          ]
+        },
+        {
+          "slug": "exile",
+          "nav": "被擄與外邦職場",
+          "children": [],
+          "from": [
+            "#exile"
+          ]
+        },
+        {
+          "slug": "gospel",
+          "nav": "耶穌與保羅",
+          "children": [
+            "瑪門與天國",
+            "家戶訓詞"
+          ],
+          "from": [
+            "#jesus",
+            "#paul"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "見證與牧養",
+          "children": [
+            "職場見證",
+            "牧養結論",
+            "經文索引"
+          ],
+          "from": [
+            "#witness",
+            "#pastoral",
+            "#trailing"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "辨別神的聲音",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#intro"
+          ]
+        },
+        {
+          "slug": "ot",
+          "nav": "舊約與已寫下的律法",
+          "children": [
+            "先知職分",
+            "律法已寫下"
+          ],
+          "from": [
+            "#ot-prophet",
+            "#written-torah"
+          ]
+        },
+        {
+          "slug": "son",
+          "nav": "耶穌是終極的話",
+          "children": [],
+          "from": [
+            "#the-son"
+          ]
+        },
+        {
+          "slug": "spirit",
+          "nav": "聖靈的工作",
+          "children": [],
+          "from": [
+            "#spirit"
+          ]
+        },
+        {
+          "slug": "testing",
+          "nav": "試驗諸靈",
+          "children": [],
+          "from": [
+            "#testing"
+          ]
+        },
+        {
+          "slug": "ordinary",
+          "nav": "充足與日常引導",
+          "children": [
+            "聖經的充足",
+            "智慧、肢體、環境"
+          ],
+          "from": [
+            "#sufficiency",
+            "#ordinary"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "警告與結論",
+          "children": [
+            "不可妄稱主名",
+            "辨別的優先序"
+          ],
+          "from": [
+            "#pastoral",
+            "#conclusion"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "猶大教、回教、天主教、基督教比較",
+      "chapters": [
+        {
+          "slug": "judaism",
+          "nav": "猶太教",
+          "children": [],
+          "from": [
+            "#judaism"
+          ]
+        },
+        {
+          "slug": "islam",
+          "nav": "伊斯蘭教",
+          "children": [],
+          "from": [
+            "#islam"
+          ]
+        },
+        {
+          "slug": "catholicism",
+          "nav": "天主教",
+          "children": [],
+          "from": [
+            "#catholicism"
+          ]
+        },
+        {
+          "slug": "protestant",
+          "nav": "基督教",
+          "children": [],
+          "from": [
+            "#protestant"
+          ]
+        },
+        {
+          "slug": "comparison",
+          "nav": "綜合比較",
+          "children": [],
+          "from": [
+            "#comparison"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "基督教與世界宗教比較",
+      "chapters": [
+        {
+          "slug": "intro",
+          "nav": "導論",
+          "children": [],
+          "from": [
+            "#intro"
+          ]
+        },
+        {
+          "slug": "overview",
+          "nav": "宗教導覽",
+          "children": [],
+          "from": [
+            "#overview"
+          ]
+        },
+        {
+          "slug": "worldview",
+          "nav": "核心理論",
+          "children": [],
+          "from": [
+            "#worldview"
+          ]
+        },
+        {
+          "slug": "god-creation",
+          "nav": "創造與神論",
+          "children": [
+            "創造論",
+            "神論"
+          ],
+          "from": [
+            "#creation",
+            "#theology"
+          ]
+        },
+        {
+          "slug": "human",
+          "nav": "人論與來世",
+          "children": [
+            "人論",
+            "來世"
+          ],
+          "from": [
+            "#anthropology",
+            "#afterlife"
+          ]
+        },
+        {
+          "slug": "salvation",
+          "nav": "得救",
+          "children": [],
+          "from": [
+            "#salvation"
+          ]
+        },
+        {
+          "slug": "scripture",
+          "nav": "經典典籍",
+          "children": [],
+          "from": [
+            "#scripture"
+          ]
+        },
+        {
+          "slug": "takeaways",
+          "nav": "課堂與牧養結語",
+          "children": [],
+          "from": [
+            "#takeaways"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "天使",
+      "chapters": [
+        {
+          "slug": "question",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#question"
+          ]
+        },
+        {
+          "slug": "word",
+          "nav": "詞與創造",
+          "children": [
+            "本義是使者",
+            "萬有藉基督而造"
+          ],
+          "from": [
+            "#word",
+            "#creation"
+          ]
+        },
+        {
+          "slug": "cherubim",
+          "nav": "聖所異象",
+          "children": [],
+          "from": [
+            "#cherubim"
+          ]
+        },
+        {
+          "slug": "ot",
+          "nav": "舊約敘事",
+          "children": [],
+          "from": [
+            "#ot"
+          ]
+        },
+        {
+          "slug": "lukeacts",
+          "nav": "路加行傳",
+          "children": [],
+          "from": [
+            "#lukeacts"
+          ]
+        },
+        {
+          "slug": "christ",
+          "nav": "基督與服役",
+          "children": [
+            "兒子遠超過天使",
+            "效力不是迷信"
+          ],
+          "from": [
+            "#christ",
+            "#ministry"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "墮落與牧養",
+          "children": [
+            "墮落的使者",
+            "牧養結論"
+          ],
+          "from": [
+            "#fallen",
+            "#pastoral"
+          ]
+        }
+      ]
+    },
+    {
+      "dir": "異端",
+      "chapters": [
+        {
+          "slug": "question",
+          "nav": "問題意識",
+          "children": [],
+          "from": [
+            "#question"
+          ]
+        },
+        {
+          "slug": "warnings",
+          "nav": "假先知與警戒",
+          "children": [
+            "舊約假先知",
+            "耶穌的警戒"
+          ],
+          "from": [
+            "#ot",
+            "#jesus"
+          ]
+        },
+        {
+          "slug": "apostles",
+          "nav": "使徒行傳與保羅",
+          "children": [
+            "使徒行傳",
+            "另一個福音"
+          ],
+          "from": [
+            "#acts",
+            "#paul"
+          ]
+        },
+        {
+          "slug": "tests",
+          "nav": "檢驗真道",
+          "children": [
+            "約翰彼得猶大",
+            "辨認核心"
+          ],
+          "from": [
+            "#john",
+            "#tests"
+          ]
+        },
+        {
+          "slug": "ancient",
+          "nav": "古代異端",
+          "children": [],
+          "from": [
+            "#ancient"
+          ]
+        },
+        {
+          "slug": "modern",
+          "nav": "近現代團體",
+          "children": [],
+          "from": [
+            "#modern"
+          ]
+        },
+        {
+          "slug": "close",
+          "nav": "分辨與牧養",
+          "children": [
+            "錯謬與異端",
+            "牧養"
+          ],
+          "from": [
+            "#distinguish",
+            "#pastoral"
+          ]
+        }
+      ]
+    }
+  ],
+  "maps": {
+    "以經解經": {},
+    "四律": {},
+    "因信稱義": {},
+    "預定論": {},
+    "神人合作說": {},
+    "自由意志": {
+      "intro": "intro.html",
+      "question": "question.html",
+      "creation": "creation.html",
+      "fallen": "fallen.html",
+      "sovereignty": "sovereignty.html",
+      "christ": "christ.html",
+      "spirit": "christ.html",
+      "distinction": "distinction.html",
+      "pastoral": "pastoral.html"
+    },
+    "千禧論": {
+      "detail-section": "positions.html"
+    },
+    "教會歷史": {},
+    "基督教各宗派": {
+      "question": "question.html",
+      "unity": "unity.html",
+      "map": "map.html",
+      "fundamentalist": "fundamentalist.html",
+      "evangelical": "evangelical.html",
+      "charismatic": "charismatic.html",
+      "other": "other.html",
+      "pastoral": "pastoral.html"
+    },
+    "祈禱": {
+      "question": "question.html",
+      "creation": "beginnings.html",
+      "patriarchs": "beginnings.html",
+      "psalms": "psalms.html",
+      "temple": "temple-exile.html",
+      "exile": "temple-exile.html",
+      "jesus": "jesus.html",
+      "church": "church.html",
+      "paul": "church.html",
+      "tension": "close.html",
+      "pastoral": "close.html"
+    },
+    "靈修學": {
+      "question": "question.html",
+      "walk": "word.html",
+      "word": "word.html",
+      "psalms": "worship.html",
+      "prophets": "worship.html",
+      "jesus": "jesus.html",
+      "union": "union.html",
+      "disciplines": "practice.html",
+      "discernment": "practice.html",
+      "pastoral": "pastoral.html"
+    },
+    "婚姻": {
+      "s1": "question.html",
+      "s2": "creation.html",
+      "s3": "fall.html",
+      "s4": "law.html",
+      "s5": "prophets.html",
+      "s6": "jesus.html",
+      "s7": "paul.html",
+      "s8": "close.html",
+      "s9": "close.html",
+      "trailing": "close.html"
+    },
+    "興學傳道": {
+      "question": "question.html",
+      "torah": "torah.html",
+      "wisdom": "torah.html",
+      "office": "office.html",
+      "jesus": "jesus.html",
+      "apostles": "jesus.html",
+      "paul": "paul.html",
+      "content": "paul.html",
+      "discern": "discern.html",
+      "pastoral": "pastoral.html"
+    },
+    "傳福音策略": {
+      "intro": "intro.html",
+      "commission": "commission.html",
+      "jesus": "jesus.html",
+      "acts": "acts.html",
+      "paul": "paul.html",
+      "content": "content.html",
+      "spirit": "content.html",
+      "methods": "close.html",
+      "pastoral": "close.html"
+    },
+    "基督教職場倫理": {
+      "question": "question.html",
+      "creation": "creation.html",
+      "sabbath": "sabbath.html",
+      "law": "law-wisdom.html",
+      "wisdom": "law-wisdom.html",
+      "exile": "exile.html",
+      "jesus": "gospel.html",
+      "paul": "gospel.html",
+      "witness": "close.html",
+      "pastoral": "close.html",
+      "trailing": "close.html"
+    },
+    "辨別神的聲音": {
+      "intro": "intro.html",
+      "ot-prophet": "ot.html",
+      "written-torah": "ot.html",
+      "the-son": "son.html",
+      "spirit": "spirit.html",
+      "testing": "testing.html",
+      "sufficiency": "ordinary.html",
+      "ordinary": "ordinary.html",
+      "pastoral": "close.html",
+      "conclusion": "close.html"
+    },
+    "猶大教、回教、天主教、基督教比較": {
+      "judaism": "judaism.html",
+      "islam": "islam.html",
+      "catholicism": "catholicism.html",
+      "protestant": "protestant.html",
+      "comparison": "comparison.html"
+    },
+    "基督教與世界宗教比較": {
+      "intro": "intro.html",
+      "overview": "overview.html",
+      "worldview": "worldview.html",
+      "creation": "god-creation.html",
+      "theology": "god-creation.html",
+      "anthropology": "human.html",
+      "afterlife": "human.html",
+      "salvation": "salvation.html",
+      "scripture": "scripture.html",
+      "takeaways": "takeaways.html"
+    },
+    "天使": {
+      "question": "question.html",
+      "word": "word.html",
+      "creation": "word.html",
+      "cherubim": "cherubim.html",
+      "ot": "ot.html",
+      "lukeacts": "lukeacts.html",
+      "christ": "christ.html",
+      "ministry": "christ.html",
+      "fallen": "close.html",
+      "pastoral": "close.html"
+    },
+    "異端": {
+      "question": "question.html",
+      "ot": "warnings.html",
+      "jesus": "warnings.html",
+      "acts": "apostles.html",
+      "paul": "apostles.html",
+      "john": "tests.html",
+      "tests": "tests.html",
+      "ancient": "ancient.html",
+      "modern": "modern.html",
+      "distinguish": "close.html",
+      "pastoral": "close.html"
+    }
+  }
+}

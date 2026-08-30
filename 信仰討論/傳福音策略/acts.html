@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使徒行傳的策略｜傳福音策略</title>
+  <meta name="description" content="傳福音策略：使徒行傳的策略。四、使徒行傳的「策略」 講章是詮釋事件；神的道是敘事中的行動者 徒 2 彼得在五旬節 以經解經、指證這一代、呼召悔改受洗。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(217, 119, 6, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.10), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(217, 119, 6, 0.08), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.14), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.14), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(217, 119, 6, 0.10), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(217, 119, 6, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.18), 0 10px 10px -5px rgba(99, 102, 241, 0.08);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .category-card:nth-child(6) { animation-delay: 0.6s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(217, 119, 6, 0.55);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(180, 83, 9, 0.85);
+      transform: translateX(5px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.6), rgba(99, 102, 241, 0.55));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #d97706 0%, #4f46e5 100%);
+      color: white;
+    }
+    .locus-section {
+      scroll-margin-top: 6rem;
+    }
+    .prose-essay p {
+      margin-bottom: 1.1rem;
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="acts">
+  <a class="skip" href="content.html#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">傳福音策略</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">使徒行傳的策略</div>
+  </header>
+
+  <section class="hero" aria-label="傳福音策略">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Evangelistic Witness</div>
+      <h1 class="serif">使徒行傳的策略<em class="latin">傳福音策略</em></h1>
+      <p class="hero-lead">四、使徒行傳的「策略」 講章是詮釋事件；神的道是敘事中的行動者 徒 2 彼得在五旬節 以經解經、指證這一代、呼召悔改受洗。</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">問題意識</a>
+        <a href="commission.html" data-nav-slug="commission">大使命與權柄</a>
+        <a href="jesus.html" data-nav-slug="jesus">耶穌的宣講</a>
+        <a href="acts.html" data-nav-slug="acts" class="is-on">使徒行傳的策略</a>
+        <a href="paul.html" data-nav-slug="paul">保羅的自我說明</a>
+        <a href="content.html" data-nav-slug="content">內容與聖靈</a>
+        <ul class="sub"><li>內容不可刪</li><li>聖靈、禱告、品格</li></ul>
+        <a href="close.html" data-nav-slug="close">方法與牧養</a>
+        <ul class="sub"><li>對方法的分辨</li><li>牧養結論</li></ul>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回傳福音策略總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/acts.svg" alt=""></figure>
+          <p class="essay-kicker">分題 04 / 07</p>
+          <h2 class="page-title serif">使徒行傳的策略</h2>
+          <div class="topic-body"><section id="acts" class="locus-section mb-16">
+            <div class="text-center mb-8 fade-in-up">
+              <h2 class="text-3xl sm:text-4xl font-semibold serif-font text-slate-900">四、使徒行傳的「策略」</h2>
+              <p class="text-slate-600 mt-2">講章是詮釋事件；神的道是敘事中的行動者</p>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-8">
+              <a href="#acts-peter" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-amber-700 mb-1">徒 2</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">彼得在五旬節</h3>
+                <p class="text-sm text-slate-700 leading-relaxed">以經解經、指證這一代、呼召悔改受洗。聖靈先降臨，講章才解釋所發生的事。</p>
+              </a>
+              <a href="#acts-temple" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-indigo-700 mb-1">徒 3–4</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">聖殿與公會</h3>
+                <p class="text-sm text-slate-700 leading-relaxed">奉耶穌的名醫治與放膽。策略不是迴避權勢，而是承認「除他以外，別無拯救」。</p>
+              </a>
+              <a href="#acts-philip" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-violet-700 mb-1">徒 8</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">四散與太監</h3>
+                <p class="text-sm text-slate-700 leading-relaxed">逼迫成了宣教；腓利從以賽亞書五十三章「傳講耶穌」。互文，不是即興心靈雞湯。</p>
+              </a>
+              <a href="#acts-cornelius" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-emerald-700 mb-1">徒 10–11</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">哥尼流</h3>
+                <p class="text-sm text-slate-700 leading-relaxed">神先打破潔淨的界線，教會事後承認。策略的主詞是神，不是彼得的勇氣。</p>
+              </a>
+              <a href="#acts-paul" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-rose-700 mb-1">徒 13–17</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">保羅的行程</h3>
+                <p class="text-sm text-slate-700 leading-relaxed">會堂先、然後外邦；路司得對異教聽眾；雅典翻譯而不變質，終點仍是復活與審判。</p>
+              </a>
+              <a href="#acts-long" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-teal-700 mb-1">徒 18–20</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">住下與眼淚</h3>
+                <p class="text-sm text-slate-700 leading-relaxed">長期講論、辯論、勸戒；以弗所的衝突顯明福音會攪動偶像經濟，不是只求和諧。</p>
+              </a>
+            </div>
+
+            <article id="acts-peter" class="locus-section content-panel rounded-2xl p-6 sm:p-10 mb-8 prose-essay">
+              <h3 class="text-2xl font-semibold serif-font text-amber-800 mb-4">1. 徒 2：彼得講章——經文、指證、呼召</h3>
+              <p class="text-slate-700 leading-relaxed">
+                五旬節不是使徒先設計一場大型佈道會。聖靈降臨，群眾聽見「神的大作為」（徒 2:11），有人譏誚。彼得站起來，第一件事是用約珥書 2:28–32 解釋眼前的現象，再用詩篇 16 與 110 指證：你們釘死的這位，神已立祂為主、為基督（徒 2:36）。講章的骨架是：<strong>應許的經文 → 耶穌的死與復活 → 聽者的罪責 → 悔改與奉祂的名受洗</strong>。
+              </p>
+              <div class="bible-verse mb-6 bg-amber-50 p-5 rounded-lg border border-amber-100">
+                <p class="italic text-slate-800 mb-2">「你們各人要悔改，奉耶穌基督的名受洗，叫你們的罪得赦，就必領受所賜的聖靈。」</p>
+                <p class="text-sm text-slate-600">— 使徒行傳 2:38（參 2:37–42）</p>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-0">
+                三千人受洗，不是因為講章「溫柔到沒有指控」，而是因為聖靈用經文刺入（「扎心」，2:37）。接着是恆心遵守使徒的教訓、彼此交接、擘餅、祈禱（2:42）。傳福音的「果效」在聖經裏包括進入教會生活，而不止於舉手。若策略只追求決志數字，卻沒有教導與群體，就截斷了路加自己所記的結果。
+              </p>
+            </article>
+
+            <article id="acts-temple" class="locus-section content-panel rounded-2xl p-6 sm:p-10 mb-8 prose-essay">
+              <h3 class="text-2xl font-semibold serif-font text-indigo-800 mb-4">2. 徒 3–4：聖殿與公會——奉這名</h3>
+              <p class="text-slate-700 leading-relaxed">
+                美門口的瘸子起來行走，彼得立刻否認自己的虔誠或能力：「因你們所看見所認識的這人，他的名……叫他痊愈了」（徒 3:16）。講章再次以經解經：亞伯拉罕的神已經榮耀祂的僕人耶穌；摩西所應許的那位先知，你們若違背，必要從民中滅絕（3:13、22–23）。到了公會，策略不是尋找安全表述，而是承認：
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-5 rounded-lg border border-indigo-100">
+                <p class="italic text-slate-800 mb-2">「除他以外，別無拯救；因為在天下人間，沒有賜下別的名，我們可以靠着得救。」</p>
+                <p class="text-sm text-slate-600">— 使徒行傳 4:12</p>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-0">
+                公會看見的是「放膽」（παρρησία，4:13）。這勇氣不是性格培訓的產品，而是與耶穌同過的人、又被聖靈充滿的結果（4:8、31）。禁令臨到時，教會不是改寫信息以換取空間，而是禱告求「放膽講你的道」（4:29）。今日若以「保持對話空間」為最高策略，而把這名藏起來，就與使徒行傳第四章走相反的路。
+              </p>
+            </article>
+
+            <article id="acts-philip" class="locus-section content-panel rounded-2xl p-6 sm:p-10 mb-8 prose-essay">
+              <h3 class="text-2xl font-semibold serif-font text-violet-800 mb-4">3. 徒 8：逼迫中四散；從以賽亞到耶穌</h3>
+              <p class="text-slate-700 leading-relaxed">
+                司提反殉道之後，「那些分散的人往各處去傳道」（徒 8:4）。路加幾乎用一句話顛覆我們對「策略規劃」的自信：福音越過耶路撒冷，首先是因為逼迫，不是因為年會通過了宣教預算。腓利在撒馬利亞城宣講基督（8:5），隨後被主的使者打發到曠野路上。埃提阿伯太監讀的是以賽亞書五十三章；他問的是詮釋問題：「先知說這話是指着誰？」（8:34）。
+              </p>
+              <div class="bible-verse mb-6 bg-violet-50 p-5 rounded-lg border border-violet-100">
+                <p class="italic text-slate-800 mb-2">「腓利就開口從這經上起，對他傳講耶穌。」</p>
+                <p class="text-sm text-slate-600">— 使徒行傳 8:35</p>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-0">
+                這是路加—使徒行傳宣教神學的縮影：<strong>從經文起，傳到耶穌</strong>。受苦僕人的詩歌不是用來激發道德同情，而是用來指認那位被宰殺又得勝的主。太監受洗，喜樂上路。策略在這裏顯為：留意聖靈與經文已經預備的人，而不是先設計一套與聖經無關的話題，再設法「轉入福音」。
+              </p>
+            </article>
+
+            <article id="acts-cornelius" class="locus-section content-panel rounded-2xl p-6 sm:p-10 mb-8 prose-essay">
+              <h3 class="text-2xl font-semibold serif-font text-emerald-800 mb-4">4. 徒 10–11：哥尼流——神先打破界線</h3>
+              <p class="text-slate-700 leading-relaxed">
+                哥尼流事件的敘事節奏極為重要。異象先臨到外邦百夫長，也臨到彼得；聖靈在彼得還在講的時候就降在一切聽道的人身上（10:44）。彼得事後只能說：「這些人既受了聖靈，與我們一樣，誰能禁止用水給他們施洗呢？」（10:47）。耶路撒冷教會的質疑，要等到彼得述說「神的作為」才安靜，並歸榮耀給神（11:18）。
+              </p>
+              <p class="text-slate-700 leading-relaxed mb-0">
+                這裏的「策略」幾乎是反策略：<strong class="text-emerald-800">神先行動，教會事後承認</strong>。彼得必須先被神潔淨的話改正：「神所潔淨的，你不可當作俗物」（10:15）。向外邦傳福音，不是彼得想出的增長方案，而是神自己拆掉「凡俗」的牆。今日教會若把跨文化宣教僅僅理解為市場擴張，就錯過了這段經文的主詞：是神不偏待人（10:34–36），把和平的福音藉耶穌基督傳給以色列人，而這位就是萬有的主。
+              </p>
+            </article>
+
+            <article id="acts-paul" class="locus-section content-panel rounded-2xl p-6 sm:p-10 mb-8 prose-essay">
+              <h3 class="text-2xl font-semibold serif-font text-rose-800 mb-4">5. 徒 13–17：會堂、路司得、雅典——翻譯而不變質</h3>
+              <p class="text-slate-700 leading-relaxed">
+                保羅一行的慣常起點是會堂（13:14；14:1；17:1–3、10、17）。這不是種族偏見，而是救贖歷史的次序：「神的道先講給你們；只因你們棄絕這道……我們就轉向外邦人去」（13:46）。接着他引用以賽亞書 49:6：「我已立你作外邦人的光，叫你施行救恩，直到地極」（13:47）。保羅的行程神學，是以賽亞僕人之歌的延續，不是「先易後難」的市場分層。
+              </p>
+              <p class="text-slate-700 leading-relaxed">
+                路司得的聽眾要把巴拿巴與保羅當作宙斯與希耳米（14:11–13）。保羅沒有順水推舟，把福音說成另一個希臘神祇故事。他撕裂衣服，呼喊：
+              </p>
+              <div class="bible-verse mb-6 bg-rose-50 p-5 rounded-lg border border-rose-100">
+                <p class="italic text-slate-800 mb-2">「我們傳福音給你們，是叫你們離棄這些虛妄，歸向那創造天、地、海，和其中萬物的永生神。」</p>
+                <p class="text-sm text-slate-600">— 使徒行傳 14:15</p>
+              </div>
+              <p class="text-slate-700 leading-relaxed">
+                對沒有妥拉背景的聽眾，他從創造、雨水、飲食、容忍過去的世代講起（14:16–17），卻毫不含糊地要求離棄偶像。言語調整了，悔改的呼召沒有刪。
+              </p>
+              <p class="text-slate-700 leading-relaxed">
+                雅典亞略巴古講章（17:16–34）常被誤讀成「用哲學包裝福音」。路加先寫保羅「心裏着急」，因為滿城偶像（17:16）；辯論發生在會堂與市上；斯多亞與伊壁鳩魯的人譏誚復活（17:18）。講章從「未識之神」起頭，承認對方的宗教熱忱，隨即用創造論加以糾正：神不住人手所造的殿，也不用人手供奉（17:24–25）。這是以賽亞書反偶像神學的翻譯，不是把福音改寫成斯多亞的宇宙理性。終點更尖銳：
+              </p>
+              <div class="bible-verse mb-6 bg-amber-50 p-5 rounded-lg border border-amber-100">
+                <p class="italic text-slate-800 mb-2">「世人蒙昧無知的時候，神並不監察，如今卻吩咐各處的人都要悔改。因為他已經定了日子，要藉着他所設立的人按公義審判天下，並且叫他從死裏復活，給萬人作可信的憑據。」</p>
+                <p class="text-sm text-slate-600">— 使徒行傳 17:30–31</p>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-0">
+                一聽到復活，有人譏誚，有人要再聽，也有人信了（17:32–34）。路加沒有把雅典寫成「最成功的佈道」。他寫的是：<strong>翻譯而不變質</strong>——從創造進入審判與復活，而不是把福音稀釋成各教都可點頭的自然神論。若亞略巴古成了我們刪掉十字架與復活的藉口，我們讀反了這段經文。
+              </p>
+            </article>
+
+            <article id="acts-long" class="locus-section content-panel rounded-2xl p-6 sm:p-10 mb-8 prose-essay">
+              <h3 class="text-2xl font-semibold serif-font text-teal-800 mb-4">6. 徒 18–20：長期住下、講論、眼淚與衝突</h3>
+              <p class="text-slate-700 leading-relaxed">
+                哥林多有主的異象：「不要怕，只管講……因為有我與你同在」（18:9–10），保羅在那裏住了一年零六個月。以弗所則先在會堂講了三個月，後在推喇奴的學房天天辯論，約有兩年（19:8–10）。路加的摘要是：「主的道大大興旺，而且得勝」（19:20）。神的道在使徒行傳裏像一個行動者：它增長、興旺、得勝（參 6:7；12:24；19:20）。策略思考若只盯着人力與預算，就看不見路加真正要我們看見的主角。
+              </p>
+              <p class="text-slate-700 leading-relaxed">
+                以弗所的衝突來自偶像經濟被攪動（19:23–41）。銀匠底米丟的控訴，恰好反證福音不是無害的心靈補充劑。米利都的臨別勸戒更把牧養與傳福音縫在一起：保羅「服事主，凡事謙卑，眼中流淚」，在公眾面前或家裏都教導，「又對猶太人和希臘人證明當向神悔改，信靠我主耶穌基督」（20:19–21）。他沒有避諱「神純全的旨意」（20:27）。長期同在、辯論、眼淚、全備的道——這才是使徒行傳後段的「策略」，不是一場接一場的高潮活動。
+              </p>
+            </article>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="jesus.html"><span class="dir">上一題</span><span class="serif">耶穌的宣講</span></a>
+        <a class="next" href="paul.html"><span class="dir">下一題</span><span class="serif">保羅的自我說明</span></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up, .category-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          link.classList.add('bg-slate-50', 'text-slate-700');
+        });
+        const match = sections.find(item => item.el === entry.target);
+        if (match) {
+          match.link.classList.add('active');
+          match.link.classList.remove('bg-slate-50', 'text-slate-700');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/傳福音策略/acts", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

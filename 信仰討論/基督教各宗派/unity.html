@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>合一與界限｜基督教各宗派</title>
+  <meta name="description" content="基督教各宗派：合一與界限。二、聖經中的合一與界限 約翰福音十七章裡，耶穌為門徒祈求的合一，不是機構合併，也不是教義最低化。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.10), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.10), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.10), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.14), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.14), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(71, 85, 105, 0.10), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(99, 102, 241, 0.16);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.04); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(67, 56, 202, 0.9);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.7), rgba(139, 92, 246, 0.7));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-body p { margin-bottom: 1.05rem; }
+    .prose-body p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body class="topic-shell" data-slug="unity">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">基督教各宗派</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">合一與界限</div>
+  </header>
+
+  <section class="hero" aria-label="基督教各宗派">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Christian Traditions</div>
+      <h1 class="serif">合一與界限<em class="latin">基督教各宗派</em></h1>
+      <p class="hero-lead">二、聖經中的合一與界限 約翰福音十七章裡，耶穌為門徒祈求的合一，不是機構合併，也不是教義最低化。</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="question.html" data-nav-slug="question">問題意識</a>
+        <a href="unity.html" data-nav-slug="unity" class="is-on">合一與界限</a>
+        <a href="map.html" data-nav-slug="map">大公傳統簡圖</a>
+        <a href="fundamentalist.html" data-nav-slug="fundamentalist">基要派</a>
+        <a href="evangelical.html" data-nav-slug="evangelical">福音派</a>
+        <a href="charismatic.html" data-nav-slug="charismatic">靈恩派與五旬節</a>
+        <a href="other.html" data-nav-slug="other">華人教會張力</a>
+        <a href="pastoral.html" data-nav-slug="pastoral">牧養結論</a>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回基督教各宗派總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/unity.svg" alt=""></figure>
+          <p class="essay-kicker">分題 02 / 08</p>
+          <h2 class="page-title serif">合一與界限</h2>
+          <div class="topic-body"><section id="unity" class="locus-section mb-14">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-body text-lg leading-relaxed text-slate-700">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">二、聖經中的合一與界限</h2>
+              <p>
+                約翰福音十七章裡，耶穌為門徒祈求的合一，不是機構合併，也不是教義最低化。祂求「使他們都合而為一。正如你父在我裡面，我在你裡面」（約 17:21），這合一的原型是聖父與聖子的相交，其目的是「叫世人相信你差了我來」。合一服事見證，見證服事差遣的主。把十七章讀成「只要和睦、不必真理」，是讀反了：同一段禱告裡，耶穌說「求你用真理使他們成聖；你的道就是真理」（約 17:17）。沒有真理的合一，不能成聖，也不能叫世人相信。
+              </p>
+              <div class="bible-verse my-6 bg-violet-50 p-6 rounded-lg border border-violet-100">
+                <p class="italic text-slate-800 mb-2">「身體只有一個，聖靈只有一個，正如你們蒙召同有一個指望。一主，一信，一洗，一神，就是眾人的父。」</p>
+                <p class="text-sm text-slate-600">— 以弗所書 4:4–6</p>
+              </div>
+              <p>
+                以弗所書 4:1–16 把合一放在身體論裡。信徒要「竭力保守聖靈所賜合而為一的心」（4:3）——合一是聖靈已賜的，人是保守，不是發明。同時，升天的基督賜下使徒、先知、傳福音的、牧師和教師，為要「成全聖徒……直等到我們眾人在真道上同歸於一」（4:11–13）。合一不是取消職事與教導，而是在真理中長大，不再「中了人的詭計和欺騙的法術」（4:14）。一主、一信、一洗：這三「一」劃出教會的核心認同；恩賜的多元則在這核心之內運作，而不是另立一個身體。
+              </p>
+              <p>
+                使徒行傳十五章的耶路撒冷會議，是新約裡最清楚的「為福音爭辯、卻不為次要立牆」的範例。有人主張外邦人必須受割禮才能得救（徒 15:1）。這不是禮儀偏好，而是救恩論。會議的結論以福音為準：神「藉著我的口叫外邦人得聽福音，而且相信」（15:7）；人得救是「因主耶穌的恩」（15:11）。給外邦信徒的幾項叮囑（15:20、29），是為了團契可行與遠離偶像，不是把摩西之軛重新綁上。會議證明：<strong class="text-indigo-800">教會可以、也必須公開分辨何謂福音；分辨之後，仍能給肢體留下同行的空間</strong>。
+              </p>
+              <p>
+                羅馬書十四至十五章處理的是另一層。吃與日、守節與不守節，保羅稱為「信心軟弱」的彼此接納，而不是另傳一個福音。「神已經收納他了」（羅 14:3）；強的不可輕看弱的，弱的不可論斷強的。十五章的目標是「一心一口榮耀神」（15:6）。把洗禮方式、敬拜音樂、末世時間表或禁食習慣抬到加拉太書一章的高度，是把羅馬書十四章讀丟了。反之，把稱義、基督的位格、復活或「另一個福音」降到羅馬書十四章的高度，是把加拉太書讀丟了。
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 my-6">
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">必須保守的核心</h3>
+                  <p class="text-sm leading-relaxed">「一主，一信，一洗」；基督照聖經死而復活（林前 15:1–11）；因信稱義的福音不被更換（加 1–2）。此處沒有「各適其適」。</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-slate-900 mb-2">必須彼此接納的次要</h3>
+                  <p class="text-sm leading-relaxed">飲食、日子、文化習慣、許多教會秩序上的差異。羅 14 的邏輯是：主能叫他站住；你不是他的主。</p>
+                </div>
+              </div>
+              <p>
+                界限的經文同樣清楚。提摩太後書 4:3–4 預告：人必厭煩純正的道理，「耳朵發癢，就隨從自己的情慾增添好些師傅」，並且「掩耳不聽真道，偏向荒渺的言語」。約翰二書 7–11 把否認耶穌基督成了肉身的稱為迷惑人的；對不傳這教訓的，連家裡的接待都要謹慎，免得在惡行上有份。加拉太書二章，保羅在安提阿當面抵擋彼得，因為福音的真理因怕奉割禮的人而妥協——「怕」可以毀掉「一信」。合一不是無限延展的禮貌；它停在使徒見證被改寫之處。
+              </p>
+            </div>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="question.html"><span class="dir">上一題</span><span class="serif">問題意識</span></a>
+        <a class="next" href="map.html"><span class="dir">下一題</span><span class="serif">大公傳統簡圖</span></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          link.classList.add('bg-slate-50', 'text-slate-700');
+        });
+        const match = sections.find(item => item.el === entry.target);
+        if (match) {
+          match.link.classList.add('active');
+          match.link.classList.remove('bg-slate-50', 'text-slate-700');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/基督教各宗派/unity", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

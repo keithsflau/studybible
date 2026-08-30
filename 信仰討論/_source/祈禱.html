@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>祈禱 | Prayer - Theological Discussion</title>
+  <meta name="description" content="祈禱（禱告）專論：按救贖歷史以經解經，從創造、族長、詩篇、聖殿、被擄，到耶穌、初期教會與保羅書信。區分聖經的呼求與當代成功神學的宣告實現。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(217, 119, 6, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(180, 83, 9, 0.06), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(217, 119, 6, 0.18);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(217, 119, 6, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(217, 119, 6, 0.4);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(217, 119, 6, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(180, 83, 9, 0.85);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(217, 119, 6, 0.6), rgba(99, 102, 241, 0.5));
+      border-radius: 2px;
+    }
+    .toc-link { transition: all 0.2s ease; white-space: nowrap; }
+    .toc-link.active {
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-essay p { margin-bottom: 1.1rem; }
+    .prose-essay p:last-child { margin-bottom: 0; }
+  </style>
+  <link rel="stylesheet" href="../../../visit-counter.css">
+</head>
+<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-white to-amber-50/40 min-h-screen overflow-x-hidden">
+  <div class="relative min-h-screen overflow-hidden">
+    <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
+
+    <div class="relative z-10">
+      <header class="px-6 py-12 sm:py-16">
+        <div class="mx-auto max-w-7xl">
+          <div class="text-center space-y-6">
+            <a href="../index.html" class="inline-block mb-4 text-slate-600 hover:text-slate-900 transition-colors fade-in-up" style="animation-delay: 0.1s;">
+              <svg class="w-6 h-6 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              返回討論主頁
+            </a>
+            <div class="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg fade-in-up" style="background:linear-gradient(135deg,#9a3412,#ea580c);animation-delay:0.15s">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h8l-1 1H9l-1-1z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21c0-4 1.6-5.4 2.2-8"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 21c0-4-1.6-5.4-2.2-8"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V8"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.2 6c-.8-2 .4-3.4 1.2-4.4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.8 7c.8-1.6 .2-3 1.2-4.2"/>
+              </svg>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight float-animation serif-font fade-in-up" style="animation-delay: 0.2s;">
+              祈禱
+              <span class="block mt-2 bg-gradient-to-r from-amber-600 via-orange-600 to-indigo-700 bg-clip-text text-transparent pulse-animation">
+                Prayer
+              </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.3s;">
+              盟約中的呼求：按救贖歷史讀聖經裡的祈禱與禱告
+            </p>
+            <div class="w-full max-w-md mx-auto mt-6 fade-in-up" style="animation-delay: 0.4s;">
+              <div class="progress-bar" style="width: 0%;" id="reading-progress"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-amber-100 shadow-sm" aria-label="專論目錄">
+        <div class="mx-auto max-w-7xl px-3 sm:px-6">
+          <div class="flex gap-2 overflow-x-auto py-3 text-sm">
+            <a href="#question" class="toc-link active px-3 py-2 rounded-lg bg-amber-50 text-amber-900 font-medium">問題意識</a>
+            <a href="#creation" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">創造與呼求</a>
+            <a href="#patriarchs" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">族長與出埃及</a>
+            <a href="#psalms" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">詩篇</a>
+            <a href="#temple" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">聖殿與代求</a>
+            <a href="#exile" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">被擄</a>
+            <a href="#jesus" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">耶穌</a>
+            <a href="#church" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">教會</a>
+            <a href="#paul" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">保羅</a>
+            <a href="#tension" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">張力</a>
+            <a href="#pastoral" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">牧養結論</a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="px-6 pb-16">
+        <div class="mx-auto max-w-4xl">
+
+          <section id="question" class="locus-section mb-16 fade-in-up" style="animation-delay: 0.5s;">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">一、問題意識：祈禱不是技巧</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                粵語常說「祈禱」；和合本正文則多用「禱告」，間亦用「祈禱」「祈求」。三詞在經文裡屬於同一語義場：受造者向永活的神說話。王上 8:28 把「禱告祈求」與「祈禱呼籲」並列；徒 2:42、6:4 用「祈禱」描述教會的恆常實踐。本文標題從粵語習慣用「祈禱」，行文二者並用，所指並非兩套工夫，而是同一盟約事實。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                當代常見兩種簡化。其一把祈禱當成技巧：調息、聲調、重複公式，彷彿掌握方法就能「接通」。其二把祈禱當成單向許願，甚至把「奉主的名」變成咒語，以為大聲宣告就能迫使實況改寫。聖經沒有把祈禱收成秘術。聖經把祈禱放在<strong class="text-amber-800">創造、聖約、救贖歷史</strong>裡：人向那位已經說話、已經立約、已經行動的神回應。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                因此，讀祈禱不能先問「怎樣更靈驗」，而要先問：<strong class="text-amber-800">這位神是誰？祈禱的人站在救贖故事的哪一站？所求的，是否與神已啟示的旨意相符？</strong>以下按經文推進，以經解經，讓較清晰的經文照亮較難的經文，而不用一套成功神學去改寫文本。
+              </p>
+              <div class="bible-verse mt-8 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「你們禱告，不可像外邦人，用許多重複話，他們以為話多了必蒙垂聽。你們不可效法他們；因為你們沒有祈求以先，你們所需用的，你們的父早已知道了。」</p>
+                <p class="text-sm text-slate-600">— 馬太福音 6:7–8</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="creation" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">二、創造與呼求</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                人被造，不是為了自成一世界，而是為了在神面前活著。創世記 1–2 沒有先教一套祈禱手冊，卻把人安置在聆聽、命名、治理與安息之中：神說話，人回應。交通先於技巧。墮落之後，人與神的面面相交破碎（創 3:8–10），但呼求並未從地上消失。
+              </p>
+              <div class="bible-verse my-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「塞特也生了一個兒子，起名叫以挪士。那時候，人才求告耶和華的名。」</p>
+                <p class="text-sm text-slate-600">— 創世記 4:26</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「求告耶和華的名」不是發明宗教，而是在該隱路線的暴力與自義之後，公開承認：生命不靠人自己的城與自己的名。巴別的對照隨即顯明另一條路：「來吧！我們要建造一座城和一座塔，塔頂通天，為要傳揚我們的名」（創 11:4）。一邊是求告<em>耶和華的名</em>，一邊是傳揚<em>我們的名</em>。祈禱的起點，正是拒絕巴別式的自我高舉。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                這一對照貫穿整本聖經。後來主禱文以「願人都尊你的名為聖」起首（太 6:9），不是偶然。祈禱若先尊自己的計畫為聖，就已經走在巴別的邏輯裡，即使用語極其敬虔。
+              </p>
+            </div>
+          </section>
+
+          <section id="patriarchs" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">三、族長與出埃及：代求與摔跤</h2>
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4">亞伯拉罕：抓住神的公義而代求</h3>
+              <p class="text-lg leading-relaxed text-slate-700">
+                創世記 18 不是談判技巧示範。耶和華將所多瑪的事告知亞伯拉罕，因為他被選是要「吩咐他的眾子……遵行耶和華的道，秉公行義」（創 18:19）。亞伯拉罕近前說：「無論善惡，你都要剿滅嗎？」（創 18:23）他的依據不是自己的善心，而是神的品格：「審判全地的主豈不行公義嗎？」（創 18:25）
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                代求在此顯出兩件事。第一，祈禱可以為別人的城、別人的家開口，而不只為自己的所需。第二，懇求是<em>按神已啟示的公義與憐憫</em>來求，不是把神拉到人的標準上。神後來的審判並未否定這段對話；這段對話卻顯明：立約之友被邀請進入神的心意，而不是旁觀一則命運公告。
+              </p>
+
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4 mt-10">雅各：抓住祝福，卻被神改名</h3>
+              <p class="text-lg leading-relaxed text-slate-700">
+                創世記 32，雅各在渡雅博河之夜與人摔跤，說：「你不給我祝福，我就不容你去。」（創 32:26）這不是成功學式的「宣告得勝」。那一夜他的大腿窩被摸了一把，他瘸了（創 32:25, 31）。他得名「以色列」，因為「你與神與人較力，都得了勝」（創 32:28），但勝利的標記是軟弱，不是自我完成。祈禱可以是整夜的纏住；纏住的結果，是人被神重新命名，而不是神被人重新定義。
+              </p>
+
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4 mt-10">摩西：在忿怒與憐憫之間站立</h3>
+              <p class="text-lg leading-relaxed text-slate-700">
+                金牛犢之後，耶和華說要滅絕百姓、使摩西成為大國（出 32:10）。摩西懇求：「耶和華啊，你為甚麼向你的百姓發烈怒呢？這百姓是你用大力和大能的手從埃及地領出來的。」（出 32:11）他抓住的是神自己的作為與應許，甚至說：「倘或你肯赦免他們的罪……不然，求你從你所寫的冊上塗抹我的名。」（出 32:32）民數記 14 再次出現同類代求：求主「照你的大慈愛赦免這百姓的罪孽」（民 14:19）。
+              </p>
+              <div class="bible-verse my-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「耶和華，耶和華，是有憐憫有恩典的神，不輕易發怒，並有豐盛的慈愛和誠實。」</p>
+                <p class="text-sm text-slate-600">— 出埃及記 34:6</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                摩西的祈禱與神的信實、忿怒、憐憫相交。文本沒有描寫一位反覆無常、等著被人說服才變心的神明。它描寫的是：神自己啟示祂的名（出 34:6–7），又讓中保按這啟示代求。改變的是審判如何在聖約中施行，不是神的品格被祈禱「改寫」。後來新約稱基督為更美之約的中保（來 7:25；8:6），正是把這條代求線接到終點，而不是把摩西的 pleader 角色變成信徒可以自我神化的範本。
+              </p>
+            </div>
+          </section>
+
+          <section id="psalms" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">四、詩篇：祈禱的學校</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                若聖經有一所祈禱學校，那就是詩篇。它不是「積極宣言」選集。讚美、哀歌、悔罪、信靠，甚至咒詛詩，都被收進以色列的公共敬拜。這本身已是神學宣告：向神說話，包括不會笑、不會唱快歌的日子。
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 my-8">
+                <div class="bg-amber-50 border border-amber-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-amber-900 mb-2">哀歌與等候（詩 13）</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">「耶和華啊，你忘記我要到幾時呢？要到永遠嗎？」（詩 13:1）四次「要到幾時」不是不信，而是把時間的折磨帶到神面前。詩篇容許抱怨，卻不容許把神趕出對話。</p>
+                </div>
+                <div class="bg-orange-50 border border-orange-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-orange-900 mb-2">被棄的呼喊（詩 22）</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">「我的神，我的神！為甚麼離棄我？」（詩 22:1）這句後來出於十字架上的耶穌（可 15:34）。最深的祈禱，可以是最深的被棄感；新約把它讀進彌賽亞的受苦，而不是讀成「信心不足」。</p>
+                </div>
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">悔罪（詩 32；51；130）</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">「我向你陳明我的罪，不隱瞞我的惡。」（詩 32:5）「神啊，求你為我造清潔的心。」（詩 51:10）「耶和華啊，我從深處向你求告！」（詩 130:1）赦免不是自我暗示，而是向那位「有赦免之恩」的主承認（詩 130:4）。</p>
+                </div>
+                <div class="bg-violet-50 border border-violet-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-violet-900 mb-2">讚美與記念（詩 103）</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">「我的心哪，你要稱頌耶和華！不可忘記他的一切恩惠！」（詩 103:1–2）讚美不是氣氛管理，而是記念神已作之工：赦罪、醫治、救贖、以仁愛冠冕。</p>
+                </div>
+              </div>
+
+              <p class="text-lg leading-relaxed text-slate-700">
+                詩篇 88 幾乎沒有轉向光明：「你把我的良朋密友隔在遠處，使我所認識的人進入黑暗裡。」（詩 88:18）它被收進正典，提醒教會：有一種忠信，就是在黑暗中仍對神說話，而不是改換神明，也不是強迫自己先「感覺積極」。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                詩篇 137 必須謹慎解釋。「我們曾在巴比倫的河邊坐下，一追想錫安就哭了。」（詩 137:1）結尾論到「拿你的嬰孩摔在磐石上」（詩 137:9），是被擄者把復仇交在神公義審判的語言裡，不是給信徒一張私人報復許可證。新約以「伸冤在主」（羅 12:19）收束這類張力：咒詛詩顯出罪惡的真實與受害者的正直憤怒，卻把最終裁決留給神，而不是把暴力聖化為門徒方法。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                總之，詩篇教導我們：祈禱包括抱怨與等候，不只積極宣言。把詩篇削成「得勝金句」，是拒絕讓聖靈用全本詩篇牧養教會。
+              </p>
+            </div>
+          </section>
+
+          <section id="temple" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">五、聖殿、祭與代求</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                所羅門獻殿禱文（王上 8）是舊約最長的公共祈禱之一。他先承認神的超越：「天和天上的天尚且不足你居住的，何況我所建的這殿呢？」（王上 8:27）然後求神垂聽「僕人的禱告祈求……祈禱呼籲」（王上 8:28），並為百姓向此處祈禱時「垂聽而赦免」（王上 8:30）。殿不是把神關進去的容器，而是神按自己應許、讓人奉祂的名呼求的所在。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                這篇禱文把祈禱與敬拜、悔改、聖約更新綁在一起：戰爭、乾旱、被擄、外邦人前來，都成為向這殿禱告的場合（王上 8:33–43）。祈禱不是殿外的附加靈修，而是聖約百姓承認「我們犯罪」並求神按慈愛歸回的行動。
+              </p>
+              <div class="bible-verse my-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「因我的殿必稱為萬民禱告的殿。」</p>
+                <p class="text-sm text-slate-600">— 以賽亞書 56:7</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                以賽亞書 56:7 把禱告的殿向「萬民」打開。耶穌潔淨聖殿時引用此句（可 11:17），指控聖殿被變成賊窩：敬拜的中心若變成交易與排斥，祈禱就被偶像化了。新約並非取消祈禱與敬拜的連繫，而是把「到神面前」的道路，從地上的殿轉移到基督自己的身體與祂所開的一條又新又活的路（約 2:21；來 10:19–22）。
+              </p>
+            </div>
+          </section>
+
+          <section id="exile" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">六、先知與被擄：認罪，抓住應許</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                被擄之後，祈禱的主調常是認罪與記念。但以理「面向耶路撒冷」（但 6:10）按時祈禱，不是地理迷信，而是抓住王上 8 的獻殿應許。但以理書 9 讀耶利米的七十年，隨即禁食認罪：
+              </p>
+              <div class="bible-verse my-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「我們在你面前懇求，原不是因自己的義，乃因你的大憐憫。……求主垂聽，求主赦免，求主應允而行，為你自己不要遲延。我的神啊，因這城和這民都是稱為你名下的。」</p>
+                <p class="text-sm text-slate-600">— 但以理書 9:18–19</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                但以理不以「我們已經夠好」為求應允的資本，而以神的名、神的憐憫、神自己的話為依據。尼希米書 1 同樣：先稱頌「守約施慈愛的神」，再承認「我們向你所行的甚是邪惡」（尼 1:5–7），然後求神記念摩西之約。尼希米記 9 的長篇認罪史，是把以色列的故事在神面前再講一遍：創造、揀選、悖逆、忍耐、管教。祈禱在此是神學敘事，不是情緒宣洩。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                被擄期的祈禱拒絕兩種逃避：一是把災難完全推給歷史偶然，二是把復興當成可以購買的宗教服務。他們承認罪，也抓住應許。沒有認罪的「宣告復興」，不是但以理的路。
+              </p>
+            </div>
+          </section>
+
+          <section id="jesus" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">七、耶穌的祈禱：子對父的順服</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                對觀福音，尤其路加，把耶穌的祈禱寫進關鍵轉折：受洗時「正在禱告，天就開了」（路 3:21）；「耶穌卻退到曠野去禱告」（路 5:16）；選十二使徒前「整夜禱告神」（路 6:12）；彼得認事前「獨自禱告」（路 9:18）；登山變像時「正禱告的時候，他的面貌就改變了」（路 9:28–29）。馬可則記：「次日早晨，天未亮的時候，耶穌起來，到曠野地方去，在那裡禱告。」（可 1:35）子的使命不是自我實現，而是在禱告中領受並遵行父的旨意。
+              </p>
+
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4 mt-10">主禱文：先神的名，後人的餅</h3>
+              <p class="text-lg leading-relaxed text-slate-700">
+                門徒說「求主教導我們禱告」（路 11:1）。耶穌所教的，不是秘傳口訣，而是重新排列祈求的優先次序。馬太福音 6:5–15 先拆毀兩種表演：在人面前的敬虔展覽，以及外邦人「話多了必蒙垂聽」的技術迷信。然後才給範本：
+              </p>
+              <div class="bible-verse my-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「我們在天上的父：願人都尊你的名為聖。願你的國降臨；願你的旨意行在地上，如同行在天上。我們日用的飲食，今日賜給我們。免我們的債，如同我們免了人的債。不叫我們遇見試探；救我們脫離兇惡。」</p>
+                <p class="text-sm text-slate-600">— 馬太福音 6:9–13</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                路加 11:2–4 同樣以父、名、國為先，然後才是日用飲食、赦罪與試探。路加隨即用半夜朋友與「祈求就給你們」（路 11:5–13）說明：父不會把蛇當魚給兒子。祈禱的信心，是信父的品格，不是信自己的音量。
+              </p>
+
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4 mt-10">恆切與稅吏：兩種人到神面前</h3>
+              <p class="text-lg leading-relaxed text-slate-700">
+                路加 18:1：「耶穌設一個比喻，是要人常常禱告，不可灰心。」不義的官尚且因纏擾而辦理；何況公義的神豈不給選民伸冤？同一章，法利賽人的禱告以自己為題：「我不像別人」；稅吏「連舉目望天也不敢」，只說：「神啊，開恩可憐我這個罪人！」（路 18:13）耶穌說後者回家去比前者為義。恆切若變成自我表揚，就不再是信心；真正的恆切，與稅吏的貧窮之靈並不衝突。
+              </p>
+
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4 mt-10">客西馬尼：祈禱的核心句子</h3>
+              <div class="bible-verse my-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「我父啊，倘若可行，求你叫這杯離開我。然而，不要照我的意思，只要照你的意思。」</p>
+                <p class="text-sm text-slate-600">— 馬太福音 26:39（參可 14:36；路 22:42）</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                這裡有真實的懇求：「叫這杯離開我」；也有不可刪去的「然而」。子的祈禱不是把父變成實現自我的工具。若客西馬尼被成功神學改寫成「只要信心夠，杯必挪去」，十字架就被抽空了。聖經的祈禱可以求脫離苦杯，但核心是順服。門徒的祈禱學校，最終不是學怎樣「說動神」，而是學怎樣在父面前放下自己的意思。
+              </p>
+            </div>
+          </section>
+
+          <section id="church" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">八、教會的祈禱：宣教與逼迫</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                使徒行傳把初期教會寫成一群禱告的群體，而不是一群先有策略、再偶爾祈禱的群體。升天之後，「這些人……都同心合意地恆切禱告」（徒 1:14）。五旬節之後，「都恆心遵守使徒的教訓，彼此交接，擘餅，祈禱」（徒 2:42）。執事被選，是為使使徒「專心以祈禱、傳道為事」（徒 6:4）。祈禱與聖道並列，不是敬虔點綴。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                徒 4:23–31 尤其值得細讀。彼得、約翰被釋放後，教會不是先求「逼迫停止」，而是引用詩篇 2，承認地上君王的敵擋早在神的定旨之中，然後求：「一面叫你僕人大放膽量講你的道」（徒 4:29）。禱告完了，他們「放膽講論神的道」（徒 4:31）。祈禱在此服務見證，而不是服務安逸。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                彼得被囚，「教會卻為他切切地禱告神」（徒 12:5）。神施行拯救，但同一章希律的刀也臨到雅各。行傳沒有保證每次切切禱告都換來監獄門開；它見證神聽禱告，也見證殉道仍在神的治理之下。安提阿教會「事奉主、禁食的時候」，聖靈說要差遣巴拿巴和掃羅；他們「禁食禱告，按手在他們頭上，就打發他們去了」（徒 13:2–3）。宣教從敬拜與祈禱中出來，不是從市場分析中出來。
+              </p>
+            </div>
+          </section>
+
+          <section id="paul" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">九、保羅：兒子的呼叫、聖靈的嘆息、教會的代求</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                保羅不以祈禱為信徒的額外功課，而以之為聖靈把人帶進子與父之關係的標記：「你們所受的，不是奴僕的心，仍舊害怕；所受的，乃是兒子的心，因此我們呼叫：『阿爸！父！』」（羅 8:15）同一章接著說，我們本不曉得當怎樣禱告，「只是聖靈親自用說不出來的歎息替我們禱告」（羅 8:26）。祈禱的深度，不在詞彙豐富，而在三一神把我們的軟弱承接下來。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                保羅為教會的祈禱，內容幾乎總是認識神、站立得穩、活出呼召，而不是一份物質心願清單。他求神「將那賜人智慧和啟示的靈賞給你們，使你們真知道他」（弗 1:17）；屈膝求神「藉著他的靈，叫你們心裡的力量剛強起來」（弗 3:16），並以「神能照著運行在我們心裡的大力充充足足地成就一切，超過我們所求所想的」（弗 3:20）作結——這「超過」是按神的能力與榮耀，不是一張空白支票。他「靠著聖靈，隨時多方禱告祈求……為眾聖徒祈求」（弗 6:18），把祈禱放在屬靈爭戰的位置：爭戰的武器是真理與代求，不是自我催眠。
+              </p>
+              <div class="bible-verse my-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「應當一無掛慮，只要凡事藉著禱告、祈求，和感謝，將你們所要的告訴神。神所賜出人意外的平安必在基督耶穌裡保守你們的心懷意念。」</p>
+                <p class="text-sm text-slate-600">— 腓立比書 4:6–7</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                腓立比書應許的，首先是神的<em>平安</em>保守心懷意念，不是「所要的每件都按原樣兌現」。西 1:9–12 求的是滿心知道神的旨意、行事對得起主。帖前 5:16–18 把「常常喜樂，不住地禱告，凡事謝恩」連在一起，稱為「神在基督耶穌裡向你們所定的旨意」：祈禱與感恩是一種生活方向，不是一場趕工的宗教表演。提前 2:1–8 更把「懇求、禱告、代求、祝謝」推到為萬人、為君王——教會的祈禱有公共向度，並且要「無忿怒，無爭論」。
+              </p>
+            </div>
+          </section>
+
+          <section id="tension" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">十、張力：祈求、未蒙應允，與「奉我的名」</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                耶穌說：「你們祈求，就給你們；尋找，就尋見；叩門，就給你們開門。」（太 7:7）下文立刻用父親與兒子、魚與蛇來解釋：重點是父的慷慨，不是人的意志可以改寫實況。同一位耶穌在客西馬尼未得「杯離開」的應允；同一位保羅「三次求過主，叫這刺離開我」，主卻說：「我的恩典夠你用的，因為我的能力是在人的軟弱上顯得完全。」（林後 12:8–9）
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                雅各把「得不著」說得更刺耳：「你們得不著，是因為你們不求。你們求也得不著，是因為你們妄求，要浪費在你們的宴樂中。」（雅 4:2–3）不求是怠惰；妄求是把神當成宴樂供應商。同卷又說：「你們中間有受苦的呢，他就該禱告……義人祈禱所發的力量是大有功效的。」（雅 5:13, 16）以利亞的例子（雅 5:17–18）不是教人複製氣象神蹟，而是見證：與我們一樣性情的人，按神的話祈禱，神就按自己的旨意行動。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                約翰福音 14–16 反覆說「奉我的名」：「你們奉我的名無論求甚麼，我必成就，叫父因兒子得榮耀。」（約 14:13）這句若被抽離上文——耶穌往父那裡去、聖靈要來、門徒要遵守命令、多結果子——就會變成咒語。奉名，是進入子的位格、使命與榮耀父的方向來求，不是在句末加四個字作靈力印記。約翰一書把界限說清楚：
+              </p>
+              <div class="bible-verse my-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「我們若照他的旨意求甚麼，他就聽我們，這是我們向他所存坦然無懼的心。」</p>
+                <p class="text-sm text-slate-600">— 約翰一書 5:14</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                因此必須區分：<strong class="text-amber-800">聖經的呼求</strong>是受造者在軟弱中向父陳明，並願意被祂的旨意修正；<strong class="text-amber-800">當代成功神學的「宣告實現」</strong>往往假設人的言語能直接構造實況，未蒙應允就被解釋成信心不夠。前者有客西馬尼與保羅的刺；後者沒有這兩段經文的位置。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                神的主權與人的懇求並行。聖經同時命令人祈求，又見證神按自己的旨意應允或扣留。這不是哲學上先解決「若神已定，何必禱告」，再決定要不要跪下。經文的姿勢與「神的主權與人的責任」那一類討論相同：兩端都必須按文本保留，而不是用一套體系把其中一端解釋掉。祈禱之所以真實，正因為神真聽；祈禱之所以不是操縱，正因為神仍是主。
+              </p>
+            </div>
+          </section>
+
+          <section id="pastoral" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">十一、牧養結論：門徒生活，不是功德</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                祈禱是門徒生活的呼吸，不是賺取恩典的功德。主禱文先求父的名、國與旨意，已排除「用禱告積分」的邏輯。公開的祈禱應當誠實，卻不可變成展覽（太 6:5–6）；私下的內室也不是逃避教會的藉口——行傳的祈禱是同心合意的。兩面都要：內室的隱藏，與群體的代求。
+              </p>
+              <div class="bible-verse my-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「只是我告訴你們，要愛你們的仇敵，為那逼迫你們的禱告。」</p>
+                <p class="text-sm text-slate-600">— 馬太福音 5:44</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                為仇敵禱告，是把詩篇裡正直的憤怒交回給神，而不讓恨意成為另一個偶像。這與成功神學式的自我祝聖正好相反：祈禱把人從自我中心拉開，拉向父的憐憫。
+              </p>
+              <div class="grid sm:grid-cols-2 gap-4 my-8">
+                <div class="bg-amber-50 border border-amber-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-amber-900 mb-2">祈禱不是操縱神</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">公式、時長、音量、禁食天數，都不能把父變成自動販賣機。禁食與恆切是認真，不是籌碼。</p>
+                </div>
+                <div class="bg-orange-50 border border-orange-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-orange-900 mb-2">祈禱不是自我催眠</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">重複一句「我已經得著」若只為改寫自己的感覺，所對的就不是那位在我們以外的活神。聖經要人把所要的告訴神，也要人接受祂的平安與祂的「不」。 </p>
+                </div>
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">公開與私下</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">內室對抗虛榮；聚會對抗孤立。兩者都按主的話受檢驗：是否尊父的名為聖，是否為眾聖徒與仇敵開口。</p>
+                </div>
+                <div class="bg-violet-50 border border-violet-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-violet-900 mb-2">與聖道並行</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">使徒「專心以祈禱、傳道為事」（徒 6:4）。離開聖經的祈禱，容易變成把自己的慾望投射到天上；離開祈禱的讀經，容易變成只認識一位不被求問的神。</p>
+                </div>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                我們從創世記的「求告耶和華的名」讀到羅馬書的「阿爸，父」。路線並未改變：人不是藉技巧升到神那裡，而是那位已經來、已經立約、已經差遣聖靈的神，把人放在可以呼叫的位置。祈禱的榮耀，不在於我們說動了神，而在於神願意聽，並且在基督裡把我們的「然而不要照我的意思」也收納為兒子的順服。
+              </p>
+              <div class="mt-8 bg-gradient-to-r from-amber-50 to-indigo-50 border border-amber-100 rounded-xl p-6 text-slate-700 leading-relaxed">
+                <p class="mb-3">經文標示依和合本；關鍵句亦對照和合本修訂版的用詞習慣。神的主權與人的懇求並行，與「<a href="../自由意志/index.html" class="text-amber-800 font-medium hover:underline">自由意志</a>」專論的「並行」同一釋經姿勢，本篇不重複那裡的意志與墮落討論。若要繼續思想預定與回應，亦可讀「<a href="../預定論/index.html" class="text-amber-800 font-medium hover:underline">預定論</a>」與「<a href="../神人合作說/index.html" class="text-amber-800 font-medium hover:underline">神人合作說</a>」。</p>
+                <p>讀經方法見「<a href="../以經解經/index.html" class="text-amber-800 font-medium hover:underline">以經解經</a>」。願主禱文繼續作教會的學校：先求父的名與國，再求今日的餅；先作稅吏，再學習恆切；先說「倘若可行」，再說「然而」。</p>
+              </div>
+            </div>
+          </section>
+
+          <div id="visit-counter-container"></div>
+        </div>
+      </main>
+
+      <footer class="text-center py-4 text-slate-500 text-sm">
+        <p class="italic mb-1">
+          But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his
+          understanding. Jeremiah 10:12
+        </p>
+        <p class="text-xs mb-1 mt-2">
+          「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」 耶利米書 10:12
+        </p>
+        <p class="text-xs mt-2 pt-2 border-t border-slate-300">
+          @ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.opacity = '1';
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          link.classList.add('bg-slate-50', 'text-slate-700');
+        });
+        const match = sections.find(item => item.el === entry.target);
+        if (match) {
+          match.link.classList.add('active');
+          match.link.classList.remove('bg-slate-50', 'text-slate-700');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    function scrollToId(id) {
+      const target = document.getElementById(id) || document.querySelector(id.startsWith('#') ? id : '#' + id);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    if (location.hash) {
+      scrollToId(location.hash);
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+    });
+  </script>
+  <script src="../../../visit-counter.js"></script>
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec';
+    if (window.VisitCounter) {
+      VisitCounter.init('bible_study/信仰討論/祈禱/index', {
+        scriptUrl: SCRIPT_URL,
+        containerId: 'visit-counter-container'
+      });
+    }
+  </script>
+</body>
+</html>

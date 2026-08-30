@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>核心原則｜以經解經</title>
+  <meta name="description" content="以經解經：核心原則。核心原則 聖經的統一性 聖經雖然由不同作者在不同時代寫成，但都是同一位聖靈的啟示，因此具有內在的統一性和一致性。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.12), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.12), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% { 
+        background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.12), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.12), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1), transparent 30%);
+      }
+      50% { 
+        background: radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.18), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.18), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.15), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.1);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+    .interactive-card {
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .interactive-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+    .interactive-card.active {
+      border-color: rgba(59, 130, 246, 0.6);
+      background: rgba(59, 130, 246, 0.15);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(59, 130, 246, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(59, 130, 246, 0.8);
+      transform: translateX(5px);
+      background: rgba(59, 130, 246, 0.05);
+    }
+    .expandable-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+      opacity: 0;
+    }
+    .expandable-content.expanded {
+      max-height: 2000px;
+      opacity: 1;
+    }
+    .principle-card {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .principle-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    .principle-card:hover::before {
+      left: 100%;
+    }
+    .example-box {
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+    .example-box:hover {
+      border-left-color: rgba(59, 130, 246, 0.6);
+      background: rgba(59, 130, 246, 0.05);
+      transform: translateX(5px);
+    }
+    .highlight-text {
+      background: linear-gradient(120deg, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.1) 100%);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      transition: all 0.3s ease;
+    }
+    .highlight-text:hover {
+      background: linear-gradient(120deg, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0.2) 100%);
+      transform: scale(1.05);
+    }
+    .progress-indicator {
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.8), rgba(99, 102, 241, 0.8));
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    .interactive-quiz {
+      transition: all 0.3s ease;
+    }
+    .quiz-option {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .quiz-option:hover {
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateX(5px);
+    }
+    .quiz-option.selected {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.6);
+    }
+    .quiz-option.correct {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: rgba(34, 197, 94, 0.6);
+    }
+    .quiz-option.incorrect {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.6);
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="principles">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">以經解經</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">核心原則</div>
+  </header>
+
+  <section class="hero" aria-label="以經解經">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Scripture Interprets Scripture</div>
+      <h1 class="serif">核心原則<em class="latin">以經解經</em></h1>
+      <p class="hero-lead">核心原則 聖經的統一性 聖經雖然由不同作者在不同時代寫成，但都是同一位聖靈的啟示，因此具有內在的統一性和一致性。</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">引言</a>
+        <a href="principles.html" data-nav-slug="principles" class="is-on">核心原則</a>
+        <a href="examples.html" data-nav-slug="examples">實踐範例</a>
+        <a href="method.html" data-nav-slug="method">方法論指引</a>
+        <a href="cautions.html" data-nav-slug="cautions">注意事項與挑戰</a>
+        <a href="reflect.html" data-nav-slug="reflect">互動思考</a>
+        <a href="summary.html" data-nav-slug="summary">總結</a>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回以經解經總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/principles.svg" alt=""></figure>
+          <p class="essay-kicker">分題 02 / 07</p>
+          <h2 class="page-title serif">核心原則</h2>
+          <div class="topic-body"><section class="space-y-8">
+            <h2 class="text-3xl font-bold serif-font text-center text-blue-400 fade-in-up">核心原則</h2>
+            
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              
+              <!-- Principle 1 -->
+              <div class="principle-card glass-card rounded-xl p-6 category-card interactive-card">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold serif-font text-blue-300">聖經的統一性</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">
+                    聖經雖然由不同作者在不同時代寫成，但都是同一位聖靈的啟示，因此具有內在的統一性和一致性。
+                  </p>
+                  <button onclick="expandContent('principle1')" class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center gap-2 mt-2">
+                    了解更多
+                    <svg class="w-4 h-4 transition-transform" id="arrow1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </button>
+                  <div id="principle1" class="expandable-content mt-4">
+                    <div class="space-y-3 text-sm text-slate-600">
+                      <p>聖經的統一性體現在：</p>
+                      <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>舊約與新約的相互印證</li>
+                        <li>不同書卷對同一主題的一致性教導</li>
+                        <li>預言與應驗的完美對應</li>
+                        <li>神學主題的貫穿始終</li>
+                      </ul>
+                      <div class="bible-verse mt-4 p-3 rounded bg-white/5">
+                        <p class="text-sm italic">「你們查考聖經，因你們以為內中有永生；給我作見證的就是這經。」</p>
+                        <p class="text-xs mt-1">約翰福音 5:39</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principle 2 -->
+              <div class="principle-card glass-card rounded-xl p-6 category-card interactive-card">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold serif-font text-indigo-300">清晰的解釋模糊的</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">
+                    當遇到難以理解的經文時，應該用聖經中更清晰、更明確的經文來解釋，而不是憑個人臆測。
+                  </p>
+                  <button onclick="expandContent('principle2')" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium flex items-center gap-2 mt-2">
+                    了解更多
+                    <svg class="w-4 h-4 transition-transform" id="arrow2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </button>
+                  <div id="principle2" class="expandable-content mt-4">
+                    <div class="space-y-3 text-sm text-slate-600">
+                      <p>實踐方法：</p>
+                      <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>尋找相同主題的其他經文</li>
+                        <li>對比平行經文</li>
+                        <li>參考直接的解釋性經文</li>
+                        <li>注意上下文的一致性</li>
+                      </ul>
+                      <div class="bible-verse mt-4 p-3 rounded bg-white/5">
+                        <p class="text-sm italic">「但保惠師，就是父因我的名所要差來的聖靈，他要將一切的事指教你們，並且要叫你們想起我對你們所說的一切話。」</p>
+                        <p class="text-xs mt-1">約翰福音 14:26</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principle 3 -->
+              <div class="principle-card glass-card rounded-xl p-6 category-card interactive-card">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold serif-font text-purple-300">上下文的重要性</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">
+                    任何經文都必須在其上下文（包括歷史背景、文學體裁、作者意圖）中理解，避免斷章取義。
+                  </p>
+                  <button onclick="expandContent('principle3')" class="text-purple-400 hover:text-purple-300 text-sm font-medium flex items-center gap-2 mt-2">
+                    了解更多
+                    <svg class="w-4 h-4 transition-transform" id="arrow3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </button>
+                  <div id="principle3" class="expandable-content mt-4">
+                    <div class="space-y-3 text-sm text-slate-600">
+                      <p>上下文包括：</p>
+                      <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>直接上下文（前後文）</li>
+                        <li>整卷書的脈絡</li>
+                        <li>聖經整體的教導</li>
+                        <li>歷史文化背景</li>
+                      </ul>
+                      <div class="bible-verse mt-4 p-3 rounded bg-white/5">
+                        <p class="text-sm italic">「並且我們講說這些事，不是用人智慧所指教的言語，乃是用聖靈所指教的言語，將屬靈的話解釋屬靈的事。」</p>
+                        <p class="text-xs mt-1">哥林多前書 2:13</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principle 4 -->
+              <div class="principle-card glass-card rounded-xl p-6 category-card interactive-card">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold serif-font text-cyan-300">舊約與新約的相互印證</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">
+                    新約引用和解釋舊約，舊約預表新約的實現，兩者相互印證，共同見證神的救贖計劃。
+                  </p>
+                  <button onclick="expandContent('principle4')" class="text-cyan-400 hover:text-cyan-300 text-sm font-medium flex items-center gap-2 mt-2">
+                    了解更多
+                    <svg class="w-4 h-4 transition-transform" id="arrow4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </button>
+                  <div id="principle4" class="expandable-content mt-4">
+                    <div class="space-y-3 text-sm text-slate-600">
+                      <p>相互印證的方式：</p>
+                      <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>新約直接引用舊約</li>
+                        <li>預表與應驗的對應</li>
+                        <li>主題的延續與發展</li>
+                        <li>預言的實現</li>
+                      </ul>
+                      <div class="bible-verse mt-4 p-3 rounded bg-white/5">
+                        <p class="text-sm italic">「你們查考聖經，因你們以為內中有永生；給我作見證的就是這經。」</p>
+                        <p class="text-xs mt-1">約翰福音 5:39</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principle 5 -->
+              <div class="principle-card glass-card rounded-xl p-6 category-card interactive-card">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold serif-font text-blue-300">聖靈的光照</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">
+                    聖靈是真理的靈，引導我們明白聖經的真意，使我們能夠正確地以經解經。
+                  </p>
+                  <button onclick="expandContent('principle5')" class="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center gap-2 mt-2">
+                    了解更多
+                    <svg class="w-4 h-4 transition-transform" id="arrow5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </button>
+                  <div id="principle5" class="expandable-content mt-4">
+                    <div class="space-y-3 text-sm text-slate-600">
+                      <p>聖靈的工作：</p>
+                      <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>開啟我們的心眼</li>
+                        <li>引導我們明白真理</li>
+                        <li>幫助我們應用經文</li>
+                        <li>使我們與神建立關係</li>
+                      </ul>
+                      <div class="bible-verse mt-4 p-3 rounded bg-white/5">
+                        <p class="text-sm italic">「只等真理的聖靈來了，他要引導你們明白一切的真理；因為他不是憑自己說的，乃是把他所聽見的都說出來，並要把將來的事告訴你們。」</p>
+                        <p class="text-xs mt-1">約翰福音 16:13</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principle 6 -->
+              <div class="principle-card glass-card rounded-xl p-6 category-card interactive-card">
+                <div class="space-y-4">
+                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold serif-font text-indigo-300">避免私意解說</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">
+                    不能隨個人私意或偏見解釋聖經，必須尊重聖經的原意，讓經文自己說話。
+                  </p>
+                  <button onclick="expandContent('principle6')" class="text-indigo-400 hover:text-indigo-300 text-sm font-medium flex items-center gap-2 mt-2">
+                    了解更多
+                    <svg class="w-4 h-4 transition-transform" id="arrow6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </button>
+                  <div id="principle6" class="expandable-content mt-4">
+                    <div class="space-y-3 text-sm text-slate-600">
+                      <p>需要避免的錯誤：</p>
+                      <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>斷章取義</li>
+                        <li>強解經文</li>
+                        <li>忽略上下文</li>
+                        <li>以個人經驗取代經文</li>
+                      </ul>
+                      <div class="bible-verse mt-4 p-3 rounded bg-white/5">
+                        <p class="text-sm italic">「第一要緊的，該知道經上所有的預言沒有可隨私意解說的；因為預言從來沒有出於人意的，乃是人被聖靈感動，說出神的話來。」</p>
+                        <p class="text-xs mt-1">彼得後書 1:20-21</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="intro.html"><span class="dir">上一題</span><span class="serif">引言</span></a>
+        <a class="next" href="examples.html"><span class="dir">下一題</span><span class="serif">實踐範例</span></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    // Expandable content functionality
+    function expandContent(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById('arrow' + id.slice(-1));
+      
+      content.classList.toggle('expanded');
+      if (arrow) {
+        arrow.style.transform = content.classList.contains('expanded') ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    }
+
+    // Quiz functionality
+    const correctAnswers = {
+      'q1': 'b',
+      'q2': 'b',
+      'q3': 'b'
+    };
+
+    function selectOption(element, questionId, answer) {
+      // Remove previous selections
+      const options = element.parentElement.querySelectorAll('.quiz-option');
+      options.forEach(opt => {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+      });
+
+      // Mark selected option
+      element.classList.add('selected');
+
+      // Check answer
+      const feedback = document.getElementById(questionId + '-feedback');
+      if (answer === correctAnswers[questionId]) {
+        element.classList.add('correct');
+        feedback.className = 'mt-3 p-4 rounded-lg bg-green-500/20 border border-green-500/50';
+        feedback.innerHTML = '<p class="text-green-300 font-semibold">✓ 正確！</p><p class="text-slate-700 text-sm mt-1">這正是「以經解經」的核心方法。</p>';
+      } else {
+        element.classList.add('incorrect');
+        feedback.className = 'mt-3 p-4 rounded-lg bg-red-500/20 border border-red-500/50';
+        feedback.innerHTML = '<p class="text-red-300 font-semibold">✗ 不正確</p><p class="text-slate-700 text-sm mt-1">請再思考一下「以經解經」的核心原則。</p>';
+      }
+      feedback.classList.remove('hidden');
+    }
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right, .scale-in');
+      animatedElements.forEach(el => observer.observe(el));
+    });
+
+    // Progress indicator on scroll
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.querySelector('.progress-indicator');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/以經解經/principles", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

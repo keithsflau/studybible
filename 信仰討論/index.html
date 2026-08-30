@@ -4,444 +4,772 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>討論 | Theological Discussions - Bible Study</title>
-  <meta name="description" content="神學討論：以經解經、因信稱義、教會歷史、千禧論、四律、預定論、神人合作說、宗教比較 | Theological Discussions: Scripture Interprets Scripture, Justification by Faith, Church History, Millennialism, Four Laws, Predestination, Synergism, Religious Comparisons">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="神學討論：以經解經、因信稱義、教會歷史、千禧論、四律、預定論、神人合作說、自由意志、祈禱、傳福音策略、婚姻、興學傳道、靈修學、辨別神的聲音、基督教各宗派、基督教職場倫理、天使、異端、宗教比較、世界宗教比較">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../visit-counter.css">
   <style>
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    :root {
+      --ink: #0c1222;
+      --ink-soft: #1b2436;
+      --gold: #c4a35a;
+      --gold-2: #e4cf96;
+      --parchment: #f6f1e6;
+      --paper: #fbf7ef;
+      --muted: #5c6574;
+      --line: rgba(196, 163, 90, 0.28);
+      --shadow: 0 22px 50px -28px rgba(12, 18, 34, 0.55);
     }
-    .gradient-bg {
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6.8rem; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Source Sans 3", "PingFang HK", "Microsoft JhengHei", sans-serif;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input { font: inherit; }
+
+    .serif { font-family: "Noto Serif TC", "Source Han Serif TC", serif; }
+    .latin { font-family: "Cormorant Garamond", "Times New Roman", serif; }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      z-index: 80;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 0.5rem 0.8rem;
+      border-radius: 0.4rem;
+    }
+    .skip:focus { top: 1rem; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.7rem 1.25rem;
+      background: rgba(12, 18, 34, 0.9);
+      color: #f6f1e6;
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(228, 207, 150, 0.16);
+    }
+    .topbar-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      color: #d7cba8;
+      transition: color 0.2s;
+    }
+    .topbar-back:hover { color: #fff; }
+    .topbar-title {
+      font-family: "Noto Serif TC", serif;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+    .topbar-search {
+      margin-left: auto;
+      position: relative;
+      width: min(22rem, 48vw);
+    }
+    .topbar-search input {
+      width: 100%;
+      border: 1px solid rgba(228, 207, 150, 0.22);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.48rem 0.95rem 0.48rem 2.2rem;
+      outline: none;
+    }
+    .topbar-search input::placeholder { color: #9aa3b2; }
+    .topbar-search input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.18);
+    }
+    .topbar-search svg {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 1rem;
+      color: #c9b27a;
+      pointer-events: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(86vh, 46rem);
+      display: grid;
+      place-items: end stretch;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-media {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.12), transparent 35%),
-                  radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.12), transparent 30%),
-                  radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.1), transparent 30%);
-      filter: blur(60px);
-      opacity: 0.9;
-      animation: gradientShift 8s ease-in-out infinite;
     }
-    @keyframes gradientShift {
-      0%, 100% { 
-        background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.12), transparent 35%),
-                    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.12), transparent 30%),
-                    radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.1), transparent 30%);
-      }
-      50% { 
-        background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.18), transparent 35%),
-                    radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.18), transparent 30%),
-                    radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.15), transparent 30%);
-      }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 42%;
+      animation: kenburns 22s ease-in-out infinite alternate;
     }
-    .glass-card {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(12, 18, 34, 0.18) 0%, rgba(12, 18, 34, 0.28) 38%, rgba(12, 18, 34, 0.88) 100%),
+        radial-gradient(circle at 75% 20%, rgba(196, 163, 90, 0.18), transparent 36%);
     }
-    .glass-card:hover {
-      background: rgba(255, 255, 255, 0.9);
-      border-color: rgba(99, 102, 241, 0.4);
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.1);
+    .hero-dust {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(255, 236, 190, 0.35) 1px, transparent 1.4px);
+      background-size: 140px 140px;
+      animation: drift 18s linear infinite;
+      opacity: 0.35;
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 2.4rem));
+      margin: 0 auto 4.2rem;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.05); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      color: var(--gold-2);
     }
-    @keyframes cardEntrance {
-      from { opacity: 0; transform: translateY(30px) scale(0.9); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
+    .eyebrow::before {
+      content: "";
+      width: 2.2rem;
+      height: 1px;
+      background: var(--gold);
     }
-    .category-card {
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      animation: cardEntrance 0.8s ease-out forwards;
+    .hero h1 {
+      margin: 0.7rem 0 0.35rem;
+      font-size: clamp(3.1rem, 8vw, 6.4rem);
+      line-height: 0.95;
+      font-weight: 700;
+    }
+    .hero h1 em {
+      display: block;
+      margin-top: 0.15rem;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 0.42em;
+      color: var(--gold-2);
+      letter-spacing: 0.04em;
+    }
+    .hero-lead {
+      max-width: 38rem;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: #e8e2d4;
+    }
+    .hero-verse {
+      margin-top: 1.4rem;
+      max-width: 34rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--gold);
+      color: #d7cba8;
+      font-style: italic;
+    }
+    .hero-verse cite {
+      display: block;
+      margin-top: 0.35rem;
+      font-style: normal;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--gold-2);
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      margin-top: 1.8rem;
+    }
+    .hero-stats strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      color: var(--gold-2);
+      line-height: 1;
+    }
+    .hero-stats span {
+      font-size: 0.78rem;
+      color: #c5c0b4;
+      letter-spacing: 0.04em;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 2.4rem));
+      margin: 0 auto;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 3.35rem;
+      z-index: 30;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      padding: 0.75rem 0 0.7rem;
+      background: rgba(251, 247, 239, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(12, 18, 34, 0.05);
+    }
+    .chip {
+      border: 1px solid rgba(12, 18, 34, 0.1);
+      background: #fff;
+      color: var(--ink-soft);
+      border-radius: 999px;
+      padding: 0.42rem 0.9rem;
+      font-size: 0.84rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .chip:hover { border-color: var(--gold); color: #8a6d28; }
+    .chip.is-on {
+      background: var(--ink);
+      color: var(--gold-2);
+      border-color: var(--ink);
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2.5rem;
+      align-items: center;
+      padding: 2.6rem 0 1.2rem;
+    }
+    .intro h2 {
+      margin: 0.4rem 0 0.7rem;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+    .rule {
+      width: 3.4rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .intro p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 0.9rem;
+    }
+    .intro-panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      padding: 1.4rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .intro-panel ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.85rem;
+    }
+    .intro-panel li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.8rem;
+      align-items: start;
+    }
+    .num {
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #f3ead4;
+      color: #8a6d28;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .cat-block { padding: 1.8rem 0 0.6rem; }
+    .cat-head {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.3rem;
+      min-height: 10.5rem;
+      margin-bottom: 1.15rem;
+      color: #fff;
+    }
+    .cat-head img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+    }
+    .cat-head::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(12, 18, 34, 0.82) 0%, rgba(12, 18, 34, 0.42) 70%, rgba(12, 18, 34, 0.2) 100%);
+    }
+    .cat-head-copy {
+      position: relative;
+      z-index: 1;
+      padding: 1.6rem 1.7rem;
+    }
+    .cat-head h2 {
+      margin: 0.15rem 0 0.3rem;
+      font-size: 1.85rem;
+    }
+    .cat-head p { margin: 0; color: #e6dfcf; max-width: 36rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid rgba(12, 18, 34, 0.08);
+      border-radius: 1.1rem;
+      overflow: hidden;
+      box-shadow: 0 10px 28px -22px rgba(12, 18, 34, 0.5);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(196, 163, 90, 0.55);
+      box-shadow: 0 24px 40px -24px rgba(12, 18, 34, 0.55);
+    }
+    .card-media {
+      position: relative;
+      height: 8.4rem;
+      overflow: hidden;
+      background: var(--card-tone, #1b2436);
+    }
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.32;
+      mix-blend-mode: luminosity;
+      transition: transform 0.7s ease;
+    }
+    .card:hover .card-media img { transform: scale(1.08); }
+    .card-wash {
+      position: absolute;
+      inset: 0;
+      background: var(--card-tone);
+      mix-blend-mode: multiply;
+      opacity: 0.62;
+    }
+    .card-icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 3.15rem;
+      height: 3.15rem;
+      border-radius: 0.85rem;
+      display: grid;
+      place-items: center;
+      background: rgba(12, 18, 34, 0.78);
+      backdrop-filter: blur(8px);
+      color: #f6edd4;
+      box-shadow: 0 8px 20px -12px rgba(12, 18, 34, 0.7);
+    }
+    .card-icon svg { width: 1.7rem; height: 1.7rem; }
+    .card-body { padding: 1rem 1.05rem 1.15rem; display: flex; flex-direction: column; flex: 1; }
+    .card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      transition: color 0.2s;
+    }
+    .card:hover h3 { color: #8a6d28; }
+    .en {
+      margin: 0.15rem 0 0.55rem;
+      color: #8b7350;
+      font-size: 0.86rem;
+      font-style: italic;
+    }
+    .excerpt {
+      margin: 0 0 0.9rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      flex: 1;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: #8a6d28;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .cta svg { width: 0.95rem; height: 0.95rem; transition: transform 0.2s; }
+    .card:hover .cta svg { transform: translateX(4px); }
+
+    .empty {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+    }
+    .empty.is-on { display: block; }
+
+    .principles {
+      margin: 3rem 0 1rem;
+      padding: 2rem 1.6rem;
+      border-radius: 1.4rem;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.92)),
+        url("images/discuss-doctrine.jpg") center/cover;
+      border: 1px solid var(--line);
+    }
+    .principles h2 { margin: 0.3rem 0 1.3rem; font-size: 2rem; text-align: center; }
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .principle {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(196, 163, 90, 0.22);
+      border-radius: 1rem;
+      padding: 1.15rem 1.1rem;
+    }
+    .principle h3 { margin: 0.55rem 0 0.4rem; font-size: 1.1rem; }
+    .principle p { margin: 0; color: var(--muted); line-height: 1.65; font-size: 0.92rem; }
+    .p-ico {
+      width: 2.3rem;
+      height: 2.3rem;
+      border-radius: 0.7rem;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: var(--gold-2);
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 2rem 1.2rem 5.5rem;
+      text-align: center;
+      color: #6b7280;
+      border-top: 1px solid rgba(12, 18, 34, 0.06);
+    }
+    footer p { margin: 0.35rem 0; }
+    footer .verse { font-style: italic; color: #4b5563; }
+
+    .reveal {
       opacity: 0;
+      transform: translateY(22px);
+      animation: rise 0.7s ease forwards;
     }
-    .category-card:nth-child(1) { animation-delay: 0.1s; }
-    .category-card:nth-child(2) { animation-delay: 0.2s; }
-    .category-card:nth-child(3) { animation-delay: 0.3s; }
-    .category-card:nth-child(4) { animation-delay: 0.4s; }
-    .category-card:nth-child(5) { animation-delay: 0.5s; }
-    .category-card:nth-child(6) { animation-delay: 0.6s; }
-    .category-card:nth-child(7) { animation-delay: 0.7s; }
-    .category-card:nth-child(8) { animation-delay: 0.8s; }
-    .float-animation {
-      animation: float 4s ease-in-out infinite;
+    .is-hidden { display: none !important; }
+
+    @keyframes kenburns {
+      from { transform: scale(1); }
+      to { transform: scale(1.08) translate3d(1.2%, -1%, 0); }
     }
-    .pulse-animation {
-      animation: pulse 2s ease-in-out infinite;
+    @keyframes drift {
+      from { background-position: 0 0; }
+      to { background-position: 140px 80px; }
     }
-    .serif-font {
-      font-family: 'Noto Serif TC', serif;
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
     }
-    .fade-in-up {
-      animation: fadeInUp 0.6s ease-out forwards;
-      opacity: 0;
+
+    @media (max-width: 900px) {
+      .intro, .grid, .principles-grid { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .topbar-search { width: min(16rem, 42vw); }
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @media (max-width: 640px) {
+      .topbar { flex-wrap: wrap; }
+      .topbar-search { width: 100%; margin-left: 0; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { min-height: 78vh; }
+      .hero-inner { margin-bottom: 2.4rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-media img, .hero-dust, .reveal, .card, .card-media img { animation: none; transition: none; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
-    <link rel="stylesheet" href="../../visit-counter.css">
 </head>
-<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 min-h-screen overflow-x-hidden">
-  <div class="relative min-h-screen overflow-hidden">
-    <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
-    
-    <div class="relative z-10">
-      
-      <!-- Header -->
-      <header class="px-6 py-12 sm:py-16">
-        <div class="mx-auto max-w-7xl">
-          <div class="text-center space-y-6">
-            <a href="../index.html" class="inline-block mb-4 text-slate-600 hover:text-slate-900 transition-colors fade-in-up">
-              <svg class="w-6 h-6 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-              </svg>
-              返回主頁
-            </a>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight float-animation serif-font fade-in-up" style="animation-delay: 0.1s;">
-              討論
-              <span class="block mt-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-700 bg-clip-text text-transparent pulse-animation">
-                 Discussions
-              </span>
-            </h1>
-            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto pulse-animation fade-in-up" style="animation-delay: 0.2s;">
-              深入探討核心議題，建立穩固的信仰根基 | Exploring Core Issues, Building a Solid Foundation of Faith
-            </p>
-          </div>
-        </div>
-      </header>
+<body>
+  <a class="skip" href="#topics">跳到主題</a>
 
-      <!-- Main Content -->
-      <main class="px-6 pb-16">
-        <div class="mx-auto max-w-7xl">
-          
-          <!-- Introduction Section -->
-          <section class="mb-16 fade-in-up" style="animation-delay: 0.3s;">
-            <div class="glass-card rounded-2xl p-8 sm:p-12">
-              <div class="text-center mb-8">
-                <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">關於討論</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
-              </div>
-              <div class="space-y-4 text-lg leading-relaxed text-slate-700 max-w-3xl mx-auto">
-                <p>
-                  通過深入探討核心議題，我們能夠更清楚地認識真理，更準確地理解聖經的教導，並在信仰生活中更有智慧地應用這些真理。
-                </p>
-                <p>
-                  本討論區涵蓋多個重要的主題：<strong class="text-indigo-700">以經解經</strong>、<strong class="text-purple-700">因信稱義</strong>、<strong class="text-violet-700">教會歷史</strong>、<strong class="text-blue-700">千禧論</strong>、<strong class="text-pink-700">四律</strong>、<strong class="text-rose-700">預定論</strong>、<strong class="text-cyan-700">神人合作說</strong>，以及<strong class="text-emerald-700">宗教比較</strong>。每個主題都提供深入的探討、聖經基礎、歷史發展，以及實際應用，幫助我們在真理上成長。
-                </p>
-              </div>
-            </div>
-          </section>
+  <header class="topbar">
+    <a class="topbar-back" href="../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <div class="topbar-title">討論</div>
+    <label class="topbar-search">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z"/></svg>
+      <input id="topic-search" type="search" placeholder="搜尋主題、英文或關鍵字…" autocomplete="off">
+    </label>
+  </header>
 
-          <!-- Discussion Topics -->
-          <section>
-            <div class="mb-12 text-center fade-in-up" style="animation-delay: 0.4s;">
-              <h2 class="text-3xl sm:text-4xl font-semibold mb-3 serif-font text-slate-900">討論主題</h2>
-              <p class="text-slate-600">Discussion Topics</p>
-            </div>
-            
-            <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              
-              <!-- 以經解經 -->
-              <a href="以經解經/index.html" class="category-card glass-card rounded-2xl p-8 hover:bg-white/90 group">
-                <div class="space-y-6">
-                  <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-700 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                    </svg>
-                  </div>
-                  <div class="text-center">
-                    <h3 class="text-2xl font-semibold mb-2 group-hover:text-blue-600 transition-colors serif-font text-slate-900">以經解經</h3>
-                    <p class="text-sm text-slate-600 mb-3">Scripture Interprets Scripture</p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                      聖經詮釋的核心原則與實踐。學習如何用聖經本身來解釋聖經，讓清晰的經文解釋模糊的經文，建立正確的解經方法。
-                    </p>
-                  </div>
-                  <div class="flex items-center justify-center text-blue-600 group-hover:text-blue-700 transition-colors">
-                    <span class="text-sm font-medium">深入了解</span>
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </div>
-              </a>
-
-              <!-- 因信稱義 -->
-              <a href="因信稱義/index.html" class="category-card glass-card rounded-2xl p-8 hover:bg-white/90 group">
-                <div class="space-y-6">
-                  <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 via-pink-600 to-rose-700 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                    </svg>
-                  </div>
-                  <div class="text-center">
-                    <h3 class="text-2xl font-semibold mb-2 group-hover:text-purple-600 transition-colors serif-font text-slate-900">因信稱義</h3>
-                    <p class="text-sm text-slate-600 mb-3">Justification by Faith</p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                      基督教信仰的核心教義。探討恩典、信心與救恩的關係，理解我們如何在神面前被視為義人，以及這個真理對我們生活的意義。
-                    </p>
-                  </div>
-                  <div class="flex items-center justify-center text-purple-600 group-hover:text-purple-700 transition-colors">
-                    <span class="text-sm font-medium">深入了解</span>
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </div>
-              </a>
-
-              <!-- 教會歷史 -->
-              <a href="教會歷史/index.html" class="category-card glass-card rounded-2xl p-8 hover:bg-white/90 group">
-                <div class="space-y-6">
-                  <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-indigo-500 via-violet-600 to-purple-700 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                  </div>
-                  <div class="text-center">
-                    <h3 class="text-2xl font-semibold mb-2 group-hover:text-indigo-600 transition-colors serif-font text-slate-900">教會歷史</h3>
-                    <p class="text-sm text-slate-600 mb-3">Church History</p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                      從使徒時代到現代：神的教會如何見證真理。認識教會如何在不同時代中持守真理、傳揚福音，並從歷史中學習寶貴的屬靈功課。
-                    </p>
-                  </div>
-                  <div class="flex items-center justify-center text-indigo-600 group-hover:text-indigo-700 transition-colors">
-                    <span class="text-sm font-medium">深入了解</span>
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </div>
-              </a>
-
-              <!-- 千禧論 -->
-              <a href="千禧論/index.html" class="category-card glass-card rounded-2xl p-8 hover:bg-white/90 group">
-                <div class="space-y-6">
-                  <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 via-cyan-600 to-teal-700 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                    </svg>
-                  </div>
-                  <div class="text-center">
-                    <h3 class="text-2xl font-semibold mb-2 group-hover:text-blue-600 transition-colors serif-font text-slate-900">千禧論</h3>
-                    <p class="text-sm text-slate-600 mb-3">Millennialism</p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                      探討基督再來與千禧年國度的不同觀點。理解前千禧年、後千禧年、無千禧年等不同立場，以及它們對末世論的影響。
-                    </p>
-                  </div>
-                  <div class="flex items-center justify-center text-blue-600 group-hover:text-blue-700 transition-colors">
-                    <span class="text-sm font-medium">深入了解</span>
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </div>
-              </a>
-
-              <!-- 四律 -->
-              <a href="四律/index.html" class="category-card glass-card rounded-2xl p-8 hover:bg-white/90 group">
-                <div class="space-y-6">
-                  <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-500 via-rose-600 to-red-700 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-                    </svg>
-                  </div>
-                  <div class="text-center">
-                    <h3 class="text-2xl font-semibold mb-2 group-hover:text-pink-600 transition-colors serif-font text-slate-900">四律</h3>
-                    <p class="text-sm text-slate-600 mb-3">Four Laws</p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                      傳福音的實用工具：神愛世人、人有罪、耶穌是解決、必須接受。學習如何清晰地向他人分享福音，引領人認識耶穌基督。
-                    </p>
-                  </div>
-                  <div class="flex items-center justify-center text-pink-600 group-hover:text-pink-700 transition-colors">
-                    <span class="text-sm font-medium">深入了解</span>
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </div>
-              </a>
-
-              <!-- 預定論 -->
-              <a href="預定論/index.html" class="category-card glass-card rounded-2xl p-8 hover:bg-white/90 group">
-                <div class="space-y-6">
-                  <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-rose-500 via-pink-600 to-fuchsia-700 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                    </svg>
-                  </div>
-                  <div class="text-center">
-                    <h3 class="text-2xl font-semibold mb-2 group-hover:text-rose-600 transition-colors serif-font text-slate-900">預定論</h3>
-                    <p class="text-sm text-slate-600 mb-3">Predestination</p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                      探討神的主權與人的責任。理解神在救恩中的預定與揀選，以及這與人的自由意志和責任之間的關係。
-                    </p>
-                  </div>
-                  <div class="flex items-center justify-center text-rose-600 group-hover:text-rose-700 transition-colors">
-                    <span class="text-sm font-medium">深入了解</span>
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </div>
-              </a>
-
-              <!-- 神人合作說 -->
-              <a href="神人合作說/index.html" class="category-card glass-card rounded-2xl p-8 hover:bg-white/90 group">
-                <div class="space-y-6">
-                  <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 via-teal-600 to-emerald-700 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                    </svg>
-                  </div>
-                  <div class="text-center">
-                    <h3 class="text-2xl font-semibold mb-2 group-hover:text-cyan-600 transition-colors serif-font text-slate-900">神人合作說</h3>
-                    <p class="text-sm text-slate-600 mb-3">Synergism</p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                      探討神的主動恩典與人的回應。理解在救恩過程中，神的恩典與人的信心如何合作，以及兩者之間的關係。
-                    </p>
-                  </div>
-                  <div class="flex items-center justify-center text-cyan-600 group-hover:text-cyan-700 transition-colors">
-                    <span class="text-sm font-medium">深入了解</span>
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </div>
-              </a>
-
-              <!-- 猶大教、回教、天主教、基督教比較 -->
-              <a href="猶大教、回教、天主教、基督教比較/index.html" class="category-card glass-card rounded-2xl p-8 hover:bg-white/90 group">
-                <div class="space-y-6">
-                  <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500 via-green-600 to-teal-700 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                    </svg>
-                  </div>
-                  <div class="text-center">
-                    <h3 class="text-2xl font-semibold mb-2 group-hover:text-emerald-600 transition-colors serif-font text-slate-900">宗教比較</h3>
-                    <p class="text-sm text-slate-600 mb-3">Religious Comparisons</p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                      比較猶太教、回教、天主教與基督教的異同。認識各宗教的核心信仰、歷史發展與主要差異，建立清晰的信仰認知。
-                    </p>
-                  </div>
-                  <div class="flex items-center justify-center text-emerald-600 group-hover:text-emerald-700 transition-colors">
-                    <span class="text-sm font-medium">深入了解</span>
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </div>
-              </a>
-
-            </div>
-          </section>
-
-          <!-- Key Principles Section -->
-          <section class="mt-16 fade-in-up" style="animation-delay: 0.5s;">
-            <div class="glass-card rounded-2xl p-8 sm:p-12">
-              <div class="text-center mb-8">
-                <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">討論原則</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
-              </div>
-              <div class="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
-                <div class="text-center p-6">
-                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-lg font-semibold mb-2 serif-font text-slate-900">以聖經為本</h3>
-                  <p class="text-sm text-slate-600">所有討論都基於聖經的教導，讓神的話語成為我們認識真理的權威。</p>
-                </div>
-                <div class="text-center p-6">
-                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-lg font-semibold mb-2 serif-font text-slate-900">謙卑學習</h3>
-                  <p class="text-sm text-slate-600">以謙卑的心態學習，願意被聖經的話語塑造和改變。</p>
-                </div>
-                <div class="text-center p-6">
-                  <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                    </svg>
-                  </div>
-                  <h3 class="text-lg font-semibold mb-2 serif-font text-slate-900">實際應用</h3>
-                  <p class="text-sm text-slate-600">將所學的真理應用到實際生活中，在信仰上不斷成長。</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-        </div>
-      
-    <!-- Visit Counter -->
-    <div id="visit-counter-container"></div>
-</main>
-
-      
-
+  <section class="hero" aria-label="討論總覽">
+    <div class="hero-media">
+      <img src="images/discuss-hero.jpg" alt="" width="1600" height="900">
     </div>
-  </div>
+    <div class="hero-shade"></div>
+    <div class="hero-dust" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Theological Discussions</div>
+      <h1 class="serif">討論<em class="latin">A table for the Word</em></h1>
+      <p class="hero-lead">按主題進入專論：以聖經為本、謙卑學習、並把真理帶回生活。不是意見廣場，而是按正意分解真理的道。</p>
+      <blockquote class="hero-verse">
+        「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」
+        <cite>提摩太後書 2:15</cite>
+      </blockquote>
+      <div class="hero-stats">
+        <div><strong id="topic-count">20</strong><span>個討論主題</span></div>
+        <div><strong>5</strong><span>個研讀路徑</span></div>
+        <div><strong>3</strong><span>項討論原則</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <nav class="toolbar" id="cat-chips" aria-label="主題分類"></nav>
+
+      <section class="intro reveal">
+        <div>
+          <div class="rule"></div>
+          <h2 class="serif">關於討論</h2>
+          <p>深入探討核心議題，是為了更清楚認識真理、更準確理解聖經的教導，並在信仰生活中更有智慧地應用。</p>
+          <p>每個主題都提供聖經基礎、歷史發展與實際應用。你可以先選一條路徑，或用上方搜尋直接進入專論。</p>
+        </div>
+        <aside class="intro-panel">
+          <ol>
+            <li><span class="num">01</span><div><strong class="serif">先讀經，再談系統</strong><p style="margin:.25rem 0 0;color:var(--muted);line-height:1.65">用清晰的經文解釋較難的經文，教義服務經文，而不是相反。</p></div></li>
+            <li><span class="num">02</span><div><strong class="serif">歷史幫助我們謙卑</strong><p style="margin:.25rem 0 0;color:var(--muted);line-height:1.65">教會在不同時代持守同一福音；我們站在見證之上，不是從零發明。</p></div></li>
+            <li><span class="num">03</span><div><strong class="serif">真理要活出來</strong><p style="margin:.25rem 0 0;color:var(--muted);line-height:1.65">祈禱、婚姻、職場與傳道，都是把所信的道帶回日常。</p></div></li>
+          </ol>
+        </aside>
+      </section>
+
+      <div id="topics"></div>
+      <p class="empty" id="empty-state">沒有符合的主題。試試另一個關鍵字，或點「全部」。</p>
+
+      <section class="principles reveal">
+        <div class="eyebrow" style="color:#8a6d28;justify-content:center">How we discuss</div>
+        <h2 class="serif">討論原則</h2>
+        <div class="principles-grid">
+          <article class="principle">
+            <div class="p-ico"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+            <h3 class="serif">以聖經為本</h3>
+            <p>所有討論都基於聖經的教導，讓神的話語成為認識真理的權威。</p>
+          </article>
+          <article class="principle">
+            <div class="p-ico"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+            <h3 class="serif">謙卑學習</h3>
+            <p>以謙卑的心態學習，願意被聖經的話語塑造和改變。</p>
+          </article>
+          <article class="principle">
+            <div class="p-ico"><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+            <h3 class="serif">實際應用</h3>
+            <p>將所學的真理應用到實際生活中，在信仰上不斷成長。</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="visit-counter-container"></div>
+
+  <footer>
+    <p class="verse">But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his understanding. Jeremiah 10:12</p>
+    <p>「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」耶利米書 10:12</p>
+    <p style="margin-top:1rem;padding-top:1rem;border-top:1px solid #e5e7eb;font-size:0.78rem">@ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau</p>
+  </footer>
 
   <script>
-    // Intersection Observer for animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+    const CATS = [
+      { id: "scripture", zh: "解經與方法", en: "Hermeneutics", img: "images/discuss-scripture.jpg", blurb: "先問聖經自己怎樣解釋自己，再談工具與傳講。" },
+      { id: "doctrine", zh: "核心教義", en: "Doctrine", img: "images/discuss-doctrine.jpg", blurb: "恩典、信心、揀選與末世：把系統放回經文之下。" },
+      { id: "history", zh: "歷史與傳統", en: "History", img: "images/discuss-history.jpg", blurb: "從使徒時代到各宗派，學習教會如何持守同一福音。" },
+      { id: "life", zh: "信仰生活", en: "Christian Life", img: "images/discuss-life.jpg", blurb: "祈禱、婚姻、職場與傳道：把所信的道帶回日常。" },
+      { id: "compare", zh: "比較與辨別", en: "Discernment", img: "images/discuss-compare.jpg", blurb: "比較宗教、天使與異端：以使徒福音作檢驗標準。" }
+    ];
+
+    const ICO = {
+      texts: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4h6a2 2 0 012 2v9"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h7a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11h4M7 14h3"/>',
+      steps: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h6v6H4V5zM14 5h6v6h-6V5zM4 13h6v6H4v-6zM14 13h6v6h-6v-6z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h.01M17 8h.01M7 16h.01M17 16h.01"/>',
+      crossShield: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l8 4v5c0 5.2-3.4 8.6-8 9.7C7.4 20.6 4 17.2 4 12V7l8-4z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8M8 12h8"/>',
+      crownPath: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10l3.2-5 4.8 3.4L16.8 5 20 10v1.6H4V10z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12.4V21M8 21h8"/>',
+      hands: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13.5c-2.2 0-4 1.6-4 3.6V21h5.2v-5.2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 13.5c2.2 0 4 1.6 4 3.6V21h-5.2v-5.2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.6 16.6h4.8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8.2a3 3 0 116 0"/>',
+      fork: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V11"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11L5 4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11l7-7"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4H3M19 4h2"/>',
+      dawn: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v2M5.6 6.6l1.5 1.5M18.4 6.6l-1.5 1.5M4 13h2M18 13h2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 15a4 4 0 018 0"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19h18"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 19l2-3 2 2 2-2 2 3"/>',
+      timeline: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 3v18"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6h8M6 12h12M6 18h8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 6a1.4 1.4 0 110 .01M18 12a1.4 1.4 0 110 .01M14 18a1.4 1.4 0 110 .01"/>',
+      branches: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V9"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15L6 9"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13l6-5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10L8.2 5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9l4.2-4"/>',
+      incense: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h8l-1 1H9l-1-1z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 21c0-4 1.6-5.4 2.2-8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 21c0-4-1.6-5.4-2.2-8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.2 6c-.8-2 .4-3.4 1.2-4.4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.8 7c.8-1.6.2-3 1.2-4.2"/>',
+      dawnBible: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 13c2.6-1 5.2-1 8 0s5.4 1 8 0v7c-2.6 1-5.2 1-8 0s-5.4-1-8 0v-7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13v7"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v3M8.2 5.2l1.3 1.4M15.8 5.2l-1.3 1.4M6 8.6h2M16 8.6h2"/>',
+      rings: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 16.2a4.4 4.4 0 110-8.8 4.4 4.4 0 010 8.8z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 16.2a4.4 4.4 0 110-8.8 4.4 4.4 0 010 8.8z"/>',
+      lampBook: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 15.2c2.6-1 5.2-1 8 0s5.4 1 8 0v5.2c-2.6 1-5.2 1-8 0s-5.4-1-8 0v-5.2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 8.2h4l1 2.8H9l1-2.8z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3.4c1.1 0 1.7 1 1.7 2.1M12 3.4c-1.1 0-1.7 1-1.7 2.1"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8.2V11"/>',
+      hornWorld: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 11l9-4v10L3 13v-2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9.2c2 .8 3.2 2 3.2 3s-1.2 2.2-3.2 3"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.2 6.4a5 5 0 11.01 0"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.2 6.4h4M18.2 4.4v4"/>',
+      tools: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.2 8.2l2.8-2.8 2 2-2.8 2.8-2-2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.2 6.8l2.6-2.4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 6.6h6.4v3.2H14z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9.8h8.4v9.4H13z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.2 14h2.2"/>',
+      earFlame: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12c0-3.3 2.2-6 5-6 2.2 0 3.5 1.6 3.5 3.6 0 2-1.2 3-1.2 4.4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12c0 2 1 3.5 3 4.2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.6 8.4c.3 1.7-1 2.8-1.9 3.4 1.3.6 2.3 1.9 2.3 3.4A3.1 3.1 0 0114 18.4c-1.1 0-1.9-.6-1.9-1.6 0-1.1.9-1.9 1.9-2.8 1.1-1.8 2-3.5 2.6-5.6z"/>',
+      pillars: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 20V10.4h3.2V20M8.8 20V7h3.2v13M14 20V13h3.2v7M19.2 20V8.6H22V20"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.4 20h20"/>',
+      globe: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 100-18 9 9 0 000 18z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c3.2 3.8 3.2 13.2 0 18M12 3c-3.2 3.8-3.2 13.2 0 18"/>',
+      messenger: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 13c3.4-2 6.6-2 8 0 1.4-2 4.6-2 8 0"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.6V20"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.2 11c-2.4-3-3.4-5.4-1.8-7.4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.8 11c2.4-3 3.4-5.4 1.8-7.4"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19.4h6"/>',
+      wheat: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21V8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10.2L5.4 7M8 10.2L10.6 7"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14.2l-2.2-2M8 14.2l2.2-2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 21V11"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 13.2c-2-2 1.8-3.4 0-6"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.4 5.2l-2 2M21 7.4l-3.2.8"/>'
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-        }
-      });
-    }, observerOptions);
+    const TOPICS = [
+      { cat: "scripture", href: "以經解經/index.html", img: "以經解經/images/hero.png", icon: "texts", tone: "linear-gradient(135deg,#3d4f3a,#8b7355)", title: "以經解經", en: "Scripture Interprets Scripture", desc: "聖經詮釋的核心原則：用清晰的經文解釋模糊的經文，建立正確的解經方法。", keys: "hermeneutics 解經 詮釋" },
+      { cat: "scripture", href: "四律/index.html", img: "四律/images/hero.png", icon: "steps", tone: "linear-gradient(135deg,#1e3a5f,#4a7c9b)", title: "四律", en: "Four Laws", desc: "傳福音的實用工具：神愛世人、人有罪、耶穌是解決、必須接受。", keys: "福音 傳講 four spiritual laws" },
+      { cat: "doctrine", href: "因信稱義/index.html", img: "因信稱義/images/hero.png", icon: "crossShield", tone: "linear-gradient(135deg,#4c1d95,#7c3aed)", title: "因信稱義", en: "Justification by Faith", desc: "恩典、信心與救恩：我們如何在神面前被視為義，以及這真理如何塑造生活。", keys: "稱義 恩典 救恩 luther" },
+      { cat: "doctrine", href: "預定論/index.html", img: "預定論/images/hero.png", icon: "crownPath", tone: "linear-gradient(135deg,#1e293b,#64748b)", title: "預定論", en: "Predestination", desc: "神的主權與人的責任：預定、揀選，以及與自由意志的關係。", keys: "揀選 加爾文 calvin" },
+      { cat: "doctrine", href: "神人合作說/index.html", img: "神人合作說/images/hero.png", icon: "hands", tone: "linear-gradient(135deg,#0f766e,#14b8a6)", title: "神人合作說", en: "Synergism", desc: "神的主動恩典與人的回應：救恩中恩典與信心如何並行。", keys: "synergism 合作 恩典" },
+      { cat: "doctrine", href: "自由意志/index.html", img: "自由意志/images/hero.png", icon: "fork", tone: "linear-gradient(135deg,#3730a3,#818cf8)", title: "自由意志", en: "Free Will", desc: "墮落後意志的轄制、神主權與人責任並行，以及在基督裏的真自由。", keys: "free will 選擇 責任" },
+      { cat: "doctrine", href: "千禧論/index.html", img: "千禧論/images/hero.png", icon: "dawn", tone: "linear-gradient(135deg,#b45309,#f59e0b)", title: "千禧論", en: "Millennialism", desc: "基督再來與千禧年國度：前千禧、後千禧、無千禧等立場。", keys: "末世 啟示錄 millennium" },
+      { cat: "history", href: "教會歷史/index.html", img: "教會歷史/images/hero.png", icon: "timeline", tone: "linear-gradient(135deg,#7c2d12,#c2410c)", title: "教會歷史", en: "Church History", desc: "從使徒時代到現代：教會如何持守真理、傳揚福音，並從歷史學習。", keys: "教父 改革 會議" },
+      { cat: "history", href: "基督教各宗派/index.html", img: "基督教各宗派/images/hero.png", icon: "branches", tone: "linear-gradient(135deg,#312e81,#6366f1)", title: "基督教各宗派", en: "Christian Traditions", desc: "天主教、東正教、更正教，以及基要派、福音派、靈恩派。評價標準是使徒福音。", keys: "天主教 東正教 更正教 宗派" },
+      { cat: "life", href: "祈禱/index.html", img: "祈禱/images/hero.png", icon: "incense", tone: "linear-gradient(135deg,#9a3412,#ea580c)", title: "祈禱", en: "Prayer", desc: "按救贖歷史讀祈禱：從呼求主名、詩篇，到耶穌的「然而」與教會的恆切。", keys: "禱告 prayer 詩篇" },
+      { cat: "life", href: "靈修學/index.html", img: "靈修學/images/hero.png", icon: "dawnBible", tone: "linear-gradient(135deg,#0e7490,#67e8f9)", title: "靈修學", en: "Christian Spirituality", desc: "聖言默想、敬拜、十架跟從與聖靈引導。靈修是聽見而活，不是技巧消費。", keys: "靈修 默想 spirituality" },
+      { cat: "life", href: "婚姻/index.html", img: "婚姻/images/hero.png", icon: "rings", tone: "linear-gradient(135deg,#9f1239,#fb7185)", title: "婚姻", en: "Marriage", desc: "創造中的一體、盟約隱喻，以及耶穌與保羅的教導。獨身同樣是恩賜。", keys: "家庭 盟約 marriage" },
+      { cat: "life", href: "興學傳道/index.html", img: "興學傳道/images/hero.png", icon: "lampBook", tone: "linear-gradient(135deg,#854d0e,#ca8a04)", title: "興學傳道", en: "Teaching in the Service of the Word", desc: "聖約教導與使徒傳承：興學為了傳道與守道，不是學位換得救。", keys: "教育 神學 教導" },
+      { cat: "life", href: "傳福音策略/index.html", img: "傳福音策略/images/hero.png", icon: "hornWorld", tone: "linear-gradient(135deg,#1d4ed8,#38bdf8)", title: "傳福音策略", en: "Evangelistic Witness", desc: "按使徒行傳思想見證：忠於基督的死與復活，並因對象調整言語。", keys: "宣教 見證 evangelism" },
+      { cat: "life", href: "基督教職場倫理/index.html", img: "基督教職場倫理/images/hero.png", icon: "tools", tone: "linear-gradient(135deg,#115e59,#a8a29e)", title: "基督教職場倫理", en: "Christian Workplace Ethics", desc: "修理看守、安息界限、工價與瑪門。工作可榮耀神，救恩不來自績效。", keys: "工作 倫理 workplace" },
+      { cat: "life", href: "辨別神的聲音/index.html", img: "辨別神的聲音/images/hero.png", icon: "earFlame", tone: "linear-gradient(135deg,#5b21b6,#c026d3)", title: "辨別神的聲音", en: "Discerning the Voice of God", desc: "以已成文的聖經為最高可檢驗標準。謙卑比敏感更安全。", keys: "引導 先知 試驗諸靈" },
+      { cat: "compare", href: "猶大教、回教、天主教、基督教比較/index.html", img: "猶大教、回教、天主教、基督教比較/images/hero.png", icon: "pillars", tone: "linear-gradient(135deg,#3f6212,#84cc16)", title: "宗教比較", en: "Religious Comparisons", desc: "比較猶太教、伊斯蘭教、天主教與基督教：核心信仰、歷史與主要差異。", keys: "猶太 伊斯蘭 天主教 亞伯拉罕" },
+      { cat: "compare", href: "基督教與世界宗教比較/index.html", img: "基督教與世界宗教比較/images/hero.png", icon: "globe", tone: "linear-gradient(135deg,#0c4a6e,#0284c7)", title: "世界宗教比較", en: "Christianity and World Religions", desc: "以創造、神論、人論、來世與經典為座標，比較各大宗教。", keys: "佛教 印度教 儒道 民間宗教" },
+      { cat: "compare", href: "天使/index.html", img: "天使/images/hero.png", icon: "messenger", tone: "linear-gradient(135deg,#0369a1,#94a3b8)", title: "天使", en: "Angels as Messengers", desc: "受造的使者與服役的靈：指向神的作為，不搶基督的榮耀。", keys: "使者 屬靈 angel" },
+      { cat: "compare", href: "異端/index.html", img: "異端/images/hero.png", icon: "wheat", tone: "linear-gradient(135deg,#881337,#64748b)", title: "異端", en: "Heresy and the Apostolic Gospel", desc: "異端不是「跟我不一樣的宗派」。先定義聖經自己的詞語，再用使徒見證檢驗。含古代與近現代主要異端分析。", keys: "假先知 另一個福音 敵基督 古代異端 近現代" }
+    ];
 
-    // Observe all animated elements
-    document.querySelectorAll('.fade-in-up, .category-card').forEach(el => {
-      observer.observe(el);
+    const catMap = Object.fromEntries(CATS.map((c) => [c.id, c]));
+    const topicsEl = document.getElementById("topics");
+    const chipsEl = document.getElementById("cat-chips");
+    const emptyEl = document.getElementById("empty-state");
+    const searchEl = document.getElementById("topic-search");
+    document.getElementById("topic-count").textContent = String(TOPICS.length);
+
+    let activeCat = "all";
+
+    function iconSvg(name) {
+      return '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24">' + (ICO[name] || ICO.texts) + "</svg>";
+    }
+
+    function cardHtml(topic) {
+      const cat = catMap[topic.cat];
+      return (
+        '<a class="card" data-cat="' + topic.cat + '" data-q="' +
+        (topic.title + " " + topic.en + " " + topic.desc + " " + topic.keys).toLowerCase() +
+        '" href="' + topic.href + '">' +
+          '<div class="card-media" style="--card-tone:' + topic.tone + '"><img src="' + (topic.img || cat.img) + '" alt=""><div class="card-wash"></div><div class="card-icon">' + iconSvg(topic.icon) + "</div></div>" +
+          '<div class="card-body">' +
+            '<h3 class="serif">' + topic.title + "</h3>" +
+            '<p class="en latin">' + topic.en + "</p>" +
+            '<p class="excerpt">' + topic.desc + "</p>" +
+            '<span class="cta">進入專論 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>' +
+          "</div></a>"
+      );
+    }
+
+    function renderChips() {
+      const items = [{ id: "all", zh: "全部" }].concat(CATS);
+      chipsEl.innerHTML = items.map(function (c) {
+        return '<button type="button" class="chip' + (c.id === activeCat ? " is-on" : "") + '" data-cat="' + c.id + '">' + c.zh + "</button>";
+      }).join("");
+    }
+
+    function renderTopics() {
+      topicsEl.innerHTML = CATS.map(function (cat, i) {
+        const cards = TOPICS.filter(function (t) { return t.cat === cat.id; }).map(cardHtml).join("");
+        return (
+          '<section class="cat-block reveal" data-cat-block="' + cat.id + '" style="animation-delay:' + (0.05 * i) + 's">' +
+            '<div class="cat-head">' +
+              '<img src="' + cat.img + '" alt="">' +
+              '<div class="cat-head-copy">' +
+                '<div class="eyebrow">' + cat.en + "</div>" +
+                '<h2 class="serif">' + cat.zh + "</h2>" +
+                "<p>" + cat.blurb + "</p>" +
+              "</div></div>" +
+            '<div class="grid">' + cards + "</div>" +
+          "</section>"
+        );
+      }).join("");
+    }
+
+    function applyFilter() {
+      const q = (searchEl.value || "").trim().toLowerCase();
+      const cards = topicsEl.querySelectorAll(".card");
+      const blocks = topicsEl.querySelectorAll("[data-cat-block]");
+      let shown = 0;
+
+      cards.forEach(function (card) {
+        const catOk = activeCat === "all" || card.getAttribute("data-cat") === activeCat;
+        const qOk = !q || (card.getAttribute("data-q") || "").indexOf(q) !== -1;
+        const on = catOk && qOk;
+        card.classList.toggle("is-hidden", !on);
+        if (on) shown += 1;
+      });
+
+      blocks.forEach(function (block) {
+        const any = block.querySelector(".card:not(.is-hidden)");
+        const catOk = activeCat === "all" || block.getAttribute("data-cat-block") === activeCat;
+        block.classList.toggle("is-hidden", !catOk || !any);
+      });
+
+      emptyEl.classList.toggle("is-on", shown === 0);
+    }
+
+    renderChips();
+    renderTopics();
+    applyFilter();
+
+    chipsEl.addEventListener("click", function (e) {
+      const btn = e.target.closest("[data-cat]");
+      if (!btn) return;
+      activeCat = btn.getAttribute("data-cat");
+      renderChips();
+      applyFilter();
+      document.getElementById("topics").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    searchEl.addEventListener("input", function () {
+      if (searchEl.value.trim() && activeCat !== "all") {
+        activeCat = "all";
+        renderChips();
+      }
+      applyFilter();
     });
   </script>
-
-          <!-- Footer -->
-      <footer class="text-center py-4 text-slate-500 text-sm">
-        <p class="italic mb-1">
-          But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his
-          understanding. Jeremiah 10:12
-        </p>
-        <p class="text-xs mb-1 mt-2">
-          「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」 耶利米書 10:12
-        </p>
-        <p class="text-xs mt-2 pt-2 border-t border-slate-300">
-          @ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau
-        </p>
-      </footer>
-<!-- Visit Counter Script -->
-    <script src="../../visit-counter.js"></script>
-    <script>
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec';
-        VisitCounter.init('bible_study/信仰討論/index', {
-            scriptUrl: SCRIPT_URL,
-            containerId: 'visit-counter-container'
-        });
-    </script>
+  <script src="../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/index", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
 </body>
 </html>
-
-

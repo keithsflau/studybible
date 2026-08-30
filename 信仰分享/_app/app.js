@@ -72,6 +72,9 @@
     if (Array.isArray(block.items)) parts.push(block.items.map((i) => (i.title || "") + " " + (i.body || "")).join(" "));
     if (Array.isArray(block.points)) parts.push(block.points.join(" "));
     if (Array.isArray(block.rows)) parts.push(block.rows.map((r) => r.join(" ")).join(" "));
+    if (Array.isArray(block.words)) {
+      parts.push(block.words.map((w) => [w.form, w.lemma, w.gloss, w.research, w.explanation].join(" ")).join(" "));
+    }
     return parts.join(" ");
   }
 
@@ -156,7 +159,7 @@
             ${block.parse ? `<p class="mt-3 text-xs text-slate-500">文法：${esc(block.parse)}</p>` : ""}
           </article>`;
       case "cards":
-        return `<div class="grid md:grid-cols-${block.cols || 3} gap-4 my-4">${(block.items || []).map((item) => `
+        return `<div class="grid ${block.cols === 2 ? "md:grid-cols-2" : block.cols === 4 ? "md:grid-cols-4" : "md:grid-cols-3"} gap-4 my-4">${(block.items || []).map((item) => `
           <div class="faith-card p-4">
             <p class="text-2xl mb-2">${item.icon || ""}</p>
             <h4 class="font-bold mb-1">${esc(item.title)}</h4>
@@ -234,7 +237,7 @@
       <div class="faith-card p-5 my-4" data-workshop>
         <h4 class="font-bold mb-1">${esc(block.title || "原文工作坊")}</h4>
         <p class="text-sm text-slate-500 mb-4">${esc(block.intro || "點擊詞語，查看研究與解釋。")}</p>
-        <p class="faith-he text-2xl leading-loose mb-4">${words.map((w, i) =>
+        <p class="${block.lang === "el" ? "faith-el" : "faith-he"} text-2xl leading-loose mb-4">${words.map((w, i) =>
           `<button type="button" class="faith-word mx-1" data-ws="${i}">${esc(w.form)}</button>`
         ).join(" ")}</p>
         <div class="rounded-lg bg-slate-50 p-4 text-sm" data-ws-panel>
@@ -243,9 +246,9 @@
       </div>`;
   }
 
-  function workshopHTML(word) {
+  function workshopHTML(word, lang) {
     return `
-      <p class="faith-he text-2xl mb-1">${esc(word.form)}</p>
+      <p class="${lang === "el" ? "faith-el" : "faith-he"} text-2xl mb-1">${esc(word.form)}</p>
       <p class="text-sm font-semibold text-slate-800">${esc(word.lemma || "")} · ${esc(word.translit || "")} · ${esc(word.gloss || "")}</p>
       <p class="mt-2"><strong>研究：</strong>${word.research || ""}</p>
       <p class="mt-1"><strong>解釋：</strong>${word.explanation || ""}</p>`;
@@ -334,6 +337,17 @@
     return items;
   }
 
+  function progressPct(topic, read) {
+    const items = topic ? navItems(topic) : [];
+    if (!items.length) return 0;
+    const valid = {};
+    items.forEach((it) => {
+      valid[it.id] = true;
+    });
+    const n = (read || []).filter((id) => valid[id]).length;
+    return Math.min(100, Math.round((n / items.length) * 100));
+  }
+
   function topicHref(meta, sectionId, ctx) {
     if (ctx.mode === "hub") return `#/${meta.id}${sectionId ? "/" + sectionId : ""}`;
     const prefix = ctx.base ? ctx.base + "/" : "";
@@ -350,7 +364,7 @@
           <p><a href="../index.html" class="text-sm text-slate-500 hover:text-slate-800">← 返回主頁</a></p>
           <p class="faith-chip faith-chip-shared mx-auto">原文 · 研究 · 解釋</p>
           <h1 class="text-4xl md:text-5xl font-bold">信仰分享</h1>
-          <p class="text-slate-600 max-w-2xl mx-auto">以「人論」為內容深度與模板：原文、詳細研究、解釋，按聖經與福音派認信整理六大教義。遇有不同理解，分開對照，不強行合併。</p>
+          <p class="text-slate-600 max-w-2xl mx-auto">以「人論」為內容深度與模板：原文、詳細研究、解釋；並按正典敘事走聖經神學——從應許到應驗、從出埃及到新出埃及。按聖經與福音派認信整理六大教義。遇有不同理解，分開對照，不強行合併。</p>
           <label class="block max-w-xl mx-auto">
             <span class="sr-only">搜尋</span>
             <input type="search" data-global-search value="${esc(q)}" placeholder="搜尋原文、教義、經文…" class="w-full rounded-full border border-slate-200 px-5 py-3 shadow-sm">
@@ -366,10 +380,12 @@
           ${catalog().map((m) => {
             const t = getTopic(m.id);
             const st = state[m.id] || { read: [] };
-            const total = ((t && t.sections) || []).length + 2;
-            const pct = Math.round((st.read.length / Math.max(total, 1)) * 100);
+            const pct = progressPct(t, st.read);
             return `
               <a href="${topicHref(m, st.last || (t && t.sections[0] && t.sections[0].id), ctx)}" class="faith-card p-6 hover:-translate-y-1 transition block">
+                <div class="w-12 h-12 rounded-xl mb-3 flex items-center justify-center text-white" style="background:${m.hue || "linear-gradient(135deg,#047857,#0f766e)"}">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">${m.icon || ""}</svg>
+                </div>
                 <p class="text-xs uppercase tracking-widest text-slate-400">${esc(m.en)}</p>
                 <h3 class="text-2xl font-bold my-1">${esc(m.title)}</h3>
                 <p class="text-sm text-slate-600 mb-4">${esc(m.blurb)}</p>
@@ -409,7 +425,7 @@
     const items = navItems(topic);
     const active = sectionId || items[0].id;
     const { cur } = topicState(topic.id);
-    const pct = Math.round((cur.read.length / items.length) * 100);
+    const pct = progressPct(topic, cur.read);
     const idx = items.findIndex((i) => i.id === active);
     const prev = items[idx - 1];
     const next = items[idx + 1];
@@ -475,10 +491,36 @@
 
     const search = root.querySelector("[data-topic-search]");
     if (search) {
-      search.addEventListener("input", () => {
-        const hits = searchAll(search.value).filter((h) => h.topicId === topic.id);
-        if (!hits.length || !search.value.trim()) return;
-      });
+      const bar = root.querySelector(".faith-topbar");
+      let hitsBox = root.querySelector("[data-topic-hits]");
+      if (!hitsBox && bar) {
+        hitsBox = document.createElement("div");
+        hitsBox.setAttribute("data-topic-hits", "");
+        hitsBox.className = "hidden px-4 pb-3 space-y-1";
+        bar.appendChild(hitsBox);
+      }
+      const showHits = () => {
+        if (!hitsBox) return;
+        const q = search.value.trim();
+        if (!q) {
+          hitsBox.classList.add("hidden");
+          hitsBox.innerHTML = "";
+          return;
+        }
+        const hits = searchAll(q).filter((h) => h.topicId === topic.id).slice(0, 6);
+        hitsBox.classList.remove("hidden");
+        if (!hits.length) {
+          hitsBox.innerHTML = "<p class='text-xs text-slate-400'>沒有本主題結果</p>";
+          return;
+        }
+        hitsBox.innerHTML = hits.map((h) =>
+          `<button type="button" class="block w-full text-left text-xs py-1 text-amber-200 hover:underline" data-hit="${esc(h.sectionId)}"><span class="font-semibold">${esc(h.title)}</span><span class="block text-slate-400">${esc(h.snippet)}</span></button>`
+        ).join("");
+        hitsBox.querySelectorAll("[data-hit]").forEach((btn) => {
+          btn.addEventListener("click", () => setHash(ctx.mode, topic.id, btn.getAttribute("data-hit")));
+        });
+      };
+      search.addEventListener("input", showHits);
       search.addEventListener("keydown", (e) => {
         if (e.key !== "Enter") return;
         const hit = searchAll(search.value).find((h) => h.topicId === topic.id);
@@ -497,7 +539,7 @@
         b.addEventListener("click", () => {
           const w = ws && ws.words[Number(b.getAttribute("data-ws"))];
           const panel = box.querySelector("[data-ws-panel]");
-          if (w && panel) panel.innerHTML = workshopHTML(w);
+          if (w && panel) panel.innerHTML = workshopHTML(w, ws.lang);
         });
       });
     });

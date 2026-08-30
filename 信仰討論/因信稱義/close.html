@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>思考與結論｜因信稱義</title>
+  <meta name="description" content="因信稱義：思考與結論。七、互動思考題 問題一：稱義的基礎是什麼？">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .gradient-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.1), transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1), transparent 50%),
+                  radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.08), transparent 50%);
+      filter: blur(80px);
+      z-index: 0;
+      animation: gradientShift 15s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.8;
+      }
+      50% { 
+        transform: translate(20px, -20px) scale(1.1);
+        opacity: 1;
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(99, 102, 241, 0.8);
+      }
+    }
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.1);
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(1.05);
+      }
+    }
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-slideInLeft {
+      animation: slideInLeft 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-slideInRight {
+      animation: slideInRight 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-scaleIn {
+      animation: scaleIn 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-pulse-slow {
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    .animate-glow {
+      animation: glow 2s ease-in-out infinite;
+    }
+    .animate-heartbeat {
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    .animate-bounce-slow {
+      animation: bounce 2s ease-in-out infinite;
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 4px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(99, 102, 241, 0.8);
+      transform: translateX(5px);
+    }
+    .interactive-card {
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .interactive-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+    .interactive-card.active {
+      border-color: rgba(99, 102, 241, 0.6);
+      background: rgba(99, 102, 241, 0.1);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .quiz-option {
+      transition: all 0.3s ease;
+    }
+    .quiz-option:hover {
+      background: rgba(99, 102, 241, 0.15);
+      transform: translateX(5px);
+    }
+    .quiz-option.selected {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.6);
+    }
+    .quiz-option.correct {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: rgba(34, 197, 94, 0.6);
+    }
+    .quiz-option.incorrect {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.6);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(99, 102, 241, 0.6), rgba(139, 92, 246, 0.6));
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.8);
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+    }
+    .comparison-table {
+      overflow-x: auto;
+    }
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .comparison-table th {
+      background: rgba(99, 102, 241, 0.15);
+      font-weight: 600;
+      color: rgba(99, 102, 241, 0.9);
+    }
+    .comparison-table tr:hover {
+      background: rgba(99, 102, 241, 0.08);
+    }
+    .doctrine-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .doctrine-badge:hover {
+      transform: scale(1.1);
+    }
+    .shimmer-effect {
+      background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.85) 0%, 
+        rgba(255, 255, 255, 0.9) 50%, 
+        rgba(255, 255, 255, 0.85) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="close">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">因信稱義</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">思考與結論</div>
+  </header>
+
+  <section class="hero" aria-label="因信稱義">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Justification by Faith</div>
+      <h1 class="serif">思考與結論<em class="latin">因信稱義</em></h1>
+      <p class="hero-lead">七、互動思考題 問題一：稱義的基礎是什麼？</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">引言</a>
+        <a href="scripture.html" data-nav-slug="scripture">聖經基礎</a>
+        <a href="definition.html" data-nav-slug="definition">神學定義與內涵</a>
+        <a href="not-works.html" data-nav-slug="not-works">不是因行為稱義</a>
+        <a href="faith-works.html" data-nav-slug="faith-works">信心與行為</a>
+        <a href="history.html" data-nav-slug="history">歷史發展</a>
+        <a href="practice.html" data-nav-slug="practice">實際應用</a>
+        <a href="close.html" data-nav-slug="close" class="is-on">思考與結論</a>
+        <ul class="sub"><li>互動思考題</li><li>結論</li></ul>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回因信稱義總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/close.svg" alt=""></figure>
+          <p class="essay-kicker">分題 08 / 08</p>
+          <h2 class="page-title serif">思考與結論</h2>
+          <div class="topic-body"><section class="mb-16 animate-fadeInUp" style="animation-delay: 1.1s;">
+        <div class="glass-card rounded-2xl p-8 sm:p-12">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl sm:text-4xl font-bold serif-font text-slate-900 mb-4">
+              七、互動思考題
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+          </div>
+
+          <div class="space-y-6" id="quiz-container">
+            <!-- Question 1 -->
+            <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-200">
+              <h3 class="text-xl font-bold text-indigo-900 mb-4">問題一：稱義的基礎是什麼？</h3>
+              <div class="space-y-3">
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'correct')">
+                  A. 基督的救贖工作和神的恩典
+                </div>
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'incorrect')">
+                  B. 人的好行為和道德修養
+                </div>
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'incorrect')">
+                  C. 遵守宗教儀式和規條
+                </div>
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'incorrect')">
+                  D. 人的努力和功德
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="bg-purple-50 p-6 rounded-xl border border-purple-200">
+              <h3 class="text-xl font-bold text-purple-900 mb-4">問題二：信心在稱義中的角色是什麼？</h3>
+              <div class="space-y-3">
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'incorrect')">
+                  A. 信心是一種功勞，可以賺取救恩
+                </div>
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'correct')">
+                  B. 信心是領受神恩典的工具
+                </div>
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'incorrect')">
+                  C. 信心是可有可無的
+                </div>
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'incorrect')">
+                  D. 信心就是好行為
+                </div>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="bg-pink-50 p-6 rounded-xl border border-pink-200">
+              <h3 class="text-xl font-bold text-pink-900 mb-4">問題三：為什麼不能因行為稱義？</h3>
+              <div class="space-y-3">
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'incorrect')">
+                  A. 因為行為不重要
+                </div>
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'correct')">
+                  B. 因為沒有人能完全遵守神的律法
+                </div>
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'incorrect')">
+                  C. 因為行為是邪惡的
+                </div>
+                <div class="quiz-option bg-white p-4 rounded-lg border-2 border-slate-200 cursor-pointer" onclick="selectOption(this, 'incorrect')">
+                  D. 因為神不喜歡行為
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<section class="mb-16 animate-fadeInUp" style="animation-delay: 1.2s;">
+        <div class="glass-card rounded-2xl p-8 sm:p-12 shimmer-effect">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl sm:text-4xl font-bold serif-font text-slate-900 mb-4">
+              結論
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"></div>
+          </div>
+
+          <div class="space-y-6 text-lg leading-relaxed text-slate-700">
+            <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-8 rounded-xl border-2 border-indigo-300">
+              <p class="text-xl text-slate-800 font-medium mb-4">
+                「因信稱義」是基督教信仰的核心真理，它告訴我們：
+              </p>
+              <ul class="list-disc list-inside space-y-3 ml-4 text-lg">
+                <li>救恩完全是<strong class="text-indigo-700">神的恩典</strong>，不是我們配得或賺取的</li>
+                <li>稱義的基礎是<strong class="text-indigo-700">基督的救贖工作</strong>，祂代替我們承受罪的刑罰</li>
+                <li>我們透過<strong class="text-indigo-700">信心</strong>接受這個救恩，信心是工具，不是功勞</li>
+                <li>稱義是<strong class="text-indigo-700">即時的、完全的</strong>，是法律地位的改變</li>
+                <li>雖然我們不是因行為稱義，但<strong class="text-indigo-700">真信心必然會產生好行為</strong></li>
+                <li>這真理給我們<strong class="text-indigo-700">確據、謙卑、感恩和自由</strong></li>
+              </ul>
+            </div>
+
+            <div class="bible-verse bg-white p-8 rounded-xl border-2 border-indigo-300">
+              <p class="text-2xl text-slate-800 leading-relaxed text-center">
+                <strong class="text-indigo-700">羅馬書 5:1</strong><br>
+                「我們既因信稱義，就藉著我們的主耶穌基督得與神相和。」
+              </p>
+            </div>
+
+            <div class="text-center mt-8">
+              <p class="text-xl text-slate-700 font-medium">
+                願我們都能明白並經歷這寶貴的真理，在神的恩典中得著真正的平安和喜樂。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section></div>
+        </article>
+        <nav class="pager">
+        <a href="practice.html"><span class="dir">上一題</span><span class="serif">實際應用</span></a>
+        <a class="is-empty"></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    // Toggle interactive cards
+    function toggleCard(element) {
+      element.classList.toggle('active');
+    }
+
+    // Quiz option selection
+    function selectOption(element, result) {
+      // Remove previous selections in the same question
+      const questionContainer = element.closest('.bg-indigo-50, .bg-purple-50, .bg-pink-50');
+      const options = questionContainer.querySelectorAll('.quiz-option');
+      options.forEach(opt => {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+      });
+
+      // Add selection class
+      element.classList.add('selected');
+      
+      // Add result class after a short delay
+      setTimeout(() => {
+        element.classList.add(result);
+        if (result === 'correct') {
+          element.style.animation = 'pulse 0.5s ease-in-out';
+        }
+      }, 300);
+    }
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.querySelectorAll('.animate-fadeInUp, .category-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/因信稱義/close", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

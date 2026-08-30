@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自由意志 | Free Will - Theological Discussion</title>
+  <meta name="description" content="自由意志：以經解經討論人的選擇、罪的轄制、神的主權與在基督裏的真自由 | Free Will: Choice, Bondage, Sovereignty, and Freedom in Christ">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    section[id] {
+      scroll-margin-top: 1.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.12), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.08), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.1);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+    .interactive-card {
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .interactive-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+    .interactive-card.active {
+      border-color: rgba(99, 102, 241, 0.6);
+      background: rgba(99, 102, 241, 0.1);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(99, 102, 241, 0.8);
+      transform: translateX(5px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .toc-link {
+      display: block;
+      padding: 0.55rem 0.75rem;
+      border-radius: 0.5rem;
+      color: #334155;
+      transition: all 0.2s ease;
+    }
+    .toc-link:hover {
+      background: rgba(99, 102, 241, 0.08);
+      color: #4338ca;
+      transform: translateX(4px);
+    }
+    .comparison-table {
+      overflow-x: auto;
+    }
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .comparison-table th {
+      background: rgba(99, 102, 241, 0.15);
+      font-weight: 600;
+      color: rgba(99, 102, 241, 0.9);
+    }
+    .comparison-table tr:hover {
+      background: rgba(99, 102, 241, 0.08);
+    }
+    .quiz-option {
+      transition: all 0.3s ease;
+    }
+    .quiz-option:hover {
+      background: rgba(99, 102, 241, 0.15);
+      transform: translateX(5px);
+    }
+    .quiz-option.selected {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.6);
+    }
+    .quiz-option.correct {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: rgba(34, 197, 94, 0.6);
+    }
+    .quiz-option.incorrect {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.6);
+    }
+    .prose-body p + p {
+      margin-top: 1.1rem;
+    }
+  </style>
+  <link rel="stylesheet" href="../../../visit-counter.css">
+</head>
+<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 min-h-screen overflow-x-hidden">
+  <div class="relative min-h-screen overflow-hidden">
+    <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
+
+    <div class="relative z-10">
+
+      <header class="px-6 py-12 sm:py-16">
+        <div class="mx-auto max-w-7xl">
+          <div class="text-center space-y-6">
+            <a href="../index.html" class="inline-block mb-4 text-slate-600 hover:text-slate-900 transition-colors fade-in-up" style="animation-delay: 0.1s;">
+              <svg class="w-6 h-6 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              返回討論主頁
+            </a>
+            <div class="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg fade-in-up" style="background:linear-gradient(135deg,#3730a3,#818cf8);animation-delay:0.15s">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V11"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11L5 4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11l7-7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4H3M19 4h2"/>
+              </svg>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight float-animation serif-font fade-in-up" style="animation-delay: 0.2s;">
+              自由意志
+              <span class="block mt-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-700 bg-clip-text text-transparent pulse-animation">
+                Free Will
+              </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto pulse-animation fade-in-up" style="animation-delay: 0.3s;">
+              聖經中的選擇、責任與真自由 | Choice, Responsibility, and True Freedom in Scripture
+            </p>
+            <div class="w-full max-w-md mx-auto mt-6 fade-in-up" style="animation-delay: 0.4s;">
+              <div class="progress-bar" style="width: 0%;" id="reading-progress"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="px-6 pb-16">
+        <div class="mx-auto max-w-6xl">
+
+          <section id="intro" class="mb-16 fade-in-up" style="animation-delay: 0.5s;">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">引言</h2>
+              <div class="prose-body text-lg leading-relaxed text-slate-700">
+                <p>
+                  「人有沒有自由意志？」這問題常被放進後來的哲學框架：自主、中立選擇、決定論。聖經卻很少用這套詞彙說話。它講的是<strong class="text-indigo-700">心</strong>、<strong class="text-indigo-700">揀選</strong>、<strong class="text-indigo-700">順服</strong>、<strong class="text-purple-700">硬心</strong>、<strong class="text-purple-700">為奴</strong>，以及在基督裏被<strong class="text-pink-700">釋放</strong>。討論若要忠實於文本，就當讓經文自己的用詞帶路，而不是先立一套體系，再向聖經索取證明經文。
+                </p>
+                <p>
+                  以下按救贖歷史推進：從創造中的責任，到墮落後意志的方向；從舊約敘事中神的主權與人的作為並行，到福音書與書信如何同時呼召人前來、又宣告人不能自救。目的不是把張力抹平，而是讓兩方面的經文都站得住。系統立場的比較，可另見<a href="../預定論/index.html" class="text-indigo-700 underline underline-offset-2 hover:text-indigo-900">預定論</a>與<a href="../神人合作說/index.html" class="text-indigo-700 underline underline-offset-2 hover:text-indigo-900">神人合作說</a>；本文專注以經解經。
+                </p>
+              </div>
+              <div class="bible-verse mt-8 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">
+                  「所以天父的兒子若叫你們自由，你們就真自由了。」
+                </p>
+                <p class="text-sm text-slate-600">— 約翰福音 8:36</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="toc" class="mb-16 fade-in-up" style="animation-delay: 0.55s;">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">本篇目錄</h2>
+              <p class="text-slate-600 mb-6">按經文順序閱讀，不必先選邊站。</p>
+              <nav aria-label="文章目錄" class="grid gap-2 sm:grid-cols-2">
+                <a class="toc-link" href="#question">一、問題意識：聖經怎樣說話</a>
+                <a class="toc-link" href="#creation">二、創造與形象：責任與選擇</a>
+                <a class="toc-link" href="#fallen">三、墮落後的意志</a>
+                <a class="toc-link" href="#sovereignty">四、神的主權與人的責任並行</a>
+                <a class="toc-link" href="#christ">五、基督與釋放：何謂真自由</a>
+                <a class="toc-link" href="#spirit">六、聖靈與更新的意志</a>
+                <a class="toc-link" href="#distinction">七、聖經的選擇不是絕對自主</a>
+                <a class="toc-link" href="#pastoral">八、牧養結論</a>
+              </nav>
+            </div>
+          </section>
+
+          <section class="mb-16">
+            <h2 class="text-3xl sm:text-4xl font-semibold mb-8 serif-font text-center fade-in-up text-slate-900">核心問題</h2>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div class="interactive-card glass-card rounded-xl p-6 category-card" onclick="toggleCard(this)">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-4">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 serif-font text-slate-900">詞彙與問題</h3>
+                <p class="text-slate-600 text-sm">聖經有沒有「自由意志」這詞？人是否仍在作真實的選擇？</p>
+              </div>
+              <div class="interactive-card glass-card rounded-xl p-6 category-card" onclick="toggleCard(this)">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mb-4">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 serif-font text-slate-900">主權與責任</h3>
+                <p class="text-slate-600 text-sm">神的定旨與人的作為，經文如何同時敘述，而不互相取消？</p>
+              </div>
+              <div class="interactive-card glass-card rounded-xl p-6 category-card" onclick="toggleCard(this)">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center mb-4">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 serif-font text-slate-900">真自由何處來</h3>
+                <p class="text-slate-600 text-sm">自由是任意選擇，還是脫離罪、歸向神？聖靈如何更新意志？</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="question" class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">一、問題意識：聖經怎樣說話</h2>
+              <div class="prose-body text-lg leading-relaxed text-slate-700">
+                <p>
+                  希伯來文與希臘文聖經沒有一個固定術語，對等於後世哲學所說的「自由意志」（liberum arbitrium）。舊約常用「心」（לֵב）指思想、意向與抉擇的中心；新約則有「願意」（θέλω）、「揀選」（αἱρέομαι / ἐκλέγομαι）、「順從」與「不順從」。詞彙的缺席並不表示現象不存在——人顯然在聽、在拒絕、在跪拜、在離開——只是提醒我們：<strong class="text-indigo-700">不要把現代「絕對自主的自我」讀進古代文本</strong>。
+                </p>
+                <p>
+                  經文呈現的張力是雙重的。一面，神呼召人選擇生命（申命記 30:19），約書亞對百姓說「今日就可以選擇所要事奉的」（約書亞記 24:15）；耶穌說「凡勞苦擔重擔的人可以到我這裏來」（馬太福音 11:28），啟示錄末了仍說「願意的，都可以白白取生命的水喝」（啟示錄 22:17）。另一面，人到基督那裏，並非出於中立的本能：「若不是差我來的父吸引人，就沒有能到我這裏來的」（約翰福音 6:44）。兩組經文同屬正典，釋經者不應為了邏輯整齊而刪去其中一組。
+                </p>
+                <p>
+                  因此，較妥當的起點不是「先證明人完全自由，或先證明人毫無選擇」，而是問：<strong class="text-purple-700">在創造、墮落、救贖與成聖的敘事裏，人的意志處於甚麼位置？</strong>神的話如何同時顯出祂的主權，又把責任放在聽者身上？
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="creation" class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">二、創造與形象：責任與選擇</h2>
+              <div class="prose-body text-lg leading-relaxed text-slate-700">
+                <p>
+                  創世記一至二章沒有討論形而上的「意志自由」，卻把人放在<strong class="text-indigo-700">可回應的位置</strong>。人按神的形像被造（創世記 1:26–27），受命治理、遍滿全地；形像首先是關係與代表，不是抽象能力清單。既是代表，就有責任：要聽吩咐、要命名、要看守園子。
+                </p>
+                <div class="bible-verse my-6 bg-indigo-50 p-5 rounded-lg border border-indigo-100">
+                  <p class="text-slate-800 mb-2">
+                    <strong class="text-indigo-700">創世記 2:16–17</strong><br>
+                    「耶和華神吩咐他說：『園中各樣樹上的果子，你可以隨意吃，只是分別善惡樹上的果子，你不可吃，因為你吃的日子必定死！』」
+                  </p>
+                </div>
+                <p>
+                  「吩咐」預設聽者能聽從或違背。禁令不是陷阱，而是信任的空間：人要以神的話，而不是以自己的眼目，來定義善惡。三章的敘事正是一次<strong class="text-purple-700">關於誰的話可信</strong>的抉擇。女人見那樹好作食物、悅人眼目、能使人有智慧，就摘來吃了，又給丈夫（創世記 3:6）。蛇的問題「神豈是真說」把神的話相對化；人的回應不是中立實驗，而是站到另一套解釋之下。
+                </p>
+                <p>
+                  墮落後，人仍然行動：躲避、推諉、給妻子起名、被趕出園子。選擇沒有消失，但選擇的方向已經彎曲——他們不再坦然到神面前，卻用無花果樹的葉子遮蓋自己（創世記 3:7–13）。後果是死亡進入人與神、人與人、人與土地的關係。往後討論「意志」，必須記得：<strong class="text-indigo-700">我們所講的，已是墮落以後的人，不是園中尚未犯罪的亞當</strong>。把創世記二章的「可以隨意吃」直接等同於今日罪人的「絕對自主」，是把敘事階段讀錯了。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="fallen" class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">三、墮落後的意志：仍選擇，卻受轄制</h2>
+              <div class="prose-body text-lg leading-relaxed text-slate-700">
+                <p>
+                  洪水前的評語極重：「耶和華見人在地上罪惡很大，終日所思想的盡都是惡」（創世記 6:5）。這不是說人不再作決定，而是說決定所從出的「思想」（心中的意向）已被罪浸透。耶利米書用另一幅圖像：「人心比萬物都詭詐，壞到極處，誰能識透呢？」（耶利米書 17:9）。心仍在謀算，只是謀算的源頭不可靠。
+                </p>
+                <p>
+                  新約把這狀態說成奴役，而不僅是「偶爾犯錯」。耶穌對那些自以為是亞伯拉罕後裔的人說：「所有犯罪的就是罪的奴僕」（約翰福音 8:34）。奴僕的比喻關鍵在於：<strong class="text-purple-700">他仍在行動，卻不能以自己的力量結束這層關係</strong>。釋放必須從外面來（約翰福音 8:36）。
+                </p>
+                <div class="bible-verse my-6 bg-purple-50 p-5 rounded-lg border border-purple-100">
+                  <p class="text-slate-800 mb-2">
+                    <strong class="text-purple-700">羅馬書 3:10–12</strong><br>
+                    「沒有義人，連一個也沒有。沒有明白的；沒有尋求神的；都是偏離正路，一同變為無用。沒有行善的，連一個也沒有。」
+                  </p>
+                </div>
+                <p>
+                  羅馬書 3:9–18 是一組舊約引文的拼圖（詩篇、傳道、以賽亞），不是孤立金句。保羅的論點是：猶太人和希臘人「都在罪惡之下」。所謂「沒有尋求神的」，並非否認宗教活動——羅馬書一章恰恰描寫人敬拜受造之物——而是說，<strong class="text-indigo-700">人不會憑己意轉向那位自我啟示的真神</strong>。尋求若發生，是神先尋找。
+                </p>
+                <p>
+                  以弗所書 2:1–3 用「死」來形容這境況：「你們死在過犯罪惡之中……隨從今世的風俗……放縱肉體的私慾，隨着肉體和心中所喜好的去行」。死人的比喻容易被用濫；在此上下文，「死」指與神隔絕、不能自活，同時人仍「行事為人」、仍「喜好」。意志沒有被刪除，<strong class="text-indigo-700">意志按墮落的欲望運作</strong>。接着四節才說「然而，神……叫我們與基督一同活過來」。
+                </p>
+                <p>
+                  羅馬書七章常被拉進「信徒是否仍有內心掙扎」的爭論。無論讀者把「我」主要放在律法下的人或成聖中的信徒，文本本身很清楚：「立志為善由得我，只是行出來由不得我」（羅馬書 7:18）。立志與行出來分裂，說明意志不是一部中立機器。七章的出路不在更強的意志力，而在八章：聖靈的律在基督耶穌裏釋放人脫離罪和死的律（羅馬書 8:1–4）。討論自由意志若停在七章而不進到八章，就把保羅的論證腰斬了。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="sovereignty" class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-8 serif-font text-slate-900">四、神的主權與人的責任並行</h2>
+              <p class="text-lg leading-relaxed text-slate-700 mb-10">
+                聖經敘事很少用後來神學的「二選一」來寫歷史。同一事件，往往同時是人的作為，也是神所成就的事。下面幾處不宜各取所需，而應讓平行的句子一起發聲。
+              </p>
+
+              <div class="space-y-12">
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">約瑟：人的惡意，神的美意</h3>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      約瑟對哥哥們說：「從前你們的意思是要害我，但神的意思原是好的，要保全許多人的性命，成就今日的光景」（創世記 50:20）。「你們的意思」與「神的意思」指向同一串事件：被賣、下埃及、升高、糧荒中的拯救。文本沒有說哥哥們只是棋子，也沒有說神只是事後補救。人的罪責成立（他們「要害我」），神的旨意同時貫穿其中。這是舊約敘事處理雙重代理的典型句法。
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">法老：自硬與神使硬</h3>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      出埃及記八至十章的措辭必須整卷來讀。災禍之間，經文既說「法老……硬着心」（如出埃及記 8:15、32），也說「耶和華使法老的心剛硬」（如出埃及記 9:12；10:20、27）。更早，四章已預告：「我要使他的心剛硬」（出埃及記 4:21）。釋經上不宜只選「法老自己負責」或只選「神單方面使硬」；<strong class="text-purple-700">敘事把兩者疊在同一個人身上</strong>。法老的拒絕是真實的悖逆，神的作為也是真實的審判與拯救以色列的手段。心硬在此不是心理學標籤，而是救贖歷史中、與榮耀顯明連在一起的主題（參羅馬書 9:17 引出埃及記 9:16）。
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">盟約中的呼召：揀選生命</h3>
+                  <div class="bible-verse my-6 bg-indigo-50 p-5 rounded-lg border border-indigo-100">
+                    <p class="text-slate-800 mb-2">
+                      <strong class="text-indigo-700">申命記 30:19</strong><br>
+                      「我今日呼天喚地向你作見證；我將生死禍福陳明在你面前，所以你要揀選生命，使你和你的後裔都得存活。」
+                    </p>
+                  </div>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      申命記三十章的「揀選」發生在盟約更新的場景：百姓已蒙救贖出埃及，現在被要求以順服回應。這不是毫無前提的「自我創造」，而是蒙恩者的責任。約書亞記 24:15 同樣：選擇的對象是「所要事奉的」，不是選擇要不要有一位主。約書亞的宣告「至於我和我家，我們必定事奉耶和華」，把家戶的效忠放在公開見證裏。經文認真對待人的抉擇，卻從不把人寫成自己故事的作者。
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">智慧文學：籌算與指引</h3>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      「人心籌算自己的道路；惟耶和華指引他的腳步」（箴言 16:9）。人的籌算被承認，神的指引被置於其上。「王的心在耶和華手中，好像隴溝的水隨意流轉」（箴言 21:1）則把最像「自主權力」的王權，放回神的手中。智慧書不取消計劃與決策，只拒絕一種幻想：以為人心是最終的舵。
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">亞述：神的杖，仍要負責</h3>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      以賽亞書十章稱亞述為「我怒氣的棍」（以賽亞書 10:5），用來管教以色列。但亞述自己的心卻說：「我的能力，我智慧的作為」（10:13）。因此，當主在錫安的工作完成，祂「必罰亞述王自大的心」（10:12）。神使用外邦帝國，並不使帝國的驕傲變成無辜。這與約瑟故事同一邏輯：<strong class="text-indigo-700">被使用，不等於被免責</strong>。
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">約翰福音：賜給、吸引、仍要來</h3>
+                  <div class="bible-verse my-6 bg-indigo-50 p-5 rounded-lg border border-indigo-100">
+                    <p class="text-slate-800 mb-2">
+                      <strong class="text-indigo-700">約翰福音 6:37、44、65</strong><br>
+                      「凡父所賜給我的人必到我這裏來；到我這裏來的，我總不丟棄他。」「若不是差我來的父吸引人，就沒有能到我這裏來的。」「若不是蒙我父的恩賜，沒有人能到我這裏來。」
+                    </p>
+                  </div>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      這幾節同在「生命的糧」講論裏。群眾已經「來」尋找耶穌，卻多為吃餅得飽（約翰福音 6:26）。真正「到我這裏來」的，是父所賜、父所吸引的人；同時，句子的動詞仍是「到……來」，不是「被搬運」。同一段也有人退去、不再與祂同行（6:66）。約翰沒有用哲學詞解釋這張力，只把榮耀歸給父，把責任留給拒絕的人。
+                    </p>
+                    <p>
+                      八章 31–36 節把「自由」從政治解放（亞伯拉罕的後裔「從來沒有作過誰的奴僕」）扭轉到罪的奴役。真自由是兒子釋放奴僕。若把「自由意志」理解成「不受任何主約束的選擇能力」，就與這段經文的方向相反。
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">使徒行傳：十字架上的定旨與惡行</h3>
+                  <div class="bible-verse my-6 bg-purple-50 p-5 rounded-lg border border-purple-100">
+                    <p class="text-slate-800 mb-2">
+                      <strong class="text-purple-700">使徒行傳 2:23</strong><br>
+                      「他既按着神的定旨先見被交與人，你們就藉着無法之人的手，把他釘在十字架上，殺了。」
+                    </p>
+                  </div>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      五旬節講章把「神的定旨先見」與「你們……殺了」放在同一句。四章 27–28 節的禱告更列出荷律、彼拉多、外邦人與以色列民，說他們聚集「成就你手和你意旨所預定必有的事」。救贖歷史的中心事件——十字架——同時是預定的，也是人的罪。初代教會沒有把其中一面解釋掉，以免另一面更好講。
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">羅馬書八至十一章：整卷論證，勿斷章</h3>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      羅馬書 8:28–30 的「預先知道……預先定下……召……稱義……得榮耀」，是受苦與盼望段落的一部分（8:18–39），不是獨立的預定手冊。它保證神對屬祂之人的旨意不會半途而廢。九至十一章則處理一個更尖銳的問題：既有這些應許，為何以色列多半不信？
+                    </p>
+                    <p>
+                      九章用窯匠與器皿、以掃與雅各、法老，強調「不在乎那定意的，也不在乎那奔跑的，只在乎發憐憫的神」（羅馬書 9:16）。若停在這裏，人的責任似乎蒸發。但十章立刻轉到口裏承認、心裏相信（10:9–10），並問：「未曾聽見他，怎能信他呢？沒有傳道的，怎能聽見呢？」（10:14）。「信道是從聽道來的，聽道是從基督的話來的」（10:17）。<strong class="text-indigo-700">同一封書信，既否定救恩出於人的定意與奔跑，又把宣講與聽信放在神拯救計劃的必需環節</strong>。
+                    </p>
+                    <p>
+                      十一章以橄欖樹的比喻結束這一段：折下與接上，都不可誇口；神能把以色列再接上。終點不是體系勝利，而是頌讚：「深哉，神豐富的智慧和知識！」（11:33）。讀九至十一章若只抽 9:16 或只抽 10:9，都是切斷保羅自己的轉折。
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">腓立比書與以弗所書：運行與作成</h3>
+                  <div class="bible-verse my-6 bg-indigo-50 p-5 rounded-lg border border-indigo-100">
+                    <p class="text-slate-800 mb-2">
+                      <strong class="text-indigo-700">腓立比書 2:12–13</strong><br>
+                      「當恐懼戰兢做成你們得救的工夫。因為你們立志行事都是神在你們心裏運行，為要成就他的美意。」
+                    </p>
+                  </div>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      「做成」是命令，「因為」引出根據：立志與行事，神都在其中運行。不是一半神、一半人的拼盤，而是人認真順服，而這順服本身被解釋為神的工作。以弗所書 1:3–14 以長句頌讚父的揀選、子的救贖、靈的印記；2:8–10 則說得救本乎恩、也因着信，「這並不是出於自己，乃是神所賜的」，接着「我們原是他的工作……為要叫我們行善」。恩典不取消行為，卻把行為從自誇的根基上挪走，放回「神所預備」的路上。
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-2xl font-semibold mb-4 text-indigo-700 serif-font">啟示錄的邀請仍然敞開</h3>
+                  <div class="prose-body text-lg leading-relaxed text-slate-700">
+                    <p>
+                      正典以邀請作結：「聖靈和新婦都說：『來！』……願意的，都可以白白取生命的水喝」（啟示錄 22:17）。「願意的」沒有被刪除。讀完約翰福音六章與羅馬書九章的人，仍須聽見這句話，並把它當作對教會與世人的真實呼召，而不是禮儀點綴。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="christ" class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">五、基督與釋放：何謂真自由</h2>
+              <div class="prose-body text-lg leading-relaxed text-slate-700">
+                <p>
+                  若自由被定義為「能選擇善或惡的中立能力」，福音書的用語會顯得格格不入。耶穌所應許的，是從罪的奴役中得釋放（約翰福音 8:34–36）。加拉太書同樣：「基督釋放了我們，叫我們得以自由。所以要站立得穩，不要再被奴僕的軛挾制」（加拉太書 5:1）。下文立刻警告：「不可將你們的自由當作放縱情慾的機會，總要用愛心互相服事」（5:13）。<strong class="text-indigo-700">自由的反面不是責任，而是另一種奴役</strong>——或律法主義的軛，或情慾的軛。
+                </p>
+                <div class="bible-verse my-6 bg-indigo-50 p-5 rounded-lg border border-indigo-100">
+                  <p class="text-slate-800 mb-2">
+                    <strong class="text-indigo-700">羅馬書 6:17–18</strong><br>
+                    「感謝神！因為你們從前雖然作罪的奴僕，現今卻從心裏順服了所傳給你們道理的模範。你們既從罪裏得了釋放，就作了義的奴僕。」
+                  </p>
+                </div>
+                <p>
+                  保羅不說「從奴僕變成無主之人」，而說主權轉移：從罪到義。把「自由意志」理解成「沒有主人的意志」，是與羅馬書六章唱反調。真自由是能夠向神說「阿們」的自由——這能力不來自亞當的後裔天生具備，而來自與基督聯合、向罪算自己是死的（羅馬書 6:11）。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="spirit" class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">六、聖靈與更新的意志</h2>
+              <div class="prose-body text-lg leading-relaxed text-slate-700">
+                <p>
+                  意志的轉向，舊約已用「新心」來說。以西結書不是勸石心自己變軟，而是應許：「我……除掉石心，賜給你們肉心。我必將我的靈放在你們裏面，使你們順從我的律例」（以西結書 36:26–27）。「使你們順從」把順服歸於神的靈，同時假定人將真實地行走在典章中。這是內在更新，不是外在取代。
+                </p>
+                <p>
+                  約翰福音三章，尼哥底母聽見「人若不重生，就不能見神的國」（3:3）。重生被比作風：聽見聲音，卻不能掌握來去（3:8）。人必須「信」，但信所進入的生命，是從上頭生的，不是修養的升級。加拉太書 5:16–25 把日常生活放在「順着聖靈而行」與「肉體的情慾」的對立中；仁愛、喜樂、和平是聖靈的果子，不是意志的產品目錄。意志被更新，表現為與聖靈同行，而不是宣布獨立。
+                </p>
+                <div class="bible-verse my-6 bg-purple-50 p-5 rounded-lg border border-purple-100">
+                  <p class="text-slate-800 mb-2">
+                    <strong class="text-purple-700">哥林多後書 3:17</strong><br>
+                    「主就是那靈；主的靈在哪裏，那裏就得以自由。」
+                  </p>
+                </div>
+                <p>
+                  這自由的上下文是帕子除去、得以看見主的榮光（哥林多後書 3:14–18）。它不是任意，而是被榮光改變、從榮耀到榮耀。討論聖靈與意志，焦點應在此：<strong class="text-purple-700">更新使人能愛神所愛，而不是使人成為自己的神</strong>。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="distinction" class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-8 serif-font text-slate-900">七、聖經的選擇不是絕對自主</h2>
+              <p class="text-lg leading-relaxed text-slate-700 mb-8">
+                現代個人主義常把「自由」理解為：自我立法、不受傳統與神約束、選擇即身份。聖經中的選擇，幾乎總是在已有的主、已有的約、已有的呼召面前作出的效忠。下表不是兩套同等的哲學，而是提醒讀經時不要偷換詞義。
+              </p>
+              <div class="comparison-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th class="text-left text-slate-900">層面</th>
+                      <th class="text-left text-slate-900">聖經敘事中的選擇／責任</th>
+                      <th class="text-left text-slate-900">現代「絕對自主」常指的</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-semibold text-indigo-700">人是誰</td>
+                      <td class="text-slate-700">受造、有形像、向造物主負責</td>
+                      <td class="text-slate-700">自我定義、最終權威在自己</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold text-indigo-700">選擇的場景</td>
+                      <td class="text-slate-700">事奉誰、聽從誰的話、是否悔改相信</td>
+                      <td class="text-slate-700">無前提地創造自己的價值</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold text-purple-700">意志的現況</td>
+                      <td class="text-slate-700">墮落後受罪轄制，仍作選擇，卻不尋求神</td>
+                      <td class="text-slate-700">假定意志天生中立、足以自救</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold text-purple-700">自由的含義</td>
+                      <td class="text-slate-700">脫離罪與死亡，作義的奴僕，愛中服事</td>
+                      <td class="text-slate-700">盡量減少約束，擴大選項</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold text-pink-700">神與人</td>
+                      <td class="text-slate-700">主權與責任並行，文本不削平</td>
+                      <td class="text-slate-700">若神真掌權，人的選擇必是假的（或相反）</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700 mt-8">
+                歷史上，伯拉糾傾向強調人能靠意志履行神的要求；另一極端則把人說成毫無行動的棋子，連悔改的呼籲也變得無意義。經文兩邊都不支持。<strong class="text-indigo-700">把辯論收成口號，往往比耐着性子讀整段論證更容易，卻更不忠實</strong>。約瑟、法老、亞述、十字架、羅馬書九至十章，都把張力留在敘事裏。釋經的任務是指認這張力，而不是用後來的標籤把它們壓扁。
+              </p>
+            </div>
+          </section>
+
+          <section id="pastoral" class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">八、牧養結論</h2>
+              <div class="prose-body text-lg leading-relaxed text-slate-700">
+                <p>
+                  人不能自誇得救。以弗所書 2:8–9 把自誇的門關上；羅馬書 3:27 問「是用何法沒有的呢？是用立功之法嗎？不是，乃用信主之法」。信心本身被放在「聽見」與「有人奉差遣」的鏈條上（羅馬書 10:14–17）。因此，<strong class="text-indigo-700">宣講不是可有可無的附加品</strong>：神既定意藉着所傳的愚拙救人（哥林多前書 1:21），講台與個人見證就仍有位置。
+                </p>
+                <p>
+                  人必須悔改相信，並負責任地順服。彼得在五旬節仍說「你們各人要悔改」（使徒行傳 2:38）；那正是他講完「定旨先見」之後的邀請。禱告也仍有意義：教會在四章承認神的預定，同時祈求放膽講道（使徒行傳 4:24–31）。若預定使禱告多餘，使徒的實踐會自相矛盾。
+                </p>
+                <p>
+                  牧養上，兩種錯待人都要避開。對灰心的人，不宜說「你的意志夠強就必得救」，彷彿基督只是旁觀者；當把他們帶到「到我這裏來的，我總不丟棄他」（約翰福音 6:37）。對冷淡的人，不宜說「反正神已定了，何必理會」；當把申命記的「揀選生命」、啟示錄的「來」說清楚。恐懼戰兢做成得救的工夫，與神在心裏運行，是同一段經文的兩面（腓立比書 2:12–13）。
+                </p>
+              </div>
+              <div class="mt-8 grid md:grid-cols-3 gap-6">
+                <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-200">
+                  <h3 class="text-lg font-semibold mb-2 serif-font text-indigo-800">不可自誇</h3>
+                  <p class="text-sm text-slate-700">救恩本乎恩；連能相信，也當感謝那位吸引人的父。</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-xl border border-purple-200">
+                  <h3 class="text-lg font-semibold mb-2 serif-font text-purple-800">必須回應</h3>
+                  <p class="text-sm text-slate-700">悔改、相信、受洗、學習順服，都是真實的責任，不是演戲。</p>
+                </div>
+                <div class="bg-pink-50 p-6 rounded-xl border border-pink-200">
+                  <h3 class="text-lg font-semibold mb-2 serif-font text-pink-800">宣講與禱告</h3>
+                  <p class="text-sm text-slate-700">信道從聽道來；教會仍要祈求、仍要開口，因為神用這些途徑工作。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-8 serif-font text-center text-slate-900">實踐意義</h2>
+              <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="interactive-card glass-card rounded-xl p-6 scale-in" style="animation-delay: 0.1s;">
+                  <h3 class="text-xl font-semibold mb-3 serif-font text-slate-900">讀經的態度</h3>
+                  <p class="text-slate-600 text-sm">遇到並行的經文，先並列、再解釋，不急於用一套口號消化整本聖經。</p>
+                </div>
+                <div class="interactive-card glass-card rounded-xl p-6 scale-in" style="animation-delay: 0.2s;">
+                  <h3 class="text-xl font-semibold mb-3 serif-font text-slate-900">傳福音仍迫切</h3>
+                  <p class="text-slate-600 text-sm">羅馬書十章把奉差遣的腳步寫進救恩的路徑；沉默不是謙卑，有時是不信神的方法。</p>
+                </div>
+                <div class="interactive-card glass-card rounded-xl p-6 scale-in" style="animation-delay: 0.3s;">
+                  <h3 class="text-xl font-semibold mb-3 serif-font text-slate-900">為硬心禱告</h3>
+                  <p class="text-slate-600 text-sm">心能自硬，也能被神軟化（以西結書 36:26）。代求承認：改變心的是主。</p>
+                </div>
+                <div class="interactive-card glass-card rounded-xl p-6 scale-in" style="animation-delay: 0.4s;">
+                  <h3 class="text-xl font-semibold mb-3 serif-font text-slate-900">自由為着服事</h3>
+                  <p class="text-slate-600 text-sm">加拉太書五章的自由指向愛心互相服事，不是擴大自我的領土。</p>
+                </div>
+                <div class="interactive-card glass-card rounded-xl p-6 scale-in" style="animation-delay: 0.5s;">
+                  <h3 class="text-xl font-semibold mb-3 serif-font text-slate-900">順服不靠血氣</h3>
+                  <p class="text-slate-600 text-sm">立志與行事，求聖靈運行；失敗時回到十字架，而不是回到自我改良。</p>
+                </div>
+                <div class="interactive-card glass-card rounded-xl p-6 scale-in" style="animation-delay: 0.6s;">
+                  <h3 class="text-xl font-semibold mb-3 serif-font text-slate-900">與弟兄姐妹同行</h3>
+                  <p class="text-slate-600 text-sm">這題目容易撕裂肢體。核心福音上合一，次要推論上彼此忍耐，比贏一場標籤戰更像基督的身體。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-8 serif-font text-center text-slate-900">互動思考</h2>
+              <div id="quiz-container" class="space-y-6">
+                <div class="quiz-question bg-slate-50 p-6 rounded-xl border border-slate-200">
+                  <h3 class="text-xl font-semibold mb-4 text-slate-900">問題 1：按本篇的釋經起點，下列哪一句最準確？</h3>
+                  <div class="space-y-3">
+                    <div class="quiz-option glass-card p-4 rounded-lg cursor-pointer" onclick="selectOption(this, 0)">
+                      <p class="text-slate-800">聖經有完整的「自由意志」哲學定義，後人只需分類整理</p>
+                    </div>
+                    <div class="quiz-option glass-card p-4 rounded-lg cursor-pointer correct-answer" onclick="selectOption(this, 1)">
+                      <p class="text-slate-800">聖經少用這術語，卻用「心、揀選、為奴、釋放」等詞描寫人的責任與轄制</p>
+                    </div>
+                    <div class="quiz-option glass-card p-4 rounded-lg cursor-pointer" onclick="selectOption(this, 2)">
+                      <p class="text-slate-800">既然沒有這詞，人的選擇就只是幻覺</p>
+                    </div>
+                  </div>
+                  <div id="answer-1" class="hidden mt-4 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+                    <p class="text-slate-800"><strong class="text-indigo-700">說明：</strong>詞彙缺席不等於現象缺席；但釋經必須由文本自己的用詞出發，而不是把現代自主觀念讀回去。</p>
+                  </div>
+                </div>
+
+                <div class="quiz-question bg-slate-50 p-6 rounded-xl border border-slate-200">
+                  <h3 class="text-xl font-semibold mb-4 text-slate-900">問題 2：出埃及記對法老「心硬」的敘述，較忠實的讀法是？</h3>
+                  <div class="space-y-3">
+                    <div class="quiz-option glass-card p-4 rounded-lg cursor-pointer" onclick="selectOption(this, 3)">
+                      <p class="text-slate-800">只說法老自己硬心，提到耶和華使硬的經文可以略過</p>
+                    </div>
+                    <div class="quiz-option glass-card p-4 rounded-lg cursor-pointer" onclick="selectOption(this, 4)">
+                      <p class="text-slate-800">只說神使硬，法老沒有道德責任</p>
+                    </div>
+                    <div class="quiz-option glass-card p-4 rounded-lg cursor-pointer correct-answer" onclick="selectOption(this, 5)">
+                      <p class="text-slate-800">經文交替說「法老硬着心」與「耶和華使法老的心剛硬」，兩者應一併保留</p>
+                    </div>
+                  </div>
+                  <div id="answer-2" class="hidden mt-4 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+                    <p class="text-slate-800"><strong class="text-indigo-700">說明：</strong>八至十章（以及四章的預告）把自硬與神使硬疊在同一敘事；削平任何一面都不是「以經解經」。</p>
+                  </div>
+                </div>
+
+                <div class="quiz-question bg-slate-50 p-6 rounded-xl border border-slate-200">
+                  <h3 class="text-xl font-semibold mb-4 text-slate-900">問題 3：按約翰福音 8 章與加拉太書 5 章，真自由主要是指？</h3>
+                  <div class="space-y-3">
+                    <div class="quiz-option glass-card p-4 rounded-lg cursor-pointer" onclick="selectOption(this, 6)">
+                      <p class="text-slate-800">不受任何主人約束，可以任意選擇善或惡</p>
+                    </div>
+                    <div class="quiz-option glass-card p-4 rounded-lg cursor-pointer correct-answer" onclick="selectOption(this, 7)">
+                      <p class="text-slate-800">子叫人脫離罪的奴役；自由是為站穩、並以愛心服事，不是放縱</p>
+                    </div>
+                    <div class="quiz-option glass-card p-4 rounded-lg cursor-pointer" onclick="selectOption(this, 8)">
+                      <p class="text-slate-800">只需 inwardly 感覺被釋放，外在順服可有可無</p>
+                    </div>
+                  </div>
+                  <div id="answer-3" class="hidden mt-4 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+                    <p class="text-slate-800"><strong class="text-indigo-700">說明：</strong>約翰福音 8:34–36 與加拉太書 5:1、13 把自由定義為釋放與效忠的轉移，而不是無主的自主。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">相關討論</h2>
+              <p class="text-slate-600 mb-6">本篇以文本推進為主。若要看神學立場對照與救恩中神人關係的專題，可續讀：</p>
+              <div class="grid sm:grid-cols-2 gap-6">
+                <a href="../預定論/index.html" class="interactive-card glass-card rounded-xl p-6 block">
+                  <h3 class="text-xl font-semibold mb-2 serif-font text-rose-700">預定論</h3>
+                  <p class="text-sm text-slate-600">神的主權與人的責任：主要立場比較，以及本站的平衡表述。</p>
+                </a>
+                <a href="../神人合作說/index.html" class="interactive-card glass-card rounded-xl p-6 block">
+                  <h3 class="text-xl font-semibold mb-2 serif-font text-cyan-700">神人合作說</h3>
+                  <p class="text-sm text-slate-600">恩典與回應如何被理解；可與本文「並行而不削平」的讀法互相參照。</p>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-16 fade-in-up">
+            <div class="glass-card rounded-2xl p-8 sm:p-12 text-center">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">結語</h2>
+              <p class="text-lg leading-relaxed text-slate-700 max-w-3xl mx-auto mb-8">
+                聖經沒有交給我們一套完整的「自由意志」哲學，卻把人放在可聽、可拒絕、也必須負責的位置；同時宣告，墮落的人不能自救，真自由是兒子所賜，聖靈所更新。神的主權與人的責任在敘事中並行。我們的本分，是讓兩面的經文都說話，然後悔改、相信、傳講、禱告——把榮耀歸給那位又發命令、又施憐憫的神。
+              </p>
+              <div class="bible-verse bg-gradient-to-r from-indigo-100 to-purple-100 p-8 rounded-xl border border-indigo-200 max-w-2xl mx-auto">
+                <p class="text-xl italic text-slate-800 mb-3">
+                  「當恐懼戰兢做成你們得救的工夫。因為你們立志行事都是神在你們心裏運行，為要成就他的美意。」
+                </p>
+                <p class="text-sm text-slate-600">— 腓立比書 2:12–13</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <div id="visit-counter-container"></div>
+      </main>
+
+    </div>
+  </div>
+
+  <script>
+    function updateReadingProgress() {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+      document.getElementById('reading-progress').style.width = Math.min(progress, 100) + '%';
+    }
+
+    window.addEventListener('scroll', updateReadingProgress);
+    updateReadingProgress();
+
+    function toggleCard(element) {
+      element.classList.toggle('active');
+    }
+
+    function selectOption(element, optionIndex) {
+      const question = element.closest('.quiz-question');
+      const options = question.querySelectorAll('.quiz-option');
+      const answerDiv = question.querySelector('[id^="answer-"]');
+
+      options.forEach(opt => {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+      });
+
+      element.classList.add('selected');
+
+      if (element.classList.contains('correct-answer')) {
+        element.classList.add('correct');
+        if (answerDiv) {
+          answerDiv.classList.remove('hidden');
+          answerDiv.classList.add('scale-in');
+        }
+      } else {
+        element.classList.add('incorrect');
+        const correctOption = question.querySelector('.correct-answer');
+        if (correctOption) {
+          correctOption.classList.add('correct');
+        }
+        if (answerDiv) {
+          answerDiv.classList.remove('hidden');
+          answerDiv.classList.add('scale-in');
+        }
+      }
+    }
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up, .scale-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+  <footer class="text-center py-4 text-slate-500 text-sm">
+    <p class="italic mb-1">
+      But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his
+      understanding. Jeremiah 10:12
+    </p>
+    <p class="text-xs mb-1 mt-2">
+      「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」 耶利米書 10:12
+    </p>
+    <p class="text-xs mt-2 pt-2 border-t border-slate-300">
+      @ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau
+    </p>
+  </footer>
+  <script src="../../../visit-counter.js"></script>
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec';
+    VisitCounter.init('bible_study/信仰討論/自由意志/index', {
+      scriptUrl: SCRIPT_URL,
+      containerId: 'visit-counter-container'
+    });
+  </script>
+</body>
+</html>

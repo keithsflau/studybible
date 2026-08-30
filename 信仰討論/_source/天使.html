@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天使 | Angels in Scripture - Theological Discussion</title>
+  <meta name="description" content="天使專論：以經解經讀聖經中的使者與服役的靈。天使是受造者，指向神的聖潔、審判與拯救，不搶基督的榮耀。路加—使徒行傳中，天使服事福音推進，不另立啟示中心。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.10), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.14), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.14), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(71, 85, 105, 0.10), transparent 30%);
+      }
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(14, 165, 233, 0.16);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(14, 165, 233, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(14, 165, 233, 0.4);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(14, 165, 233, 0.55);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(79, 70, 229, 0.85);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(14, 165, 233, 0.6), rgba(99, 102, 241, 0.5));
+      border-radius: 2px;
+    }
+    .toc-link { transition: all 0.2s ease; white-space: nowrap; }
+    .toc-link.active {
+      background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-essay p { margin-bottom: 1.1rem; }
+    .prose-essay p:last-child { margin-bottom: 0; }
+  </style>
+  <link rel="stylesheet" href="../../../visit-counter.css">
+</head>
+<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-white to-sky-50/40 min-h-screen overflow-x-hidden">
+  <div class="relative min-h-screen overflow-hidden">
+    <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
+
+    <div class="relative z-10">
+      <header class="px-6 py-12 sm:py-16">
+        <div class="mx-auto max-w-7xl">
+          <div class="text-center space-y-6">
+            <a href="../index.html" class="inline-block mb-4 text-slate-600 hover:text-slate-900 transition-colors fade-in-up" style="animation-delay: 0.1s;">
+              <svg class="w-6 h-6 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              返回討論主頁
+            </a>
+            <div class="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg fade-in-up" style="background:linear-gradient(135deg,#0369a1,#94a3b8);animation-delay:0.15s">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 13c3.4-2 6.6-2 8 0 1.4-2 4.6-2 8 0"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.6V20"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.2 11c-2.4-3-3.4-5.4-1.8-7.4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.8 11c2.4-3 3.4-5.4 1.8-7.4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19.4h6"/>
+              </svg>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight float-animation serif-font fade-in-up" style="animation-delay: 0.2s;">
+              天使
+              <span class="block mt-2 bg-gradient-to-r from-sky-600 via-indigo-600 to-slate-700 bg-clip-text text-transparent pulse-animation">
+                Angels as Messengers
+              </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.3s;">
+              受造的使者與服役的靈：以經解經讀救贖敘事中的天使
+            </p>
+            <div class="w-full max-w-md mx-auto mt-6 fade-in-up" style="animation-delay: 0.4s;">
+              <div class="progress-bar" style="width: 0%;" id="reading-progress"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-sky-100 shadow-sm" aria-label="專論目錄">
+        <div class="mx-auto max-w-7xl px-3 sm:px-6">
+          <div class="flex gap-2 overflow-x-auto py-3 text-sm">
+            <a href="#question" class="toc-link active px-3 py-2 rounded-lg bg-sky-50 text-sky-900 font-medium">問題意識</a>
+            <a href="#word" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">詞與職分</a>
+            <a href="#creation" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">創造與地位</a>
+            <a href="#cherubim" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">聖所異象</a>
+            <a href="#ot" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">舊約敘事</a>
+            <a href="#lukeacts" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">路加行傳</a>
+            <a href="#christ" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">基督與天使</a>
+            <a href="#ministry" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">服役與信徒</a>
+            <a href="#fallen" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">墮落的使者</a>
+            <a href="#pastoral" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">牧養結論</a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="px-6 pb-16">
+        <div class="mx-auto max-w-4xl">
+
+          <section id="question" class="locus-section mb-16 fade-in-up" style="animation-delay: 0.5s;">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">一、問題意識：天使是受造的服役者</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                一提起「天使」，當代想像往往比聖經更快：守護天使商品、新紀元的「光之存有」、中世紀九級階級表被當成教義，甚至把過世的親人說成「變成天使」。聖經的記載卻克制得多。天使不是半神，也不是死人變的。人死後或安息、或復活、或面臨審判，並不經歷一場「升級為使者」的變形（傳 12:7；來 9:27；林前 15:42–49）。聖經提到天使，是為了<strong class="text-sky-800">顯明神的聖潔、審判與拯救</strong>：使者出現，因為神自己正在行動。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                希伯來書把這個職分說得很乾淨：
+              </p>
+              <div class="bible-verse mb-6 bg-sky-50 p-6 rounded-lg border border-sky-100">
+                <p class="text-lg italic text-slate-800 mb-2">「天使豈不都是服役的靈、奉差遣為那將要承受救恩的人效力嗎？」</p>
+                <p class="text-sm text-slate-600">— 希伯來書 1:14</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「服役」與「奉差遣」已經劃了界線：天使是受造的僕人，不是崇拜的對象，也不是另一個啟示中心。路加—使徒行傳尤其清楚：天使宣告、釋放、引導，好叫<strong class="text-indigo-800">神的道往前走</strong>，指向基督的死與復活，而不搶去人子的榮耀。正典對翅膀數目、個人守護名單、天庭組織圖，幾乎一律沉默。沉默不是缺陷，而是規範：我們不可用次經、民間傳說或靈恩經驗去補完聖經故意留下的空白。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                敬拜天使、或以天使名義加增經典與指令，屬保羅所斥的<strong class="text-rose-800">異端軌跡</strong>（西 2:18；加 1:8–9；見「<a href="../異端/index.html" class="text-indigo-700 font-medium hover:underline">異端</a>」）。如何試驗諸靈，見本區「<a href="../辨別神的聲音/index.html" class="text-indigo-700 font-medium hover:underline">辨別神的聲音</a>」；日常敬虔若把「對頻天使」當成靈修，則當與「<a href="../靈修學/index.html" class="text-indigo-700 font-medium hover:underline">靈修學</a>」對讀——靈修是聽見聖言而活，不是另覓中介。
+              </p>
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-sky-50 border border-sky-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-sky-900 mb-2">不是甚麼</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">不是半神、不是亡靈轉化、不是可求問的靈媒，也不是可編成百科的九級天階教義。</p>
+                </div>
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">是甚麼</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">是神所造、所差的使者與服役的靈；記載為了顯明神自己的作為，叫人敬畏並信靠基督。</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-slate-900 mb-2">方法</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">以經解經、沿救贖敘事推進。承認正典克制；敘事細節不可系統化為投機的天使學。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="word" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">二、詞與職分：本義是「使者」</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                希伯來文 <span class="serif-font">מַלְאָךְ</span>（malʾāḵ）與希臘文 ἄγγελος（angelos）的本義都是<strong class="text-sky-800">使者</strong>：被差去傳達、執行、護衛。詞本身不先告訴我們「有翅膀的靈體」，而先告訴我們「有差遣者」。舊約裡，同一詞也可指人的信使（如創 32:3 雅各打發人去見以掃；瑪 2:7 祭司被稱為萬軍之耶和華的使者）。翻譯成「天使」，容易讓讀者先看見受造物的形貌，卻忘了職分：<strong class="text-indigo-800">誰差他、他傳甚麼</strong>。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                有一類經文必須謹慎：「耶和華的使者」常帶着神顯現的張力。夏甲說：「在這裡我也看見那看顧我的嗎？」（創 16:13）；亞伯拉罕獻以撒時，「耶和華的使者從天上呼叫」，隨後經文卻以「耶和華說」繼續（創 22:11–16）；摩西在荊棘火焰中，先寫「耶和華的使者」，接着「神……說：我是你父親的神」（出 3:2–6）。敘事把使者與神自己的臨在疊在一起，不是要我們發明一位可獨立崇拜的中介，而是要我們承認：<strong class="text-sky-800">說話、立約、施行拯救的是耶和華自己</strong>。解經在此應當謙卑：這些文本指向神的自我臨在，絕不是鼓勵天使崇拜。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                新約沿用同一職分語言。加百列「奉差而來」（路 1:19、26）；啟示錄裡，向約翰顯現的那一位拒絕俯伏：「千萬不可！我和你，並你那些為耶穌作見證的弟兄同是作僕人的。你要敬拜神！」（啟 19:10；參 22:8–9）。使者若忠心，必把自己藏在差遣者後面。
+              </p>
+            </div>
+          </section>
+
+          <section id="creation" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">三、創造與地位：萬有藉基督而造</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                詩篇把天使放在受造讚美的隊列裡，而不是創造主的位置：
+              </p>
+              <div class="bible-verse mb-6 bg-sky-50 p-6 rounded-lg border border-sky-100">
+                <p class="text-lg italic text-slate-800 mb-2">「他的眾使者都要讚美他！他的諸軍都要讚美他！……因為他一吩咐，便都造成。」</p>
+                <p class="text-sm text-slate-600">— 詩篇 148:2、5</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                歌羅西書把這隊列放在基督論之下：
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「因為萬有都是靠他造的，無論是天上的，地上的；能看見的，不能看見的；或是有位的，主治的，執政的，掌權的；一概都是藉著他造的，又是為他造的。」</p>
+                <p class="text-sm text-slate-600">— 歌羅西書 1:16</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「有位的、主治的」無論指天上的權能或人間的結構，都不能逃出「藉着他、為他」這兩個介詞。天使有智力、有能力，能執行審判、傳報、爭戰（詩 103:20–21；王下 19:35），卻<strong class="text-sky-800">並非無所不知</strong>。論到那日子、那時辰，「沒有人知道，連天上的使者也不知道，子也不知道，惟獨父知道」（太 24:36；參可 13:32）。彼得也說，先知所傳的救恩，「天使也願意詳細察看」（彼前 1:12）。他們渴慕認識神在基督裡成就的事，卻不是這救恩的作者。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                因此，任何把天使抬到「半神」「能量源」「命運管理者」的系統，都已經離開西 1:16。受造物再榮耀，仍是受造；敬拜只歸創造主。
+              </p>
+            </div>
+          </section>
+
+          <section id="cherubim" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">四、基路伯、撒拉弗、異象中的活物</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                聖經用幾組特殊名稱，描繪聖所與寶座前的受造物，但這些名稱首先是<strong class="text-sky-800">聖潔的象徵語言</strong>，不是供人繪製完整編制表的素材。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                人被趕出伊甸園後，「基路伯和四面轉動發火焰的劍」把守生命樹的道路（創 3:24）：不是童話守衛，而是宣告墮落之後，生命不再可擅自奪取。出埃及記吩咐在施恩座上做兩個基路伯，翅膀遮掩施恩座（出 25:18–22）；耶和華說：「我要在那裡與你相會。」約櫃上的基路伯不是偶像，而是提醒：至聖所裡，人只能按神指定的方式，在施恩的遮蓋下朝見。以賽亞看見撒拉弗侍立，彼此呼喊「聖哉，聖哉，聖哉」（賽 6:2–3）；先知的反應是「禍哉！我滅亡了」，直到炭沾嘴唇、罪孽除掉。以西結看見四活物與基路伯、輪中套輪的異象（結 1；10），語言極度稠密、近乎難以圖像化——正是要人停在神的榮耀之前，而不是停在生物分類學之前。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                後來教會傳統（尤其託名丟尼修的《天階體系》）把天使編成「九級」。這是後聖經的系統化嘗試，可作為歷史注腳，<strong class="text-indigo-800">卻不可提升為教義</strong>。正典給我們的是敬拜與聖潔，不是軍階名冊。把賽 6、結 1、啟 4 的異象語言釘成一本「天使百科」，就是用我們的好奇心，填補神選擇不說的話。
+              </p>
+            </div>
+          </section>
+
+          <section id="ot" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">五、舊約敘事：神在歷史中差遣</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                族長敘事裡，使者一次又一次把應許從「聽說」變成「臨到」。三位訪客到亞伯拉罕帳棚，宣告撒拉將生兒子（創 18）；其中的說話者被稱為耶和華。兩位使者到所多瑪，拯救羅得、執行審判（創 19）：憐憫與烈怒同在一晚。雅各夢見梯子「有神的使者在梯子上，上去下來」，醒來卻說：「耶和華真在這裡」（創 28:12–16）——梯子的重點不是天使交通學，而是神在逃亡之地仍與他同在。巴蘭的驢看見耶和華的使者站在路上（民 22:22–35）：先知的眼睛比驢還遲鈍，直到神開他的眼。基甸打麥時，耶和華的使者顯現：「大能的勇士啊，耶和華與你同在」（士 6:12）；基甸求憑據，神卻把榮耀留給自己的拯救，而不是留給使者的形貌。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                但以理書把視野拉到列國爭戰的背後。加百列前來使人明白異象（但 8:16；9:21–23）；米迦勒被稱為「保衛你本國之民的大君」（但 12:1；參 10:13、21）。經文承認：地上帝國的起伏，並非只有外交與刀劍。然而解經必須克制。但以理的異象服務於被擄與復興的盼望，以及至高者仍掌權；它<strong class="text-sky-800">並不授權我們發展一套「領土靈」作戰手冊</strong>——按郵區認領天使、點名捆綁「城市之靈」。把但 10 讀成可操作的屬靈地理學，是把啟示的邊緣變成系統的中心，也常把人的注意力從悔改、忠心與等候轉移到技巧。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                舊約天使敘事的共同方向是：神記念應許、審判罪惡、保護餘民。使者是情節中的差役，不是故事的主角。
+              </p>
+            </div>
+          </section>
+
+          <section id="lukeacts" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">六、路加—使徒行傳：天使服事福音推進</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                路加以聖殿與應許起筆。撒迦利亞在聖殿燒香，加百列站在香壇的右邊，宣告以利沙伯將生約翰（路 1:11–20）。同一位加百列到加利利，向馬利亞報喜：「你要懷孕生子，可以給他起名叫耶穌」（路 1:26–31）。兩次顯現的文學對比極刻意：祭司懷疑而暫時不能說話；卑微的童女卻說「情願照你的話成就在我身上」（1:38）。天使沒有另傳一套奧秘；他重述神對大衛家的應許，並把孩子放進「至高者的兒子」這條基督論的軌道（1:32–35）。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                聖誕夜，群天使向牧羊人讚美（路 2:9–14）。信息不是「你們遇見了天使」，而是：
+              </p>
+              <div class="bible-verse mb-6 bg-sky-50 p-6 rounded-lg border border-sky-100">
+                <p class="text-lg italic text-slate-800 mb-2">「不要懼怕！我報給你們大喜的信息，是關乎萬民的；因今天在大衛的城裡，為你們生了救主，就是主基督。」</p>
+                <p class="text-sm text-slate-600">— 路加福音 2:10–11</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「關乎萬民」已經預告使徒行傳的地極。牧羊人去伯利恆「看看所成的事」（2:15）；敘事強迫讀者把視線從天上的榮光，轉到馬槽裡的嬰孩。這是路加一貫的進路：<strong class="text-indigo-800">天使的榮耀服務於救主的降臨，而不是相反</strong>。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                客西馬尼，有抄本記着：「有一位天使從天上顯現，加添他的力量」（路 22:43）。這節（連同 22:44）在早期重要抄本中或缺或存，經文鑑別需一句交代，卻不必在其上建造教義。無論取捨，段落的中心仍是人子禱告「不要成就我的意思，只要成就你的意思」（22:42）。天使若出現，也是服役於這一順服，不是把耶穌寫成需要天庭救援的半神。復活清晨，兩個人「衣服放光」對婦女說：「為甚麼在死人中找活人呢？他不在這裡，已經復活了」（路 24:4–6）。天使再次作見證人，把空墳解釋為神已經應驗的作為。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                升天時，兩個人穿白衣站在旁邊：「這離開你們被接升天的耶穌，你們見他怎樣往天上去，他還要怎樣來」（徒 1:10–11）。門徒不可停在仰天發呆；他們要回到城裡等候聖靈，然後作見證（1:8）。使徒行傳此後的天使，幾乎都出現在<strong class="text-sky-800">福音越過界線的節點</strong>上，而不是另立一個啟示中心。
+              </p>
+              <ul class="list-disc pl-6 text-lg leading-relaxed text-slate-700 space-y-3 mb-5">
+                <li><strong class="text-slate-900">徒 5:19–20</strong>：主的使者開監門，吩咐使徒「站在殿裡，把這生命的道都講給百姓聽」。釋放是為了繼續講道，不是為了個人安逸。雅各後來仍被刀殺（12:2），說明天使不是「成功學保單」。</li>
+                <li><strong class="text-slate-900">徒 8:26</strong>：主的使者對腓利說「起來！向南走」。曠野路上，埃提阿伯太監正在讀以賽亞書五十三章。天使把傳道者送到經文已經預備好的人那裡；解釋經文、指着耶穌講的，仍是腓利（8:35）。</li>
+                <li><strong class="text-slate-900">徒 10:3–8、22</strong>：哥尼流看見神的使者，卻沒有從使者領受一套外邦人福音。使者叫他去請彼得；彼得必須講那關於耶穌的道，聖靈才降臨。天使推動外邦納入，卻不取代使徒的見證。</li>
+                <li><strong class="text-slate-900">徒 12:7–11</strong>：主的使者拍醒彼得，鐵鏈脫落。教會正在切切禱告。路加讓我們看見神聽禱告、也差使者，但故事的結尾是彼得「往別處去了」（12:17）——教會仍在逼迫中前行。</li>
+                <li><strong class="text-slate-900">徒 27:23–24</strong>：船難夜裡，保羅說「我所屬所事奉的神，他的使者昨夜站在我旁邊」，應許他必站在凱撒面前。天使的話再次服務於「神的道」抵達羅馬，而不是服務於航海順利本身。</li>
+              </ul>
+              <p class="text-lg leading-relaxed text-slate-700">
+                把這些場景連起來，路加的神學地理便顯明：從聖殿的香壇，到萬民的馬槽，到外邦的百夫長，到地中海的風浪——天使是福音推進的差役。他們不另傳與使徒不同的福音；若有人聲稱「天上來的使者」改寫了十字架，保羅的判語已經寫下（加 1:8）。
+              </p>
+            </div>
+          </section>
+
+          <section id="christ" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">七、基督與天使：兒子遠超過天使</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                希伯來書開篇就把層級釘死。神既在這末世藉着兒子說話，這兒子「所承受的名，既比天使的名更尊貴，就遠超過天使」（來 1:4）。經文一連串以經解經：神何曾對哪一個天使說「你是我的兒子，我今日生你」？又說「神的使者都要拜他」（1:5–6）。第二章補上一面：耶穌暫時「比天使小一點」，為要親嘗死味、救拔亞伯拉罕的後裔（2:9、16）。降卑是救贖，不是本體上的遜位。天使是服役者；兒子是承受萬有者。混淆二者，就是把福音的中心搬空。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                試探裡，魔鬼引用詩篇九十一篇：「主要為你吩咐他的使者用手托着你」（太 4:6；詩 91:11–12）。耶穌拒絕誤用這節經文去試探主。真正的詩 91 是投靠神的人的倚靠，不是表演神蹟的劇本。連一句「有天使保護」的真經文，都可以被扭曲成自我中心的宗教。人子選擇的路是十架，不是從殿頂跳下去的天庭特技。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                復活與再來的場景裡，天使再次出現，卻仍是服役。收割時「人子要差遣使者」（太 13:41）；人子「要在他榮耀裡，同着眾天使降臨」（太 25:31）；主耶穌「同他有能力的天使從天上在火焰中顯現」（帖後 1:7）。天使執行終末的分別與榮耀的伴隨，審判的主仍是基督。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                因此人不可拜天使。歌羅西的危機之一，是「故意謙虛和敬拜天使」（西 2:18）：看起來敬虔，實則奪去對元首的持定（2:19）。約翰兩次俯伏，兩次被喝止：「你要敬拜神！」（啟 19:10；22:8–9）。忠心的使者與先知、與為耶穌作見證的弟兄「同是作僕人的」。任何把天使放在中保位置上的敬虔，都已經離開提前 2:5「只有一位中保」。
+              </p>
+            </div>
+          </section>
+
+          <section id="ministry" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">八、服役與信徒：效力，不是迷信</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                來 1:14 的應許是給「將要承受救恩的人」：天使奉差遣效力。這是安慰，也是界線。安慰在於：神的護理可以使用祂所造的使者。界線在於：我們不向使者祈禱、不為自己點名一位「專屬守護者」、不把安全感建立在靈界人事編制上。詩篇九十一篇說「他要為你吩咐他的使者」（詩 91:11），上下文是「住在至高者隱密處的」投靠耶和華（91:1–2），不是護身符。主耶穌在試探中已經示範：這節經文不可被抽出來試探神。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「你們要小心，不可輕看這小子裡的一個；我告訴你們，他們的使者在天上，常見我天父的面。」（太 18:10）這句常被做成「兒童守護天使」的商品神學。上文卻是論天國裡誰為大、不可絆倒信我的一個小子，並以迷失的羊作結（18:1–14）。重點是<strong class="text-sky-800">不可輕看</strong>：這些「小子」在父面前極其貴重，甚至天庭都與他們有關。經文沒有教我們為每個小孩繪製守護天使名片，更沒有把保護從十架的牧者轉移到可愛的翅膀圖像上。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「不可忘記用愛心接待客旅；因為曾有接待客旅的，不知不覺就接待了天使。」（來 13:2）這是倫理勸勉，回響亞伯拉罕的帳棚（創 18），不是獵奇指南。教會不可把這節讀成「如何遇見天使」的攻略，而應讀成：向陌生人具體地有愛，因為神的世界比我們看見的更大。效力的方向是愛弟兄、接待、記念被捆綁的人（來 13:1–3），不是蒐集超自然軼事。
+              </p>
+            </div>
+          </section>
+
+          <section id="fallen" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">九、墮落的使者：承認張力，不建神話</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                聖經同樣承認：並非所有使者都忠心。創世記六章「神的兒子們」與人的女子們，歷代有天使說、塞特譜系說、權貴說等爭論——此處一句帶過即可，<strong class="text-sky-800">不可用次經《以諾一書》的守望者神話來補完正典，並建成一整套前洪水天使學</strong>。約伯記一至二章讓「撒但」出現在神的眾子之中，控告義人；主動權仍在耶和華，撒但必須請示。猶大書說有「不守本位、離開自己住處的天使」，被永遠的鎖鍊拘留（猶 6）；彼得後書平行地說神「沒有寬容犯了罪的天使」（彼後 2:4）。啟示錄用龍、古蛇、魔鬼、撒但的一串名稱，並「他的使者」（啟 12:7–9），描繪天上的爭戰與地上的逼迫。這些文本足夠嚴肅，卻仍克制：重點是神的勝利與聖徒的見證，不是給人一份可操作的鬼魔目錄。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                撒但與鬼魔另有專題可寫；本篇重心是忠心的天使與當守的界線。只消記住：邪惡的靈界存在是真實的，卻不是二元對等的第二個神。基督已經「將一切執政的、掌權的擄來，明顯給眾人看，就仗着十字架誇勝」（西 2:15）。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                哥林多前書留下一句令人不安的話：「豈不知我們要審判天使嗎？何況今生的事呢？」（林前 6:3）上下文是責備信徒彼此告到外邦人面前。保羅用終末的尊榮反襯今日那些瑣碎的訴訟：若聖徒將參與神對世界——甚至對某些天使——的審判，怎麼連教會內的小事都不會判斷？這節不是邀請我們想像審判庭的座位表，而是叫教會活在與終末身份相稱的智慧與聖潔裡。張力保留給經文：人在今世比天使小，在基督裡卻被抬到出人意外的位置（來 2:5–9；林前 6:2–3）。
+              </p>
+            </div>
+          </section>
+
+          <section id="pastoral" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">十、牧養結論：思想天使，為了敬拜神</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                聖經要我們知道有天使，好叫我們<strong class="text-sky-800">更敬畏神、更剛強壯膽、更專心基督</strong>。以利沙的僕人眼睛被開啟，看見滿山有火車火馬（王下 6:17）——那一幕的結論不是「去研究天軍編制」，而是「不要懼怕，與我們同在的比與他們同在的更多」（6:16）。今日若有人教導求問天使、與天使「對頻」、領受以天使署名的新經典或生活指令，就當用加拉太書與歌羅西書拒絕：
+              </p>
+              <div class="bible-verse mb-6 bg-rose-50 p-6 rounded-lg border border-rose-100">
+                <p class="text-lg italic text-slate-800 mb-2">「但無論是我們，是天上來的使者，若傳福音給你們，與我們所傳給你們的不同，他就應當被咒詛。」</p>
+                <p class="text-sm text-slate-600">— 加拉太書 1:8（參西 2:18–19）</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                福音已經一次交付聖徒。天使若忠心，必把人推向這福音，而不是推向自己。我們不需要一套比正典更完整的天使學才能作門徒；我們需要的是聽兒子、持定元首、彼此相愛。思想天使，最後應當把人帶回很普通的地方：打開聖經、敬拜三一神、傳那關乎萬民的大喜信息，並在患難中知道神仍差遣祂的僕人效力。
+              </p>
+              <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-sky-50 border border-sky-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-sky-900 mb-2">給個人</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">可為神的護理感恩，卻不向天使禱告、不蒐集守護名單。安全感在父與子，不在翅膀的圖像。</p>
+                </div>
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">給教會</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">講道與詩歌可提天使的敬拜與服役，卻不可讓「天使經歷」成為入會門檻或屬靈等級。</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-slate-900 mb-2">給分辨</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">凡以天使名義加增經典、改寫福音、奪去對基督的持定，一律拒絕。正典已經說夠。</p>
+                </div>
+              </div>
+              <div class="bg-gradient-to-r from-sky-50 to-indigo-50 border border-sky-100 rounded-xl p-6 text-slate-700 leading-relaxed">
+                <p class="mb-3">相關討論可並讀「<a href="../辨別神的聲音/index.html" class="text-indigo-700 font-medium hover:underline">辨別神的聲音</a>」、「<a href="../靈修學/index.html" class="text-indigo-700 font-medium hover:underline">靈修學</a>」，以及「<a href="../以經解經/index.html" class="text-indigo-700 font-medium hover:underline">以經解經</a>」。前者守護試驗；中者守護敬虔的位置；後者守護解釋的方法。天使專論的結論只有一句：<strong class="text-indigo-800">使者過去了，所傳的那一位仍在。</strong></p>
+                <p>「你要敬拜神！」（啟 22:9）</p>
+              </div>
+            </div>
+          </section>
+
+          <div id="visit-counter-container"></div>
+        </div>
+      </main>
+
+      <footer class="text-center py-4 text-slate-500 text-sm">
+        <p class="italic mb-1">
+          But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his
+          understanding. Jeremiah 10:12
+        </p>
+        <p class="text-xs mb-1 mt-2">
+          「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」 耶利米書 10:12
+        </p>
+        <p class="text-xs mt-2 pt-2 border-t border-slate-300">
+          @ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.opacity = '1';
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    function setActiveToc(id) {
+      tocLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', isActive);
+        link.classList.toggle('bg-slate-50', !isActive);
+        link.classList.toggle('text-slate-700', !isActive);
+      });
+    }
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const match = sections.find(item => item.el === entry.target);
+        if (match) setActiveToc(match.id);
+      });
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+      if (scrollTop < 120) setActiveToc('question');
+    });
+  </script>
+  <script src="../../../visit-counter.js"></script>
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec';
+    if (window.VisitCounter) {
+      VisitCounter.init('bible_study/信仰討論/天使/index', {
+        scriptUrl: SCRIPT_URL,
+        containerId: 'visit-counter-container'
+      });
+    }
+  </script>
+</body>
+</html>

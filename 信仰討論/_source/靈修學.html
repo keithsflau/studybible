@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>靈修學 | Christian Spirituality - Theological Discussion</title>
+  <meta name="description" content="靈修學：以經解經與救贖歷史探討信徒如何在基督裡與神相交，被聖言與聖靈塑造。敬虔是聖約中的聽見與跟從，不是技巧消費。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(180, 83, 9, 0.08), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(13, 148, 136, 0.06), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(180, 83, 9, 0.08), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.08), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(13, 148, 136, 0.06), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(180, 83, 9, 0.12), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.12), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(13, 148, 136, 0.08), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(180, 83, 9, 0.18);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(180, 83, 9, 0.35);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(180, 83, 9, 0.15), 0 10px 10px -5px rgba(99, 102, 241, 0.08);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(180, 83, 9, 0.16);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(180, 83, 9, 0.55);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(180, 83, 9, 0.85);
+      transform: translateX(5px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(180, 83, 9, 0.55), rgba(99, 102, 241, 0.5));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #b45309 0%, #6366f1 100%);
+      color: white;
+    }
+    .locus-section {
+      scroll-margin-top: 6rem;
+    }
+  </style>
+  <link rel="stylesheet" href="../../../visit-counter.css">
+</head>
+<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-white to-amber-50/30 min-h-screen overflow-x-hidden">
+  <div class="relative min-h-screen overflow-hidden">
+    <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
+
+    <div class="relative z-10">
+
+      <header class="px-6 py-12 sm:py-16">
+        <div class="mx-auto max-w-7xl">
+          <div class="text-center space-y-6">
+            <a href="../index.html" class="inline-block mb-4 text-slate-600 hover:text-slate-900 transition-colors fade-in-up" style="animation-delay: 0.1s;">
+              <svg class="w-6 h-6 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              返回討論主頁
+            </a>
+            <div class="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg fade-in-up" style="background:linear-gradient(135deg,#0e7490,#67e8f9);animation-delay:0.15s">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 13c2.6-1 5.2-1 8 0s5.4 1 8 0v7c-2.6 1-5.2 1-8 0s-5.4-1-8 0v-7z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13v7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v3M8.2 5.2l1.3 1.4M15.8 5.2l-1.3 1.4M6 8.6h2M16 8.6h2"/>
+              </svg>
+            </div>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight float-animation serif-font fade-in-up" style="animation-delay: 0.2s;">
+              靈修學
+              <span class="block mt-2 bg-gradient-to-r from-amber-700 via-indigo-600 to-teal-700 bg-clip-text text-transparent pulse-animation">
+                Christian Spirituality
+              </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto pulse-animation fade-in-up" style="animation-delay: 0.3s;">
+              聖約中的聽見與跟從：以經解經、救贖歷史中的與神相交
+            </p>
+            <div class="w-full max-w-md mx-auto mt-6 fade-in-up" style="animation-delay: 0.4s;">
+              <div class="progress-bar" style="width: 0%;" id="reading-progress"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-amber-100 shadow-sm" aria-label="單元目錄">
+        <div class="mx-auto max-w-7xl px-3 sm:px-6">
+          <div class="flex gap-2 overflow-x-auto py-3 text-sm">
+            <a href="#question" class="toc-link active px-3 py-2 rounded-lg bg-amber-50 text-amber-900 font-medium">問題意識</a>
+            <a href="#walk" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">與神同行</a>
+            <a href="#word" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">聖言默想</a>
+            <a href="#psalms" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">詩篇與敬拜</a>
+            <a href="#prophets" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">虛假敬虔</a>
+            <a href="#jesus" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">耶穌的生命</a>
+            <a href="#union" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">在基督裡</a>
+            <a href="#disciplines" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">操練的位置</a>
+            <a href="#discernment" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">分辨</a>
+            <a href="#pastoral" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">牧養結論</a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="px-6 pb-16">
+        <div class="mx-auto max-w-6xl">
+
+          <section id="question" class="locus-section mb-16 fade-in-up" style="animation-delay: 0.5s;">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">一、問題意識：靈修若離開聖經與教會</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                華人教會口中的「靈修學」，近於西方所謂 <em>spiritual theology</em> 或 <em>Christian spirituality</em>：研究信徒如何在基督裡與神相交，並被聖言與聖靈塑造。它不是另立一本權威，與聖經並列；也不是把「每日五步驟」當成可以消費的技巧。靈修學的正當任務，是<strong class="text-amber-800">按聖經反省這條生命之路</strong>——人如何聽見神的話而活。
+              </p>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                困難恰恰在這裡。一旦「靈修」離開公開的聖經與可見的教會，它極易變成自我感覺的管理：我今天「有沒有被摸着」、有沒有「額外的話」、有沒有「內在釋放」。聖經的敬虔卻不是先量度感覺，而是先俯伏在已賜下的話語前。申命記反覆說：以色列的生命繫於聽見、謹守、遵行（申 6:4–9；8:3）。主耶穌引用同一傳統：「人活着，不是單靠食物，乃是靠神口裡所出的一切話。」（太 4:4）靈修若把感覺或技巧放在聖言之上，就已經走偏了。
+              </p>
+              <div class="bible-verse mb-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「人活着，不是單靠食物，乃是靠神口裡所出的一切話。」</p>
+                <p class="text-sm text-slate-600">— 馬太福音 4:4（參申命記 8:3）</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                因此，本文不寫操作手冊，也不追隨與聖經脫節的神秘主義、成功神學，或把內在醫治當成另一套救恩。祈禱是靈修的呼吸；細節見本討論區「<a href="../祈禱/index.html" class="text-indigo-700 font-medium hover:underline">祈禱</a>」專論，當與本文並讀。此處範圍更廣：<strong class="text-indigo-700">聖言、敬拜、順服、群體，以及十架形狀的生命</strong>。方法是以經解經、沿救贖歷史推進——從聖約中的同行，到律法的默想，到先知對虛假敬虔的批判，再到基督與聖靈裡的聯合。靈修不是技巧市場上的消費，而是聖約中的敬畏與跟從。
+              </p>
+              <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-amber-50 border border-amber-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-amber-900 mb-2">不是甚麼</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">不是每日步驟清單，不是取代聖經的「額外啟示」，也不是以感覺驗證神是否同在。</p>
+                </div>
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">是甚麼</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">是對「在基督裡與神相交」這條路的聖經反省：聽見、敬拜、順服、在教會中被塑造。</p>
+                </div>
+                <div class="bg-teal-50 border border-teal-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-teal-900 mb-2">判準</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">正典已經說夠。靈修學服務門徒生活，不另立權威；一切經歷必須服在聖經之下。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="walk" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">二、與神同行：交通在順服裡</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                舊約很少用後世那種「靈修」詞彙，卻一再描寫人在聖約中與神同行。創世記 5:24 只說：「以諾與神同行，神將他取去，他就不在世了。」經文沒有提供出神的技巧、異象的階梯，或可複製的方法。它把焦點放在一生的方向：這人活在神面前。同行（הָלַךְ）在妥拉裡不是神秘術語，而是行走、生活、持續的忠誠。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「亞伯蘭年九十九歲的時候，耶和華向他顯現，對他說：『我是全能的神。你當在我面前作完全人。』」</p>
+                <p class="text-sm text-slate-600">— 創世記 17:1</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                亞伯拉罕的「完全」（תָּמִים）不是無罪無缺的自我完成，而是在立約之主面前的忠誠與整全。神先自我啟示——「我是全能的神」——然後呼召人活在祂面前。交通的主動權在神；人的回應是行走，不是發明一條通往神的技術。同一條線貫穿族長敘事：神說話、應許、命令；人相信、離開本地、獻上以撒（創 12；15；22）。與神相交，發生在聽命的歷史裡，不發生在抽離歷史的出神練習裡。
+              </p>
+              <div class="bible-verse mb-6 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「世人哪，耶和華已指示你何為善。他向你所要的是甚麼呢？只要你行公義，好憐憫，存謙卑的心，與你的神同行。」</p>
+                <p class="text-sm text-slate-600">— 彌迦書 6:8</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                彌迦把「與神同行」從禮儀表演拉回聖約倫理。神所要的，不是更多祭物去「買」同在，而是公義、憐憫與謙卑。靈修學若只談內在安靜、不談鄰舍與權柄下的生活，就還沒讀完這節經文。交通在順服裡；順服有公共後果。救贖歷史往前走，這條線不會被廢掉，只會在基督裡被成全。
+              </p>
+            </div>
+          </section>
+
+          <section id="word" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">三、聖言的默想：靈修的中心是聆聽聖經</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                約書亞承接摩西之後，神給他的「屬靈裝備」不是祕傳口訣，而是律法書：「這律法書不可離開你的口，總要晝夜思想，好使你謹守遵行這書上所寫的一切話。」（書 1:8）默想（הָגָה）是口中反覆、心思盤桓，目的是遵行，不是蒐集靈感。亨通與順利，在這節裡附屬於謹守，而不是成功神學的保證單。
+              </p>
+              <div class="bible-verse mb-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「惟喜愛耶和華的律法，晝夜思想，這人便為有福！」</p>
+                <p class="text-sm text-slate-600">— 詩篇 1:2</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                詩篇第一篇把義人與惡人分開的，不是誰比較會「進入內室」，而是誰喜愛律法、晝夜思想。義人像溪旁的樹，果子按時候結出——生命被話語灌溉，而不是被技巧催熟。詩篇 19 篇接著說：「耶和華的律法全備，能甦醒人心；……耶和華的訓詞正直，能快活人的心。」（詩 19:7–8）聖言本身能甦醒、能快活；靈修不必在聖經以外另找「更靈」的聲音。
+              </p>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                詩篇 119 是最長的默想教材。詩人不是在尋找取代妥拉的「額外的話」，而是求神開眼，使自己看出律法中的奇妙（詩 119:18）；「你的話是我腳前的燈，是我路上的光。」（詩 119:105）喜愛、思想、遵行、受熬煉而不離棄——這才是聖經自己的靈修課程。當代若有人把「領受」理解成繞過經文、直接取得神對今日的私語，詩篇 119 會先問：你有沒有先愛這本已經敞開的書？
+              </p>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p><strong class="text-slate-900">釋經提醒：</strong>新約沒有廢掉這條聆聽之路，而是把它聚焦在基督身上。路加記載復活的主「從摩西和眾先知起，凡經上所指着自己的話都給他們講解明白了」（路 24:27）。聖靈光照，是叫人明白聖經所見證的基督（約 5:39；16:13–14），不是另頒一套與正典競爭的私啟示。靈修的中心是聆聽聖經。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="psalms" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">四、詩篇與敬拜：讚美、哀歌、等候如何塑造人</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                祈禱的專題討論，此處不重複。需要指出的是：以色列的禱告書同時是敬拜書。詩篇不是私人靈修的附錄，而是聖約群體在聖殿與會堂中學習如何對神說話、如何被神改寫情感。讚美詩（如詩 103；145）教導人按神的作為稱頌，而不是按自己的心情製造氣氛；哀歌（如詩 13；22；88）允許信心帶着控訴與眼淚到神面前，拒絕把「正面能量」當成敬虔的證明。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「我的心哪，你為何憂悶？為何在我裡面煩躁？應當仰望神，因我還要稱讚他。」</p>
+                <p class="text-sm text-slate-600">— 詩篇 42:5</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                詩篇 42–43 讓我們看見靈修的真實形狀：魂可以憂悶，信心卻學習對自己講論神。這不是心理技巧，而是敬拜中的自我勸勉。詩篇 130 篇把深處的呼求連於赦罪與「等候」：「我的心等候主，勝於守夜的，等候天亮。」（詩 130:6）等候不是空白，而是承認救贖歷史尚未完結，人不能用操練把神的時間表搶過來。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                新約教會繼承這本詩篇。保羅要信徒「用詩章、頌詞、靈歌，彼此對說，口唱心和的讚美主」（弗 5:19）。敬拜塑造人格：我們學會為誰感恩、向誰哀哭、把盼望放在何處。靈修學若只談獨處日記，卻不談主日聚集中的聖言與詩歌，就把聖經給以色列和教會的主要塑造場地挪走了。獨處有其位置（下一節談耶穌時會再提）；但詩篇首先是群體的學校。
+              </p>
+            </div>
+          </section>
+
+          <section id="prophets" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">五、先知對虛假敬虔的批判：真靈修有倫理後果</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                救贖歷史中，先知並不反對敬拜本身，卻猛烈拆毀與公義脫節的宗教表演。以賽亞書 1 章，主說祂厭煩公牛公羊的祭，也不喜悅嚴肅會；伸手禱告，祂卻遮眼，因為手上滿了殺人的血（賽 1:11–15）。問題不是禮儀太多，而是禮儀成了遮掩不義的帳幕。
+              </p>
+              <div class="bible-verse mb-6 bg-rose-50 p-6 rounded-lg border border-rose-100">
+                <p class="text-lg italic text-slate-800 mb-2">「我所揀選的禁食不是要鬆開凶惡的繩，解下軛上的索，使被欺壓的得自由，折斷一切的軛嗎？」</p>
+                <p class="text-sm text-slate-600">— 以賽亞書 58:6</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                以賽亞書 58 章把禁食從「屬靈進深」的自我感覺裡拉出來。當日有人禁食卻同時欺壓工人、彼此爭競（賽 58:3–4）。主所揀選的禁食，是鬆開凶惡的繩、讓受壓的得自由，並把餅分給飢餓的人（賽 58:6–7）。阿摩司同樣宣告：「我厭惡你們的節期，也不喜悅你們的嚴肅會。……惟願公平如大水滾滾，使公義如江河滔滔。」（摩 5:21、24）
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                這對當代靈修學是一把必要的刀。禁食、守夜、退修、方言、淚流滿面，都可以是真的，也都可以是虛的。判準不在強度，而在是否與神的聖約品格相符：憐憫、公平、誠實。真靈修有倫理後果；沒有後果的「很靈」，先知稱之為主所厭惡的。靈修學必須把以賽亞與阿摩司讀進課程，否則它只會培養更精緻的自義。
+              </p>
+            </div>
+          </section>
+
+          <section id="jesus" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">六、耶穌的生命：曠野、人群、客西馬尼與十架</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                福音書沒有把耶穌寫成靈性進階的導師，而是寫成走上十字架的兒子。祂「常常退到曠野去禱告」（路 5:16），也在會堂讀經、在人群中醫治與教導。獨處不是逃離使命，而是把使命交回父的手中。路加特別把禱告與聖靈、與關鍵抉擇連在一起（路 3:21–22；6:12–13；9:18、28–29）。這不是可販售的「曠野技巧」，而是子對父的忠誠。
+              </p>
+              <div class="bible-verse mb-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「阿爸！父啊！在你凡事都能；求你將這杯撤去。然而，不要從我的意思，只要從你的意思。」</p>
+                <p class="text-sm text-slate-600">— 馬可福音 14:36</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                客西馬尼是新約靈修的試金石。耶穌沒有用出神繞過痛苦，也沒有把「與父合一」理解成意志消失。祂真實祈求杯撤去，又把主權交回：「不要從我的意思。」跟從祂的人，不是攀上比十架更高的階梯，而是背起十字架。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「若有人要跟從我，就當捨己，背起他的十字架來跟從我。因為，凡救自己生命的，必喪掉生命；凡為我和福音喪掉生命的，必救了生命。」</p>
+                <p class="text-sm text-slate-600">— 馬可福音 8:34–35</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                可 8:34–38 把門徒身份釘在十字架的邏輯上，而不是靈性等級上。登山變相（可 9:2–8）讓三個門徒看見榮耀，卻立刻被帶回下山的道路：兒子仍要受苦，門徒仍要服事。雲彩中的聲音說：「這是我的愛子，你們要聽他。」靈修的高峰不是停留在山上的光，而是聽這一位，然後與祂下山。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                因此，把耶穌的禱告生活抽成「如何更有能力」的課程，是讀反了福音。祂的能力為着服事；祂的順服走向各各他。靈修學若以耶穌為範式，就必須同時講曠野與人群、講變相與下山、講「不要照我的意思」。跟從是十架形狀，不是進階階梯。
+              </p>
+            </div>
+          </section>
+
+          <section id="union" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">七、「在基督裡」與聖靈：新約靈修的核心</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                舊約的「同行」在新約被收進一個更尖銳的範疇：與基督聯合。約翰福音 15 章，主說：「我是葡萄樹，你們是枝子。常在我裡面的，我也常在他裡面，這人就多結果子；因為離了我，你們就不能做甚麼。」（約 15:5）「常在」不是情緒維持術，而是住在祂的話裡、遵守祂的命令、彼此相愛（約 15:7–12）。枝子不決定自己如何結果；它被接在真葡萄樹上。
+              </p>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                羅馬書 6–8 把這聯合講成救贖歷史的轉移：我們在洗禮中與基督同死同活，不再作罪的奴僕（羅 6:3–11）；律法本身不能釋放肉體中的人，聖靈卻把生命的律放在基督裡（羅 8:1–4）。「你們若順從肉體活着，必要死；若靠着聖靈治死身體的惡行，必要活着。因為凡被神的靈引導的，都是神的兒子。」（羅 8:13–14）新約靈修的引擎不是意志的自我優化，而是聖靈引導下的治死與活出。
+              </p>
+              <div class="bible-verse mb-6 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「聖靈所結的果子，就是仁愛、喜樂、和平、忍耐、恩慈、良善、信實、溫柔、節制。……我們若是靠聖靈得生，就當靠聖靈行事。」</p>
+                <p class="text-sm text-slate-600">— 加拉太書 5:22–23、25</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                加拉太書 5 章把「靠聖靈行事」對比「情慾的事」。果子是品格，不是表演。以弗所書 3:16–19 保羅祈求：藉着聖靈，叫信徒心裡的力量剛強起來，使基督因信住在心裡，能和眾聖徒一同明白祂的愛是何等長闊高深，並知道這愛是過於人所能測度的。注意「和眾聖徒一同」——測度基督的愛，不是隱修者的私人高峰，而是教會裡的共同認識。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「所以，你們若真與基督一同復活，就當求在上面的事……就要脫去舊人和舊人的行為，穿上了新人。這新人在知識上漸漸更新，正如造他主的形像。」</p>
+                <p class="text-sm text-slate-600">— 歌羅西書 3:1、9–10</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                歌羅西書 3:1–17 把天上的心思、治死地上的肢體、穿上憐憫謙虛，以及讓基督的道理豐豐富富存在心裡、彼此教導、感恩的心，織成同一塊布。新約靈修的核心不是「我如何更屬靈」，而是：<strong class="text-indigo-700">與基督聯合、受聖靈引導，治死罪、活出新人</strong>。離開這條救贖歷史的主線，任何操練都會變成另一種律法，或另一種偶像。
+              </p>
+            </div>
+          </section>
+
+          <section id="disciplines" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">八、操練的位置：恩典中的回應，不是賺取神</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                聖經確實吩咐操練，卻從不讓操練成為與神交易的貨幣。馬太福音 6 章，禁食、施捨、禱告都要在父面前，不在人面前表演（太 6:1–18）。禁食是身子加入哀慟與專心的記號，不是換取能力的技術。守望（可 13:33–37；西 4:2）是末世中的清醒，不是靈界探險。唱詩與聖言同在：「當用各樣的智慧，把基督的道理豐豐富富的存在心裡，用詩章、頌詞、靈歌，彼此教導，互相勸戒。」（西 3:16）詩歌服事道理，不是取代道理。
+              </p>
+              <div class="bible-verse mb-6 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「又要彼此相顧，激發愛心，勉勵行善。你們不可停止聚會，好像那些停止慣了的人，倒要彼此勸勉，既知道那日子臨近，就更當如此。」</p>
+                <p class="text-sm text-slate-600">— 希伯來書 10:24–25</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                擘餅記念主死，直到祂來（林前 11:23–26）；彼此勸勉，因為日子臨近。這些都是教會的操練，不是個人靈修套餐的加購項目。把聖餐、聚集、勸勉從「靈修」裡拿掉，剩下的往往只是自我經營。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「聖經都是神所默示的，於教訓、督責、使人歸正、教導人學義都是有益的，叫屬神的人得以完全，預備行各樣的善事。」</p>
+                <p class="text-sm text-slate-600">— 提摩太後書 3:16–17</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                提後 3:16–17 把「完全」與「預備行善」歸給聖經的功用，而不是歸給一套更高的靈修秘傳。操練是恩典中的回應：神已經在基督裡賜下兒子的名分，我們以禁食、守望、唱詩、擘餅、聚集來活出這名分。操練不賺取神；神也不欠操練者一次高潮。誰把操練當成階梯，誰就還沒讀懂加拉太書。
+              </p>
+            </div>
+          </section>
+
+          <section id="discernment" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">九、分辨：試驗諸靈，不超越經上所記</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                第一世紀的教會已經面對「很靈」的問題。約翰寫道：「一切的靈，你們不可都信，總要試驗那些靈是出於神的不是；因為世上有許多假先知已經出來了。」（約一 4:1）試驗的標準首先是基督論：耶穌基督是否成了肉身而來（約一 4:2–3）。靈修經驗若模糊、削弱、或繞過道成肉身的耶穌，不論感覺多強，都必須被拒絕。
+              </p>
+              <div class="bible-verse mb-6 bg-rose-50 p-6 rounded-lg border border-rose-100">
+                <p class="text-lg italic text-slate-800 mb-2">「弟兄們，我為你們的緣故，拿這些事轉比自己和亞波羅，叫你們效法我們不可過於聖經所記，免得你們自高自大，貴重這個，輕看那個。」</p>
+                <p class="text-sm text-slate-600">— 哥林多前書 4:6</p>
+              </div>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                「不可過於聖經所記」是靈修學的護欄。當代常聽到「我領受到」「內在有聲音」——這些宣稱不是自動作廢，卻必須服在已寫成的正典之下，並在教會的見證中受試驗。神可以藉良心、環境、肢體勸勉引導祂的兒女；但任何與聖經衝突的「聲音」，都不是聖靈的聲音，因為聖靈是叫人想起主所說的話（約 14:26），並榮耀基督（約 16:14）。
+              </p>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                路加福音 18:9–14 的法利賽人與稅吏，把敬虔與自義分開。法利賽人的禱告充滿屬靈履歷；稅吏只求開恩可憐。耶穌說下去的是稅吏。靈修學必須不斷問：我的操練是在誇自己，還是在投靠恩典？自義可以穿上禁食、讀經、甚至「很謙卑」的外衣。只有十架能拆穿它。
+              </p>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p><strong class="text-slate-900">對「內在聲音」的牧養界線：</strong>聖經鼓勵尋求智慧（雅 1:5），也警告離棄聖經的熱病（西 2:18–23）。把主觀領受當成與經文同級的啟示，就是「過於聖經所記」。把一切主觀完全抹煞，也不合乎羅馬書 8 章聖靈與我們的心同證。健康的位置是：<em>經歷要有，權威在經。</em></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="pastoral" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">十、牧養結論：靈修學服務門徒生活</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                把以上經文串起來，靈修學的牧養任務就清楚了。它服務門徒生活，而不是另開一間「更高屬靈」的店。骨架是這五根柱子：<strong class="text-amber-800">聖言、祈禱、教會、十架、盼望</strong>。聖言是中心聆聽；祈禱是回應（細節見「<a href="../祈禱/index.html" class="text-indigo-700 font-medium hover:underline">祈禱</a>」）；教會是塑造的群體；十架是跟從的形狀；盼望是等候主的日子，使操練不致變成今世的成功計劃。
+              </p>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                獨處與群體不可偏廢。耶穌退到曠野，也走入人群；詩篇在會中唱，也在夜裡思想。只有獨處，容易把神變成內心的回聲；只有群體，容易把敬虔變成可見的表演。希伯來書要我們彼此相顧，又承認各人必須存着信心到底（來 3:12–14；10:24–25）。健康的靈修學同時牧養隱密處與主日、家庭與職場。
+              </p>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                「<a href="../興學傳道/index.html" class="text-indigo-700 font-medium hover:underline">興學傳道</a>」裝備頭腦，叫人按正意分解真理的道（提後 2:15）。靈修不是反智，也不是把神學趕出祈禱室。恰恰相反：真理必須進入敬拜與順服，否則知識只是「叫人自高自大」（林前 8:1）；而沒有真理的熱情，只是未經試驗的火。靈修學與健全的聖經神學應當互相效力——頭腦被聖言更新（羅 12:2），心被同一聖言切開（來 4:12），腳走上十架的路。
+              </p>
+              <div class="bible-verse mb-8 bg-amber-50 p-6 rounded-lg border border-amber-100">
+                <p class="text-lg italic text-slate-800 mb-2">「所以，我們既有這許多的見證人，如同雲彩圍着我們，就當放下各樣的重擔，脫去容易纏累我們的罪，存心忍耐，奔那擺在我們前頭的路程，仰望為我們信心創始成終的耶穌。」</p>
+                <p class="text-sm text-slate-600">— 希伯來書 12:1–2</p>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 mb-8">
+                <div class="bg-amber-50 border border-amber-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-amber-900 mb-2">給個人</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">晝夜思想聖經，帶着詩篇的誠實禱告，在罪上治死、在愛裡結果。不要用感覺驗證神是否守約；要用以諾式的同行、稅吏式的求憐憫來過日子。</p>
+                </div>
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">給教會</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">以聖言講道與教導為靈修的主糧，以聖餐與詩歌塑造共同記憶，以勸勉防止自義。退修可以有，卻不可替代主日與肢體生活。</p>
+                </div>
+              </div>
+              <div class="bg-gradient-to-r from-amber-50 to-indigo-50 border border-amber-100 rounded-xl p-6 text-slate-700 leading-relaxed">
+                <p class="mb-3">靈修學若忠於聖經，最後會把人帶回很普通、卻極艱難的地方：打開聖經、開口祈禱、加入聚會、背起十架、等候主來。這不是退步，而是救贖歷史給門徒的正路。</p>
+                <p>相關討論可並讀本站「<a href="../以經解經/index.html" class="text-indigo-700 font-medium hover:underline">以經解經</a>」、「<a href="../因信稱義/index.html" class="text-indigo-700 font-medium hover:underline">因信稱義</a>」。前者守護解釋聖經的方法；後者守護恩典，使操練不致變成賺取稱義的工作。</p>
+              </div>
+            </div>
+          </section>
+
+          <div id="visit-counter-container"></div>
+        </div>
+      </main>
+
+      <footer class="text-center py-4 text-slate-500 text-sm">
+        <p class="italic mb-1">
+          But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his
+          understanding. Jeremiah 10:12
+        </p>
+        <p class="text-xs mb-1 mt-2">
+          「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」 耶利米書 10:12
+        </p>
+        <p class="text-xs mt-2 pt-2 border-t border-slate-300">
+          @ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    function setActiveToc(id) {
+      tocLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', isActive);
+        link.classList.toggle('bg-slate-50', !isActive);
+        link.classList.toggle('text-slate-700', !isActive);
+      });
+    }
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const match = sections.find(item => item.el === entry.target);
+        if (match) setActiveToc(match.id);
+      });
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+      if (scrollTop < 120) setActiveToc('question');
+    });
+  </script>
+
+  <script src="../../../visit-counter.js"></script>
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec';
+    if (window.VisitCounter) {
+      VisitCounter.init('bible_study/信仰討論/靈修學/index', {
+        scriptUrl: SCRIPT_URL,
+        containerId: 'visit-counter-container'
+      });
+    }
+  </script>
+</body>
+</html>

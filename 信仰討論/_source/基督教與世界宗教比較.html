@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基督教與世界宗教比較 | Christianity and World Religions</title>
+  <meta name="description" content="神學院比較宗教單元：以基督教為參照，按核心理論、創造論、神論、人論、來世、得救、經典典籍，比較猶太教、伊斯蘭教、佛教、印度教，以及道教、儒家與華人民間宗教。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.12), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.08), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.1);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .category-card:nth-child(6) { animation-delay: 0.6s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(99, 102, 241, 0.8);
+      transform: translateX(5px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .comparison-table {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .comparison-table table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      vertical-align: top;
+    }
+    .comparison-table th {
+      background: rgba(99, 102, 241, 0.15);
+      font-weight: 600;
+      color: rgba(79, 70, 229, 0.95);
+    }
+    .comparison-table tr:hover {
+      background: rgba(99, 102, 241, 0.08);
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+      color: white;
+    }
+    .locus-section {
+      scroll-margin-top: 6rem;
+    }
+  </style>
+  <link rel="stylesheet" href="../../../visit-counter.css">
+</head>
+<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-white to-indigo-50/30 min-h-screen overflow-x-hidden">
+  <div class="relative min-h-screen overflow-hidden">
+    <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
+
+    <div class="relative z-10">
+
+      <header class="px-6 py-12 sm:py-16">
+        <div class="mx-auto max-w-7xl">
+          <div class="text-center space-y-6">
+            <a href="../index.html" class="inline-block mb-4 text-slate-600 hover:text-slate-900 transition-colors fade-in-up" style="animation-delay: 0.1s;">
+              <svg class="w-6 h-6 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              返回討論主頁
+            </a>
+            <div class="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg fade-in-up" style="background:linear-gradient(135deg,#0c4a6e,#0284c7);animation-delay:0.15s">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 100-18 9 9 0 000 18z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c3.2 3.8 3.2 13.2 0 18M12 3c-3.2 3.8-3.2 13.2 0 18"/>
+              </svg>
+            </div>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight float-animation serif-font fade-in-up" style="animation-delay: 0.2s;">
+              基督教與世界宗教比較
+              <span class="block mt-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-700 bg-clip-text text-transparent pulse-animation">
+                Comparative Theology
+              </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto pulse-animation fade-in-up" style="animation-delay: 0.3s;">
+              以系統神學論題為共同座標，公平認識鄰近與遠方的信仰傳統
+            </p>
+            <div class="w-full max-w-md mx-auto mt-6 fade-in-up" style="animation-delay: 0.4s;">
+              <div class="progress-bar" style="width: 0%;" id="reading-progress"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-indigo-100 shadow-sm" aria-label="單元目錄">
+        <div class="mx-auto max-w-7xl px-3 sm:px-6">
+          <div class="flex gap-2 overflow-x-auto py-3 text-sm">
+            <a href="#intro" class="toc-link active px-3 py-2 rounded-lg bg-indigo-50 text-indigo-800 font-medium">導論</a>
+            <a href="#overview" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">宗教導覽</a>
+            <a href="#worldview" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">核心理論</a>
+            <a href="#creation" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">創造論</a>
+            <a href="#theology" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">神論</a>
+            <a href="#anthropology" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">人論</a>
+            <a href="#afterlife" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">來世</a>
+            <a href="#salvation" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">得救</a>
+            <a href="#scripture" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">經典典籍</a>
+            <a href="#takeaways" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">課堂結語</a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="px-6 pb-16">
+        <div class="mx-auto max-w-6xl">
+
+          <section id="intro" class="locus-section mb-16 fade-in-up" style="animation-delay: 0.5s;">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">導論：目的、方法與謹慎</h2>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                本單元是比較宗教（comparative religion）與比較神學（comparative theology）的課堂講義。我們不以「誰比較落後」來排列宗教，也不把鄰近傳統畫成稻草人。課堂的提問是：<strong class="text-indigo-700">同一組神學論題（loci）上，各大傳統實際在說甚麼？與基督教的認信如何相交、如何分歧？</strong>
+              </p>
+              <p class="text-lg leading-relaxed mb-5 text-slate-700">
+                比較的參照點是歷史大公基督教——尼西亞—迦克墩的認信：獨一上帝、三位一體、道成肉身、十字架與復活、恩典中的稱義與成聖。天主教、東正教與更正教在權威來源與聖禮上的差異，已有專頁處理；本單元把「基督教」作為一個家庭來看，必要時才點出內部分歧。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">
+                  「只要心裡尊主基督為聖。有人問你們心中盼望的緣由，就要常作準備，以溫柔、敬畏的心回答各人。」
+                </p>
+                <p class="text-sm text-slate-600">— 彼得前書 3:15</p>
+              </div>
+              <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">目的</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">裝備信徒在多元社會中認識鄰舍的信仰，並更清楚自己所信的是甚麼、為甚麼這是福音。</p>
+                </div>
+                <div class="bg-violet-50 border border-violet-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-violet-900 mb-2">方法</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">先按同一論題陳述各傳統的經典／主流表述，再以基督教為參照作神學評估。先聽清楚，才作判斷。</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-amber-900 mb-2">謹慎</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">每個宗教內部都極度多元。本單元只能勾勒「經典中心」與常見民間實踐；不可把一種表述當成全體。</p>
+                </div>
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p class="mb-2"><strong class="text-slate-900">與本站既有單元的關係：</strong>「<a href="../猶大教、回教、天主教、基督教比較/index.html" class="text-indigo-700 hover:underline">宗教比較</a>」專頁處理亞伯拉罕傳統內部，以及天主教與更正教的異同。本單元把視野拉開到佛教、印度教，以及華人教會最常相遇的道教、儒家與民間宗教。</p>
+                <p>保羅在雅典（使徒行傳 17）先讀石碑、再講創造與復活：尊重對方的敬虔，卻不把福音稀釋成「各教都一樣」。這是本課堂的牧養姿勢。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="overview" class="locus-section mb-16">
+            <div class="text-center mb-8 fade-in-up">
+              <h2 class="text-3xl sm:text-4xl font-semibold serif-font text-slate-900">一、宗教導覽</h2>
+              <p class="text-slate-600 mt-2">先建立地圖，再進入論題比較</p>
+            </div>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <a href="#rel-christianity" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-indigo-600 mb-1">參照傳統</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">基督教</h3>
+                <p class="text-sm text-slate-600 mb-3">Christianity</p>
+                <p class="text-sm text-slate-700 leading-relaxed">從第二聖殿猶太教中興起，認耶穌為基督與主。核心敘事是創造—墮落—救贖—新天新地。</p>
+              </a>
+              <a href="#rel-judaism" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-blue-600 mb-1">亞伯拉罕傳統</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">猶太教</h3>
+                <p class="text-sm text-slate-600 mb-3">Judaism</p>
+                <p class="text-sm text-slate-700 leading-relaxed">以妥拉、聖約與選民身份為中心。拉比猶太教在聖殿被毀後，以口傳律法延續敬拜與倫理。</p>
+              </a>
+              <a href="#rel-islam" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-emerald-600 mb-1">亞伯拉罕傳統</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">伊斯蘭教</h3>
+                <p class="text-sm text-slate-600 mb-3">Islam</p>
+                <p class="text-sm text-slate-700 leading-relaxed">七世紀阿拉伯半島興起。核心是認主獨一（tawḥīd）與降服（islām）。穆罕默德被視為封印先知。</p>
+              </a>
+              <a href="#rel-buddhism" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-amber-600 mb-1">印度起源</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">佛教</h3>
+                <p class="text-sm text-slate-600 mb-3">Buddhism</p>
+                <p class="text-sm text-slate-700 leading-relaxed">釋迦牟尼教導四聖諦與緣起。一般不以人格創造主為終極；解脫指向涅槃，而非與神和好。</p>
+              </a>
+              <a href="#rel-hinduism" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-rose-600 mb-1">印度起源</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">印度教</h3>
+                <p class="text-sm text-slate-600 mb-3">Hinduism</p>
+                <p class="text-sm text-slate-700 leading-relaxed">極為多元的文明宗教。共同座標常是法（dharma）、業、輪迴與解脫（mokṣa），而非單一信經。</p>
+              </a>
+              <a href="#rel-chinese" class="category-card glass-card rounded-2xl p-6 block">
+                <p class="text-xs font-semibold text-teal-600 mb-1">華人處境</p>
+                <h3 class="text-xl font-semibold serif-font text-slate-900 mb-2">儒、道、民間宗教</h3>
+                <p class="text-sm text-slate-600 mb-3">Chinese traditions</p>
+                <p class="text-sm text-slate-700 leading-relaxed">儒家重倫理秩序，道教重道與養生，民間宗教則常儒釋道合流，並以祖先與神明崇拜為日常。</p>
+              </a>
+            </div>
+
+            <div class="grid gap-6 mt-8">
+              <article id="rel-christianity" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-indigo-800 mb-3">基督教：參照點</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">基督教認獨一上帝在耶穌基督裡自我啟示。父、子、聖靈是同一本質的三位；子成為人，死而復活，使罪人因信稱義，並等候身體復活與新創造。教會是被召出的群體，聖經是規範信仰與生活的正典。</p>
+                <p class="text-sm text-slate-600">內部提醒：更正教強調「唯獨聖經、唯獨恩典、唯獨信心」；天主教與東正教同時重視聖傳與教會訓導。見本站「宗教比較」單元。</p>
+              </article>
+              <article id="rel-judaism" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-blue-800 mb-3">猶太教：聖約的子民</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">猶太教是基督教的母體傳統。申命記 6:4 的「示瑪」宣告上主獨一無二。身份不首先是「個人靈魂得救」，而是與亞伯拉罕、摩西之約連在一起的民族敬拜與妥拉生活。第一世紀有法利賽、撒都該、愛色尼等；聖殿於公元 70 年被毀後，拉比猶太教成為主流。</p>
+                <p class="text-sm text-slate-600">今日可見正統派、保守派、改革派等。對耶穌是否彌賽亞的否定，是與教會最尖銳的歷史分歧；同時，兩約聖經中的上帝、妥拉與先知，仍是共同的記憶。</p>
+              </article>
+              <article id="rel-islam" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-emerald-800 mb-3">伊斯蘭教：認主獨一與降服</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">「伊斯蘭」意即降服於真主。六大信仰（真主、天使、經典、先知、末日、前定）與五功（念、禮、齋、課、朝）構成生活骨架。古蘭經尊崇爾撒（耶穌）為先知與彌賽亞，卻明確否定他是上帝之子，也否定釘十字架的救贖意義（參古蘭 4:157 的傳統詮釋）。</p>
+                <p class="text-sm text-slate-600">遜尼派約佔多數；什葉派強調阿里及其後裔的伊瑪目職分；蘇菲傳統重內在道路。與基督教對話時，「三位一體是否三神」幾乎總是第一個誤解，必須耐心澄清。</p>
+              </article>
+              <article id="rel-buddhism" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-amber-800 mb-3">佛教：苦、集、滅、道</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">佛陀診斷人生為苦（dukkha），苦因於渴愛與無明；滅苦之路是八正道。緣起與「無我」（anātman）否定一個常住、獨立的靈魂實體。上座部強調阿羅漢的自我解脫；大乘提出菩薩道與空性；淨土宗則強調他力——稱念阿彌陀佛名號，往生極樂。</p>
+                <p class="text-sm text-slate-600">華人教會常遇見的，不是巴利藏的哲學討論，而是寺廟、超度、功德與「信佛保平安」。比較時要同時看見經典佛教與民間佛教。</p>
+              </article>
+              <article id="rel-hinduism" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-rose-800 mb-3">印度教：法、業、輪迴、解脫</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">「印度教」是現代總稱，涵蓋吠陀祭祀、奧義書哲思、毗濕奴／濕婆／女神虔信，以及無數地方神明。不二吠檀多視終極為梵（Brahman），個我（ātman）與其不異；虔信傳統則敬拜人格神（如 Krishna），以恩寵與奉獻求親近。</p>
+                <p class="text-sm text-slate-600">不可簡單標籤為「多神教」或「泛神論」——兩種描述都只抓住部分。對華人讀者，印度教較遠，但瑜伽、業力、轉世等觀念已滲入流行文化。</p>
+              </article>
+              <article id="rel-chinese" class="locus-section content-panel rounded-2xl p-6 sm:p-8">
+                <h3 class="text-2xl font-semibold serif-font text-teal-800 mb-3">中華傳統：儒、道、民間宗教</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">儒家以仁、禮、孝與修身齊家治國為主軸，較少發展系統來世論，卻以「天」為道德與秩序的超越參照。道家（哲學）言道生萬物、無為；道教（宗教）則有神仙體系、科儀與內丹。民間宗教常把祖先、土地、關帝、觀音、天后放在同一屋簷下，講求靈驗、和諧與家族延續。</p>
+                <p class="text-sm text-slate-600">對華人教會，這不是「外國宗教課」，而是祖父母的神龕與喪禮。比較時要有牧養敏感：孝不是偶像，但祭祖的宗教含義需要分辨。</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="worldview" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">二、核心理論（世界觀）</h2>
+              <p class="text-slate-700 leading-relaxed mb-6">世界觀回答：實在的終極是甚麼？歷史有沒有方向？人的根本問題是甚麼？基督教的骨架是<strong>創造—墮落—救贖—終末</strong>：上帝是位格的創造主，世界本為美好，罪是悖逆而非幻覺，救贖是上帝親自進入歷史，終末是身體復活而非靈魂消融。</p>
+              <div class="comparison-table mb-6">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>問題</th>
+                      <th>基督教</th>
+                      <th>猶太教</th>
+                      <th>伊斯蘭教</th>
+                      <th>佛教</th>
+                      <th>印度教</th>
+                      <th>中華傳統</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-semibold">終極實在</td>
+                      <td>三位一體的位格上帝</td>
+                      <td>獨一上主（YHWH）</td>
+                      <td>獨一真主（安拉）</td>
+                      <td>緣起／涅槃；非創造主</td>
+                      <td>梵、或人格主神</td>
+                      <td>天、道、或神明體系</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">歷史觀</td>
+                      <td>線性，有目的，邁向新創造</td>
+                      <td>線性，聖約歷史，彌賽亞盼望</td>
+                      <td>線性，走向復活日與審判</td>
+                      <td>輪迴循環；涅槃是出離</td>
+                      <td>極大週期（由迦）；解脫出離</td>
+                      <td>循環與當下秩序並存</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">人的根本問題</td>
+                      <td>罪：與上帝、人、己、地的破裂</td>
+                      <td>不忠於聖約；惡的傾向</td>
+                      <td>忘記真主、驕傲、不信</td>
+                      <td>無明與渴愛，導致苦</td>
+                      <td>無明、業縛，忘卻真我</td>
+                      <td>失序、失德、陰陽失調</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">解決的方向</td>
+                      <td>上帝在基督裡的救贖恩典</td>
+                      <td>悔改、守誡、修復世界</td>
+                      <td>認主、順服、善功與慈憫</td>
+                      <td>覺悟、戒定慧、出離輪迴</td>
+                      <td>智、業、信愛等解脫道</td>
+                      <td>修身、合道、祭儀與和諧</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p><strong class="text-indigo-900">課堂提示：</strong>亞伯拉罕三教共享「位格創造主 + 線性歷史 + 道德責任」。佛教與（部分）印度教把問題放在無明與輪迴，不放在「得罪聖潔上帝」。儒家則把重心放在此世倫理。比較時先對準「問題定義」，否則「得救」一詞會各說各話。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="creation" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">三、創造論</h2>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「起初，上帝創造天地。」</p>
+                <p class="text-sm text-slate-600">— 創世記 1:1；參約翰福音 1:1–3；希伯來書 11:3</p>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-6">基督教主張<strong>從無創造</strong>（creatio ex nihilo）：世界不是上帝的身體，也不是永恆物質的重組。創造是美善的；物質不是囚牢。墮落是歷史中的破裂，不是宇宙本有的幻相。道成肉身與身體復活，都預設創造的美善。</p>
+              <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-100">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">基督教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">獨一上帝用話語創造，與世界有本體區分（Creator / creature）。人是受造而非神聖火花。護理（providence）持續托住萬有。自然啟示可見上帝的永能與神性（羅 1:20），卻不能取代基督裡的特殊啟示。</p>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
+                  <h3 class="font-semibold serif-font text-blue-900 mb-2">猶太教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">同樣以創世記為根基：上主創造、安息、稱「好」。拉比傳統較少發展奧古斯丁式的「原罪遺傳」，更強調受造的美善與人的責任。喀巴拉等神秘支流會有更複雜的流出說，但不代表全體。</p>
+                </div>
+                <div class="bg-emerald-50 rounded-xl p-5 border border-emerald-100">
+                  <h3 class="font-semibold serif-font text-emerald-900 mb-2">伊斯蘭教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">真主以「有」（kun）創造天地。世界是真主的跡象（āyāt），卻絕不可與主聯合（shirk）。人被造為大地的代理（khalīfa）。一般不接受「墮落使人性徹底敗壞」；亞當的過犯被視為可饒恕的違命。</p>
+                </div>
+                <div class="bg-amber-50 rounded-xl p-5 border border-amber-100">
+                  <h3 class="font-semibold serif-font text-amber-900 mb-2">佛教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">經典宇宙論描述多層天界與劫的循環，但<strong>不設定人格創造主</strong>。世界因業與緣起而持續。追問「第一因」常被視為無益戲論。神祇可以存在，卻同在輪迴中，不是終極依靠。</p>
+                </div>
+                <div class="bg-rose-50 rounded-xl p-5 border border-rose-100">
+                  <h3 class="font-semibold serif-font text-rose-900 mb-2">印度教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">創造敘事多樣：原人（Puruṣa）祭祀、梵天開顯、毗濕奴的夢／遊戲（līlā）。時間是循環的由迦。有的學派視現象界為摩耶（māyā）；虔信傳統則肯定世界是主的真實顯化。與「從無創造」並不相同。</p>
+                </div>
+                <div class="bg-teal-50 rounded-xl p-5 border border-teal-100">
+                  <h3 class="font-semibold serif-font text-teal-900 mb-2">儒、道、民間</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">《道德經》言「道生一，一生二，二生三，三生萬物」——是生化，不是位格命令。儒家重天道秩序多於宇宙起源。民間神話有盤古、女媧，但日常宗教更關心風水、節氣與家族延續，而非「從無到有」的教義。</p>
+                </div>
+              </div>
+              <div class="bg-amber-50 border border-amber-100 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p><strong class="text-amber-900">評估：</strong>基督教創造論同時反對唯物無神、以及把世界視為神的一部分。它保護兩件事：上帝的超越，以及受造界（包括身體、婚姻、工作）的尊嚴。這直接影響生態、倫理與來世觀——新天新地是更新的創造，不是逃離物質。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="theology" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">四、神論</h2>
+              <p class="text-slate-700 leading-relaxed mb-6">神論問：上帝是誰？是一位還是多位？可認識嗎？可親近嗎？基督教的獨特性不在「相信有神」，而在<strong>三一、道成肉身、以及十字架上的自我給予</strong>。</p>
+              <div class="comparison-table mb-6">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>面向</th>
+                      <th>基督教</th>
+                      <th>猶太教</th>
+                      <th>伊斯蘭教</th>
+                      <th>佛教</th>
+                      <th>印度教</th>
+                      <th>中華傳統</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-semibold">神的數目與本質</td>
+                      <td>一本質、三位格</td>
+                      <td>絕對一神；拒三一</td>
+                      <td>絕對認主獨一；以三一為以物配主</td>
+                      <td>終極非人格創造主；天神非終極</td>
+                      <td>一梵多形，或主神至上</td>
+                      <td>天／道偏非人格；民間多神明</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">上帝與世界</td>
+                      <td>超越又臨在；非泛神</td>
+                      <td>超越又立約臨在</td>
+                      <td>絕對超越；相近如 jugular</td>
+                      <td>不談創造主護理</td>
+                      <td>可從泛神到有神論</td>
+                      <td>天人感應、神明巡遊</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">對耶穌</td>
+                      <td>真神真人或道成肉身</td>
+                      <td>非彌賽亞、非神</td>
+                      <td>先知，非神、非被釘救贖</td>
+                      <td>或敬為覺者／聖人，非上帝</td>
+                      <td>或納入化身系列，非獨一聖子</td>
+                      <td>民間或當神明之一</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">形象與聖名</td>
+                      <td>不可拜偶像；子是上帝的像</td>
+                      <td>嚴禁偶像；聖名極敬畏</td>
+                      <td>嚴禁偶像；九十九美名</td>
+                      <td>佛像是方便，非創造主像</td>
+                      <td>神像（mūrti）為敬拜焦點</td>
+                      <td>神像、牌位極為日常</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="space-y-4 text-slate-700 leading-relaxed">
+                <p>猶太教與伊斯蘭教的一神論是嚴肅的認信，不是「還沒聽過三一」。對他們而言，三一聽起來像分裂上帝。課堂上要解釋：教會拒絕三神論與形態論；三一是為了同時堅持「只有一位上帝」以及「耶穌與聖靈是真上帝」。</p>
+                <p>佛教可以很「宗教」，卻不必有基督教意義上的上帝。把佛陀說成「他們的上帝」是常見誤述。印度教的梵可以是無德（nirguṇa）或有德（saguṇa）；毗濕奴的化身（avatāra）與基督的道成肉身只是表面相似——化身可重複、可為教導而顯現；道成肉身是獨一、歷史、並走向十字架的自我給予。</p>
+                <div class="bg-violet-50 border border-violet-100 rounded-xl p-5">
+                  <p><strong class="text-violet-900">牧養一句：</strong>華人民間宗教的「神」常是功能神（求財、求子、求平安）。基督教的上帝首先不是功能供應者，而是立約的主與聖潔的父。對話可從「天」的道德莊嚴開始，但必須走到基督的面。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="anthropology" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">五、人論</h2>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「上帝就照著自己的形像造人……」又：「因為世人都犯了罪，虧缺了上帝的榮耀。」</p>
+                <p class="text-sm text-slate-600">— 創世記 1:27；羅馬書 3:23</p>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-6">基督教人論有雙焦點：<strong>尊嚴</strong>（上帝的形像）與<strong>敗壞</strong>（罪）。人不是神，也不是垃圾；不是純粹靈魂暫住身體，也不是只有物質。救恩針對的是整個人——包括身體的復活。</p>
+              <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="rounded-xl p-5 bg-indigo-50 border border-indigo-100">
+                  <h3 class="font-semibold serif-font mb-2">基督教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">人有理性、道德、關係與治理的召命。原罪（各傳統表述不同）指墮落後人傾向自我為中心，不能自救。男女同為形像承載者。教會是新人的群體，但不取消受造的家庭與公民責任。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-blue-50 border border-blue-100">
+                  <h3 class="font-semibold serif-font mb-2">猶太教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">人亦有上帝的形像（tzelem）。拉比講善傾向與惡傾向（yetzer ha-tov / ha-ra），強調自由與悔改（teshuvah）。一般拒絕「出生即背負亞當罪咎」的教義。義不首先是法庭稱義，而是妥拉生活中的忠誠。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-emerald-50 border border-emerald-100">
+                  <h3 class="font-semibold serif-font mb-2">伊斯蘭教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">人受造於先天本性（fiṭra），本可認識真主。亞當被饒恕，後代不繼承罪咎。人的問題是健忘、驕傲與不信。作為代理，人要在大地上建立公正。末日各人為自己的行為負責。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-amber-50 border border-amber-100">
+                  <h3 class="font-semibold serif-font mb-2">佛教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">「無我」否認常住靈魂。人是五蘊和合，剎那生滅。苦來自執著一個不存在的「我」。慈悲極深，卻不是建基於「上帝的形像」，而是建基於眾生皆苦、皆可覺悟。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-rose-50 border border-rose-100">
+                  <h3 class="font-semibold serif-font mb-2">印度教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">許多學派主張真我（ātman）不朽，甚至與梵不二。身體與社會角色（種姓／生活階段）曾深刻塑造人論，現代改革運動則多加批判。人的問題常是無明：把暫時的當成終極。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-teal-50 border border-teal-100">
+                  <h3 class="font-semibold serif-font mb-2">儒、道、民間</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">孟子主性善、荀子主性惡，爭的是可教化性。人是關係中的人：君臣父子。道教講精氣神與長生。民間宗教裡，人是祖先譜系的一環，也是可求神明庇佑的弱者。罪的語言較淡，恥、報、運的語言較濃。</p>
+                </div>
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p><strong class="text-slate-900">為何這論題關鍵：</strong>沒有上帝的形像，人權與鄰舍之愛容易變成契約計算。沒有罪，十字架變成多餘的悲劇。佛教的無我能拆毀自我偶像，卻難以安放「被指名呼召的你」。牧者需要同時抵抗兩極：廉價的自我神化，以及把人說成毫無價值。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="afterlife" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">六、來世（終末）</h2>
+              <p class="text-slate-700 leading-relaxed mb-6">基督教終末論的中心不是「靈魂去一個更好的地方」，而是<strong>死人復活、基督再來、最終審判與新天新地</strong>。中間狀態（與主同在）是真實的，卻不是故事的結局。這使喪禮、身體、公義與盼望都與輪迴或單純祖先世界不同。</p>
+              <div class="comparison-table mb-6">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>傳統</th>
+                      <th>死後立即如何</th>
+                      <th>終局圖像</th>
+                      <th>與基督教的關鍵差異</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-semibold">基督教</td>
+                      <td>與主同在或等候；非輪迴</td>
+                      <td>復活、審判、新創造；永恆與上帝同在或隔絕</td>
+                      <td>參照點：身體有份，歷史有終局</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">猶太教</td>
+                      <td>陰間／靈魂去處說法多樣</td>
+                      <td>來世（Olam Ha-Ba）、義人復活（尤其正統派）</td>
+                      <td>共享復活盼望；不認耶穌已開啟終末</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">伊斯蘭教</td>
+                      <td>中間界（barzakh）</td>
+                      <td>復活日、天園與火獄；秤行為</td>
+                      <td>共享審判與復活；救贖不靠十字架</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">佛教</td>
+                      <td>隨業再生（六道等）</td>
+                      <td>涅槃：苦的止息；淨土是方便與願力</td>
+                      <td>終局是出離輪迴，不是身體復活的新地</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">印度教</td>
+                      <td>輪迴，或暫居天界</td>
+                      <td>解脫：與梵合一或永居神前</td>
+                      <td>循環宇宙；解脫常是出離個體歷史</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">中華傳統</td>
+                      <td>靈魂、祖先、陰間等民間圖像</td>
+                      <td>受佛教影響後常有輪迴、地獄、超度</td>
+                      <td>重家族連續；較少「新創造」教義</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-4">天主教的煉獄、更正教內部的千禧年爭論，屬於基督教家庭內部的終末學，見本站「千禧論」與「宗教比較」。本單元只需記住：大公基督教一致承認復活與審判，拒絕輪迴作為福音的答案。</p>
+              <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p><strong class="text-indigo-900">牧養提示：</strong>華人喪禮中的紙紮、功德、安靈，背後是「死者仍需後人照顧」的宇宙。基督教不是冷淡對待死者，而是把死者交託給復活的主，並以盼望陪伴活人。比較宗教若只贏教義、輸掉喪禮現場的溫柔，就還未學完這一課。</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="salvation" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">七、得救（救贖論）</h2>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「你們得救是本乎恩，也因著信；這並不是出於自己，乃是上帝所賜的；也不是出於行為，免得有人自誇。」</p>
+                <p class="text-sm text-slate-600">— 以弗所書 2:8–9</p>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-6">「得救」在各宗教指涉不同終局。基督教說的是：有罪的人與聖潔上帝和好，被稱為義，得著聖靈，並被帶進新創造。途徑是<strong>上帝的恩典，在基督的死與復活裡成就，並以信心領受</strong>。善行是果，不是價。</p>
+              <div class="comparison-table mb-6">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>傳統</th>
+                      <th>「得救」大致指甚麼</th>
+                      <th>怎樣達到</th>
+                      <th>恩典／他力？</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-semibold">基督教</td>
+                      <td>稱義、和好、成聖、得榮耀</td>
+                      <td>信靠耶穌基督；洗禮與聖餐是恩典標記</td>
+                      <td>核心是神的恩典；人是回應，不是賺取</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">猶太教</td>
+                      <td>聖約中的忠誠、悔改、來世份兒</td>
+                      <td>誡命、公義、悔改；外邦人可守挪亞七律</td>
+                      <td>上主有憐憫；不強調「代替贖罪的彌賽亞已來」</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">伊斯蘭教</td>
+                      <td>免於火獄、進入天園</td>
+                      <td>正信、五功、善行；真主按慈憫與公正判決</td>
+                      <td>真主的慈憫極大，但十字架代贖被拒</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">佛教</td>
+                      <td>從輪迴與苦中解脫</td>
+                      <td>上座部重自力修行；大乘有菩薩願；淨土重稱名</td>
+                      <td>淨土「他力」表面接近恩典，對象與內容不同</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">印度教</td>
+                      <td>解脫輪迴，或與主聯合</td>
+                      <td>業瑜伽、智瑜伽、信愛之道等</td>
+                      <td>虔信傳統有恩寵語言，仍在業與法的宇宙中</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">中華傳統</td>
+                      <td>平安、福祿、家族興旺、成聖成仙</td>
+                      <td>修德、禮儀、功德、法術、積陰德</td>
+                      <td>少有「白白稱義」；報應與交換邏輯常見</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-emerald-50 border border-emerald-100 rounded-xl p-5 text-sm text-slate-700 leading-relaxed">
+                  <h3 class="font-semibold serif-font text-emerald-900 mb-2">公平地說</h3>
+                  <p>猶太教的悔改極嚴肅，不是律法主義的漫畫。伊斯蘭的五功是整全生活，不只是「靠做好人上天堂」。淨土宗的他力、印度教的信愛，都承認人有限。比較不是為了嘲諷對方「膚淺」，而是指出：<strong>誰成就拯救、拯救是甚麼、人站在甚麼地位</strong>。</p>
+                </div>
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 text-sm text-slate-700 leading-relaxed">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">基督教的尖銳點</h3>
+                  <p>福音的冒犯在於：拯救不是人攀上去，而是上帝降下來。十字架宣告人不能自救，也宣告上帝不棄絕。復活宣告罪與死已被勝過。若拿掉三一、道成肉身、恩典與復活，剩下的「基督教」就只是又一門勸人為善的宗教。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="scripture" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">八、經典典籍</h2>
+              <p class="text-slate-700 leading-relaxed mb-6">經典比較要問三個問題：<strong>正典範圍、權威性質、實際用法</strong>。有的傳統有封閉正典，有的是開放文庫；有的視經典為上帝的話語，有的視其為覺悟的記錄或禮儀腳本。</p>
+
+              <div class="space-y-6">
+                <article class="bg-indigo-50 border border-indigo-100 rounded-xl p-6">
+                  <h3 class="text-xl font-semibold serif-font text-indigo-900 mb-3">基督教：舊約與新約</h3>
+                  <ul class="text-slate-700 space-y-2 text-sm leading-relaxed">
+                    <li><strong>舊約／希伯來聖經：</strong>更正教 39 卷，與猶太教塔納赫書卷相同、分卷不同。天主教、東正教另收次經／第二正典（如多比傳、馬加比書等）。</li>
+                    <li><strong>新約：</strong>27 卷——福音書、使徒行傳、書信、啟示錄。見證耶穌是基督，並解釋福音如何成就律法與先知。</li>
+                    <li><strong>權威：</strong>上帝藉先知與使徒說話；聖經是規範規範的規範（norma normans）。更正教「唯獨聖經」並非不要傳統，而是傳統不能與聖經平起平坐。天主教以聖經、聖傳、教導權威（Magisterium）共同傳遞。</li>
+                    <li><strong>用法：</strong>公開誦讀、講道、禮儀、私人靈修。解釋需顧及文體、正典內互證（以經解經）與基督中心。</li>
+                  </ul>
+                </article>
+
+                <article class="bg-blue-50 border border-blue-100 rounded-xl p-6">
+                  <h3 class="text-xl font-semibold serif-font text-blue-900 mb-3">猶太教：塔納赫與塔木德</h3>
+                  <ul class="text-slate-700 space-y-2 text-sm leading-relaxed">
+                    <li><strong>塔納赫（Tanakh）：</strong>妥拉（Torah，摩西五經）、先知（Nevi'im）、聖卷（Ketuvim）。這是與教會共享的經文庫，卻在正典順序與詮釋上不同——教會按基督論讀，會堂按聖約與哈拉卡讀。</li>
+                    <li><strong>塔木德（Talmud）：</strong>口傳妥拉的文學結晶，含《密西拿》（Mishnah）與《革馬拉》（Gemara）。有巴比倫與耶路撒冷兩套；巴比倫塔木德權威更廣。</li>
+                    <li><strong>其他：</strong>米德拉什（釋經與敘事）、律法裁決、禮儀書。改革派較強調塔納赫與倫理，正統派視口傳律法同具約束。</li>
+                    <li><strong>用法：</strong>學習本身是敬拜。妥拉卷軸在會堂中的地位，接近「上帝話語的臨在」，而不只是參考書。</li>
+                  </ul>
+                </article>
+
+                <article class="bg-emerald-50 border border-emerald-100 rounded-xl p-6">
+                  <h3 class="text-xl font-semibold serif-font text-emerald-900 mb-3">伊斯蘭教：古蘭經與聖訓</h3>
+                  <ul class="text-slate-700 space-y-2 text-sm leading-relaxed">
+                    <li><strong>古蘭經（Qur'an）：</strong>被視為真主的直接言語，藉天使傳達給穆罕默德，以阿拉伯文降示。經典遜尼神學有「古蘭非受造」的爭論史。翻譯是解釋，不是原文本身。</li>
+                    <li><strong>聖訓（Hadith）：</strong>穆罕默德的言行傳承。布哈里、穆斯林等「健全」（ṣaḥīḥ）匯編地位極高。聖訓解釋如何活出古蘭，並構成教法（Sharīʿa）的主要來源之一。</li>
+                    <li><strong>權威層級：</strong>古蘭最高，其次聖訓，再加共識（ijmāʿ）與類比（qiyās）等教法工具（學派不同）。</li>
+                    <li><strong>用法：</strong>背誦、誦讀本身即功修。與基督教「默想意義」並行的是「正確發音與儀禮」。耶穌的福音書不被伊斯蘭承認為未竄改的現存啟示。</li>
+                  </ul>
+                </article>
+
+                <article class="bg-amber-50 border border-amber-100 rounded-xl p-6">
+                  <h3 class="text-xl font-semibold serif-font text-amber-900 mb-3">佛教：三藏與大乘經典</h3>
+                  <ul class="text-slate-700 space-y-2 text-sm leading-relaxed">
+                    <li><strong>三藏（Tripitaka / Tipiṭaka）：</strong>律藏（Vinaya，僧團規範）、經藏（Sutta/Sūtra，佛陀教說）、論藏（Abhidharma，系統分析）。巴利大藏是上座部的核心。</li>
+                    <li><strong>大乘經典：</strong>如《般若經》、《法華經》、《華嚴經》、《涅槃經》等，被大乘視為佛說，上座部則不收入其封閉藏經。</li>
+                    <li><strong>權威：</strong>不是「上帝的話」，而是指向覺悟的筏。著名比喻：筏已渡河，不必再扛。《金剛經》甚至提醒不要執著於法。</li>
+                    <li><strong>用法：</strong>誦經可累積功德、安穩心靈；禪宗可「教外別傳」。華人寺廟中，《心經》《金剛經》《彌陀經》最常見。</li>
+                  </ul>
+                </article>
+
+                <article class="bg-rose-50 border border-rose-100 rounded-xl p-6">
+                  <h3 class="text-xl font-semibold serif-font text-rose-900 mb-3">印度教：吠陀、奧義書、《薄伽梵歌》</h3>
+                  <ul class="text-slate-700 space-y-2 text-sm leading-relaxed">
+                    <li><strong>天啟（Śruti）：</strong>吠陀本集、梵書、森林書、奧義書。被許多學派視為無作者、永恆的啟示聲音。內容從祭祀頌詩到「梵我一如」的哲思。</li>
+                    <li><strong>憶持（Smṛti）：</strong>史詩（摩訶婆羅多、羅摩衍那）、往世書、法論。《薄伽梵歌》雖屬憶持，實際權威常超過多數吠陀頌詩，是虔信與瑜伽的核心文本。</li>
+                    <li><strong>權威：</strong>沒有單一封閉正典會議。宗師傳承（guru-paramparā）與所屬神統，決定哪些經被「活出來」。</li>
+                    <li><strong>用法：</strong>祭祀吟誦極重語音；虔信運動則用方言歌唱。現代全球讀者多從《歌》與瑜伽進入，而非全套吠陀。</li>
+                  </ul>
+                </article>
+
+                <article class="bg-teal-50 border border-teal-100 rounded-xl p-6">
+                  <h3 class="text-xl font-semibold serif-font text-teal-900 mb-3">儒、道、民間：經與無經</h3>
+                  <ul class="text-slate-700 space-y-2 text-sm leading-relaxed">
+                    <li><strong>儒家：</strong>五經（詩、書、禮、易、春秋）與四書（大學、中庸、論語、孟子）。權威是聖賢教導與禮樂秩序，不是先知領受的「耶和華如此說」。</li>
+                    <li><strong>道教：</strong>《道德經》、《莊子》是哲學源頭；《道藏》則是龐大的科儀、丹道、神譜文庫。正一、全真等派各有所用。</li>
+                    <li><strong>民間宗教：</strong>往往沒有統一正典。善書、科儀本、乩文、口傳故事並存。權威常是靈驗與家族習慣。</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="comparison-table mt-8">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>傳統</th>
+                      <th>核心文本</th>
+                      <th>權威性格（簡述）</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-semibold">基督教</td>
+                      <td>舊約 + 新約</td>
+                      <td>上帝的話語；正典封閉；教會 magistere 角色有爭議</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">猶太教</td>
+                      <td>塔納赫、塔木德</td>
+                      <td>成文 + 口傳妥拉；學習即敬拜</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">伊斯蘭教</td>
+                      <td>古蘭經、聖訓</td>
+                      <td>古蘭為真主言語；聖訓規範實踐</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">佛教</td>
+                      <td>三藏、大乘經</td>
+                      <td>覺悟之筏；部派正典範圍不同</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">印度教</td>
+                      <td>吠陀、奧義書、《薄伽梵歌》</td>
+                      <td>天啟／憶持；無單一封閉目錄</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">中華傳統</td>
+                      <td>四書五經、《道藏》、善書</td>
+                      <td>聖賢／科儀／靈驗並存</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="takeaways" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">九、課堂與牧養結語</h2>
+              <p class="text-lg text-slate-700 leading-relaxed mb-6">比較的目的，不是為了「贏一場宗教辯論」，而是讓教會更認識基督，也更認識鄰舍。以下是本單元希望學生帶走的判斷，不是對其他信仰者的嘲諷。</p>
+
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4">基督教不可讓渡的認信</h3>
+              <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                <div class="glass-card rounded-xl p-5">
+                  <h4 class="font-semibold text-indigo-800 mb-2">三位一體</h4>
+                  <p class="text-sm text-slate-700 leading-relaxed">上帝的生命本身就是愛的共融。救恩是被帶進這生命，不是攀上非人格的原理。</p>
+                </div>
+                <div class="glass-card rounded-xl p-5">
+                  <h4 class="font-semibold text-indigo-800 mb-2">道成肉身</h4>
+                  <p class="text-sm text-slate-700 leading-relaxed">上帝不是遠遠發指令。聖子成為人，使創造與歷史被親自承擔。</p>
+                </div>
+                <div class="glass-card rounded-xl p-5">
+                  <h4 class="font-semibold text-indigo-800 mb-2">恩典與十字架</h4>
+                  <p class="text-sm text-slate-700 leading-relaxed">罪人被稱為義，是因為基督的義，不是因為積累的功德或正確的技巧。</p>
+                </div>
+                <div class="glass-card rounded-xl p-5">
+                  <h4 class="font-semibold text-indigo-800 mb-2">復活與新創造</h4>
+                  <p class="text-sm text-slate-700 leading-relaxed">福音的終局是身體復活與萬有更新，不是輪迴，也不是靈魂逃離物質。</p>
+                </div>
+              </div>
+
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4">對話時的課堂紀律</h3>
+              <ol class="list-decimal pl-6 space-y-3 text-slate-700 leading-relaxed mb-8">
+                <li><strong>先複述到對方點頭。</strong>若猶太朋友不承認你講的是猶太教，或佛教朋友聽出你把佛陀講成上帝，比較就還沒開始。</li>
+                <li><strong>分別經典理想與民間實踐。</strong>基督教也有民間迷信；我們不願被對方用最糟的例子代表，也就不要這樣對待別人。</li>
+                <li><strong>尋找接觸點，不偽造等同。</strong>「天」可以通向創造主，卻不等于父。「他力」可以通向恩典的飢渴，卻不等于基督的代贖。</li>
+                <li><strong>作見證，不羞辱。</strong>彼得前書要的是溫柔與敬畏。真理不需要靠貶低鄰舍來顯出自己高大。</li>
+                <li><strong>牧養華人家庭時特別慢。</strong>祭祖、神主牌、清明，往往是孝與恐懼纏在一起。教義要清，腳步要穩，關係要存。</li>
+              </ol>
+
+              <div class="bible-verse mb-8 bg-violet-50 p-6 rounded-lg border border-violet-100">
+                <p class="text-lg italic text-slate-800 mb-2">「創造宇宙和其中萬物的上帝，既是天地的主，就不住人手所造的殿……世人蒙昧無知的時候，上帝並不監察，如今卻吩咐各處的人都要悔改。因為他已經定了日子，要藉著他所設立的人按公義審判天下，並且叫他從死裡復活，給萬人作可信的憑據。」</p>
+                <p class="text-sm text-slate-600">— 使徒行傳 17:24、30–31</p>
+              </div>
+
+              <div class="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-6 text-slate-700 leading-relaxed">
+                <p class="mb-3">若要繼續亞伯拉罕傳統內部的細比較（包括天主教與更正教），請讀本站「<a href="../猶大教、回教、天主教、基督教比較/index.html" class="text-indigo-700 font-medium hover:underline">宗教比較</a>」。救恩論的核心經文與歷史，見「<a href="../因信稱義/index.html" class="text-indigo-700 font-medium hover:underline">因信稱義</a>」。</p>
+                <p>本講義是課堂地圖，不是百科全書。學生若能用自己的話，公平講出另一傳統在「上帝、人、拯救、經典」上的主張，並指出基督教的獨特認信——這一課就及格了。</p>
+              </div>
+            </div>
+          </section>
+
+          <div id="visit-counter-container"></div>
+        </div>
+      </main>
+
+      <footer class="text-center py-4 text-slate-500 text-sm">
+        <p class="italic mb-1">
+          But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his
+          understanding. Jeremiah 10:12
+        </p>
+        <p class="text-xs mb-1 mt-2">
+          「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」 耶利米書 10:12
+        </p>
+        <p class="text-xs mt-2 pt-2 border-t border-slate-300">
+          @ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up, .category-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    function setActiveToc(id) {
+      tocLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', isActive);
+        link.classList.toggle('bg-slate-50', !isActive);
+        link.classList.toggle('text-slate-700', !isActive);
+      });
+    }
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const match = sections.find(item => item.el === entry.target);
+        if (match) setActiveToc(match.id);
+      });
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+      if (scrollTop < 120) setActiveToc('intro');
+    });
+  </script>
+
+  <script src="../../../visit-counter.js"></script>
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec';
+    if (window.VisitCounter) {
+      VisitCounter.init('bible_study/信仰討論/基督教與世界宗教比較/index', {
+        scriptUrl: SCRIPT_URL,
+        containerId: 'visit-counter-container'
+      });
+    }
+  </script>
+</body>
+</html>

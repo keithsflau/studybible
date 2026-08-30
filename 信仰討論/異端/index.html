@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>異端｜Heresy and the Apostolic Gospel</title>
+  <meta name="description" content="異端：以經解經討論假先知、假師傅、另一個福音與敵基督。含古代大公會議所拒的主要異端，以及近現代自稱基督教、卻更換福音的團體分析。異端不是「跟我不一樣的宗派」。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(71, 85, 105, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(190, 18, 60, 0.07), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(71, 85, 105, 0.10), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(190, 18, 60, 0.07), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.08), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(71, 85, 105, 0.14), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(190, 18, 60, 0.10), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.10), transparent 30%);
+      }
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(71, 85, 105, 0.16);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(99, 102, 241, 0.4);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(136, 19, 55, 0.45);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(79, 70, 229, 0.75);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(71, 85, 105, 0.65), rgba(190, 18, 60, 0.45), rgba(79, 70, 229, 0.5));
+      border-radius: 2px;
+    }
+    .toc-link { transition: all 0.2s ease; white-space: nowrap; }
+    .toc-link.active {
+      background: linear-gradient(135deg, #475569 0%, #be123c 50%, #4f46e5 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-zh p { line-height: 1.85; }
+  </style>
+</head>
+<body class="topic-shell" data-slug="index">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">異端</a>
+    
+  </header>
+
+  <section class="hero" aria-label="異端">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Heresy and the Apostolic Gospel</div>
+      <h1 class="serif">異端<em class="latin">Heresy and the Apostolic Gospel</em></h1>
+      <p class="hero-lead">假先知、另一個福音，與使徒對基督的見證</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index" class="is-on">總覽</a>
+        <a href="question.html" data-nav-slug="question">問題意識</a>
+        <a href="warnings.html" data-nav-slug="warnings">假先知與警戒</a>
+        <ul class="sub"><li>舊約假先知</li><li>耶穌的警戒</li></ul>
+        <a href="apostles.html" data-nav-slug="apostles">使徒行傳與保羅</a>
+        <ul class="sub"><li>使徒行傳</li><li>另一個福音</li></ul>
+        <a href="tests.html" data-nav-slug="tests">檢驗真道</a>
+        <ul class="sub"><li>約翰彼得猶大</li><li>辨認核心</li></ul>
+        <a href="ancient.html" data-nav-slug="ancient">古代異端</a>
+        <a href="modern.html" data-nav-slug="modern">近現代團體</a>
+        <a href="close.html" data-nav-slug="close">分辨與牧養</a>
+        <ul class="sub"><li>錯謬與異端</li><li>牧養</li></ul>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/hero.png" alt=""></figure>
+          <p class="essay-kicker">專論總覽</p>
+          
+          
+          <div class="overview-lead">
+            <p>假先知、另一個福音，與使徒對基督的見證</p>
+            <p>本篇已按原有標題拆成可獨立閱讀的分題。請選一題進入；正文未經改寫，只把長頁分開。</p>
+          </div>
+          <div class="chapter-grid">
+        <a class="chapter-card" href="question.html">
+          <div class="media"><img src="images/question.svg" alt=""></div>
+          <div class="body">
+            <div class="num">01</div>
+            <h3 class="serif">問題意識</h3>
+            <p>一、問題意識：所信的基督是否真基督 「異端」在今日華語裡，往往變成一句情緒詞：誰跟我不一樣，誰就是異端。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="warnings.html">
+          <div class="media"><img src="images/warnings.svg" alt=""></div>
+          <div class="body">
+            <div class="num">02</div>
+            <h3 class="serif">假先知與警戒</h3>
+            <p>二、舊約：假先知——神蹟也不能蓋過對耶和華的忠誠 以色列從一開始就必須分辨：誰是奉耶和華的名說話，誰是擅自說話，誰是領人去隨從別神。</p>
+            <ul class="kids"><li>舊約假先知</li><li>耶穌的警戒</li></ul>
+          </div>
+        </a>
+        <a class="chapter-card" href="apostles.html">
+          <div class="media"><img src="images/apostles.svg" alt=""></div>
+          <div class="body">
+            <div class="num">03</div>
+            <h3 class="serif">使徒行傳與保羅</h3>
+            <p>四、使徒行傳：把恩賜當商品，把律法功德加在福音上 路加沒有寫抽象的異端論，他寫案例。</p>
+            <ul class="kids"><li>使徒行傳</li><li>另一個福音</li></ul>
+          </div>
+        </a>
+        <a class="chapter-card" href="tests.html">
+          <div class="media"><img src="images/tests.svg" alt=""></div>
+          <div class="body">
+            <div class="num">04</div>
+            <h3 class="serif">檢驗真道</h3>
+            <p>六、約翰、彼得與猶大：成了肉身的基督，與一次交付的真道 敵基督：不認耶穌是成了肉身來的 約翰把末時的標誌，從時間表拉回認信：「如今是末時了。</p>
+            <ul class="kids"><li>約翰彼得猶大</li><li>辨認核心</li></ul>
+          </div>
+        </a>
+        <a class="chapter-card" href="ancient.html">
+          <div class="media"><img src="images/ancient.svg" alt=""></div>
+          <div class="body">
+            <div class="num">05</div>
+            <h3 class="serif">古代異端</h3>
+            <p>八、古代／大公會議所拒的主要異端：基督教內部的教義史 這一節處理的，是教會在讀同一本聖經時，對基督、三一與救恩走偏、後來被大公認信所拒的教導。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="modern.html">
+          <div class="media"><img src="images/modern.svg" alt=""></div>
+          <div class="body">
+            <div class="num">06</div>
+            <h3 class="serif">近現代團體</h3>
+            <p>九、近現代自稱基督教、卻更換福音或基督的主要團體 第七節已點名若干教義特徵。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="close.html">
+          <div class="media"><img src="images/close.svg" alt=""></div>
+          <div class="body">
+            <div class="num">07</div>
+            <h3 class="serif">分辨與牧養</h3>
+            <p>十、異端、錯謬、不平衡與罪：不要用同一把火燒盡田地 真教會裡也會有錯誤教導。</p>
+            <ul class="kids"><li>錯謬與異端</li><li>牧養</li></ul>
+          </div>
+        </a>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/異端/index", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

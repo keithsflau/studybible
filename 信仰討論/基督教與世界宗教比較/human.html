@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人論與來世｜世界宗教比較</title>
+  <meta name="description" content="世界宗教比較：人論與來世。五、人論 「上帝就照著自己的形像造人……」又：「因為世人都犯了罪，虧缺了上帝的榮耀。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.12), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.08), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.1);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .category-card:nth-child(6) { animation-delay: 0.6s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(99, 102, 241, 0.8);
+      transform: translateX(5px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .comparison-table {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .comparison-table table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      vertical-align: top;
+    }
+    .comparison-table th {
+      background: rgba(99, 102, 241, 0.15);
+      font-weight: 600;
+      color: rgba(79, 70, 229, 0.95);
+    }
+    .comparison-table tr:hover {
+      background: rgba(99, 102, 241, 0.08);
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #6366f1 0%, #7c3aed 100%);
+      color: white;
+    }
+    .locus-section {
+      scroll-margin-top: 6rem;
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="human">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">世界宗教比較</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">人論與來世</div>
+  </header>
+
+  <section class="hero" aria-label="世界宗教比較">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Christianity and World Religions</div>
+      <h1 class="serif">人論與來世<em class="latin">世界宗教比較</em></h1>
+      <p class="hero-lead">五、人論 「上帝就照著自己的形像造人……」又：「因為世人都犯了罪，虧缺了上帝的榮耀。</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">導論</a>
+        <a href="overview.html" data-nav-slug="overview">宗教導覽</a>
+        <a href="worldview.html" data-nav-slug="worldview">核心理論</a>
+        <a href="god-creation.html" data-nav-slug="god-creation">創造與神論</a>
+        <ul class="sub"><li>創造論</li><li>神論</li></ul>
+        <a href="human.html" data-nav-slug="human" class="is-on">人論與來世</a>
+        <ul class="sub"><li>人論</li><li>來世</li></ul>
+        <a href="salvation.html" data-nav-slug="salvation">得救</a>
+        <a href="scripture.html" data-nav-slug="scripture">經典典籍</a>
+        <a href="takeaways.html" data-nav-slug="takeaways">課堂與牧養結語</a>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回世界宗教比較總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/human.svg" alt=""></figure>
+          <p class="essay-kicker">分題 05 / 08</p>
+          <h2 class="page-title serif">人論與來世</h2>
+          <div class="topic-body"><section id="anthropology" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">五、人論</h2>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「上帝就照著自己的形像造人……」又：「因為世人都犯了罪，虧缺了上帝的榮耀。」</p>
+                <p class="text-sm text-slate-600">— 創世記 1:27；羅馬書 3:23</p>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-6">基督教人論有雙焦點：<strong>尊嚴</strong>（上帝的形像）與<strong>敗壞</strong>（罪）。人不是神，也不是垃圾；不是純粹靈魂暫住身體，也不是只有物質。救恩針對的是整個人——包括身體的復活。</p>
+              <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="rounded-xl p-5 bg-indigo-50 border border-indigo-100">
+                  <h3 class="font-semibold serif-font mb-2">基督教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">人有理性、道德、關係與治理的召命。原罪（各傳統表述不同）指墮落後人傾向自我為中心，不能自救。男女同為形像承載者。教會是新人的群體，但不取消受造的家庭與公民責任。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-blue-50 border border-blue-100">
+                  <h3 class="font-semibold serif-font mb-2">猶太教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">人亦有上帝的形像（tzelem）。拉比講善傾向與惡傾向（yetzer ha-tov / ha-ra），強調自由與悔改（teshuvah）。一般拒絕「出生即背負亞當罪咎」的教義。義不首先是法庭稱義，而是妥拉生活中的忠誠。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-emerald-50 border border-emerald-100">
+                  <h3 class="font-semibold serif-font mb-2">伊斯蘭教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">人受造於先天本性（fiṭra），本可認識真主。亞當被饒恕，後代不繼承罪咎。人的問題是健忘、驕傲與不信。作為代理，人要在大地上建立公正。末日各人為自己的行為負責。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-amber-50 border border-amber-100">
+                  <h3 class="font-semibold serif-font mb-2">佛教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">「無我」否認常住靈魂。人是五蘊和合，剎那生滅。苦來自執著一個不存在的「我」。慈悲極深，卻不是建基於「上帝的形像」，而是建基於眾生皆苦、皆可覺悟。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-rose-50 border border-rose-100">
+                  <h3 class="font-semibold serif-font mb-2">印度教</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">許多學派主張真我（ātman）不朽，甚至與梵不二。身體與社會角色（種姓／生活階段）曾深刻塑造人論，現代改革運動則多加批判。人的問題常是無明：把暫時的當成終極。</p>
+                </div>
+                <div class="rounded-xl p-5 bg-teal-50 border border-teal-100">
+                  <h3 class="font-semibold serif-font mb-2">儒、道、民間</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">孟子主性善、荀子主性惡，爭的是可教化性。人是關係中的人：君臣父子。道教講精氣神與長生。民間宗教裡，人是祖先譜系的一環，也是可求神明庇佑的弱者。罪的語言較淡，恥、報、運的語言較濃。</p>
+                </div>
+              </div>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p><strong class="text-slate-900">為何這論題關鍵：</strong>沒有上帝的形像，人權與鄰舍之愛容易變成契約計算。沒有罪，十字架變成多餘的悲劇。佛教的無我能拆毀自我偶像，卻難以安放「被指名呼召的你」。牧者需要同時抵抗兩極：廉價的自我神化，以及把人說成毫無價值。</p>
+              </div>
+            </div>
+          </section>
+<section id="afterlife" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-4 serif-font text-slate-900">六、來世（終末）</h2>
+              <p class="text-slate-700 leading-relaxed mb-6">基督教終末論的中心不是「靈魂去一個更好的地方」，而是<strong>死人復活、基督再來、最終審判與新天新地</strong>。中間狀態（與主同在）是真實的，卻不是故事的結局。這使喪禮、身體、公義與盼望都與輪迴或單純祖先世界不同。</p>
+              <div class="comparison-table mb-6">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>傳統</th>
+                      <th>死後立即如何</th>
+                      <th>終局圖像</th>
+                      <th>與基督教的關鍵差異</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-semibold">基督教</td>
+                      <td>與主同在或等候；非輪迴</td>
+                      <td>復活、審判、新創造；永恆與上帝同在或隔絕</td>
+                      <td>參照點：身體有份，歷史有終局</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">猶太教</td>
+                      <td>陰間／靈魂去處說法多樣</td>
+                      <td>來世（Olam Ha-Ba）、義人復活（尤其正統派）</td>
+                      <td>共享復活盼望；不認耶穌已開啟終末</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">伊斯蘭教</td>
+                      <td>中間界（barzakh）</td>
+                      <td>復活日、天園與火獄；秤行為</td>
+                      <td>共享審判與復活；救贖不靠十字架</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">佛教</td>
+                      <td>隨業再生（六道等）</td>
+                      <td>涅槃：苦的止息；淨土是方便與願力</td>
+                      <td>終局是出離輪迴，不是身體復活的新地</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">印度教</td>
+                      <td>輪迴，或暫居天界</td>
+                      <td>解脫：與梵合一或永居神前</td>
+                      <td>循環宇宙；解脫常是出離個體歷史</td>
+                    </tr>
+                    <tr>
+                      <td class="font-semibold">中華傳統</td>
+                      <td>靈魂、祖先、陰間等民間圖像</td>
+                      <td>受佛教影響後常有輪迴、地獄、超度</td>
+                      <td>重家族連續；較少「新創造」教義</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-slate-700 leading-relaxed mb-4">天主教的煉獄、更正教內部的千禧年爭論，屬於基督教家庭內部的終末學，見本站「千禧論」與「宗教比較」。本單元只需記住：大公基督教一致承認復活與審判，拒絕輪迴作為福音的答案。</p>
+              <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 text-slate-700 leading-relaxed">
+                <p><strong class="text-indigo-900">牧養提示：</strong>華人喪禮中的紙紮、功德、安靈，背後是「死者仍需後人照顧」的宇宙。基督教不是冷淡對待死者，而是把死者交託給復活的主，並以盼望陪伴活人。比較宗教若只贏教義、輸掉喪禮現場的溫柔，就還未學完這一課。</p>
+              </div>
+            </div>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="god-creation.html"><span class="dir">上一題</span><span class="serif">創造與神論</span></a>
+        <a class="next" href="salvation.html"><span class="dir">下一題</span><span class="serif">得救</span></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up, .category-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    function setActiveToc(id) {
+      tocLinks.forEach(link => {
+        const isActive = link.getAttribute('href') === '#' + id;
+        link.classList.toggle('active', isActive);
+        link.classList.toggle('bg-slate-50', !isActive);
+        link.classList.toggle('text-slate-700', !isActive);
+      });
+    }
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const match = sections.find(item => item.el === entry.target);
+        if (match) setActiveToc(match.id);
+      });
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+      if (scrollTop < 120) setActiveToc('intro');
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/基督教與世界宗教比較/human", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

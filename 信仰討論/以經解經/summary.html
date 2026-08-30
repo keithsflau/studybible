@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>總結｜以經解經</title>
+  <meta name="description" content="以經解經：總結。總結 以經解經 不僅是一種解經方法，更是一種對聖經權威的認信。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.12), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.12), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% { 
+        background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.12), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.12), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.1), transparent 30%);
+      }
+      50% { 
+        background: radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.18), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.18), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.15), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.1);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+    .interactive-card {
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .interactive-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+    .interactive-card.active {
+      border-color: rgba(59, 130, 246, 0.6);
+      background: rgba(59, 130, 246, 0.15);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(59, 130, 246, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(59, 130, 246, 0.8);
+      transform: translateX(5px);
+      background: rgba(59, 130, 246, 0.05);
+    }
+    .expandable-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+      opacity: 0;
+    }
+    .expandable-content.expanded {
+      max-height: 2000px;
+      opacity: 1;
+    }
+    .principle-card {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .principle-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+    .principle-card:hover::before {
+      left: 100%;
+    }
+    .example-box {
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+    .example-box:hover {
+      border-left-color: rgba(59, 130, 246, 0.6);
+      background: rgba(59, 130, 246, 0.05);
+      transform: translateX(5px);
+    }
+    .highlight-text {
+      background: linear-gradient(120deg, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.1) 100%);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      transition: all 0.3s ease;
+    }
+    .highlight-text:hover {
+      background: linear-gradient(120deg, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0.2) 100%);
+      transform: scale(1.05);
+    }
+    .progress-indicator {
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.8), rgba(99, 102, 241, 0.8));
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    .interactive-quiz {
+      transition: all 0.3s ease;
+    }
+    .quiz-option {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .quiz-option:hover {
+      background: rgba(59, 130, 246, 0.1);
+      transform: translateX(5px);
+    }
+    .quiz-option.selected {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: rgba(59, 130, 246, 0.6);
+    }
+    .quiz-option.correct {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: rgba(34, 197, 94, 0.6);
+    }
+    .quiz-option.incorrect {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.6);
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="summary">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">以經解經</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">總結</div>
+  </header>
+
+  <section class="hero" aria-label="以經解經">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Scripture Interprets Scripture</div>
+      <h1 class="serif">總結<em class="latin">以經解經</em></h1>
+      <p class="hero-lead">總結 以經解經 不僅是一種解經方法，更是一種對聖經權威的認信。</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">引言</a>
+        <a href="principles.html" data-nav-slug="principles">核心原則</a>
+        <a href="examples.html" data-nav-slug="examples">實踐範例</a>
+        <a href="method.html" data-nav-slug="method">方法論指引</a>
+        <a href="cautions.html" data-nav-slug="cautions">注意事項與挑戰</a>
+        <a href="reflect.html" data-nav-slug="reflect">互動思考</a>
+        <a href="summary.html" data-nav-slug="summary" class="is-on">總結</a>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回以經解經總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/summary.svg" alt=""></figure>
+          <p class="essay-kicker">分題 07 / 07</p>
+          <h2 class="page-title serif">總結</h2>
+          <div class="topic-body"><section class="glass-card rounded-2xl p-8 fade-in-up">
+            <div class="space-y-6">
+              <h2 class="text-3xl font-bold serif-font text-blue-400 text-center">總結</h2>
+              <div class="space-y-4 text-slate-800 leading-relaxed">
+                <p>
+                  <span class="highlight-text">以經解經</span>不僅是一種解經方法，更是一種對聖經權威的認信。它提醒我們，聖經是神所啟示的，具有內在的一致性和統一性。當我們認真地以經解經時，我們就是在承認聖經的權威，讓聖經自己解釋自己。
+                </p>
+                <p>
+                  這個方法要求我們謙卑地學習，仔細地查考，並且願意被聖經的話語塑造和改變。它不是要我們成為聖經學者，而是要我們成為忠心的讀者，讓神的話語在我們的生命中發揮應有的作用。
+                </p>
+                <div class="bible-verse mt-6 p-6 rounded-lg bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border-l-4 border-blue-400">
+                  <p class="text-xl italic text-blue-200 mb-3">「聖經都是神所默示的，於教訓、督責、使人歸正、教導人學義都是有益的，叫屬神的人得以完全，預備行各樣的善事。」</p>
+                  <p class="text-sm text-slate-700">— 提摩太後書 3:16-17</p>
+                </div>
+                <p class="mt-4">
+                  願我們都能在聖靈的光照下，通過以經解經的方法，更深入地認識神的話語，更準確地理解神的旨意，更忠心地活出神的道。
+                </p>
+              </div>
+            </div>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="reflect.html"><span class="dir">上一題</span><span class="serif">互動思考</span></a>
+        <a class="is-empty"></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    // Expandable content functionality
+    function expandContent(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById('arrow' + id.slice(-1));
+      
+      content.classList.toggle('expanded');
+      if (arrow) {
+        arrow.style.transform = content.classList.contains('expanded') ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    }
+
+    // Quiz functionality
+    const correctAnswers = {
+      'q1': 'b',
+      'q2': 'b',
+      'q3': 'b'
+    };
+
+    function selectOption(element, questionId, answer) {
+      // Remove previous selections
+      const options = element.parentElement.querySelectorAll('.quiz-option');
+      options.forEach(opt => {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+      });
+
+      // Mark selected option
+      element.classList.add('selected');
+
+      // Check answer
+      const feedback = document.getElementById(questionId + '-feedback');
+      if (answer === correctAnswers[questionId]) {
+        element.classList.add('correct');
+        feedback.className = 'mt-3 p-4 rounded-lg bg-green-500/20 border border-green-500/50';
+        feedback.innerHTML = '<p class="text-green-300 font-semibold">✓ 正確！</p><p class="text-slate-700 text-sm mt-1">這正是「以經解經」的核心方法。</p>';
+      } else {
+        element.classList.add('incorrect');
+        feedback.className = 'mt-3 p-4 rounded-lg bg-red-500/20 border border-red-500/50';
+        feedback.innerHTML = '<p class="text-red-300 font-semibold">✗ 不正確</p><p class="text-slate-700 text-sm mt-1">請再思考一下「以經解經」的核心原則。</p>';
+      }
+      feedback.classList.remove('hidden');
+    }
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right, .scale-in');
+      animatedElements.forEach(el => observer.observe(el));
+    });
+
+    // Progress indicator on scroll
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.querySelector('.progress-indicator');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/以經解經/summary", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

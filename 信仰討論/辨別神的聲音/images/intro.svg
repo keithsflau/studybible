@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b2436"/>
+      <stop offset="1" stop-color="#3d4a6b"/>
+    </linearGradient>
+    <pattern id="dust" width="80" height="80" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="10" r="1.1" fill="#e4cf96" opacity=".25"/>
+      <circle cx="50" cy="40" r="0.9" fill="#f6f1e6" opacity=".18"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#wash)"/>
+  <rect width="1600" height="900" fill="url(#dust)"/>
+  <rect x="48" y="48" width="1504" height="804" fill="none" stroke="#c4a35a" stroke-width="3" opacity=".55"/>
+  <rect x="64" y="64" width="1472" height="772" fill="none" stroke="#e4cf96" stroke-width="1.5" opacity=".35"/>
+  
+    <path d="M860 220 c180 40 220 200 180 320 s-160 200-260 160" fill="none" stroke="#c4a35a" stroke-width="16"/>
+    <path d="M820 300 c90 30 110 120 80 190 s-90 110-150 80" fill="none" stroke="#e4cf96" stroke-width="10"/>
+    <rect x="420" y="300" width="260" height="320" rx="16" fill="#f6f1e6" stroke="#c4a35a" stroke-width="8"/>
+    <rect x="450" y="340" width="200" height="12" fill="#3d4a6b" opacity=".3"/>
+    <rect x="450" y="380" width="160" height="10" fill="#3d4a6b" opacity=".25"/>
+</svg>

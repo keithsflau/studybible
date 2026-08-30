@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基督教職場倫理 | Christian Workplace Ethics - Theological Discussion</title>
+  <meta name="description" content="基督教職場倫理專論：按救贖歷史以經解經，從創造中的修理看守、安息界限、律法與先知的經濟公義，到被擄中的持守、耶穌論瑪門，以及新約家戶訓詞的謹慎詮釋。工作可榮耀神，救恩不來自績效。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(13, 148, 136, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(87, 83, 78, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(5, 150, 105, 0.07), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(13, 148, 136, 0.18);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(13, 148, 136, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(15, 118, 110, 0.85);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(13, 148, 136, 0.65), rgba(87, 83, 78, 0.45));
+      border-radius: 2px;
+    }
+    .toc-link { transition: all 0.2s ease; white-space: nowrap; }
+    .toc-link.active {
+      background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-essay p { margin-bottom: 1.1rem; }
+    .prose-essay p:last-child { margin-bottom: 0; }
+    .term {
+      font-style: italic;
+      color: #115e59;
+    }
+  </style>
+  <link rel="stylesheet" href="../../../visit-counter.css">
+</head>
+<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-white to-teal-50/40 min-h-screen overflow-x-hidden">
+  <div class="relative min-h-screen overflow-hidden">
+    <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
+
+    <div class="relative z-10">
+      <header class="px-6 py-12 sm:py-16">
+        <div class="mx-auto max-w-7xl">
+          <div class="text-center space-y-6">
+            <a href="../index.html" class="inline-block mb-4 text-slate-600 hover:text-slate-900 transition-colors fade-in-up" style="animation-delay: 0.1s;">
+              <svg class="w-6 h-6 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              返回討論主頁
+            </a>
+            <div class="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg fade-in-up" style="background:linear-gradient(135deg,#115e59,#a8a29e);animation-delay:0.15s">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.2 8.2l2.8-2.8 2 2-2.8 2.8-2-2z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6.2 6.8l2.6-2.4"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 6.6h6.4v3.2H14z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9.8h8.4v9.4H13z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.2 14h2.2"/>
+              </svg>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight float-animation serif-font fade-in-up" style="animation-delay: 0.2s;">
+              基督教職場倫理
+              <span class="block mt-2 bg-gradient-to-r from-teal-700 via-stone-600 to-emerald-800 bg-clip-text text-transparent pulse-animation">
+                Christian Workplace Ethics
+              </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.3s;">
+              創造與聖約下的工作：以經解經，按救贖歷史讀主僕、工價與瑪門
+            </p>
+            <div class="w-full max-w-md mx-auto mt-6 fade-in-up" style="animation-delay: 0.4s;">
+              <div class="progress-bar" style="width: 0%;" id="reading-progress"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-teal-100 shadow-sm" aria-label="專論目錄">
+        <div class="mx-auto max-w-7xl px-3 sm:px-6">
+          <div class="flex gap-2 overflow-x-auto py-3 text-sm">
+            <a href="#question" class="toc-link active px-3 py-2 rounded-lg bg-teal-50 text-teal-900 font-medium">問題意識</a>
+            <a href="#creation" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">創造中的工作</a>
+            <a href="#sabbath" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">安息與界限</a>
+            <a href="#law" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">經濟倫理</a>
+            <a href="#wisdom" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">智慧傳統</a>
+            <a href="#exile" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">被擄與外邦</a>
+            <a href="#jesus" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">耶穌</a>
+            <a href="#paul" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">保羅與家戶</a>
+            <a href="#witness" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">見證與分別</a>
+            <a href="#pastoral" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">牧養結論</a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="px-6 pb-16">
+        <div class="mx-auto max-w-4xl">
+
+          <section id="question" class="locus-section mb-16 fade-in-up" style="animation-delay: 0.5s;">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">一、問題意識：職場不是信仰的例外區</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「職場倫理」一詞容易讓人以為：信仰管主日，星期一至五另有一套規則——公司文化、績效指標、行業潛規則。聖經不容許這種分割。人無論在園子、田間、王宮或帳棚裡做工，都站在同一位創造主與立約之神面前。倫理的源頭是<strong class="text-teal-800">神的性情與誡命</strong>，不是市場的平均線，也不是某間機構的價值宣言。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                當代至少有三條岔路，必須同時拒絕。第一條，把工作區變成信仰的「例外區」：敬拜在教堂，辦公室則「入鄉隨俗」，彷彿第八、第九、第十誡在合約簽署後暫停生效。第二條，把聖經削成現代人力資源手冊或成功學講義：勤勞經文變成升遷秘訣，約瑟與但以理變成「職場先知」的樣板，神的信實被改寫成職涯保證。第三條，把「神告訴我」變成商業話術——以主的名炒賣項目、操控同事、合理化貪財。這是妄稱耶和華的名，不是敬虔。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                因此，本文不從「如何在公司更成功」出發，而從正典的救贖歷史出發：工作先屬<strong class="text-teal-800">創造的託付</strong>，後在墮落中變為勞苦，又在聖約律法中被界限與公義所約束；智慧書同時肯定殷勤並揭穿勞碌的虛空；被擄敘事顯明在異教權力結構中如何持守敬畏；耶穌把天國對立於瑪門；保羅在羅馬帝國的家戶訓詞中對主僕說話——這最後一層必須謹慎詮釋：<strong class="text-teal-800">既不可把奴隸制永恆化，也不可把經文抽空成心靈雞湯</strong>。方法是以經解經：讓較清晰的創造與誡命照亮較難的家戶經文，而不是用後世的僱傭合約或革命口號，先決定文本「應該」說甚麼。讀經方法見本站「<a href="../以經解經/index.html" class="text-teal-800 font-medium hover:underline">以經解經</a>」。
+              </p>
+              <div class="bible-verse mt-8 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「所以，你們或吃或喝，無論做甚麼，都要為榮耀神而行。」</p>
+                <p class="text-sm text-slate-600">— 哥林多前書 10:31</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="creation" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">二、創造中的工作：修理看守，不是咒詛本身</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                聖經對工作的第一句話，不是「你要養家」，而是形像與託付。神說：「我們要照著我們的形像、按著我們的樣式造人，使他們管理……地上各樣所爬的昆蟲。」（創 1:26）隨後賜福：「要生養眾多，遍滿地面，治理這地。」（創 1:28）治理不是掠奪的許可證，而是代理治理：人代表那位看一切為「甚好」的創造主，照料受造界。工作的尊嚴，先於任何薪酬制度；它來自人按神的形像被造。
+              </p>
+              <div class="bible-verse my-6 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「耶和華神將那人安置在伊甸園，使他修理看守。」</p>
+                <p class="text-sm text-slate-600">— 創世記 2:15</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「修理看守」（<span class="term">עָבַד</span> 與 <span class="term">שָׁמַר</span>）是園丁的語言，也是後來聖所事奉的語言。工作在墮落以先已經存在。把「做工」本身等同咒詛，是誤讀文本：亞當在罪入世界之前已被安置去耕耘與守護。工作是受造的責任，不是被貶入凡俗的刑罰。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                墮落改寫的是處境，不是取消託付。耶和華對亞當說：「地必為你的緣故受咒詛；你必終身勞苦才能從地裡得吃的。地必給你長出荊棘和蒺藜來……你必汗流滿面才得糊口。」（創 3:17–19）受咒詛的是地，勞苦與荊棘是墮落後的實況。人仍要得食，卻在抗拒與衰殘中得食。羅馬書後來說，受造之物「服在虛空之下……一同歎息、勞苦」（羅 8:20–22），正是把創世記三章的荊棘讀進整個受造界的等待。職場上的挫折、不公、身體耗損，往往屬於這歎息，而不是證明「你信心不夠所以升不了職」。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                創造敘事還阻止另一種偶像：把工作神化。人是園丁，不是園子的主。安息日尚未在創二章以誡命形式頒布，但第七日神歇了祂一切的工（創 2:2–3），已經為後來的界限埋下伏筆。人被造去工作，也被造去停下來承認：世界不靠我的績效運轉。
+              </p>
+            </div>
+          </section>
+
+          <section id="sabbath" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">三、安息與界限：人不是生產工具</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                十誡把工作放進有限度的節奏裡。「當記念安息日，守為聖日。六日要勞碌做你一切的工，但第七日是向耶和華—你神當守的安息日。」（出 20:8–10）出埃及記的理據連於創造：「因為六日之內，耶和華造天、地、海，和其中的萬物，第七日便安息。」（出 20:11）工作有六日的正當位置，也有一日不可被生產邏輯吞沒的位置。人不是晝夜運轉的器具。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                申命記平行處把同一誡命接在救贖歷史上：「你也要記念你在埃及地作過奴僕；耶和華—你神用大能的手和伸出來的膀臂將你從那裡領出來。因此，耶和華—你的神吩咐你守安息日。」（申 5:15）兩處不是互相取消，而是互相解釋：創造說「你不是神」；出埃及說「你不再是法老的磚窯」。安息日保護的不只是自由民，也包括「你的僕婢、牲畜，並你城裡寄居的客旅」（出 20:10；申 5:14）。弱勢者得歇息，是誡命的一部分，不是僱主的額外恩惠。
+              </p>
+              <div class="bible-verse my-6 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「六日要做工，第七日要安息，使牛、驢可以歇息，並使你婢女的兒子和寄居的都可以喘息。」</p>
+                <p class="text-sm text-slate-600">— 出埃及記 23:12</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                新約並沒有把這條線索蒸發成「內心平靜即可」。耶穌在安息日醫病，是恢復安息日的本意——憐憫，而不是廢掉「人需要歇息、鄰舍不可被當機器用」這條倫理。希伯來書把「神的安息」推向終末（來 4:9–11），卻沒有授權教會用「我為主燃燒」來合理化對自己或下屬的持續壓榨。若一種職場文化要求人永不歇息、並以敬虔言語包裝過勞，它對抗的是創造與救贖的節奏，不是對抗懶惰。
+              </p>
+            </div>
+          </section>
+
+          <section id="law" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">四、律法中的經濟倫理：工價、度量衡與先知的控訴</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                第八誡「不可偷盜」、第十誡「不可貪戀」（出 20:15、17）不是只管夜間破門。它們劃定鄰舍的產業、名譽與人身，不被慾望重新分配。貪戀在工作場域的形態，可以是篡改數據、搶奪功勞、把別人的時間與身體當成免費原料。偷盜也可以穿上合約的外衣：答應的工價不付，度量衡動手腳。
+              </p>
+              <div class="bible-verse my-6 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「不可欺壓你的鄰舍，也不可搶奪他的物。雇工人的工價，不可在你那裡過夜，留到早晨。」</p>
+                <p class="text-sm text-slate-600">— 利未記 19:13</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                申命記把同一原則說得更具體：「困苦窮乏的雇工，無論是你的弟兄或是在你城裡寄居的，你不可欺負他。要當日給他工價，不可等到日落——因為他困苦，把心放在工價上——恐怕他因你求告耶和華，罪便歸你了。」（申 24:14–15）工價倫理的核心不是現代會計週期，而是<strong class="text-teal-800">鄰舍的急需與神的垂聽</strong>。拖延、克扣、用程序把弱者拖到放棄，在這條線上已經是罪，不必再等一則「特別啟示」。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                誠實的度量衡屬於同一聖潔法典：「你們施行審判，不可行不義；在尺、秤、升、斗上也是如此。要用公道天平、公道法碼、公道升斗、公道秤。」（利 19:35–36）箴言把它說成敬畏的語言：「詭詐的天平為耶和華所憎惡；公平的法碼為他所喜悅。」（箴 11:1）帳目、合約條款、產品說明、績效數字，都是今日的「升斗」。神憎惡的不是商業本身，而是用制度化的不義去吃人。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                先知把這倫理推到公共層面。阿摩司指責那些「要吞吃窮乏人、使困苦人衰敗」、在安息日迫不及待做買賣、「賣出用小升斗，收銀用大戥子，用詭詐的天平欺哄人」的人（摩 8:4–6）。新約雅各書沒有把這條線切斷：「工人給你們收割莊稼，你們虧欠他們的工錢；這工錢有聲音呼叫，並且那收割之人的冤聲已經入了萬軍之主的耳了。」（雅 5:4；參 5:1–6）敬拜若與欺壓工人並存，先知不稱之為熱忱，而稱之為審判的對象。教會讀這些經文，不是為了把一切勞資談判聖戰化，而是為了承認：<strong class="text-teal-800">神聽得見被拖欠者的聲音</strong>，掌權者不能用「市場就是這樣」把自己說成中立。
+              </p>
+            </div>
+          </section>
+
+          <section id="wisdom" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">五、智慧傳統：殷勤、口舌、賄賂，以及勞碌的虛空</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                箴言在聖約社群的日常中訓練人。它讚許殷勤：「手懶的，要受貧窮；手勤的，卻要富足。」（箴 10:4）「你看見辦事殷勤的人嗎？他必站在君王面前。」（箴 22:29）這些句子是觀察性智慧，不是萬靈公式。正典同時收錄義人受苦、惡人亨通（參伯；詩 73）。把箴 10:4 讀成「貧窮皆因懶惰」，就是拒絕讓約伯記與先知書進房間。
+              </p>
+              <div class="grid sm:grid-cols-2 gap-4 my-8">
+                <div class="bg-teal-50 border border-teal-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-teal-900 mb-2">誠實與口舌</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">「說謊言的嘴為耶和華所憎惡；行事誠實的，為他所喜悅。」（箴 12:22）簡報、考核、客戶承諾，都在這句底下。美名被看得比大財更重：「美名勝過大財；恩寵強如金銀。」（箴 22:1）</p>
+                </div>
+                <div class="bg-stone-50 border border-stone-200 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-stone-800 mb-2">賄賂與權力</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">「王藉公平，使國堅定；索要賄賂，使國傾敗。」（箴 29:4）智慧傳統不把「打通關係」中性化。賄賂扭曲判斷，使弱者無門可入。這是公共倫理，也是辦公室倫理。</p>
+                </div>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                傳道書不許我們把箴言的殷勤收成一套「多勞多得神學」。傳道者看日光之下的勞碌：「後來我察看我手所經營的一切事和我勞碌所成的功。誰知都是虛空，都是捕風。」（傳 2:11）同時他又說：「人莫強如吃喝，且在勞碌中享福，我看這也是出於神的手。」（傳 2:24）「神賜人資財豐富，使他能享用……在他勞碌中喜樂，這乃是神的恩賜。」（傳 5:19）張力必須留在文本裡：<strong class="text-teal-800">勞碌本身不能成為偶像，也不能被虛無化到可以懶惰或欺壓</strong>。在神面前享用勞碌，是恩賜；把勞碌當作自我稱義或自我拯救，是虛空。
+              </p>
+            </div>
+          </section>
+
+          <section id="exile" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">六、被擄與外邦職場：聖潔與智慧，不是飛黃騰達</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                約瑟在波提乏家「凡事亨通」（創 39:2–3），經文隨即把他放進性試探與誣告：主母拉住他的衣裳，他說：「我怎能作這大惡，得罪神呢？」（創 39:9）他盡忠辦事，卻下在監裡。後來的高升，是神在饑荒中保存生命的故事（創 45:5–8），不是一張「敬虔者終必坐上高位」的保證書。讀約瑟若刪掉監獄與被遺忘的歲月（創 40:23），剩下的就是成功學，不是創世記。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                但以理書把同一模式放在帝國朝廷。但以理定志不以王的膳玷污自己（但 1:8），又在禁令之下仍一日三次祈禱（但 6:10）。他辦事忠心，「毫無錯誤過失」（但 6:4），卻幾乎死在獅子坑裡。文本要我們看見的，不是宮廷生存技巧，而是：<strong class="text-teal-800">可以在異教權力結構中盡職，卻不可拜那結構所要求的偶像</strong>。但以理服事尼布甲尼撒與大流士，卻不把王當成神。三位友人拒絕跪拜金像（但 3），即使結果是火窯。
+              </p>
+              <div class="bible-verse my-6 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「我們所事奉的神能將我們從烈火的窯中救出來……即或不然，王啊，你當知道我們決不事奉你的神，也不敬拜你所立的金像。」</p>
+                <p class="text-sm text-slate-600">— 但以理書 3:17–18</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「即或不然」切斷了飛黃騰達神學。神可以拯救，拯救卻不是敬拜的條件。外邦職場的忠心，是分別為聖加上辦事的智慧，不是把帝國的升遷階梯施洗成「神的帶領」。耶利米寫信給被擄者：「建造房屋，住在其中；栽種田園，吃其中所產的……求這城的平安。」（耶 29:5–7）寄居者可以為城的福祉勞碌，卻仍是寄居者。這兩條必須一起讀：既不退進屬靈的隔離區，也不把巴比倫的神認作自己的神。
+              </p>
+            </div>
+          </section>
+
+          <section id="jesus" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">七、耶穌：天國、瑪門，以及倫理的轉向</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                登山寶訓把財寶與焦慮放在天父的統治底下。「不要為自己積攢財寶在地上……只要積攢財寶在天上。」（太 6:19–20）焦點不是禁慾，而是主權：「一個人不能事奉兩個主……你們不能又事奉神，又事奉瑪門。」（太 6:24）<span class="term">μαμωνᾶς</span>（瑪門）在此被人格化：錢財可以成為一位競爭的主。因此「不要為生命憂慮」（太 6:25–34）不是鼓勵不負責任，而是拆掉以積蓄為救主的偶像。先求祂的國和祂的義，日用的飲食才回到受造者當求的位置。
+              </p>
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4 mt-10">不義的管家：必須謹慎解釋</h3>
+              <p class="text-lg leading-relaxed text-slate-700">
+                路加福音 16:1–13 常被誤讀成「職場要懂權術」。管家即將被辭，便更改債戶的帳，為自己預備退路。主人誇獎的是他「做事先見」（路 16:8），不是誇獎欺詐本身。耶穌隨即把比喻轉到「光明之子」應當為即將到來的世代作聰明的安排，並收束於：「倘若你們在不義的錢財上不忠心，誰還把那真實的錢財託付你們呢？」（路 16:11）終句再次對立神與瑪門（路 16:13）。<strong class="text-teal-800">比喻要求的是面向終末的忠心與慷慨，不是授權做假帳</strong>。把這段讀成辦公室政治教材，是把結論從文本上撕掉。
+              </p>
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4 mt-10">稅吏的悔改是倫理轉向</h3>
+              <div class="bible-verse my-6 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「主啊，我把所有的一半給窮人；我若訛詐了誰，就還他四倍。」</p>
+                <p class="text-sm text-slate-600">— 路加福音 19:8</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                撒該的救恩臨到這家（路 19:9），立刻顯出經濟行為的轉向：訛詐要償還，而且是加重的償還。耶穌不是為稅吏體制背書，也不是要求所有人變賣一切才算信主；祂顯明：遇見祂的人，不能繼續用舊的榨取方式事奉瑪門。悔改若完全不碰工價、帳目與權力，就還不是路加所記的那種悔改。
+              </p>
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4 mt-10">呼召跟從，不是人人離職</h3>
+              <p class="text-lg leading-relaxed text-slate-700">
+                西門、安得烈「立刻捨了網，跟從了祂」（太 4:20）；雅各、約翰連船和父親也放下（太 4:21–22）。有人被召離開原有的生計，這是真實的。但正典同時記下：呂底亞是賣紫色布疋的（徒 16:14–15）；亞居拉、百基拉與保羅一同織帳棚（徒 18:3）；哥林多教會裡「各人蒙召的時候是甚麼身分」（林前 7:20）成為牧養的起點。關鍵不是職業浪漫主義——彷彿全職事奉才屬靈、市場工作只是次等——而是<strong class="text-teal-800">誰作主</strong>。有人放下網；有人留下買賣，卻讓帳房服從天國。兩者都是跟從，只要瑪門不再坐在寶座上。
+              </p>
+            </div>
+          </section>
+
+          <section id="paul" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">八、保羅與家戶訓詞：主僕都在主面前負責</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                歌羅西書與以弗所書的家戶訓詞（<span class="term">Haustafeln</span>）對 <span class="term">δοῦλοι</span>（奴僕）與 <span class="term">κύριοι</span>（主人）說話，其社會位置是羅馬帝國的家戶，不是二十一世紀的僱傭合約。釋經的第一條紀律，是承認這個距離。把這些經文直接讀成「員工要無條件服從老闆、奴隸制是創造秩序」，是把第一世紀的制度永恆化。把「像是給主做的」撕下來當勵志海報，而略去對主人的命令，則是把文本抽空。
+              </p>
+              <div class="bible-verse my-6 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「你們作僕人的，要凡事聽從你們肉身的主人，不要只在眼前事奉，像是討人喜歡的，總要存心誠實敬畏主。……你們作主人的，要公公平平地待僕人，因為知道你們也有一位主在天上。」</p>
+                <p class="text-sm text-slate-600">— 歌羅西書 3:22；4:1</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                歌羅西書的宇宙性基督論（西 1:15–20）是這段倫理的框架：萬有在祂裡面被造、靠祂而立，祂是身體的頭。因此「無論做甚麼，或說話或行事，都要奉主耶穌的名」（西 3:17），「無論做甚麼，都要從心裡做，像是給主做的，不是給人做的」（西 3:23），不是把苦工聖化，而是把每一個地上角色重新置於那位真 <span class="term">κύριος</span> 之下。主人「也有一位主在天上」（西 4:1；弗 6:9「你們和他們同有一位主」）。權柄被相對化：沒有人是終極的主。以弗所書平行處同樣禁止「威嚇」（弗 6:9），並要求僕人「不要只在眼前事奉」（弗 6:6）。兩邊都被福音問責。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                哥林多前書 7:21–24 使這張力更清楚：「你是作奴隸蒙召的嗎？不要因此憂慮；若能以自由，就求自由更好。……你們是重價買來的，不要作人的奴僕。」呼召（<span class="term">κλῆσις</span>）首先是在神面前的身分，不是把現狀神聖化。能得自由就求自由；同時，蒙召時的處境不是羞恥。腓利門書把同一福音推到關係裡：阿尼西母「不再是奴僕，乃是高過奴僕，是親愛的兄弟」（門 16）。若家戶訓詞被用來維持轄制，而腓利門書與林前 7 被關在門外，那不是以經解經。
+              </p>
+              <h3 class="text-2xl font-semibold serif-font text-slate-900 mb-4 mt-10">親手做工、安靜度日、敬虔知足</h3>
+              <p class="text-lg leading-relaxed text-slate-700">
+                帖撒羅尼迦的牧養更貼近日常勞作。「又要立志作安靜人，辦自己的事，親手做工……叫你們可以向外人行事端正，自己也就沒有甚麼缺乏了。」（帖前 4:11–12）針對有人不肯做工、反倒專管閒事，保羅說：「若有人不肯做工，就不可吃飯。」（帖後 3:10；參 3:6–12）這不是用來羞辱病弱或失業者的棍子——「不肯」指向意志上的拒絕——而是拒絕把福音團體變成逃避鄰舍責任的避難所。工作在此與見證相連：向外人行事端正。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                提摩太前書把敬虔與錢財放在一起：「然而，敬虔加上知足的心便是大利了……貪財是萬惡之根。」（提前 6:6、10；參 6:1–10）對仍處奴僕身分的人，保羅關心的是神的名與道理不被毀謗（提前 6:1）；對想發財的人，他指出網羅、私慾與沉淪（提前 6:9）。職場倫理若只談「卓越」而不談知足，已經離開這段經文。救恩的教義見本站「<a href="../因信稱義/index.html" class="text-teal-800 font-medium hover:underline">因信稱義</a>」：人在神面前被稱為義，不靠績效評估。
+              </p>
+            </div>
+          </section>
+
+          <section id="witness" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">九、職場見證與分別為聖：不必等待「特別引導」</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                「你們是世上的鹽……你們的光也當這樣照在人前，叫他們看見你們的好行為，便將榮耀歸給你們在天上的父。」（太 5:13–16）彼得把同一邏輯放進寄居者的公共生活：「你們在外邦人中，應當品行端正，叫那些毀謗你們是作惡的，因看見你們的好行為，便在鑒察的日子歸榮耀給神。」（彼前 2:12）家僕受苦而仍存敬畏，被連於基督的榜樣（彼前 2:18–23），卻不是叫人美化虐待。接著：「只要心裡尊主基督為聖。有人問你們心中盼望的緣由，就要常作準備，以溫柔、敬畏的心回答各人。」（彼前 3:15–16）見證是品行與言語，不是把公司改造成講台的權術。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                以弗所書禁止與黑暗無益的事同行：「從前你們是暗昧的，但如今在主裡面是光明的，行事為人就當像光明的子女……那暗昧無益的事，不要與人同行，倒要責備行這事的人。」（弗 5:8–11）利益衝突、謊報數字、性騷擾、以權術傷害鄰舍——這些不必先求一個異象才知道對錯。誡命與登山寶訓已經夠審判它們：不可姦淫、不可作假見證、不可貪戀；眼睛的淫亂與虛假的起誓，耶穌說得比律法條文更進內心（太 5:27–37）。已顯明的旨意，不需要再等「平安的感覺」來批准犯罪。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                職場上的言語見證，屬於傳福音的倫理，不是把同事當成業績；詳見「<a href="../傳福音策略/index.html" class="text-teal-800 font-medium hover:underline">傳福音策略</a>」。至於把「神告訴我這單一定成」拿來炒賣項目或操控人心，則是妄稱主的名。分辨引導的專論見「<a href="../辨別神的聲音/index.html" class="text-teal-800 font-medium hover:underline">辨別神的聲音</a>」；此處只指出：已寫成的聖道，已經夠叫人拒絕謊言與貪財，不必另造一則「特別帶領」來覆蓋誡命。
+              </p>
+            </div>
+          </section>
+
+          <section id="pastoral" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">十、牧養結論：工作可榮耀神，救恩不來自績效</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                把以上文本放回救贖歷史，職場就不再是例外區。人按形像被造，被安置去修理看守；墮落使地長出荊棘，卻沒有取消託付。安息日宣告人不是工具；律法與先知追討工價與度量衡；智慧書同時要殷勤與知足；被擄者在外邦盡忠而不跪拜；耶穌不許雙重事奉；保羅把主僕都帶到同一位主面前。工作可以——也應當——為榮耀神而行（林前 10:31；西 3:17、23–24）。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                但救恩不來自績效。稱義是恩典中的信心，不是年終考核的延伸。「你們得救是本乎恩，也因著信；這並不是出於自己，乃是神所賜的；也不是出於行為，免得有人自誇。」（弗 2:8–9）緊接著：「我們原是祂的工作，在基督耶穌裡造成的，為要叫我們行善。」（弗 2:10）善行是新造的果子，包括誠實的帳、按時的工價、對下屬的體面、以及自己的歇息。這些是敬拜的一部分，不是賺取救恩的積分。
+              </p>
+              <div class="grid sm:grid-cols-2 gap-4 my-8">
+                <div class="bg-teal-50 border border-teal-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-teal-900 mb-2">休息、公義、誠實</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">記念安息的界限；不克扣工價；不用詭詐的天平。掌權者要記得：天上有一位主。被管的人要記得：眼前的主人不是最終的主。</p>
+                </div>
+                <div class="bg-stone-50 border border-stone-200 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-stone-800 mb-2">何時需要離開</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">若職業本身要求持續犯罪——持續的欺詐、拜偶像式的忠誠、對鄰舍身體與尊嚴的侵害——就需要分辨離開。不是每一份難做的工都是逼迫；荊棘與汗流滿面，仍可能是在呼召中的忠心。</p>
+                </div>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                分辨的標準仍是聖道，不是感覺上的順利。約瑟坐牢不是因為他聽錯神的聲音；但以理下坑不是因為他不夠卓越。難處可以是墮落世界的常態，也可以是持守聖潔的代價。持續被要求去犯罪，則是另一種情況：那時「順從神，不順從人」（徒 5:29）比保住職位更優先。教會的責任，是陪伴人讀這些文本，而不是用「神要你成功」或「忍耐就是屬靈」兩句口號，代替經文自己的張力。
+              </p>
+              <div class="mt-8 bg-gradient-to-r from-teal-50 to-stone-50 border border-teal-100 rounded-xl p-6 text-slate-700 leading-relaxed">
+                <p class="mb-3">經文標示依和合本；關鍵句亦對照和合本修訂版的用詞習慣。本篇不重寫傳福音或辨別引導的專論，只在見證與妄稱主名之處與它們相交。家戶訓詞的謹慎讀法，必須與創造中的形像、出埃及的釋放、以及「重價買來」同讀，才不致把奴役永恆化，也不致把「給主做」變成空洞口號。</p>
+                <p>願吃喝與做工都歸榮耀給神；願歇息與給工價也成為敬拜。人不是生產工具，救恩也不是績效。園丁忠心修理看守，園子的主仍是耶和華。</p>
+              </div>
+              <div class="bible-verse mt-8 bg-teal-50 p-6 rounded-lg border border-teal-100">
+                <p class="text-lg italic text-slate-800 mb-2">「無論做甚麼，都要從心裡做，像是給主做的，不是給人做的，因你們知道從主那裡必得著基業為賞賜；你們所事奉的乃是主基督。」</p>
+                <p class="text-sm text-slate-600">— 歌羅西書 3:23–24</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-8">
+            <div class="content-panel rounded-2xl p-8">
+              <h2 class="text-xl font-semibold serif-font text-slate-900 mb-3">經文索引（本文主要文本）</h2>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                創 1:26–28；2:2–3、15；3:17–19；39；45:5–8；出 20:8–17；23:12；利 19:13、35–36；申 5:12–15；24:14–15；耶 29:5–7；但 1；3:17–18；6；摩 8:4–6；箴 10:4；11:1；12:22；22:1、29；29:4；傳 2:11、24；5:19；太 4:18–22；5:13–16、27–37；6:19–34；路 16:1–13；19:1–10；徒 5:29；16:14–15；18:3；羅 8:20–22；林前 7:20–24；10:31；弗 2:8–10；5:8–12；6:5–9；西 1:15–20；3:17、22–25；4:1；帖前 4:11–12；帖後 3:6–12；提前 6:1–10；門 16；來 4:9–11；雅 5:1–6；彼前 2:12–23；3:15–16。
+              </p>
+            </div>
+          </section>
+
+          <div id="visit-counter-container"></div>
+        </div>
+      </main>
+
+      <footer class="text-center py-4 text-slate-500 text-sm">
+        <p class="italic mb-1">
+          But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his
+          understanding. Jeremiah 10:12
+        </p>
+        <p class="text-xs mb-1 mt-2">
+          「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」 耶利米書 10:12
+        </p>
+        <p class="text-xs mt-2 pt-2 border-t border-slate-300">
+          @ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.opacity = '1';
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          link.classList.add('bg-slate-50', 'text-slate-700');
+        });
+        const match = sections.find(item => item.el === entry.target);
+        if (match) {
+          match.link.classList.add('active');
+          match.link.classList.remove('bg-slate-50', 'text-slate-700');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+    });
+  </script>
+  <script src="../../../visit-counter.js"></script>
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec';
+    if (window.VisitCounter) {
+      VisitCounter.init('bible_study/信仰討論/基督教職場倫理/index', {
+        scriptUrl: SCRIPT_URL,
+        containerId: 'visit-counter-container'
+      });
+    }
+  </script>
+</body>
+</html>

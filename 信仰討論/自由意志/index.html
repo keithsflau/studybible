@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自由意志｜Free Will</title>
+  <meta name="description" content="自由意志：以經解經討論人的選擇、罪的轄制、神的主權與在基督裏的真自由 | Free Will: Choice, Bondage, Sovereignty, and Freedom in Christ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    section[id] {
+      scroll-margin-top: 1.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.08), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(79, 70, 229, 0.06), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.12), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.08), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.2), 0 10px 10px -5px rgba(99, 102, 241, 0.1);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .scale-in {
+      animation: scaleIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+    .interactive-card {
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .interactive-card:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+    .interactive-card.active {
+      border-color: rgba(99, 102, 241, 0.6);
+      background: rgba(99, 102, 241, 0.1);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(99, 102, 241, 0.8);
+      transform: translateX(5px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .toc-link {
+      display: block;
+      padding: 0.55rem 0.75rem;
+      border-radius: 0.5rem;
+      color: #334155;
+      transition: all 0.2s ease;
+    }
+    .toc-link:hover {
+      background: rgba(99, 102, 241, 0.08);
+      color: #4338ca;
+      transform: translateX(4px);
+    }
+    .comparison-table {
+      overflow-x: auto;
+    }
+    .comparison-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .comparison-table th {
+      background: rgba(99, 102, 241, 0.15);
+      font-weight: 600;
+      color: rgba(99, 102, 241, 0.9);
+    }
+    .comparison-table tr:hover {
+      background: rgba(99, 102, 241, 0.08);
+    }
+    .quiz-option {
+      transition: all 0.3s ease;
+    }
+    .quiz-option:hover {
+      background: rgba(99, 102, 241, 0.15);
+      transform: translateX(5px);
+    }
+    .quiz-option.selected {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.6);
+    }
+    .quiz-option.correct {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: rgba(34, 197, 94, 0.6);
+    }
+    .quiz-option.incorrect {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.6);
+    }
+    .prose-body p + p {
+      margin-top: 1.1rem;
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="index">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">自由意志</a>
+    
+  </header>
+
+  <section class="hero" aria-label="自由意志">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Free Will</div>
+      <h1 class="serif">自由意志<em class="latin">Free Will</em></h1>
+      <p class="hero-lead">聖經中的選擇、責任與真自由 | Choice, Responsibility, and True Freedom in Scripture</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index" class="is-on">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">引言與核心問題</a>
+        <a href="question.html" data-nav-slug="question">問題意識</a>
+        <a href="creation.html" data-nav-slug="creation">創造與形象</a>
+        <a href="fallen.html" data-nav-slug="fallen">墮落後的意志</a>
+        <a href="sovereignty.html" data-nav-slug="sovereignty">主權與責任</a>
+        <a href="christ.html" data-nav-slug="christ">真自由與聖靈</a>
+        <ul class="sub"><li>基督與釋放</li><li>聖靈與更新的意志</li></ul>
+        <a href="distinction.html" data-nav-slug="distinction">不是絕對自主</a>
+        <a href="pastoral.html" data-nav-slug="pastoral">牧養與結語</a>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/hero.png" alt=""></figure>
+          <p class="essay-kicker">專論總覽</p>
+          
+          
+          <div class="overview-lead">
+            <p>聖經中的選擇、責任與真自由 | Choice, Responsibility, and True Freedom in Scripture</p>
+            <p>本篇已按原有標題拆成可獨立閱讀的分題。請選一題進入；正文未經改寫，只把長頁分開。</p>
+          </div>
+          <div class="chapter-grid">
+        <a class="chapter-card" href="intro.html">
+          <div class="media"><img src="images/intro.svg" alt=""></div>
+          <div class="body">
+            <div class="num">01</div>
+            <h3 class="serif">引言與核心問題</h3>
+            <p>引言 「人有沒有自由意志？</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="question.html">
+          <div class="media"><img src="images/question.svg" alt=""></div>
+          <div class="body">
+            <div class="num">02</div>
+            <h3 class="serif">問題意識</h3>
+            <p>一、問題意識：聖經怎樣說話 希伯來文與希臘文聖經沒有一個固定術語，對等於後世哲學所說的「自由意志」（liberum arbitrium）。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="creation.html">
+          <div class="media"><img src="images/creation.svg" alt=""></div>
+          <div class="body">
+            <div class="num">03</div>
+            <h3 class="serif">創造與形象</h3>
+            <p>二、創造與形象：責任與選擇 創世記一至二章沒有討論形而上的「意志自由」，卻把人放在 可回應的位置 。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="fallen.html">
+          <div class="media"><img src="images/fallen.svg" alt=""></div>
+          <div class="body">
+            <div class="num">04</div>
+            <h3 class="serif">墮落後的意志</h3>
+            <p>三、墮落後的意志：仍選擇，卻受轄制 洪水前的評語極重：「耶和華見人在地上罪惡很大，終日所思想的盡都是惡」（創世記 6:5）。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="sovereignty.html">
+          <div class="media"><img src="images/sovereignty.svg" alt=""></div>
+          <div class="body">
+            <div class="num">05</div>
+            <h3 class="serif">主權與責任</h3>
+            <p>四、神的主權與人的責任並行 聖經敘事很少用後來神學的「二選一」來寫歷史。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="christ.html">
+          <div class="media"><img src="images/christ.svg" alt=""></div>
+          <div class="body">
+            <div class="num">06</div>
+            <h3 class="serif">真自由與聖靈</h3>
+            <p>五、基督與釋放：何謂真自由 若自由被定義為「能選擇善或惡的中立能力」，福音書的用語會顯得格格不入。</p>
+            <ul class="kids"><li>基督與釋放</li><li>聖靈與更新的意志</li></ul>
+          </div>
+        </a>
+        <a class="chapter-card" href="distinction.html">
+          <div class="media"><img src="images/distinction.svg" alt=""></div>
+          <div class="body">
+            <div class="num">07</div>
+            <h3 class="serif">不是絕對自主</h3>
+            <p>七、聖經的選擇不是絕對自主 現代個人主義常把「自由」理解為：自我立法、不受傳統與神約束、選擇即身份。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="pastoral.html">
+          <div class="media"><img src="images/pastoral.svg" alt=""></div>
+          <div class="body">
+            <div class="num">08</div>
+            <h3 class="serif">牧養與結語</h3>
+            <p>八、牧養結論 人不能自誇得救。</p>
+            
+          </div>
+        </a>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/自由意志/index", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

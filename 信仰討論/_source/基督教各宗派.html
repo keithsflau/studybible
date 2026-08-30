@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基督教各宗派 | Christian Traditions - Theological Discussion</title>
+  <meta name="description" content="基督教各宗派：以經解經與歷史意識討論天主教、東正教、更正教各支，以及基要派、福音派、靈恩派。以使徒福音為準，分辨合一與界限，不是罵戰，也不是相對主義。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.10), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.10), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.10), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.14), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.14), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(71, 85, 105, 0.10), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(99, 102, 241, 0.16);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.04); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(67, 56, 202, 0.9);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.7), rgba(139, 92, 246, 0.7));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-body p { margin-bottom: 1.05rem; }
+    .prose-body p:last-child { margin-bottom: 0; }
+  </style>
+  <link rel="stylesheet" href="../../../visit-counter.css">
+</head>
+<body class="antialiased text-slate-900 bg-gradient-to-br from-slate-50 via-white to-indigo-50/40 min-h-screen overflow-x-hidden">
+  <div class="relative min-h-screen overflow-hidden">
+    <div aria-hidden="true" class="gradient-bg pointer-events-none"></div>
+
+    <div class="relative z-10">
+
+      <header class="px-6 py-12 sm:py-16">
+        <div class="mx-auto max-w-7xl">
+          <div class="text-center space-y-6">
+            <a href="../index.html" class="inline-block mb-4 text-slate-600 hover:text-slate-900 transition-colors fade-in-up" style="animation-delay: 0.1s;">
+              <svg class="w-6 h-6 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              返回討論主頁
+            </a>
+            <div class="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-lg fade-in-up" style="background:linear-gradient(135deg,#312e81,#6366f1);animation-delay:0.15s">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V9"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15L6 9"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13l6-5"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10L8.2 5"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9l4.2-4"/>
+              </svg>
+            </div>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight float-animation serif-font fade-in-up" style="animation-delay: 0.2s;">
+              基督教各宗派
+              <span class="block mt-2 bg-gradient-to-r from-indigo-600 via-violet-600 to-slate-700 bg-clip-text text-transparent pulse-animation">
+                One Gospel, Many Histories
+              </span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto fade-in-up" style="animation-delay: 0.3s;">
+              以歷史意識承認分歧，以整本聖經與使徒福音作規範；不是教派罵戰，也不是「大家都一樣」
+            </p>
+            <div class="w-full max-w-md mx-auto mt-6 fade-in-up" style="animation-delay: 0.4s;">
+              <div class="progress-bar" style="width: 0%;" id="reading-progress"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-indigo-100 shadow-sm" aria-label="專論目錄">
+        <div class="mx-auto max-w-7xl px-3 sm:px-6">
+          <div class="flex gap-2 overflow-x-auto py-3 text-sm">
+            <a href="#question" class="toc-link active px-3 py-2 rounded-lg bg-indigo-50 text-indigo-900 font-medium">問題意識</a>
+            <a href="#unity" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">合一與界限</a>
+            <a href="#map" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">大公傳統</a>
+            <a href="#fundamentalist" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">基要派</a>
+            <a href="#evangelical" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">福音派</a>
+            <a href="#charismatic" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">靈恩派</a>
+            <a href="#other" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">其他張力</a>
+            <a href="#pastoral" class="toc-link px-3 py-2 rounded-lg bg-slate-50 text-slate-700 font-medium">牧養結論</a>
+          </div>
+        </div>
+      </nav>
+
+      <main class="px-6 pb-16">
+        <div class="mx-auto max-w-4xl">
+
+          <section id="question" class="locus-section mb-14 fade-in-up" style="animation-delay: 0.45s;">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-body text-lg leading-relaxed text-slate-700">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">一、問題意識：分門結黨，與為真道爭辯</h2>
+              <p>
+                華人信徒一談「宗派」，往往立刻掉進兩條淺灘。一條是罵戰：把對方的最壞例子當成對方的全部，用標籤代替經文。另一條是相對主義：宣稱「大家都信耶穌，分別不重要」，把使徒所交託的福音稀釋成最低公約數。兩者都不是新約的路。新約承認分歧會發生，卻從不把福音核心交給民意；它也承認身體裡有多元恩賜，卻拒絕把「我是屬某某」當成身份。
+              </p>
+              <p>
+                哥林多教會的裂痕，不是後世才發明的。保羅聽見有人說：「我是屬保羅的；我是屬亞波羅的；我是屬磯法的；我是屬基督的。」（林前 1:12）他的反問極銳利：「基督是分開的嗎？保羅為你們釘了十字架嗎？你們是奉保羅的名受了洗嗎？」（林前 1:13）分門結黨的罪，在於把僕人抬到主人的位置，把洗禮與十字架的歸屬從基督挪到人。林前 3:5–9 繼續拆這偶像：保羅栽種，亞波羅澆灌，叫它生長的乃是神；工人只是「與神同工」，田地是神的。宗派若把某一教師、某一靈性風格或某一組織當成得救的記號，就已經重演哥林多的病。
+              </p>
+              <div class="bible-verse my-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="italic text-slate-800 mb-2">「弟兄們，我藉我們主耶穌基督的名勸你們都說一樣的話。你們中間也不可分黨，只要一心一意，彼此相合。」</p>
+                <p class="text-sm text-slate-600">— 哥林多前書 1:10</p>
+              </div>
+              <p>
+                可是，「不可分黨」並不是「不可分辨」。猶大書把另一條線寫死：「要為從前一次交付聖徒的真道竭力地爭辯。」（猶 3）加拉太書更不容情：若有人傳另一個福音，「與我們所傳給你們的不同，他就應當被咒詛」（加 1:8–9）。保羅在林前所責備的，是以人為中心的派系；他在加拉太所拒絕的，是更改基督的福音。兩種經文必須同時站住。<strong class="text-indigo-800">分門別類的罪，與為真理爭辯，不是同一件事</strong>；把兩者混為一談，不是寬容，而是懶惰。
+              </p>
+              <p>
+                因此，本篇的方法必須先說清楚。宗派是歷史中的事實：教會在不同世紀，對聖經、禮儀、教會論與聖靈工作作出不同領受。歷史意識要求我們先聽對方所忠實看見的經文，而不是先畫漫畫。以經解經則要求我們把這些領受帶回整本聖經與使徒見證，而不是以某一派的自我標籤為終審。評價標準是使徒福音，不是「基要」「福音」「靈恩」這些後起的名字。教會歷史的長線，見本站「<a href="../教會歷史/index.html" class="text-indigo-700 font-medium hover:underline">教會歷史</a>」；本篇不重寫通史，只處理：在這歷史分化裡，聖經如何同時要求合一與界限。
+              </p>
+            </div>
+          </section>
+
+          <section id="unity" class="locus-section mb-14">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-body text-lg leading-relaxed text-slate-700">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">二、聖經中的合一與界限</h2>
+              <p>
+                約翰福音十七章裡，耶穌為門徒祈求的合一，不是機構合併，也不是教義最低化。祂求「使他們都合而為一。正如你父在我裡面，我在你裡面」（約 17:21），這合一的原型是聖父與聖子的相交，其目的是「叫世人相信你差了我來」。合一服事見證，見證服事差遣的主。把十七章讀成「只要和睦、不必真理」，是讀反了：同一段禱告裡，耶穌說「求你用真理使他們成聖；你的道就是真理」（約 17:17）。沒有真理的合一，不能成聖，也不能叫世人相信。
+              </p>
+              <div class="bible-verse my-6 bg-violet-50 p-6 rounded-lg border border-violet-100">
+                <p class="italic text-slate-800 mb-2">「身體只有一個，聖靈只有一個，正如你們蒙召同有一個指望。一主，一信，一洗，一神，就是眾人的父。」</p>
+                <p class="text-sm text-slate-600">— 以弗所書 4:4–6</p>
+              </div>
+              <p>
+                以弗所書 4:1–16 把合一放在身體論裡。信徒要「竭力保守聖靈所賜合而為一的心」（4:3）——合一是聖靈已賜的，人是保守，不是發明。同時，升天的基督賜下使徒、先知、傳福音的、牧師和教師，為要「成全聖徒……直等到我們眾人在真道上同歸於一」（4:11–13）。合一不是取消職事與教導，而是在真理中長大，不再「中了人的詭計和欺騙的法術」（4:14）。一主、一信、一洗：這三「一」劃出教會的核心認同；恩賜的多元則在這核心之內運作，而不是另立一個身體。
+              </p>
+              <p>
+                使徒行傳十五章的耶路撒冷會議，是新約裡最清楚的「為福音爭辯、卻不為次要立牆」的範例。有人主張外邦人必須受割禮才能得救（徒 15:1）。這不是禮儀偏好，而是救恩論。會議的結論以福音為準：神「藉著我的口叫外邦人得聽福音，而且相信」（15:7）；人得救是「因主耶穌的恩」（15:11）。給外邦信徒的幾項叮囑（15:20、29），是為了團契可行與遠離偶像，不是把摩西之軛重新綁上。會議證明：<strong class="text-indigo-800">教會可以、也必須公開分辨何謂福音；分辨之後，仍能給肢體留下同行的空間</strong>。
+              </p>
+              <p>
+                羅馬書十四至十五章處理的是另一層。吃與日、守節與不守節，保羅稱為「信心軟弱」的彼此接納，而不是另傳一個福音。「神已經收納他了」（羅 14:3）；強的不可輕看弱的，弱的不可論斷強的。十五章的目標是「一心一口榮耀神」（15:6）。把洗禮方式、敬拜音樂、末世時間表或禁食習慣抬到加拉太書一章的高度，是把羅馬書十四章讀丟了。反之，把稱義、基督的位格、復活或「另一個福音」降到羅馬書十四章的高度，是把加拉太書讀丟了。
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 my-6">
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">必須保守的核心</h3>
+                  <p class="text-sm leading-relaxed">「一主，一信，一洗」；基督照聖經死而復活（林前 15:1–11）；因信稱義的福音不被更換（加 1–2）。此處沒有「各適其適」。</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-slate-900 mb-2">必須彼此接納的次要</h3>
+                  <p class="text-sm leading-relaxed">飲食、日子、文化習慣、許多教會秩序上的差異。羅 14 的邏輯是：主能叫他站住；你不是他的主。</p>
+                </div>
+              </div>
+              <p>
+                界限的經文同樣清楚。提摩太後書 4:3–4 預告：人必厭煩純正的道理，「耳朵發癢，就隨從自己的情慾增添好些師傅」，並且「掩耳不聽真道，偏向荒渺的言語」。約翰二書 7–11 把否認耶穌基督成了肉身的稱為迷惑人的；對不傳這教訓的，連家裡的接待都要謹慎，免得在惡行上有份。加拉太書二章，保羅在安提阿當面抵擋彼得，因為福音的真理因怕奉割禮的人而妥協——「怕」可以毀掉「一信」。合一不是無限延展的禮貌；它停在使徒見證被改寫之處。
+              </p>
+            </div>
+          </section>
+
+          <section id="map" class="locus-section mb-14">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-body text-lg leading-relaxed text-slate-700">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">三、大公傳統簡圖：為華人讀者定向</h2>
+              <p>
+                以下不是教會史課本，只是一張定向圖。使徒教會沒有「天主教／東正教／更正教」這套後世標籤。它有使徒的教訓、洗禮與擘餅、長老與監督、以及在逼迫中持守「耶穌是主」的認信（徒 2:42；20:17–28；羅 10:9）。東西方的分化經過數世紀的語言、禮儀、政治與神學累積，至十一世紀公開決裂；十六世紀的宗教改革則是西方教會內部，對聖經權威、稱義與教會權柄的再爭辯。讀這張圖，是為了聽各方所強調的經文，再用同一本聖經去檢驗。
+              </p>
+
+              <h3 class="text-2xl font-semibold mt-8 mb-3 serif-font text-indigo-900">天主教</h3>
+              <p>
+                天主教強調聖禮為恩典的可見管道、使徒統緒與伯多祿職分，以及聖經與聖傳在訓導權下的共同傳遞。他們常引用的經文包括：馬太福音 16:18–19「你是彼得，我要把我的教會建造在這磐石上」；約翰福音 20:22–23 論赦罪的權柄；提摩太前書 3:15 稱教會為「真理的柱石和根基」；以及聖餐經文（林前 11:23–26）。這些經文確實見證：教會不是私人俱樂部，聖禮不是可有可無的符號，使徒職事有延續的責任。
+              </p>
+              <p>
+                需要用經文檢驗的，不是「教會重要」或「聖禮嚴肅」——新約兩者都肯定——而是權威的結構是否把人的傳統與聖經並列，甚至讓傳統解釋聖經到一個地步，使經文無法回頭質問傳統。耶穌責備法利賽人「拘守人的遺傳」，以致廢了神的道（可 7:8–13）。「只有一位神，在神和人中間，只有一位中保，乃是降世為人的基督耶穌」（提前 2:5）。稱義若被理解成恩典加上人可積累的功績，就必須面對羅馬書 3:21–26 與加拉太書 2:16。天主教內部對恩典與稱義的表述並非鐵板一塊；對話必須準確，批評也必須對準真正的教導，而不是民間虔誠的漫畫。更細的亞伯拉罕傳統比較，見「<a href="../猶大教、回教、天主教、基督教比較/index.html" class="text-indigo-700 font-medium hover:underline">宗教比較</a>」。
+              </p>
+
+              <h3 class="text-2xl font-semibold mt-8 mb-3 serif-font text-indigo-900">東正教</h3>
+              <p>
+                東正教強調禮儀中的奧秘、七次大公會議的認信、神化（θέωσις）作為救恩的目標，以及主教團的大公性，而非單一羅馬座的至上權。他們看重彼得後書 1:4「與神的性情有分」、約翰福音 17 的相交，以及啟示錄中天上敬拜的圖像。長處在於：救恩不被縮成法庭上的一次宣判，而包括人被更新、被帶進三一生命的團契；敬拜不被縮成信息傳遞，而承認受造物以頌讚回應創造主。
+              </p>
+              <p>
+                檢驗之處同樣要公正。神化的語言若忠於「有分」而不是人變成神，與新約的成聖與得榮耀並不必然衝突（羅 8:29–30；約一 3:2）。但若禮儀傳統、聖像敬拜或教父文集在實踐上取得與聖經同等的規範力，仍須回到「聖經都是神所默示的」（提後 3:16）以及「不可過於聖經所記」（林前 4:6）。東正教對西方經院理性的警戒值得聽；把奧秘變成不可被經文審問的領域，則不是使徒的路。
+              </p>
+
+              <h3 class="text-2xl font-semibold mt-8 mb-3 serif-font text-indigo-900">更正教各支</h3>
+              <p>
+                宗教改革的共同呼聲是唯獨聖經、唯獨恩典、唯獨信心、唯獨基督、榮耀唯獨歸神。這不是五句口號，而是對中世紀晚期西方教會的聖經論與救恩論提出的規範性抗議。以下各支所強調的，往往是聖經裡真實的一面；危機在於把那一面變成唯一的一面。
+              </p>
+              <div class="grid md:grid-cols-2 gap-4 my-6">
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">信義宗</h3>
+                  <p class="text-sm leading-relaxed">以羅 1:16–17、羅 3、加拉太書守護因信稱義，並以聖道與聖禮為福音臨到罪人的方式。長處是十字架神學；警戒是把「律法與福音」公式化到忽略整本聖經的倫理與教會紀律。</p>
+                </div>
+                <div class="bg-violet-50 border border-violet-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-violet-900 mb-2">改革宗／長老</h3>
+                  <p class="text-sm leading-relaxed">強調神的主權、聖約與長老治會（弗 1；徒 14:23；多 1:5）。長處是以神為中心的敬拜與教義深度；警戒是用系統壓扁難解經文，或把預定論變成冷漠的標籤。與阿米念的張力，見「<a href="../自由意志/index.html" class="text-violet-800 font-medium hover:underline">自由意志</a>」。</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-slate-900 mb-2">聖公會</h3>
+                  <p class="text-sm leading-relaxed">重視禮儀秩序、主教職與「聖經—傳統—理性」的共讀（林前 14:40；徒 15 的會議模式）。長處是公共敬拜的厚實；警戒是傳統與理性若不再服在聖經之下，禮儀可以保存形式、失去福音。</p>
+                </div>
+                <div class="bg-sky-50 border border-sky-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-sky-900 mb-2">浸信</h3>
+                  <p class="text-sm leading-relaxed">強調信徒的洗、地方教會與聖經的充足（太 28:19；徒 2:41；8:36–38）。長處是認信必須出於信心；警戒是把洗禮模式抬到福音核心，或把會眾自治變成孤立，忽略身體的大公性（弗 4）。</p>
+                </div>
+              </div>
+              <p>
+                衛理／循道傳統特別看重成聖與恩典在生活中的更新：「你們要追求與眾人和睦，並要追求聖潔；非聖潔沒有人能見主。」（來 12:14）這是聖經的命令，不是附加選項。長處是認真對待聖潔與社會關懷；警戒是把成聖的追求滑向靠行為維持救恩，或把「完全」理解成今世無罪的幻覺（約一 1:8–10）。各支都有聖經上的長處，也各有必須被經文審問之處。<strong class="text-indigo-800">標籤不救人；忠於使徒見證的認信與生活，才是問題</strong>。
+              </p>
+            </div>
+          </section>
+
+          <section id="fundamentalist" class="locus-section mb-14">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-body text-lg leading-relaxed text-slate-700">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">四、基要派：守住核心，卻不可把次要當成基要</h2>
+              <p>
+                「基要派」（Fundamentalism）作為歷史名稱，主要是十九世紀末至二十世紀初，英語世界教會對自由派神學的反動。當時部分學院與講台開始以歷史批判與現代世界觀削弱超自然：神蹟可疑、童女生子可商、復活可象徵化。基要運動以「五基要」回答：聖經無誤、基督的神性、童女生子、代贖、以及肉體復活與再來。這五點不是完整的系統神學，而是一條護欄：福音若失去這些，就不再是使徒所傳的那一個。
+              </p>
+              <p>
+                每一點背後都有紮實的經文，不是口號。聖經的權威：「聖經都是神所默示的，於教訓、督責、使人歸正、教導人學義都是有益的。」（提後 3:16）基督的神性與道成肉身：「太初有道，道與神同在，道就是神。……道成了肉身，住在我們中間。」（約 1:1、14）童女生子：馬太福音一章引用以賽亞書 7:14，把耶穌的出生放在應許的線上，而不是神話點綴。代贖：羅馬書 3:21–26 說神設立耶穌作挽回祭，「好在今時顯明他的義，使人知道他自己為義，也稱信耶穌的人為義」。復活與再來：哥林多前書十五章把肉體復活釘死為福音本身——「若基督沒有復活，你們的信便是徒然」（林前 15:17）。
+              </p>
+              <div class="bible-verse my-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="italic text-slate-800 mb-2">「我當日所領受又傳給你們的：第一，就是基督照聖經所說，為我們的罪死了，而且埋葬了；又照聖經所說，第三天復活了。」</p>
+                <p class="text-sm text-slate-600">— 哥林多前書 15:3–4</p>
+              </div>
+              <p>
+                <strong class="text-indigo-800">長處必須先承認</strong>。在自由派把超自然從福音中抽走的世代，基要派拒絕讓教會以學術時髦換掉使徒的「第一」。沒有無誤的聖經作規範、沒有真神真人的基督、沒有真實的代贖與復活，所謂「基督教」只剩倫理建議。華人教會若以「基要」為羞，卻說不清林前 15 的福音，那不是成熟，而是失憶。
+              </p>
+              <p>
+                警戒也必須說清楚，而且不是冷嘲。第一，好爭競。提摩太後書 2:23–24 要主的僕人「不可爭競，只要溫溫和和地待眾人」。為真道爭辯（猶 3）若變成以打倒人為樂，已經離開猶大書的動機。第二，文化孤立。教會被稱為「世上的光」（太 5:14–16），不是地洞裡的燈。把分別為聖理解成退出鄰舍、學問與公共責任，是誤讀「不屬世界」（約 17:14–18）——耶穌求的是父「保守」他們，卻「不求你叫他們離開世界」。第三，把次要當基要：某一譯本、某一末世時間表、某一敬拜風格，被抬到與童女生子同級。這正是林前 1 與羅 14 所禁止的顛倒。第四，忽視全人與社會公義的經文。「世人哪，耶和華已指示你何為善。他向你所要的是甚麼呢？只要你行公義，好憐憫，存謙卑的心，與你的神同行。」（彌 6:8）耶穌責備文士「那律法上更重的事，就是公義、憐憫、信實，反倒不行」（太 23:23）。守住五基要，卻對寡婦、窮人與不義沉默，不是更忠心，而是更像法利賽人。
+              </p>
+            </div>
+          </section>
+
+          <section id="evangelical" class="locus-section mb-14">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-body text-lg leading-relaxed text-slate-700">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">五、福音派：福音與宣教，卻不可把決志當成門徒</h2>
+              <p>
+                「福音派」（Evangelical）比基要派更寬、也更雜。歷史上，它承接宗教改革對聖經與恩典的再發現，以及十八世紀大覺醒對個人歸信與宣教的火熱。其典型強調包括：唯獨聖經為最高規範、唯獨恩典與信心、十字架為中心、個人必須悔改相信，以及把福音傳到萬民。它不是單一宗派，而是跨信義、改革、聖公、浸信、衛理等傳統的運動。正因如此，它能成為許多華人教會的共同語言，也能變得定義模糊，以致「福音派」有時只剩下活動熱度。
+              </p>
+              <div class="bible-verse my-6 bg-violet-50 p-6 rounded-lg border border-violet-100">
+                <p class="italic text-slate-800 mb-2">「我不以福音為恥；這福音本是神的大能，要救一切相信的……因為神的義正在這福音上顯明出來；這義是本於信，以致於信。」</p>
+                <p class="text-sm text-slate-600">— 羅馬書 1:16–17</p>
+              </div>
+              <p>
+                他們所重視的經文，正是新約的主幹。羅馬書 10:9–17：口裡認耶穌為主，心裡信神叫祂從死裡復活，就必得救；「信道是從聽道來的，聽道是從基督的話來的」。馬太福音 28:18–20：權柄在復活的主，使命是使萬民作門徒，施洗並「凡我所吩咐你們的，都教訓他們遵守」。這些經文不屬於福音派私產；任何自稱教會的群體，都當被它們審問。
+              </p>
+              <p>
+                <strong class="text-indigo-800">長處是福音與宣教</strong>。在禮儀僵化或文化基督教只剩名義的地方，福音派把人帶回一個問題：你是否親自信靠那位死而復活的主？它也拒絕把大使命外包給「專業宣教士」而讓堂會只辦活動。本站「<a href="../傳福音策略/index.html" class="text-indigo-700 font-medium hover:underline">傳福音策略</a>」已說明：策略服從信息，不是相反。福音派在最好的時候，正是抓住了這一點。
+              </p>
+              <p>
+                警戒同樣來自聖經，不是來自對熱心的厭惡。第一，經驗主義：以感覺、見證的震撼或決志人數驗證真理。哥林多後書 5:7 說「因我們行事為人是憑著信心，不是憑著眼見」；信心的對象是神的應許與使徒見證，不是內心天氣。第二，市場化教會：把聽眾當消費者，把十字架藏在附錄，以免冒犯。這與「十字架的道理，在那滅亡的人為愚拙」（林前 1:18）相衝突。第三，把「決志」當門徒。大使命的動詞是「使作門徒」，內容包括施洗與教訓遵守；使徒行傳裡相信的人被加入教會、恆心遵守使徒的教訓（徒 2:41–42）。舉手不是終點。第四，對聖禮與教會論薄弱：個人與神的關係被強調到一個地步，洗禮、聖餐與身體的彼此歸屬變成可選配件。這不是羅馬書十章的本意——認信發生在群體中，一洗歸入的是一個身體（林前 12:13）。
+              </p>
+              <p>
+                因此，裝備頭腦的「<a href="../興學傳道/index.html" class="text-indigo-700 font-medium hover:underline">興學傳道</a>」對福音派不是奢侈：決志之後若沒有人把基督「講解更加詳細」（徒 18:26），熱心很難傳代。靈修若只剩個人靈修清單，也需與「<a href="../靈修學/index.html" class="text-indigo-700 font-medium hover:underline">靈修學</a>」對讀——敬虔是聖約中的聽見與跟從，不是技巧消費。
+              </p>
+            </div>
+          </section>
+
+          <section id="charismatic" class="locus-section mb-14">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-body text-lg leading-relaxed text-slate-700">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">六、靈恩派與五旬節：認真對待聖靈，也試驗諸靈</h2>
+              <p>
+                五旬節運動興起於二十世紀初，靈恩更新隨後進入許多歷史宗派。它們的共同堅持是：使徒行傳裡的聖靈不是博物館展品；恩賜、能力、禱告與宣教熱情，屬於教會的正常生命。這一點，許多「非靈恩」的講台其實虧欠新約。保羅問：「你們中間若有愚昧人，卻沒有一個智慧人能審斷弟兄嗎？」（林前 6:5 的語氣）——換到聖靈論，我們也當問：哥林多前書十二至十四章若仍是正典，教會憑甚麼把恩賜整章跳過，只留下「愛是恆久忍耐」作婚禮經文？
+              </p>
+              <div class="bible-verse my-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="italic text-slate-800 mb-2">「五旬節到了，門徒都聚集在一處。……他們就都被聖靈充滿，按著聖靈所賜的口才說起別國的話來。」</p>
+                <p class="text-sm text-slate-600">— 使徒行傳 2:1、4</p>
+              </div>
+              <p>
+                徒 2 必須按路加自己的敘事讀。五旬節是救贖歷史的轉折：升天的主將所應許的聖靈澆灌下來（徒 2:33），彼得用約珥書解釋這事，並指向「凡求告主名的，就必得救」（2:21）。方言在當日是可被聽懂的「別國的話」，功能是見證神的作為臨到萬邦，不是私人表演。林前 12–14 則是教會生活中的規範性討論：恩賜有分別，聖靈卻是一位；身體有許多肢體，卻是一個身體；沒有愛，恩賜「就算不得甚麼」（林前 13:1–3）；聚會「凡事都要規規矩矩地按著次序行」（14:40）。
+              </p>
+              <p>
+                <strong class="text-indigo-800">長處應當被聽見，而且不帶冷嘲</strong>。靈恩傳統認真對待聖靈是一位又真又活的主，而不是教義附錄。它恢復禱告的迫切、宣教的膽量，以及對疾病、捆綁與偶像的屬靈爭戰意識——這些在使徒行傳裡並非邊緣。許多地方教會的活力、對貧窮與未得之民的負擔，也常從這裡流出。把靈恩一概斥為「情緒」，是用一種文化氣質審判聖經。
+              </p>
+              <p>
+                警戒必須同樣具體，同樣不醜化。第一，把使徒行傳的敘事一律規範化。路加記述神在轉折點上的作為（五旬節、哥尼流、以弗所門徒），並非每一細節都是後世必須複製的禮儀時間表。敘事要被書信解釋，也被路加自己的重複與變化解釋；「神在某處這樣做了」不等于「神只許這樣做」或「人人必須有同一經歷才算得救」。第二，超聖經的「神說」。先知的靈「是順服先知的」（林前 14:32）；任何與已成文之正典衝突的聲音，都不是聖靈的聲音，因為聖靈叫人想起主所說的話，並榮耀基督（約 14:26；16:14）。這一點的專論，見「<a href="../辨別神的聲音/index.html" class="text-indigo-700 font-medium hover:underline">辨別神的聲音</a>」，此處不重寫。第三，用恩賜分等：說方言的高人一等，或沒有某種經歷的被視為「沒有聖靈」。林前 12:29–30 的反問句已經堵死這條路：「豈都是說方言的嗎？」第四，秩序與愛。林前 14:26–40 允許多方參與，卻以造就、可明白、輪流與安靜為界。愛不是讓混亂合理化的毯子；秩序也不是消滅恩賜的藉口。
+              </p>
+              <div class="bible-verse my-6 bg-violet-50 p-6 rounded-lg border border-violet-100">
+                <p class="italic text-slate-800 mb-2">「親愛的弟兄啊，一切的靈，你們不可都信，總要試驗那些靈是出於神的不是，因為世上有許多假先知已經出來了。」</p>
+                <p class="text-sm text-slate-600">— 約翰一書 4:1（參 4:2–3）</p>
+              </div>
+              <p>
+                試驗的標準，約翰立刻說出：是否承認耶穌基督是成了肉身來的（約一 4:2–3）。靈恩的真偽，不首先用音量、眼淚或醫治數字衡量，而用基督論與使徒教訓衡量。承認這一點的靈恩信徒，與承認林前 12–14 仍是正典的非靈恩信徒，其實站在同一塊磐石上；他們的分別，往往落在教會秩序與文化偏好，而不是另一個福音。
+              </p>
+            </div>
+          </section>
+
+          <section id="other" class="locus-section mb-14">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-body text-lg leading-relaxed text-slate-700">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">七、華人教會常見的其他張力</h2>
+
+              <h3 class="text-2xl font-semibold mt-2 mb-3 serif-font text-indigo-900">自由派／新派</h3>
+              <p>
+                自由派神學的形態很多，共同趨勢是：以現代歷史意識與倫理理想重構基督教，使超自然變得可有可無，聖經的權威降為宗教文獻。它可以極其認真地談愛與公義，卻把童女生子、神蹟、代贖與復活讀成象徵。新約的回答不是反智，而是不肯讓「象徵」吞掉使徒的「第一」。哥林多前書十五章把復活從比喻裡拉出來：若死人不復活，基督也沒有復活；基督若沒有復活，「你們仍在罪裡」（15:17）。提摩太後書 3:14–17 把聖經的功用綁在「得救的智慧」與「學義」上，不是綁在追趕時代精神上。削弱聖經權威與削弱復活，最後必削弱福音本身。對自由派的回應，不必醜化其對社會不義的敏感——彌 6:8 仍在——但敏感不能代替使徒見證。
+              </p>
+
+              <h3 class="text-2xl font-semibold mt-8 mb-3 serif-font text-indigo-900">改革宗與阿米念</h3>
+              <p>
+                這組張力在華人神學院與講台上反覆出現：神的揀選與人的回應、恩典是否不可抗拒、聖徒是否必蒙保守。雙方都能擺出經文。改革宗看重以弗所書 1:3–14、羅馬書 9、約翰福音 6:44；阿米念看重約翰福音 3:16、彼得後書 3:9、提摩太前書 2:4。本篇不重開這場辯論。經文如何同時肯定神的主權與人的責任，見「<a href="../自由意志/index.html" class="text-indigo-700 font-medium hover:underline">自由意志</a>」，並可與「<a href="../預定論/index.html" class="text-indigo-700 font-medium hover:underline">預定論</a>」「<a href="../神人合作說/index.html" class="text-indigo-700 font-medium hover:underline">神人合作說</a>」對讀。此處只要一句：這張力主要落在救恩論的解釋，<strong class="text-indigo-800">只要雙方仍宣認同一位死而復活的主、同一本聖經的規範，就不可把它做成林前 1 式的派系刀</strong>。把對方趕出福音，需要加拉太書一章那種「另一個福音」的證據，而不是羅馬書九章釋經上的不同意。
+              </p>
+
+              <h3 class="text-2xl font-semibold mt-8 mb-3 serif-font text-indigo-900">成功神學</h3>
+              <p>
+                成功神學必須被明確拒絕。它不是「靈恩」的必然產物，也不是「福音派增長」的無辜副作用；它是另一套救恩故事：信心成為支取健康與財富的技術，十字架成為通往今世興盛的跳板。提摩太後書 4:3–4 所形容的「耳朵發癢」，正是這類信息的市場。哥林多後書把使徒的生命寫成相反的圖像：「我們有這寶貝放在瓦器裡，要顯明這莫大的能力是出於神，不是出於我們」（林後 4:7）；保羅身上帶著耶穌的死，使耶穌的生也顯明在他身上（4:10）。林後 12:9 更直接：「我的恩典夠你用的，因為我的能力是在人的軟弱上顯得完全。」以缺乏物質興盛來定人的罪，或以興盛來證明神的喜悅，都與這位「為我們成為貧窮」的主不相稱（林後 8:9）。分辨禱告與「宣告」，見「<a href="../祈禱/index.html" class="text-indigo-700 font-medium hover:underline">祈禱</a>」；此處只劃界：成功神學不是可並存的次要意見。
+              </p>
+            </div>
+          </section>
+
+          <section id="pastoral" class="locus-section mb-14">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-body text-lg leading-relaxed text-slate-700">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">八、牧養結論：三層分辨，一個身體</h2>
+              <p>
+                走完這張地圖，結論其實單純。宗派標籤不能救人。沒有人因為「我是屬基要、屬福音、屬靈恩」就與神和好；與神和好的，是那位為我們的罪死了、埋葬了、第三天復活了的基督（林前 15:3–4）。基督的身體裡有多元恩賜——有人更看見聖經的規範、有人更看見宣教的催促、有人更看見聖靈的能力——「恩賜原有分別，聖靈卻是一位」（林前 12:4）。但身體不可有另一個福音。加拉太書一章的咒詛，不是給禮儀口味不同的人，而是給更改基督之恩的人。
+              </p>
+              <p>
+                學習對方所忠實看見的經文，是悔改，不是投降。基要派提醒我們：林前 15 與提後 3 不是可談判的附錄。福音派提醒我們：羅 1:16 與太 28 要求口裡承認、腳上行走。靈恩傳統提醒我們：徒 2 與林前 12–14 仍是正典。天主教與東正教提醒我們：教會、聖禮與歷史認信不是現代個人主義的發明。改革宗與衛理傳統分別把神的主權與成聖的呼召推到我們面前。每一方的長處，幾乎都是對方的盲點。聽，是以經解經的一部分。
+              </p>
+              <p>
+                拒絕任何偏離使徒見證的教導，同樣是愛。自由派對超自然的削弱、成功神學對耳朵發癢的迎合、任何把傳統或「神說」抬到聖經之上的做法，都不能用「合一」遮蓋。約翰二書的界限仍然有效。愛真理的合一，與怕衝突的混合，外表相似，本質相反。
+              </p>
+              <div class="grid md:grid-cols-3 gap-4 my-6">
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-indigo-900 mb-2">福音核心</h3>
+                  <p class="text-sm leading-relaxed">三一真神、基督的位格與工作、照聖經的死而復活、因信稱義、聖經為神的話。此層不可讓，也不可當商品。</p>
+                </div>
+                <div class="bg-violet-50 border border-violet-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-violet-900 mb-2">教會秩序</h3>
+                  <p class="text-sm leading-relaxed">洗禮對象與方式、治會、聖禮次數、恩賜在聚會中的位置。當用聖經認真辯論，卻慎防把它做成「另一個福音」。</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-slate-900 mb-2">文化偏好</h3>
+                  <p class="text-sm leading-relaxed">音樂風格、衣著、節目單、建築、許多華人堂會的習慣。羅 14 的彼此接納從這裡開始，不是從基督論開始。</p>
+                </div>
+              </div>
+              <div class="bible-verse my-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="italic text-slate-800 mb-2">「直等到我們眾人在真道上同歸於一，認識神的兒子，得以長大成人，滿有基督長成的身量。」</p>
+                <p class="text-sm text-slate-600">— 以弗所書 4:13</p>
+              </div>
+              <div class="bg-gradient-to-r from-indigo-50 to-violet-50 border border-indigo-100 rounded-xl p-6">
+                <h3 class="font-semibold serif-font text-slate-900 mb-3">今日可自問的幾件事</h3>
+                <ul class="list-disc list-inside space-y-2 text-base sm:text-lg">
+                  <li>我的「我們」是以基督的名受洗的身體，還是以某教師、某經歷、某機構為榮的派系？</li>
+                  <li>我拒絕對方時，所根據的是加 1 的另一個福音，還是羅 14 的次要？</li>
+                  <li>我能否複述對方最看重的經文，並承認其中真實的一面？</li>
+                  <li>我的堂會是否守住林前 15，卻丟掉彌 6:8；或高舉經歷，卻不試驗諸靈？</li>
+                  <li>興學、靈修與辨別，是否都服在同一本聖經之下，而不是變成新的宗派徽章？</li>
+                </ul>
+              </div>
+              <p class="mt-6">
+                若這三層被認真分開，華人教會就比較不容易把弟兄當仇敵，也不容易把仇敵的道理當弟兄。願我們「竭力保守聖靈所賜合而為一的心」，同時「為從前一次交付聖徒的真道竭力地爭辯」。兩者都是竭力；兩者都不是為自己的名字爭。田地是神的，生長是神的；工人只可忠心，不可分地為王。
+              </p>
+              <p class="mt-4 text-base text-slate-600">
+                教導與傳承，見「<a href="../興學傳道/index.html" class="text-indigo-700 font-medium hover:underline">興學傳道</a>」。日常與神相交，見「<a href="../靈修學/index.html" class="text-indigo-700 font-medium hover:underline">靈修學</a>」。經歷與「神說」如何受試驗，見「<a href="../辨別神的聲音/index.html" class="text-indigo-700 font-medium hover:underline">辨別神的聲音</a>」。本篇只把宗派放回聖經的合一與界限裡，免得歷史中的領受變成偶像，或變成無可分辨的相對。
+              </p>
+            </div>
+          </section>
+
+          <div id="visit-counter-container"></div>
+        </div>
+      </main>
+
+      <footer class="text-center py-4 text-slate-500 text-sm">
+        <p class="italic mb-1">
+          But God made the earth by his power; he founded the world by his wisdom and stretched out the heavens by his
+          understanding. Jeremiah 10:12
+        </p>
+        <p class="text-xs mb-1 mt-2">
+          「耶和華用能力創造大地，用智慧建立世界，用聰明鋪張穹蒼。」 耶利米書 10:12
+        </p>
+        <p class="text-xs mt-2 pt-2 border-t border-slate-300">
+          @ 2025 Education Engineering Portfolio | Generated by Gemini Pro 3.0 | Prepared by SF Lau
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          link.classList.add('bg-slate-50', 'text-slate-700');
+        });
+        const match = sections.find(item => item.el === entry.target);
+        if (match) {
+          match.link.classList.add('active');
+          match.link.classList.remove('bg-slate-50', 'text-slate-700');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+    });
+  </script>
+
+  <script src="../../../visit-counter.js"></script>
+  <script>
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec';
+    if (window.VisitCounter) {
+      VisitCounter.init('bible_study/信仰討論/基督教各宗派/index', {
+        scriptUrl: SCRIPT_URL,
+        containerId: 'visit-counter-container'
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>祈禱｜Prayer</title>
+  <meta name="description" content="祈禱（禱告）專論：按救贖歷史以經解經，從創造、族長、詩篇、聖殿、被擄，到耶穌、初期教會與保羅書信。區分聖經的呼求與當代成功神學的宣告實現。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(217, 119, 6, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.08), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(180, 83, 9, 0.06), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(217, 119, 6, 0.18);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(217, 119, 6, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(217, 119, 6, 0.4);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(217, 119, 6, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(180, 83, 9, 0.85);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(217, 119, 6, 0.6), rgba(99, 102, 241, 0.5));
+      border-radius: 2px;
+    }
+    .toc-link { transition: all 0.2s ease; white-space: nowrap; }
+    .toc-link.active {
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-essay p { margin-bottom: 1.1rem; }
+    .prose-essay p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body class="topic-shell" data-slug="index">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">祈禱</a>
+    
+  </header>
+
+  <section class="hero" aria-label="祈禱">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Prayer</div>
+      <h1 class="serif">祈禱<em class="latin">Prayer</em></h1>
+      <p class="hero-lead">盟約中的呼求：按救贖歷史讀聖經裡的祈禱與禱告</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index" class="is-on">總覽</a>
+        <a href="question.html" data-nav-slug="question">問題意識</a>
+        <a href="beginnings.html" data-nav-slug="beginnings">呼求與摔跤</a>
+        <ul class="sub"><li>創造與呼求</li><li>族長與出埃及</li></ul>
+        <a href="psalms.html" data-nav-slug="psalms">詩篇：祈禱的學校</a>
+        <a href="temple-exile.html" data-nav-slug="temple-exile">聖殿與被擄</a>
+        <ul class="sub"><li>聖殿、祭與代求</li><li>先知與被擄</li></ul>
+        <a href="jesus.html" data-nav-slug="jesus">耶穌的祈禱</a>
+        <a href="church.html" data-nav-slug="church">教會與保羅</a>
+        <ul class="sub"><li>教會的祈禱</li><li>兒子的呼叫</li></ul>
+        <a href="close.html" data-nav-slug="close">張力與牧養</a>
+        <ul class="sub"><li>未蒙應允</li><li>牧養結論</li></ul>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/hero.png" alt=""></figure>
+          <p class="essay-kicker">專論總覽</p>
+          
+          
+          <div class="overview-lead">
+            <p>盟約中的呼求：按救贖歷史讀聖經裡的祈禱與禱告</p>
+            <p>本篇已按原有標題拆成可獨立閱讀的分題。請選一題進入；正文未經改寫，只把長頁分開。</p>
+          </div>
+          <div class="chapter-grid">
+        <a class="chapter-card" href="question.html">
+          <div class="media"><img src="images/question.svg" alt=""></div>
+          <div class="body">
+            <div class="num">01</div>
+            <h3 class="serif">問題意識</h3>
+            <p>一、問題意識：祈禱不是技巧 粵語常說「祈禱」；和合本正文則多用「禱告」，間亦用「祈禱」「祈求」。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="beginnings.html">
+          <div class="media"><img src="images/beginnings.svg" alt=""></div>
+          <div class="body">
+            <div class="num">02</div>
+            <h3 class="serif">呼求與摔跤</h3>
+            <p>二、創造與呼求 人被造，不是為了自成一世界，而是為了在神面前活著。</p>
+            <ul class="kids"><li>創造與呼求</li><li>族長與出埃及</li></ul>
+          </div>
+        </a>
+        <a class="chapter-card" href="psalms.html">
+          <div class="media"><img src="images/psalms.svg" alt=""></div>
+          <div class="body">
+            <div class="num">03</div>
+            <h3 class="serif">詩篇：祈禱的學校</h3>
+            <p>四、詩篇：祈禱的學校 若聖經有一所祈禱學校，那就是詩篇。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="temple-exile.html">
+          <div class="media"><img src="images/temple-exile.svg" alt=""></div>
+          <div class="body">
+            <div class="num">04</div>
+            <h3 class="serif">聖殿與被擄</h3>
+            <p>五、聖殿、祭與代求 所羅門獻殿禱文（王上 8）是舊約最長的公共祈禱之一。</p>
+            <ul class="kids"><li>聖殿、祭與代求</li><li>先知與被擄</li></ul>
+          </div>
+        </a>
+        <a class="chapter-card" href="jesus.html">
+          <div class="media"><img src="images/jesus.svg" alt=""></div>
+          <div class="body">
+            <div class="num">05</div>
+            <h3 class="serif">耶穌的祈禱</h3>
+            <p>七、耶穌的祈禱：子對父的順服 對觀福音，尤其路加，把耶穌的祈禱寫進關鍵轉折：受洗時「正在禱告，天就開了」（路 3:21）；「耶穌卻退到曠野去禱告」（路 5:16）；選十二使徒前…</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="church.html">
+          <div class="media"><img src="images/church.svg" alt=""></div>
+          <div class="body">
+            <div class="num">06</div>
+            <h3 class="serif">教會與保羅</h3>
+            <p>八、教會的祈禱：宣教與逼迫 使徒行傳把初期教會寫成一群禱告的群體，而不是一群先有策略、再偶爾祈禱的群體。</p>
+            <ul class="kids"><li>教會的祈禱</li><li>兒子的呼叫</li></ul>
+          </div>
+        </a>
+        <a class="chapter-card" href="close.html">
+          <div class="media"><img src="images/close.svg" alt=""></div>
+          <div class="body">
+            <div class="num">07</div>
+            <h3 class="serif">張力與牧養</h3>
+            <p>十、張力：祈求、未蒙應允，與「奉我的名」 耶穌說：「你們祈求，就給你們；尋找，就尋見；叩門，就給你們開門。</p>
+            <ul class="kids"><li>未蒙應允</li><li>牧養結論</li></ul>
+          </div>
+        </a>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/祈禱/index", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

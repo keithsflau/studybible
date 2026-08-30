@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>方法與牧養｜傳福音策略</title>
+  <meta name="description" content="傳福音策略：方法與牧養。八、對「方法」的分辨：肯定因地制宜，否定以數字為義 聖經肯定因地制宜的言語與場合。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(217, 119, 6, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.10), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.10), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(217, 119, 6, 0.08), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.14), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(99, 102, 241, 0.14), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(217, 119, 6, 0.10), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(245, 158, 11, 0.22);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(217, 119, 6, 0.4);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.18), 0 10px 10px -5px rgba(99, 102, 241, 0.08);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    @keyframes cardEntrance {
+      from { opacity: 0; transform: translateY(30px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .category-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: cardEntrance 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .category-card:nth-child(1) { animation-delay: 0.1s; }
+    .category-card:nth-child(2) { animation-delay: 0.2s; }
+    .category-card:nth-child(3) { animation-delay: 0.3s; }
+    .category-card:nth-child(4) { animation-delay: 0.4s; }
+    .category-card:nth-child(5) { animation-delay: 0.5s; }
+    .category-card:nth-child(6) { animation-delay: 0.6s; }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+    .pulse-animation {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(217, 119, 6, 0.55);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(180, 83, 9, 0.85);
+      transform: translateX(5px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.6), rgba(99, 102, 241, 0.55));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #d97706 0%, #4f46e5 100%);
+      color: white;
+    }
+    .locus-section {
+      scroll-margin-top: 6rem;
+    }
+    .prose-essay p {
+      margin-bottom: 1.1rem;
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="close">
+  <a class="skip" href="content.html#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">傳福音策略</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">方法與牧養</div>
+  </header>
+
+  <section class="hero" aria-label="傳福音策略">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Evangelistic Witness</div>
+      <h1 class="serif">方法與牧養<em class="latin">傳福音策略</em></h1>
+      <p class="hero-lead">八、對「方法」的分辨：肯定因地制宜，否定以數字為義 聖經肯定因地制宜的言語與場合。</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="intro.html" data-nav-slug="intro">問題意識</a>
+        <a href="commission.html" data-nav-slug="commission">大使命與權柄</a>
+        <a href="jesus.html" data-nav-slug="jesus">耶穌的宣講</a>
+        <a href="acts.html" data-nav-slug="acts">使徒行傳的策略</a>
+        <a href="paul.html" data-nav-slug="paul">保羅的自我說明</a>
+        <a href="content.html" data-nav-slug="content">內容與聖靈</a>
+        <ul class="sub"><li>內容不可刪</li><li>聖靈、禱告、品格</li></ul>
+        <a href="close.html" data-nav-slug="close" class="is-on">方法與牧養</a>
+        <ul class="sub"><li>對方法的分辨</li><li>牧養結論</li></ul>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回傳福音策略總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/close.svg" alt=""></figure>
+          <p class="essay-kicker">分題 07 / 07</p>
+          <h2 class="page-title serif">方法與牧養</h2>
+          <div class="topic-body"><section id="methods" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">八、對「方法」的分辨：肯定因地制宜，否定以數字為義</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                聖經肯定因地制宜的言語與場合。耶穌在井旁談水，保羅在會堂引妥拉與先知，在路司得與雅典從創造講起，在推喇奴學房天天辯論。場合可以是聖殿、家裏、河邊、監獄、官邸。路加並不把某一個場地神聖化。言語的翻譯是愛的工作：讓聽者真正聽見他所當聽見的，而不是讓講者享受自己熟悉的套語。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                聖經同時否定以數字、權勢、詭詐為義。「不行詭詐，不謬講神的道理」（林後 4:2）。帖撒羅尼迦前書拒絕諂媚與貪心（帖前 2:5）。使徒沒有用銀匠的手法去維持宗教產業，反倒因福音而與以弗所的銀匠衝突。成功的定義若是「愈來愈多人喜歡我們」，使徒行傳裏的監獄、鞭打、暴動與譏誚就無法解釋。
+              </p>
+              <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-slate-900 mb-2">活動導向</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">聖經有聚集、也有分散；有五旬節的大日，也有兩年的學房。活動可以服事宣講，卻不能代替「神的道」被清楚講明。高潮之後若沒有教導與群體，路加會說我們只做了一半。</p>
+                </div>
+                <div class="bg-amber-50 border border-amber-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-amber-900 mb-2">恐懼營銷</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">聖經確實講審判與永死，卻不是用驚嚇操縱決志。彼得的指證連於經文與基督的復活；保羅講「定了日子」，同時講那一位已從死裏復活的憑據。恐懼若離開十字架的恩典，就不是福音。</p>
+                </div>
+                <div class="bg-rose-50 border border-rose-100 rounded-xl p-5">
+                  <h3 class="font-semibold serif-font text-rose-900 mb-2">只講福，不講十字架</h3>
+                  <p class="text-sm text-slate-700 leading-relaxed">以賽亞的好消息包括釋放與禧年，也指向受苦的僕人。路加的耶穌祝福貧窮人，同時呼召捨己。若「福」變成與基督無關的成功保證，那是另一個福音，不是使徒所傳的。</p>
+                </div>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700 mb-0">
+                溫和地說：今日許多方法在技術上中性——場地、翻譯、印刷、數位媒介，正如保羅使用羅馬道路與會堂網絡。中性一旦變成主人，要求信息為它讓路，就不再中性。分辨的問題始終是：<strong class="text-amber-800">十字架有沒有落空？真理有沒有被表明？聽者有沒有被交給神，而不是交給我們的技巧？</strong>
+              </p>
+            </div>
+          </section>
+<section id="pastoral" class="locus-section mb-16">
+            <div class="content-panel rounded-2xl p-8 sm:p-12 prose-essay">
+              <h2 class="text-3xl sm:text-4xl font-semibold mb-6 serif-font text-slate-900">九、牧養結論：見證人、恩賜、忠心、生長在神</h2>
+              <p class="text-lg leading-relaxed text-slate-700">
+                徒 1:8 的「你們……作我的見證」，主詞是門徒群體，不只是少數有講台恩賜的人。每個信徒都是見證人；這不表示每個人都是巡迴佈道家。林前 12 與弗 4 提醒我們：恩賜不同，身體卻是一個。有人善於開口講明聖經，有人善於接待、翻譯、堅守無虧的良心，使問盼望緣由的人得着回答（彼前 3:15）。教會整體宣講：聖禮、教導、慈善與聖潔生活，都在為這道作見證；個人談話不能從這整體被抽離，變成孤立的銷售技巧。
+              </p>
+              <div class="bible-verse mb-6 bg-indigo-50 p-6 rounded-lg border border-indigo-100">
+                <p class="text-lg italic text-slate-800 mb-2">「我栽種了，亞波羅澆灌了，惟有神叫他生長。可見栽種的算不得甚麼，澆灌的也算不得甚麼，只在那叫他生長的神。」</p>
+                <p class="text-sm text-slate-600">— 哥林多前書 3:6–7</p>
+              </div>
+              <p class="text-lg leading-relaxed text-slate-700">
+                因此，忠心比技巧更先。技巧仍當學習——保羅會講希臘話，也會織帳棚，也會在官長面前分訴——但技巧不能叫人生長。結果在神。這句話不是懶惰的藉口（保羅「比眾使徒格外勞苦」，林前 15:10），而是敬拜的界線：我們拒絕把果效神化，拒絕用數字稱義，也拒絕因門關閉而以為神失敗。
+              </p>
+              <p class="text-lg leading-relaxed text-slate-700">
+                回到本篇的核心論點：聖經的「策略」首先是忠於福音內容與聖靈引導，其次才是因對象調整言語。路加讓我們看見神的道從耶路撒冷走到地極；以賽亞讓我們聽見地極的光；保羅讓我們學習翻譯而不變質、自由而不諂媚。我們不是產品經理，而是見證人。主自己說：「我就常與你們同在，直到世界的末了。」同在的主，比任何策略手冊更先、也更夠。
+              </p>
+              <div class="bg-gradient-to-r from-amber-50 to-indigo-50 border border-amber-100 rounded-xl p-6 text-slate-700 leading-relaxed">
+                <p class="mb-3">若要溫習福音內容的簡明骨架，可讀本站「<a href="../四律/index.html" class="text-amber-800 font-medium hover:underline">四律</a>」。救恩如何「因信」臨到罪人，見「<a href="../因信稱義/index.html" class="text-amber-800 font-medium hover:underline">因信稱義</a>」。經文如何互相解釋，見「<a href="../以經解經/index.html" class="text-amber-800 font-medium hover:underline">以經解經</a>」。傳福音與呼求主名，見「<a href="../祈禱/index.html" class="text-amber-800 font-medium hover:underline">祈禱</a>」。</p>
+                <p>本篇是釋經專論，不是活動企劃。若讀完以後更不敢把聽者交給自己的方法、更願把聽者交給神的道與神的靈，這一課就沒有白讀。</p>
+              </div>
+            </div>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="content.html"><span class="dir">上一題</span><span class="serif">內容與聖靈</span></a>
+        <a class="is-empty"></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up, .category-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = Array.from(tocLinks).map(link => {
+      const id = link.getAttribute('href').slice(1);
+      return { id, el: document.getElementById(id), link };
+    }).filter(item => item.el);
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          link.classList.add('bg-slate-50', 'text-slate-700');
+        });
+        const match = sections.find(item => item.el === entry.target);
+        if (match) {
+          match.link.classList.add('active');
+          match.link.classList.remove('bg-slate-50', 'text-slate-700');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+
+    sections.forEach(item => sectionObserver.observe(item.el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      });
+    });
+
+    const progressBar = document.getElementById('reading-progress');
+    window.addEventListener('scroll', function () {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const height = doc.scrollHeight - doc.clientHeight;
+      const percent = height > 0 ? (scrollTop / height) * 100 : 0;
+      if (progressBar) progressBar.style.width = percent + '%';
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/傳福音策略/close", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

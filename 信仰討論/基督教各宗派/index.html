@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基督教各宗派｜Christian Traditions</title>
+  <meta name="description" content="基督教各宗派：以經解經與歷史意識討論天主教、東正教、更正教各支，以及基要派、福音派、靈恩派。以使徒福音為準，分辨合一與界限，不是罵戰，也不是相對主義。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    html {
+      scroll-padding-top: 5.5rem;
+    }
+    .gradient-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.10), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.10), transparent 30%),
+                  radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      filter: blur(60px);
+      opacity: 0.9;
+      animation: gradientShift 8s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.10), transparent 35%),
+                    radial-gradient(circle at 80% 0%, rgba(139, 92, 246, 0.10), transparent 30%),
+                    radial-gradient(circle at 50% 80%, rgba(71, 85, 105, 0.08), transparent 30%);
+      }
+      50% {
+        background: radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.14), transparent 35%),
+                    radial-gradient(circle at 20% 0%, rgba(139, 92, 246, 0.14), transparent 30%),
+                    radial-gradient(circle at 50% 20%, rgba(71, 85, 105, 0.10), transparent 30%);
+      }
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .content-panel {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(99, 102, 241, 0.16);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.04); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .pulse-animation { animation: pulse 2s ease-in-out infinite; }
+    .serif-font { font-family: 'Noto Serif TC', serif; }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 3px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(67, 56, 202, 0.9);
+      transform: translateX(4px);
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.7), rgba(139, 92, 246, 0.7));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .toc-link {
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .toc-link.active {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: white;
+    }
+    .locus-section { scroll-margin-top: 6rem; }
+    .prose-body p { margin-bottom: 1.05rem; }
+    .prose-body p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body class="topic-shell" data-slug="index">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">基督教各宗派</a>
+    
+  </header>
+
+  <section class="hero" aria-label="基督教各宗派">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Christian Traditions</div>
+      <h1 class="serif">基督教各宗派<em class="latin">Christian Traditions</em></h1>
+      <p class="hero-lead">以歷史意識承認分歧，以整本聖經與使徒福音作規範；不是教派罵戰，也不是「大家都一樣」</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index" class="is-on">總覽</a>
+        <a href="question.html" data-nav-slug="question">問題意識</a>
+        <a href="unity.html" data-nav-slug="unity">合一與界限</a>
+        <a href="map.html" data-nav-slug="map">大公傳統簡圖</a>
+        <a href="fundamentalist.html" data-nav-slug="fundamentalist">基要派</a>
+        <a href="evangelical.html" data-nav-slug="evangelical">福音派</a>
+        <a href="charismatic.html" data-nav-slug="charismatic">靈恩派與五旬節</a>
+        <a href="other.html" data-nav-slug="other">華人教會張力</a>
+        <a href="pastoral.html" data-nav-slug="pastoral">牧養結論</a>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/hero.png" alt=""></figure>
+          <p class="essay-kicker">專論總覽</p>
+          
+          
+          <div class="overview-lead">
+            <p>以歷史意識承認分歧，以整本聖經與使徒福音作規範；不是教派罵戰，也不是「大家都一樣」</p>
+            <p>本篇已按原有標題拆成可獨立閱讀的分題。請選一題進入；正文未經改寫，只把長頁分開。</p>
+          </div>
+          <div class="chapter-grid">
+        <a class="chapter-card" href="question.html">
+          <div class="media"><img src="images/question.svg" alt=""></div>
+          <div class="body">
+            <div class="num">01</div>
+            <h3 class="serif">問題意識</h3>
+            <p>一、問題意識：分門結黨，與為真道爭辯 華人信徒一談「宗派」，往往立刻掉進兩條淺灘。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="unity.html">
+          <div class="media"><img src="images/unity.svg" alt=""></div>
+          <div class="body">
+            <div class="num">02</div>
+            <h3 class="serif">合一與界限</h3>
+            <p>二、聖經中的合一與界限 約翰福音十七章裡，耶穌為門徒祈求的合一，不是機構合併，也不是教義最低化。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="map.html">
+          <div class="media"><img src="images/map.svg" alt=""></div>
+          <div class="body">
+            <div class="num">03</div>
+            <h3 class="serif">大公傳統簡圖</h3>
+            <p>三、大公傳統簡圖：為華人讀者定向 以下不是教會史課本，只是一張定向圖。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="fundamentalist.html">
+          <div class="media"><img src="images/fundamentalist.svg" alt=""></div>
+          <div class="body">
+            <div class="num">04</div>
+            <h3 class="serif">基要派</h3>
+            <p>四、基要派：守住核心，卻不可把次要當成基要 「基要派」（Fundamentalism）作為歷史名稱，主要是十九世紀末至二十世紀初，英語世界教會對自由派神學的反動。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="evangelical.html">
+          <div class="media"><img src="images/evangelical.svg" alt=""></div>
+          <div class="body">
+            <div class="num">05</div>
+            <h3 class="serif">福音派</h3>
+            <p>五、福音派：福音與宣教，卻不可把決志當成門徒 「福音派」（Evangelical）比基要派更寬、也更雜。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="charismatic.html">
+          <div class="media"><img src="images/charismatic.svg" alt=""></div>
+          <div class="body">
+            <div class="num">06</div>
+            <h3 class="serif">靈恩派與五旬節</h3>
+            <p>六、靈恩派與五旬節：認真對待聖靈，也試驗諸靈 五旬節運動興起於二十世紀初，靈恩更新隨後進入許多歷史宗派。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="other.html">
+          <div class="media"><img src="images/other.svg" alt=""></div>
+          <div class="body">
+            <div class="num">07</div>
+            <h3 class="serif">華人教會張力</h3>
+            <p>七、華人教會常見的其他張力 自由派／新派 自由派神學的形態很多，共同趨勢是：以現代歷史意識與倫理理想重構基督教，使超自然變得可有可無，聖經的權威降為宗教文獻。</p>
+            
+          </div>
+        </a>
+        <a class="chapter-card" href="pastoral.html">
+          <div class="media"><img src="images/pastoral.svg" alt=""></div>
+          <div class="body">
+            <div class="num">08</div>
+            <h3 class="serif">牧養結論</h3>
+            <p>八、牧養結論：三層分辨，一個身體 走完這張地圖，結論其實單純。</p>
+            
+          </div>
+        </a>
+          </div>
+        </article>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/基督教各宗派/index", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

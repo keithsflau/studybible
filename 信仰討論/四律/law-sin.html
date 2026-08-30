@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第二律：罪的隔絕｜四律</title>
+  <meta name="description" content="四律：第二律：罪的隔絕。二 人因有罪而與神隔絕，所以不能知道並經驗神的愛和神為他生命的計劃 人因有罪 羅馬書 3:23 「因為世人都犯了罪，虧缺了神的榮耀。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../visit-counter.css">
+  <link rel="stylesheet" href="../_shared/topic.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .gradient-bg {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.1), transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1), transparent 50%),
+                  radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.08), transparent 50%);
+      filter: blur(80px);
+      z-index: 0;
+      animation: gradientShift 15s ease-in-out infinite;
+    }
+    @keyframes gradientShift {
+      0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.8;
+      }
+      50% { 
+        transform: translate(20px, -20px) scale(1.1);
+        opacity: 1;
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(99, 102, 241, 0.8);
+      }
+    }
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.1);
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(1.05);
+      }
+    }
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-slideInLeft {
+      animation: slideInLeft 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-slideInRight {
+      animation: slideInRight 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-scaleIn {
+      animation: scaleIn 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    .animate-pulse-slow {
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    .animate-glow {
+      animation: glow 2s ease-in-out infinite;
+    }
+    .animate-heartbeat {
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    .glass-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+    }
+    .law-number {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: white;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+    .law-number:hover {
+      transform: scale(1.1);
+    }
+    .bible-verse {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 4px solid rgba(99, 102, 241, 0.5);
+      transition: all 0.3s ease;
+    }
+    .bible-verse:hover {
+      border-left-color: rgba(99, 102, 241, 0.8);
+      transform: translateX(5px);
+    }
+    .interactive-circle {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .interactive-circle:hover {
+      transform: scale(1.05);
+    }
+    .interactive-circle.active {
+      animation: pulse 1s ease-in-out infinite;
+    }
+    .train-diagram {
+      position: relative;
+      overflow: visible;
+    }
+    .train-car {
+      transition: all 0.3s ease;
+    }
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(99, 102, 241, 0.6), rgba(139, 92, 246, 0.6));
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .shimmer-effect {
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+    }
+    .prayer-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .prayer-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    .prayer-card:hover::before {
+      left: 100%;
+    }
+    .check-item {
+      transition: all 0.3s ease;
+    }
+    .check-item:hover {
+      transform: translateX(5px);
+      background: rgba(99, 102, 241, 0.05);
+    }
+    .check-item.completed {
+      opacity: 0.7;
+    }
+    .check-item.completed .check-icon {
+      color: rgba(34, 197, 94, 0.8);
+    }
+    @media (max-width: 768px) {
+      .law-number {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body class="topic-shell" data-slug="law-sin">
+  <a class="skip" href="#content">跳到正文</a>
+  <header class="topbar">
+    <a href="../../index.html">
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      主頁
+    </a>
+    <span class="topbar-sep">/</span>
+    <a href="../index.html">討論</a>
+    <span class="topbar-sep">/</span>
+    <a href="index.html">四律</a>
+    <span class="topbar-sep">/</span><div class="topbar-title">第二律：罪的隔絕</div>
+  </header>
+
+  <section class="hero" aria-label="四律">
+    <div class="hero-media"><img src="images/hero.png" alt="" width="1600" height="900"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Four Laws</div>
+      <h1 class="serif">第二律：罪的隔絕<em class="latin">四律</em></h1>
+      <p class="hero-lead">二 人因有罪而與神隔絕，所以不能知道並經驗神的愛和神為他生命的計劃 人因有罪 羅馬書 3:23 「因為世人都犯了罪，虧缺了神的榮耀。</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <aside class="sidenav" aria-label="分題導航">
+        <h2>分題</h2>
+        <div class="nav-links">
+        <a href="index.html" data-nav-slug="index">總覽</a>
+        <a href="law-love.html" data-nav-slug="law-love">第一律：神的愛</a>
+        <a href="law-sin.html" data-nav-slug="law-sin" class="is-on">第二律：罪的隔絕</a>
+        <a href="law-christ.html" data-nav-slug="law-christ">第三律：唯一救法</a>
+        <a href="law-receive.html" data-nav-slug="law-receive">第四律：必須接受</a>
+        <a href="after.html" data-nav-slug="after">接受之後</a>
+        <a href="next.html" data-nav-slug="next">還有什麼呢</a>
+        </div>
+      </aside>
+      <div>
+        <nav class="crumbs">
+          <a href="../index.html">← 返回討論目錄</a>
+          <a href="index.html">← 返回四律總覽</a>
+        </nav>
+        <article id="content" class="essay">
+          <figure class="topic-figure"><img src="images/law-sin.svg" alt=""></figure>
+          <p class="essay-kicker">分題 02 / 06</p>
+          <h2 class="page-title serif">第二律：罪的隔絕</h2>
+          <div class="topic-body"><section class="mb-16 animate-fadeInUp" style="animation-delay: 0.6s;">
+            <div class="glass-card rounded-2xl p-8 sm:p-12">
+              <div class="flex items-center mb-6">
+                <div class="law-number bg-gradient-to-br from-red-500 to-rose-600 mr-6 animate-glow" id="law-2-number">二</div>
+                <h2 class="text-3xl sm:text-4xl font-semibold serif-font text-slate-900">
+                  人因有罪而與神隔絕，所以不能知道並經驗神的愛和神為他生命的計劃
+                </h2>
+              </div>
+              
+              <div class="space-y-6 text-lg leading-relaxed text-slate-700">
+                <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+                  <h3 class="text-xl font-semibold mb-4 text-red-700 serif-font">人因有罪</h3>
+                  <div class="bible-verse bg-white p-5 rounded-lg mb-4">
+                    <p class="text-slate-800 text-lg">
+                      <strong class="text-red-700">羅馬書 3:23</strong><br>
+                      「因為世人都犯了罪，虧缺了神的榮耀。」
+                    </p>
+                  </div>
+                  <p class="text-slate-700">
+                    神創造人原是要人享受與祂同在一起的快樂，但因各人頑固任性、偏行己路、背向真神，以致與神隔絕。這種向神任性的態度，使人對神漠不關心或公開反對，就是聖經所說的罪。
+                  </p>
+                </div>
+
+                <div class="bg-rose-50 p-6 rounded-xl border border-rose-200">
+                  <h3 class="text-xl font-semibold mb-4 text-rose-700 serif-font">與神隔絕</h3>
+                  <div class="bible-verse bg-white p-5 rounded-lg mb-4">
+                    <p class="text-slate-800 text-lg">
+                      <strong class="text-rose-700">羅馬書 6:23</strong><br>
+                      「因為罪的工價乃是死。」（靈性與神隔絕）
+                    </p>
+                  </div>
+                  <p class="text-slate-700">
+                    聖潔的神與有罪的人中間，有如深淵隔絕。雖然人不斷地用自己的方法，就如善行、道德、宗教、哲學等，來尋求神和豐盛的生命，但是總得不著。
+                  </p>
+                </div>
+
+                <!-- Separation Diagram: God above, Man below, arrows cannot reach -->
+                <div class="mt-8 p-6 bg-white rounded-xl border border-slate-300">
+                  <div class="flex justify-center items-center">
+                    <svg width="500" height="400" viewBox="0 0 500 400" class="w-full max-w-2xl">
+                      <!-- Decorative corner lines -->
+                      <line x1="50" y1="30" x2="80" y2="30" stroke="#374151" stroke-width="2" opacity="0.6"/>
+                      <line x1="50" y1="30" x2="50" y2="60" stroke="#374151" stroke-width="2" opacity="0.6"/>
+                      <line x1="450" y1="30" x2="420" y2="30" stroke="#374151" stroke-width="2" opacity="0.6"/>
+                      <line x1="450" y1="30" x2="450" y2="60" stroke="#374151" stroke-width="2" opacity="0.6"/>
+                      
+                      <!-- God at top with rectangle box -->
+                      <rect x="150" y="30" width="200" height="50" fill="none" stroke="#1e40af" stroke-width="3" rx="5"/>
+                      <text x="250" y="60" text-anchor="middle" fill="#1e40af" font-size="32" font-weight="bold">聖潔的神</text>
+                      
+                      <!-- Man at bottom with rectangle box -->
+                      <rect x="150" y="330" width="200" height="50" fill="none" stroke="#dc2626" stroke-width="3" rx="5"/>
+                      <text x="250" y="360" text-anchor="middle" fill="#dc2626" font-size="32" font-weight="bold">有罪的人</text>
+                      
+                      <!-- Multiple arrows from man to God, but cannot reach -->
+                      <!-- Arrow 1 (leftmost) -->
+                      <path d="M 150 330 L 150 100" stroke="#374151" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+                      <path d="M 150 100 L 140 110 L 150 115 L 160 110 Z" fill="#374151"/>
+                      
+                      <!-- Arrow 2 -->
+                      <path d="M 200 330 L 200 120" stroke="#374151" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+                      <path d="M 200 120 L 190 130 L 200 135 L 210 130 Z" fill="#374151"/>
+                      
+                      <!-- Arrow 3 (center) -->
+                      <path d="M 250 330 L 250 140" stroke="#374151" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+                      <path d="M 250 140 L 240 150 L 250 155 L 260 150 Z" fill="#374151"/>
+                      
+                      <!-- Arrow 4 -->
+                      <path d="M 300 330 L 300 120" stroke="#374151" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+                      <path d="M 300 120 L 290 130 L 300 135 L 310 130 Z" fill="#374151"/>
+                      
+                      <!-- Arrow 5 (rightmost) -->
+                      <path d="M 350 330 L 350 100" stroke="#374151" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+                      <path d="M 350 100 L 340 110 L 350 115 L 360 110 Z" fill="#374151"/>
+                      
+                      <!-- Border frame -->
+                      <rect x="40" y="20" width="420" height="360" fill="none" stroke="#374151" stroke-width="2" opacity="0.8"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="text-center p-4 bg-slate-100 rounded-lg mt-6">
+                  <p class="text-lg font-semibold text-slate-800">
+                    第三律告訴我們這難題的唯一答案：
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section></div>
+        </article>
+        <nav class="pager">
+        <a href="law-love.html"><span class="dir">上一題</span><span class="serif">第一律：神的愛</span></a>
+        <a class="next" href="law-christ.html"><span class="dir">下一題</span><span class="serif">第三律：唯一救法</span></a>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="visit-counter-container"></div>
+  <footer class="topic-footer">
+    <p>「你當竭力在神面前得蒙喜悅，作無愧的工人，按著正意分解真理的道。」提摩太後書 2:15</p>
+  </footer>
+  <script src="../_shared/topic.js"></script>
+  <script>try{
+
+    // Reading progress
+    function updateReadingProgress() {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+      const progressBar = document.getElementById('reading-progress');
+      if (progressBar) {
+        progressBar.style.width = Math.min(progress, 100) + '%';
+      }
+    }
+    
+    window.addEventListener('scroll', updateReadingProgress);
+    updateReadingProgress();
+
+    // Toggle circle animation
+    function toggleCircle(type) {
+      const circle = document.getElementById(`circle-${type}`);
+      if (circle) {
+        circle.classList.toggle('active');
+      }
+    }
+
+    // Toggle check item
+    function toggleCheck(element) {
+      element.classList.toggle('completed');
+    }
+
+    // Train animation removed - train stays static
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.querySelectorAll('.animate-fadeInUp, .animate-fadeIn, .animate-slideInLeft, .animate-slideInRight, .animate-scaleIn').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Law number pulse on scroll
+    const lawNumbers = document.querySelectorAll('.law-number');
+    const lawObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'heartbeat 1s ease-in-out';
+          setTimeout(() => {
+            entry.target.style.animation = '';
+          }, 2000);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    lawNumbers.forEach(num => lawObserver.observe(num));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  
+}catch(e){console.warn(e)}</script>
+  <script src="../../visit-counter.js"></script>
+  <script>
+    if (window.VisitCounter) {
+      VisitCounter.init("bible_study/信仰討論/四律/law-sin", {
+        scriptUrl: "https://script.google.com/macros/s/AKfycby5jEjDAcEM6TttPbwwh1tvXPo_-W7YrNlKfJRV82PjkmAHvR_wILhA7h-zIRPF7oTRTw/exec",
+        containerId: "visit-counter-container"
+      });
+    }
+  </script>
+</body>
+</html>

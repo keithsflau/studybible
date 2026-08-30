@@ -3,28 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <title>教會論 | 被召出的群體</title>
   <meta name="description" content="教會論：原文、詳細研究與解釋。">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../app/app.css?v=3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&family=Noto+Serif+Hebrew:wght@500;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../app/app.css">
-  <link rel="stylesheet" href="../../../visit-counter.css">
+  <script src="https://cdn.tailwindcss.com" defer></script>
 </head>
 <body>
-  <div id="faith-app" data-mode="topic" data-topic="church" data-base=".."></div>
+  <div id="faith-app" data-mode="topic" data-topic="church" data-base="..">
+    <p style="padding:3rem 1.5rem;text-align:center;font-family:sans-serif;color:#64748b">正在載入教材…</p>
+  </div>
   <div id="visit-counter-container"></div>
-  <script src="../data/catalog.js"></script>
-  <script src="../data/man.js"></script>
-  <script src="../data/god.js"></script>
-  <script src="../data/christ.js"></script>
-  <script src="../data/spirit.js"></script>
-  <script src="../data/church.js"></script>
-  <script src="../data/scripture.js"></script>
-  <script src="../app/app.js"></script>
-  <script src="../app/boot.js"></script>
-  <script src="../../../visit-counter.js"></script>
+  <script src="../data/catalog.js?v=3"></script>
+  <script src="../data/man.js?v=3"></script>
+  <script src="../data/god.js?v=3"></script>
+  <script src="../data/christ.js?v=3"></script>
+  <script src="../data/spirit.js?v=3"></script>
+  <script src="../data/church.js?v=3"></script>
+  <script src="../data/scripture.js?v=3"></script>
+  <script src="../app/app.js?v=3"></script>
+  <script src="../app/boot.js?v=3"></script>
+  <script>
+    (function () {
+      if (window.FaithApp) return;
+      function add(src, onload) {
+        var s = document.createElement("script");
+        s.src = src;
+        if (onload) s.onload = onload;
+        document.body.appendChild(s);
+      }
+      add("../_app/app.js?v=3", function () { add("../_app/boot.js?v=3"); });
+    })();
+  </script>
+  <script src="../../visit-counter.js"></script>
   <script>
     if (window.VisitCounter) {
       VisitCounter.init("bible_study/信仰分享/教會/index", {

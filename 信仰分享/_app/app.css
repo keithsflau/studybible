@@ -1,0 +1,202 @@
+:root {
+  --faith-accent: #047857;
+  --faith-accent-2: #0f766e;
+  --faith-soft: #ecfdf5;
+  --faith-ink: #0f172a;
+  --faith-muted: #475569;
+}
+
+[data-theme="emerald"] { --faith-accent: #047857; --faith-accent-2: #0f766e; --faith-soft: #ecfdf5; }
+[data-theme="amber"] { --faith-accent: #b45309; --faith-accent-2: #c2410c; --faith-soft: #fffbeb; }
+[data-theme="rose"] { --faith-accent: #be123c; --faith-accent-2: #9f1239; --faith-soft: #fff1f2; }
+[data-theme="cyan"] { --faith-accent: #0e7490; --faith-accent-2: #155e75; --faith-soft: #ecfeff; }
+[data-theme="violet"] { --faith-accent: #6d28d9; --faith-accent-2: #5b21b6; --faith-soft: #f5f3ff; }
+[data-theme="indigo"] { --faith-accent: #3730a3; --faith-accent-2: #312e81; --faith-soft: #eef2ff; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+
+body.faith-app-body {
+  font-family: "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", sans-serif;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--faith-accent) 14%, transparent), transparent 50%),
+    radial-gradient(900px 500px at 100% 0%, rgba(15, 23, 42, 0.06), transparent 45%),
+    #f8fafc;
+  color: var(--faith-ink);
+}
+
+.faith-serif,
+.faith-app h1,
+.faith-app h2,
+.faith-app h3,
+.faith-app h4 { font-family: "Noto Serif TC", "Source Han Serif TC", serif; }
+
+.faith-he {
+  font-family: "Noto Serif Hebrew", "Times New Roman", serif;
+  direction: rtl;
+  unicode-bidi: isolate;
+  font-size: 1.25em;
+  line-height: 1.7;
+}
+
+.faith-el {
+  font-family: "Noto Serif", "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.12em;
+}
+
+.faith-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.faith-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(15, 23, 42, 0.94);
+  color: #fff;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faith-accent { color: var(--faith-accent); }
+.faith-bg-accent { background: var(--faith-accent); }
+.faith-soft { background: var(--faith-soft); }
+
+.faith-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  transition: 0.18s ease;
+}
+
+.faith-nav-btn:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
+
+.faith-nav-btn.is-active {
+  background: color-mix(in srgb, var(--faith-accent) 28%, #0f172a);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--faith-accent) 45%, transparent);
+}
+
+.faith-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.faith-chip-es { background: #dbeafe; color: #1e3a8a; }
+.faith-chip-pec { background: #fce7f3; color: #9d174d; }
+.faith-chip-shared { background: #dcfce7; color: #166534; }
+
+.faith-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px -18px rgba(15, 23, 42, 0.35);
+}
+
+.faith-verse {
+  border-left: 4px solid var(--faith-accent);
+  background: linear-gradient(90deg, var(--faith-soft), #fff);
+}
+
+.faith-word {
+  cursor: pointer;
+  border-bottom: 2px dotted var(--faith-accent);
+  color: var(--faith-accent-2);
+  font-weight: 600;
+}
+
+.faith-word:hover { background: var(--faith-soft); }
+
+.faith-fade { animation: faithFade 0.35s ease; }
+@keyframes faithFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+.faith-progress {
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.faith-progress > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--faith-accent), var(--faith-accent-2));
+}
+
+.faith-original {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem;
+}
+
+.faith-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.faith-modal-panel {
+  width: min(720px, 100%);
+  max-height: 88vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.25rem 1.4rem;
+  box-shadow: 0 25px 60px -20px rgba(0, 0, 0, 0.45);
+}
+
+.faith-quiz-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #fff;
+  transition: 0.15s ease;
+}
+
+.faith-quiz-btn:hover { border-color: var(--faith-accent); background: var(--faith-soft); }
+.faith-quiz-btn.is-right { background: #dcfce7; border-color: #16a34a; color: #14532d; }
+.faith-quiz-btn.is-wrong { background: #fee2e2; border-color: #ef4444; color: #7f1d1d; }
+
+.faith-aside {
+  width: 18.5rem;
+  flex-shrink: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+@media (max-width: 900px) {
+  .faith-aside { display: none; }
+  .faith-aside.is-open {
+    display: block;
+    position: fixed;
+    inset: 3.5rem 0 0 0;
+    width: auto;
+    z-index: 35;
+    overflow: auto;
+  }
+}

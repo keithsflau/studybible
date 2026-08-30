@@ -13,7 +13,7 @@ window.FAITH_CATALOG = [
     en: "Bibliology",
     folder: "聖經論",
     color: "indigo",
-    blurb: "神所默示的話語：無誤、權威、正典與釋經。"
+    blurb: "默示與無誤、各卷作者與成型、正典確立、流傳與抄本地點。"
   },
   {
     id: "christ",

@@ -120,6 +120,9 @@
         }
       });
     });
+    if (window.FaithHymns && window.FaithHymns.searchHits) {
+      hits.push.apply(hits, window.FaithHymns.searchHits(query));
+    }
     return hits.slice(0, 18);
   }
 
@@ -302,6 +305,12 @@
     if (sectionId === "lab") {
       return `<header class="mb-6 border-b pb-4"><p class="text-xs tracking-widest uppercase" style="color:var(--faith-accent)">Laboratory</p><h2 class="text-3xl font-bold">互動主日學實驗室</h2></header>${renderLab(topic)}`;
     }
+    if (sectionId === "hymns" && window.FaithHymns) {
+      return window.FaithHymns.renderStudio();
+    }
+    if (sectionId === "player" && window.FaithHymns) {
+      return window.FaithHymns.renderPlayer();
+    }
     const sec = (topic.sections || []).find((s) => s.id === sectionId) || topic.sections[0];
     return `
       <header class="mb-6 border-b pb-4">
@@ -318,6 +327,10 @@
     }));
     items.push({ id: "lexicon", label: "原文詞庫" });
     items.push({ id: "lab", label: "互動實驗室" });
+    if (topic.id === "church" && window.FaithHymns) {
+      items.push({ id: "hymns", label: "AI 詩歌模組" });
+      items.push({ id: "player", label: "詩歌播放" });
+    }
     return items;
   }
 
@@ -365,6 +378,17 @@
               </a>`;
           }).join("")}
         </section>
+        ${window.FaithHymns ? `<section class="faith-card p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-4 justify-between">
+          <div>
+            <p class="faith-chip faith-chip-shared mb-2">教會論新單元</p>
+            <h2 class="text-2xl font-bold mb-1">AI 詩歌模組與播放軟件</h2>
+            <p class="text-sm text-slate-600">按團契、聖道、十架、聖靈、宣教等主題起草詩歌，並播放本站 AI 詩歌錄音。</p>
+          </div>
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <a href="${ctx.mode === "hub" ? "#/church/hymns" : topicHref({ id: "church", folder: "教會" }, "hymns", ctx)}" class="faith-hymn-action">AI 詩歌模組</a>
+            <a href="${ctx.mode === "hub" ? "#/church/player" : topicHref({ id: "church", folder: "教會" }, "player", ctx)}" class="faith-hymn-action is-ghost">詩歌播放</a>
+          </div>
+        </section>` : ""}
         <section class="faith-card p-6 md:p-8">
           <h2 class="text-2xl font-bold mb-3">怎樣讀這套教材</h2>
           <div class="grid md:grid-cols-3 gap-4 text-sm">
@@ -488,6 +512,11 @@
     });
 
     const answered = {};
+    if (window.FaithHymns && (active === "hymns" || active === "player")) {
+      const mediaRoot = (ctx.base || ".").replace(/\/$/, "") + "/../AI 歌曲/";
+      window.FaithHymns.mount(root, { section: active, mediaRoot: mediaRoot });
+    }
+
     root.querySelectorAll("[data-opt]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const qi = Number(btn.getAttribute("data-q"));

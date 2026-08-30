@@ -200,3 +200,149 @@ body.faith-app-body {
     overflow: auto;
   }
 }
+
+.faith-hymn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: var(--faith-accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.faith-hymn-action.is-ghost {
+  background: #fff;
+  color: var(--faith-accent);
+  border-color: color-mix(in srgb, var(--faith-accent) 35%, #e2e8f0);
+}
+.faith-hymn-action:hover { filter: brightness(1.05); }
+
+[data-hymn-mod].is-picked {
+  box-shadow: 0 0 0 2px var(--faith-accent);
+}
+
+.faith-hymn-lyrics {
+  white-space: pre-wrap;
+  font-family: "Noto Serif TC", "Source Han Serif TC", serif;
+  line-height: 1.8;
+  background: var(--faith-soft);
+  border-radius: 0.9rem;
+  padding: 1rem 1.1rem;
+  font-size: 0.95rem;
+}
+
+.faith-hymn-track {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: left;
+}
+.faith-hymn-track:hover { background: var(--faith-soft); }
+.faith-hymn-track.is-active {
+  background: color-mix(in srgb, var(--faith-accent) 10%, #fff);
+}
+.faith-hymn-num {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 0.45rem;
+  background: #f1f5f9;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #475569;
+  flex-shrink: 0;
+}
+.faith-hymn-track.is-active .faith-hymn-num {
+  background: var(--faith-accent);
+  color: #fff;
+}
+
+.faith-hymn-stage {
+  background: linear-gradient(135deg, var(--faith-accent), var(--faith-accent-2));
+  color: #fff;
+  padding: 1.5rem 1.25rem;
+  min-height: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.faith-hymn-seek,
+.faith-hymn-dock-seek {
+  width: 100%;
+  accent-color: var(--faith-accent);
+}
+.faith-hymn-ctrl {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  font-size: 1rem;
+}
+.faith-hymn-ctrl.is-main {
+  width: 3.2rem;
+  height: 3.2rem;
+  background: var(--faith-accent);
+  color: #fff;
+}
+
+.faith-hymn-lyric-box {
+  max-height: 16rem;
+  overflow: auto;
+  line-height: 1.7;
+}
+.faith-lyric-line { padding: 0.15rem 0.35rem; border-radius: 0.4rem; color: #475569; }
+.faith-lyric-line.is-tag { font-size: 0.75rem; font-weight: 700; color: var(--faith-accent); margin-top: 0.5rem; }
+.faith-lyric-line.is-active { background: var(--faith-soft); color: #0f172a; font-weight: 700; }
+
+.faith-hymn-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: min(52rem, calc(100vw - 1.5rem));
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.85rem;
+  background: rgba(15, 23, 42, 0.94);
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 18px 40px -18px rgba(15, 23, 42, 0.7);
+}
+.faith-hymn-dock.is-hidden { display: none; }
+body:has(.faith-hymn-dock:not(.is-hidden)) { padding-bottom: 7.5rem; }
+.faith-hymn-dock video {
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.faith-hymn-dock-btn {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  flex-shrink: 0;
+}
+.faith-hymn-dock-btn.is-main { background: var(--faith-accent); }
+.faith-hymn-dock-meta { min-width: 0; flex: 1; }
+.faith-hymn-dock-title { font-weight: 700; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.faith-hymn-dock-sub { font-size: 0.7rem; color: #94a3b8; }
+.faith-hymn-dock-seek { flex: 1.2; min-width: 5rem; }
+
+@media (max-width: 700px) {
+  .faith-hymn-dock { flex-wrap: wrap; }
+  .faith-hymn-dock-seek { order: 8; width: 100%; flex: auto; }
+}

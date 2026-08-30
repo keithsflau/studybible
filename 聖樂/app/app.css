@@ -1,0 +1,1253 @@
+/* 聖樂教室 — 與全站羊皮紙／金色主題一致，略加聖所暮色與譜表裝飾 */
+
+.smc-app {
+  min-height: 100vh;
+}
+
+.smc-topbar-search {
+  margin-left: auto;
+  position: relative;
+  width: min(22rem, 48vw);
+}
+
+.smc-topbar-search input {
+  width: 100%;
+  border: 1px solid rgba(228, 207, 150, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.48rem 0.95rem 0.48rem 2.2rem;
+  outline: none;
+}
+
+.smc-topbar-search input::placeholder {
+  color: #9aa3b2;
+}
+
+.smc-topbar-search input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.18);
+}
+
+.smc-topbar-search svg {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: #c9b27a;
+  pointer-events: none;
+}
+
+.smc-hero {
+  position: relative;
+  min-height: min(72vh, 38rem);
+  display: grid;
+  place-items: end stretch;
+  color: #fff;
+  overflow: hidden;
+}
+
+.smc-hero-media,
+.smc-hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.smc-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  animation: smc-kenburns 22s ease-in-out infinite alternate;
+}
+
+.smc-hero-shade {
+  background:
+    linear-gradient(180deg, rgba(12, 18, 34, 0.22) 0%, rgba(18, 16, 32, 0.4) 40%, rgba(12, 18, 34, 0.92) 100%),
+    radial-gradient(circle at 78% 16%, rgba(196, 163, 90, 0.22), transparent 36%);
+}
+
+.smc-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 2.4rem));
+  margin: 0 auto 2.4rem;
+}
+
+.smc-hero h1 {
+  margin: 0.45rem 0 0.35rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  font-weight: 700;
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-hero h1 em {
+  display: block;
+  margin-top: 0.2rem;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.46em;
+  color: var(--gold-2);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.smc-hero-lead {
+  max-width: 44rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #e8e2d4;
+}
+
+.smc-hero-verse {
+  margin-top: 1.1rem;
+  max-width: 38rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--gold);
+  color: #d7cba8;
+  font-style: italic;
+}
+
+.smc-hero-verse cite {
+  display: block;
+  margin-top: 0.35rem;
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-2);
+}
+
+.smc-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.smc-hero-stats div {
+  min-width: 5.5rem;
+}
+
+.smc-hero-stats strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: var(--gold-2);
+}
+
+.smc-hero-stats span {
+  font-size: 0.82rem;
+  color: #c9c2b0;
+}
+
+.smc-wrap {
+  width: min(1120px, calc(100% - 2.4rem));
+  margin: 0 auto;
+}
+
+.smc-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.3rem 0 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.smc-crumb a {
+  color: var(--gold-text);
+  text-decoration: none;
+}
+
+.smc-crumb a:hover {
+  text-decoration: underline;
+}
+
+.smc-featured {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 0;
+  margin: 2rem 0 0.4rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.smc-featured:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196, 163, 90, 0.55);
+  box-shadow: 0 24px 40px -24px rgba(12, 18, 34, 0.55);
+}
+
+.smc-featured-media {
+  position: relative;
+  min-height: 16rem;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(228, 207, 150, 0.28), transparent 42%),
+    linear-gradient(160deg, #2a2118, #1d2a4a 70%);
+}
+
+.smc-featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.smc-featured-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(12, 18, 34, 0.82);
+  color: var(--gold-2);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.smc-featured-body {
+  padding: 1.5rem 1.6rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.smc-featured-body h2 {
+  margin: 0.25rem 0 0.2rem;
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-featured-body .latin {
+  margin: 0 0 0.7rem;
+  color: #8b7350;
+}
+
+.smc-featured-body p {
+  margin: 0 0 0.7rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.smc-intro {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2.2rem;
+  align-items: start;
+  padding: 2.2rem 0 0.6rem;
+}
+
+.smc-intro h2 {
+  margin: 0.4rem 0 0.7rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-intro p {
+  color: var(--muted);
+  line-height: 1.85;
+  margin: 0 0 0.85rem;
+}
+
+.smc-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.smc-panel ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.smc-panel li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+}
+
+.smc-num {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #f3ead4;
+  color: #8a6d28;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.smc-section-head {
+  padding: 1.6rem 0 0.8rem;
+}
+
+.smc-section-head h2 {
+  margin: 0.35rem 0 0.4rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.smc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.4rem 0 1.1rem;
+}
+
+.smc-chip {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.smc-chip:hover,
+.smc-chip.is-on {
+  background: var(--ink);
+  color: var(--gold-2);
+  border-color: var(--ink);
+}
+
+.smc-grid-3,
+.smc-grid-hymns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.smc-grid-hymns {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.smc-card,
+.smc-hymn {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(12, 18, 34, 0.08);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 28px -22px rgba(12, 18, 34, 0.5);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.smc-card:hover,
+.smc-hymn:hover {
+  transform: translateY(-6px);
+  border-color: rgba(196, 163, 90, 0.55);
+  box-shadow: 0 24px 40px -24px rgba(12, 18, 34, 0.55);
+}
+
+.smc-card-media {
+  position: relative;
+  height: 7.2rem;
+  overflow: hidden;
+  background: var(--card-tone, #1b2436);
+}
+
+.smc-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.72;
+}
+
+.smc-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(12, 18, 34, 0.45));
+}
+
+.smc-card-body,
+.smc-hymn-body {
+  padding: 1rem 1.05rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.smc-card h3,
+.smc-hymn h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-card:hover h3,
+.smc-hymn:hover h3 {
+  color: var(--gold-text);
+}
+
+.smc-en {
+  margin: 0.15rem 0 0.5rem;
+  color: #8b7350;
+  font-size: 0.86rem;
+  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.smc-excerpt {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.smc-score {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 11px,
+      rgba(228, 207, 150, 0.18) 11px,
+      rgba(228, 207, 150, 0.18) 12px
+    ),
+    radial-gradient(circle at 18% 20%, rgba(228, 207, 150, 0.22), transparent 46%),
+    linear-gradient(160deg, #2a2118, #1d2a4a 72%);
+  color: #f6edd4;
+}
+
+.smc-score-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.85rem 0.95rem;
+  gap: 0.2rem;
+}
+
+.smc-score-inner strong {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.smc-score-inner span {
+  font-size: 0.78rem;
+  color: #d7cba8;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+}
+
+.smc-hymn-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #8b7350;
+}
+
+.smc-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+}
+
+.smc-pill {
+  display: inline-block;
+  padding: 0.12rem 0.48rem;
+  border-radius: 999px;
+  background: #f3ead4;
+  color: var(--gold-text);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+.smc-pill.is-copy {
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.smc-pill.is-play {
+  background: #e8f0e4;
+  color: #3d4f3a;
+}
+
+.smc-pill.is-full {
+  background: #f3ead4;
+  color: #6b4f1d;
+  border: 1px solid rgba(138, 109, 40, 0.22);
+}
+
+.smc-lyrics-jump {
+  margin: 0.35rem 0 0.85rem;
+}
+
+.smc-lyrics-jump-btn {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--gold-text);
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(138, 109, 40, 0.35);
+}
+
+.smc-lyrics-jump-btn:hover {
+  border-bottom-color: var(--gold);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.smc-player {
+  position: relative;
+  scroll-margin-top: 5.5rem;
+  margin: 0 0 1.3rem;
+  padding: 1.05rem 1.15rem 1.1rem;
+  background:
+    linear-gradient(180deg, #fffdf7, #fff),
+    radial-gradient(circle at 8% 0%, rgba(228, 207, 150, 0.22), transparent 42%);
+  border: 1px solid var(--line);
+  border-radius: 0.95rem;
+  box-shadow: var(--shadow);
+}
+
+.smc-player-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.smc-player h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-player-head h3 {
+  margin: 0;
+}
+
+.smc-player-track {
+  margin: 0 0 0.75rem;
+  color: var(--ink-soft);
+  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-style: italic;
+}
+
+.smc-player-track strong {
+  font-style: normal;
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-player audio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.smc-player-controls {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.smc-player-play {
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--gold-2);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 8px 18px -12px rgba(12, 18, 34, 0.7);
+}
+
+.smc-player-play:hover,
+.smc-player-play:focus-visible {
+  background: #1b2436;
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.smc-player-play svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.smc-player-play .icon-pause,
+.smc-player.is-playing .smc-player-play .icon-play {
+  display: none;
+}
+
+.smc-player.is-playing .smc-player-play .icon-pause {
+  display: block;
+}
+
+.smc-player-seek-wrap {
+  display: block;
+  min-width: 0;
+}
+
+.smc-player-seek {
+  width: 100%;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.smc-player-time {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+  color: #8b7350;
+  white-space: nowrap;
+}
+
+.smc-player-credit {
+  margin: 0.75rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.smc-player-credit a {
+  color: var(--gold-text);
+}
+
+.smc-player-error {
+  margin: 0.55rem 0 0;
+  font-size: 0.82rem;
+  color: #9a3412;
+}
+
+.smc-player.is-empty {
+  box-shadow: none;
+}
+
+.smc-player.is-empty p,
+.smc-player.is-restricted p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+.smc-player.is-restricted {
+  background: #fff7ed;
+  border-color: rgba(154, 52, 18, 0.22);
+}
+
+.smc-empty {
+  display: none;
+  text-align: center;
+  padding: 2.4rem 1rem;
+  color: var(--muted);
+}
+
+.smc-empty.is-on {
+  display: block;
+}
+
+.smc-chapter-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.4rem;
+  margin: 1.2rem 0 1.6rem;
+  align-items: center;
+}
+
+.smc-chapter-hero figure {
+  margin: 0;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  min-height: 12rem;
+  background: #1b2436;
+}
+
+.smc-chapter-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 12rem;
+}
+
+.smc-chapter-hero h1 {
+  margin: 0.25rem 0 0.45rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+.smc-kicker {
+  color: var(--gold-text);
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.smc-prose {
+  padding-bottom: 2rem;
+}
+
+.smc-prose p {
+  color: var(--ink-soft);
+  line-height: 1.9;
+  margin: 0 0 1rem;
+  font-size: 1.02rem;
+}
+
+.smc-prose h2 {
+  margin: 2rem 0 0.7rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.32rem;
+}
+
+.smc-prose h2 .latin {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78em;
+  font-weight: 500;
+  color: #8b7350;
+}
+
+.smc-points {
+  margin: 0 0 1rem;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.smc-points li + li {
+  margin-top: 0.45rem;
+}
+
+.smc-quote {
+  margin: 0 0 0.9rem;
+  padding: 0.95rem 1.05rem;
+  background: linear-gradient(90deg, #f3ead4, #fff);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 0.8rem 0.8rem 0;
+}
+
+.smc-quote p {
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.75;
+}
+
+.smc-quote .orig {
+  margin-top: 0.45rem;
+  font-style: italic;
+  color: #8b7350;
+  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-size: 0.95rem;
+}
+
+.smc-quote cite {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: var(--gold-text);
+}
+
+.smc-note {
+  margin: 1rem 0;
+  padding: 1rem 1.1rem;
+  border-radius: 0.9rem;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.smc-note.is-caution {
+  background: #fff7ed;
+  border-color: rgba(154, 52, 18, 0.22);
+}
+
+.smc-note h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.smc-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+  margin: 0.4rem 0 1.1rem;
+}
+
+.smc-cards article {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  padding: 0.85rem 0.95rem;
+}
+
+.smc-cards h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-cards p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.smc-table-wrap {
+  overflow-x: auto;
+  margin: 0.4rem 0 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: #fff;
+}
+
+.smc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.smc-table th,
+.smc-table td {
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(196, 163, 90, 0.16);
+}
+
+.smc-table th {
+  background: #f3ead4;
+  color: var(--gold-text);
+  font-weight: 600;
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.smc-flow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.45rem;
+  margin: 0.5rem 0 1.2rem;
+}
+
+.smc-flow li {
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 0.7rem 0.55rem;
+  text-align: center;
+}
+
+.smc-flow strong {
+  display: block;
+  font-family: "Noto Serif TC", serif;
+  font-size: 0.88rem;
+}
+
+.smc-flow span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.smc-hymn-page {
+  display: grid;
+  grid-template-columns: min(18rem, 34%) 1fr;
+  gap: 1.8rem;
+  padding: 1.2rem 0 2rem;
+}
+
+.smc-hymn-side {
+  position: sticky;
+  top: 5.2rem;
+  align-self: start;
+}
+
+.smc-hymn-side .smc-score {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  aspect-ratio: 4 / 5;
+}
+
+.smc-hymn-page h1 {
+  margin: 0.2rem 0 0.15rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.55rem);
+  line-height: 1.25;
+}
+
+.smc-dl {
+  display: grid;
+  grid-template-columns: 5.2rem 1fr;
+  gap: 0.35rem 0.7rem;
+  margin: 1rem 0 1.3rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.smc-dl dt {
+  color: #8b7350;
+}
+
+.smc-lyric {
+  margin: 0 0 1.1rem;
+  padding: 1.05rem 1.15rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.95rem;
+}
+
+.smc-lyric h3 {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.smc-lyric-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.smc-lyric pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.85;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.smc-lyric .orig {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: #5c4a32;
+}
+
+.smc-full-lyrics {
+  scroll-margin-top: 5.2rem;
+  margin: 1.6rem 0 1.4rem;
+  padding: 1.35rem 1.3rem 1.45rem;
+  background:
+    linear-gradient(180deg, #fffdf6 0%, #f7f0dc 100%);
+  border: 1px solid rgba(138, 109, 40, 0.28);
+  border-radius: 1.05rem;
+  box-shadow: 0 10px 28px -22px rgba(48, 32, 12, 0.55);
+}
+
+.smc-full-lyrics > header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(138, 109, 40, 0.18);
+}
+
+.smc-full-lyrics h2 {
+  margin: 0.15rem 0 0.4rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+}
+
+.smc-full-lyrics-lead,
+.smc-full-lyrics-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.smc-full-lyrics-note {
+  margin-top: 1rem;
+}
+
+.smc-full-lyrics .smc-lyrics-copy {
+  margin: 0 0 1rem;
+}
+
+.smc-full-lyrics .smc-lyric.is-teaching {
+  margin-bottom: 1rem;
+  background: #fffaf0;
+}
+
+.smc-stanzas {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.smc-stanza {
+  padding: 0.85rem 0.95rem 1rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(138, 109, 40, 0.14);
+  border-radius: 0.8rem;
+}
+
+.smc-stanza.is-chorus {
+  background: rgba(243, 234, 212, 0.7);
+  border-color: rgba(138, 109, 40, 0.28);
+}
+
+.smc-stanza-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 0.7rem;
+  margin-bottom: 0.65rem;
+}
+
+.smc-stanza-tag {
+  display: inline-block;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  background: #1d2a4a;
+  color: #f3ead4;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.smc-stanza-tag.is-chorus {
+  background: #8a6d28;
+}
+
+.smc-stanza-hint {
+  font-size: 0.78rem;
+  color: #8b7350;
+}
+
+.smc-stanza-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem 1.2rem;
+}
+
+.smc-stanza-body.has-en {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.smc-stanza-lang {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: #8a6d28;
+}
+
+.smc-stanza-lines {
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.smc-stanza-col.is-orig .smc-stanza-lines,
+.smc-stanza-col.is-en .smc-stanza-lines {
+  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  color: #5c4a32;
+}
+
+.smc-nav-hymns {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin: 1.6rem 0 0.4rem;
+}
+
+.smc-nav-hymns a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 0.9rem;
+  padding: 0.8rem 1rem;
+}
+
+.smc-nav-hymns a:hover {
+  border-color: var(--gold);
+}
+
+.smc-nav-hymns small {
+  display: block;
+  color: var(--gold-text);
+  font-size: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.smc-related {
+  margin: 1.4rem 0 0;
+}
+
+.smc-loading {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.smc-sister {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0 0 2.2rem;
+}
+
+.smc-sister a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.smc-sister a:hover {
+  border-color: var(--gold);
+  color: var(--gold-text);
+}
+
+@media (max-width: 960px) {
+  .smc-featured,
+  .smc-intro,
+  .smc-chapter-hero,
+  .smc-hymn-page,
+  .smc-grid-3,
+  .smc-lyric-col,
+  .smc-stanza-body,
+  .smc-stanza-body.has-en,
+  .smc-cards {
+    grid-template-columns: 1fr;
+  }
+  .smc-grid-hymns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .smc-hymn-side {
+    position: static;
+    max-width: 16rem;
+  }
+  .smc-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .smc-topbar-search {
+    width: 100%;
+    margin-left: 0;
+  }
+  .smc-grid-hymns {
+    grid-template-columns: 1fr;
+  }
+  .smc-hero {
+    min-height: 68vh;
+  }
+  .smc-hymn-side {
+    max-width: none;
+  }
+  .smc-player-controls {
+    grid-template-columns: auto 1fr;
+  }
+  .smc-player-time {
+    grid-column: 2;
+  }
+}
+
+@media print {
+  .site-topbar,
+  .smc-player,
+  .smc-nav-hymns,
+  .smc-lyrics-jump,
+  .site-footer {
+    display: none !important;
+  }
+  .smc-hymn-page {
+    display: block;
+  }
+  .smc-hymn-side {
+    position: static;
+    max-width: none;
+    margin-bottom: 1rem;
+  }
+  .smc-full-lyrics {
+    background: #fff;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+  .smc-stanza {
+    break-inside: avoid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smc-hero-media img,
+  .smc-card,
+  .smc-hymn,
+  .smc-featured {
+    animation: none;
+    transition: none;
+  }
+}
+
+@keyframes smc-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07) translate3d(1%, -1%, 0);
+  }
+}

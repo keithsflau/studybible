@@ -1,0 +1,712 @@
+/* 基督教經典書籍巡禮 — 與全站羊皮紙／金色主題一致 */
+
+.clx-app {
+  min-height: 100vh;
+}
+
+.clx-topbar-search {
+  margin-left: auto;
+  position: relative;
+  width: min(22rem, 48vw);
+}
+
+.clx-topbar-search input {
+  width: 100%;
+  border: 1px solid rgba(228, 207, 150, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.48rem 0.95rem 0.48rem 2.2rem;
+  outline: none;
+}
+
+.clx-topbar-search input::placeholder { color: #9aa3b2; }
+
+.clx-topbar-search input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.18);
+}
+
+.clx-topbar-search svg {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: #c9b27a;
+  pointer-events: none;
+}
+
+.clx-hero {
+  position: relative;
+  min-height: min(72vh, 38rem);
+  display: grid;
+  place-items: end stretch;
+  color: #fff;
+  overflow: hidden;
+}
+
+.clx-hero-media,
+.clx-hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.clx-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+  animation: clx-kenburns 22s ease-in-out infinite alternate;
+}
+
+.clx-hero-shade {
+  background:
+    linear-gradient(180deg, rgba(12, 18, 34, 0.2) 0%, rgba(12, 18, 34, 0.35) 40%, rgba(12, 18, 34, 0.9) 100%),
+    radial-gradient(circle at 75% 18%, rgba(196, 163, 90, 0.2), transparent 36%);
+}
+
+.clx-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 2.4rem));
+  margin: 0 auto 2.4rem;
+}
+
+.clx-hero h1 {
+  margin: 0.45rem 0 0.35rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  font-weight: 700;
+  font-family: "Noto Serif TC", serif;
+}
+
+.clx-hero h1 em {
+  display: block;
+  margin-top: 0.2rem;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.46em;
+  color: var(--gold-2);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.clx-hero-lead {
+  max-width: 42rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #e8e2d4;
+}
+
+.clx-hero-verse {
+  margin-top: 1.1rem;
+  max-width: 36rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--gold);
+  color: #d7cba8;
+  font-style: italic;
+}
+
+.clx-hero-verse cite {
+  display: block;
+  margin-top: 0.35rem;
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-2);
+}
+
+.clx-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.clx-hero-stats div {
+  min-width: 5.5rem;
+}
+
+.clx-hero-stats strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: var(--gold-2);
+}
+
+.clx-hero-stats span {
+  font-size: 0.82rem;
+  color: #c9c2b0;
+}
+
+.clx-wrap {
+  width: min(1120px, calc(100% - 2.4rem));
+  margin: 0 auto;
+}
+
+.clx-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.3rem 0 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.clx-crumb a { color: var(--gold-text); text-decoration: none; }
+.clx-crumb a:hover { text-decoration: underline; }
+
+.clx-featured {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 0;
+  margin: 2rem 0 0.4rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.clx-featured:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196, 163, 90, 0.55);
+  box-shadow: 0 24px 40px -24px rgba(12, 18, 34, 0.55);
+}
+
+.clx-featured-media {
+  position: relative;
+  min-height: 16rem;
+  background: #1b2436;
+}
+
+.clx-featured-media img,
+.clx-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+}
+
+.clx-book-side .clx-cover img {
+  object-fit: contain;
+  background: #16120e;
+}
+
+.clx-featured-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(12, 18, 34, 0.82);
+  color: var(--gold-2);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.clx-featured-body {
+  padding: 1.5rem 1.6rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.clx-featured-body h2 {
+  margin: 0.25rem 0 0.2rem;
+  font-size: clamp(1.55rem, 3vw, 2.1rem);
+  font-family: "Noto Serif TC", serif;
+}
+
+.clx-featured-body .latin {
+  margin: 0 0 0.7rem;
+  color: #8b7350;
+}
+
+.clx-featured-body p {
+  margin: 0 0 0.7rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.clx-intro {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2.2rem;
+  align-items: start;
+  padding: 2.2rem 0 0.6rem;
+}
+
+.clx-intro h2 {
+  margin: 0.4rem 0 0.7rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-family: "Noto Serif TC", serif;
+}
+
+.clx-intro p {
+  color: var(--muted);
+  line-height: 1.85;
+  margin: 0 0 0.85rem;
+}
+
+.clx-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.clx-panel ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.clx-panel li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+}
+
+.clx-num {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #f3ead4;
+  color: #8a6d28;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.clx-section-head {
+  padding: 1.6rem 0 0.8rem;
+}
+
+.clx-section-head h2 {
+  margin: 0.35rem 0 0.4rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.clx-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.4rem 0 1.1rem;
+}
+
+.clx-chip {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.clx-chip:hover,
+.clx-chip.is-on {
+  background: var(--ink);
+  color: var(--gold-2);
+  border-color: var(--ink);
+}
+
+.clx-grid-3,
+.clx-grid-books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.clx-grid-books { grid-template-columns: repeat(4, 1fr); }
+
+.clx-card,
+.clx-book {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(12, 18, 34, 0.08);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 28px -22px rgba(12, 18, 34, 0.5);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.clx-card:hover,
+.clx-book:hover {
+  transform: translateY(-6px);
+  border-color: rgba(196, 163, 90, 0.55);
+  box-shadow: 0 24px 40px -24px rgba(12, 18, 34, 0.55);
+}
+
+.clx-card-media {
+  position: relative;
+  height: 7.2rem;
+  overflow: hidden;
+  background: var(--card-tone, #1b2436);
+}
+
+.clx-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.72;
+}
+
+.clx-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(12, 18, 34, 0.45));
+}
+
+.clx-card-body,
+.clx-book-body {
+  padding: 1rem 1.05rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.clx-card h3,
+.clx-book h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.clx-card:hover h3,
+.clx-book:hover h3 { color: var(--gold-text); }
+
+.clx-en {
+  margin: 0.15rem 0 0.5rem;
+  color: #8b7350;
+  font-size: 0.86rem;
+  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.clx-excerpt {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.clx-cover {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(228, 207, 150, 0.28), transparent 42%),
+    linear-gradient(160deg, #2a2118, #0c1222 70%);
+  color: #f6edd4;
+}
+
+.clx-cover-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  padding: 1rem 0.85rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.clx-cover.is-fallback img { display: none; }
+.clx-cover.is-fallback .clx-cover-fallback { display: flex; }
+
+.clx-cover-fallback strong {
+  font-family: "Noto Serif TC", serif;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.clx-cover-fallback span {
+  font-size: 0.75rem;
+  color: #d7cba8;
+}
+
+.clx-book-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #8b7350;
+}
+
+.clx-star {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--gold-text);
+  font-weight: 600;
+}
+
+.clx-caution {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: #9a3412;
+}
+
+.clx-empty {
+  display: none;
+  text-align: center;
+  padding: 2.4rem 1rem;
+  color: var(--muted);
+}
+
+.clx-empty.is-on { display: block; }
+
+.clx-chapter-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.4rem;
+  margin: 1.2rem 0 1.6rem;
+  align-items: center;
+}
+
+.clx-chapter-hero figure {
+  margin: 0;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  min-height: 12rem;
+  background: #1b2436;
+}
+
+.clx-chapter-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 12rem;
+}
+
+.clx-chapter-hero h1 {
+  margin: 0.25rem 0 0.45rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+.clx-book-page {
+  display: grid;
+  grid-template-columns: min(17rem, 32%) 1fr;
+  gap: 1.8rem;
+  padding: 1.2rem 0 2rem;
+}
+
+.clx-book-side {
+  position: sticky;
+  top: 5.2rem;
+  align-self: start;
+}
+
+.clx-book-side .clx-cover {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+
+.clx-kicker {
+  color: var(--gold-text);
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.clx-book-page h1 {
+  margin: 0.2rem 0 0.15rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.55rem);
+  line-height: 1.25;
+}
+
+.clx-dl {
+  display: grid;
+  grid-template-columns: 5.2rem 1fr;
+  gap: 0.35rem 0.7rem;
+  margin: 1rem 0 1.3rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.clx-dl dt { color: #8b7350; }
+
+.clx-prose p {
+  color: var(--ink-soft);
+  line-height: 1.9;
+  margin: 0 0 1rem;
+  font-size: 1.02rem;
+}
+
+.clx-prose h2 {
+  margin: 1.6rem 0 0.7rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.28rem;
+}
+
+.clx-points {
+  margin: 0 0 1rem;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.clx-points li + li { margin-top: 0.45rem; }
+
+.clx-quote {
+  margin: 0 0 0.9rem;
+  padding: 0.95rem 1.05rem;
+  background: linear-gradient(90deg, #f3ead4, #fff);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 0.8rem 0.8rem 0;
+}
+
+.clx-quote p {
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.75;
+}
+
+.clx-quote .orig {
+  margin-top: 0.45rem;
+  font-style: italic;
+  color: #8b7350;
+  font-family: "Cormorant Garamond", "Noto Serif TC", serif;
+  font-size: 0.95rem;
+}
+
+.clx-quote cite {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  color: var(--gold-text);
+}
+
+.clx-note {
+  margin: 1rem 0;
+  padding: 1rem 1.1rem;
+  border-radius: 0.9rem;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.clx-note.is-caution {
+  background: #fff7ed;
+  border-color: rgba(154, 52, 18, 0.22);
+}
+
+.clx-note h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.clx-note p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+.clx-nav-books {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin: 1.6rem 0 0.4rem;
+}
+
+.clx-nav-books a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 0.9rem;
+  padding: 0.8rem 1rem;
+}
+
+.clx-nav-books a:hover { border-color: var(--gold); }
+
+.clx-nav-books small {
+  display: block;
+  color: var(--gold-text);
+  font-size: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+.clx-loading {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.clx-allegory {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+  margin: 0.4rem 0 1.1rem;
+}
+
+.clx-allegory article {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  padding: 0.85rem 0.95rem;
+}
+
+.clx-allegory h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.clx-allegory p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 960px) {
+  .clx-featured,
+  .clx-intro,
+  .clx-chapter-hero,
+  .clx-book-page,
+  .clx-grid-3 { grid-template-columns: 1fr; }
+  .clx-grid-books { grid-template-columns: repeat(2, 1fr); }
+  .clx-book-side { position: static; max-width: 16rem; }
+  .clx-allegory { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .clx-topbar-search { width: 100%; margin-left: 0; }
+  .clx-grid-books { grid-template-columns: 1fr 1fr; }
+  .clx-hero { min-height: 68vh; }
+  .clx-book-side { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clx-hero-media img,
+  .clx-card,
+  .clx-book,
+  .clx-featured { animation: none; transition: none; }
+}
+
+@keyframes clx-kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.07) translate3d(1%, -1%, 0); }
+}

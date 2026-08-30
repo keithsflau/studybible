@@ -1,0 +1,813 @@
+/* 基督教輔導學 — 與全站羊皮紙／金色主題一致 */
+
+.csl-app {
+  min-height: 100vh;
+}
+
+.csl-topbar-search {
+  margin-left: auto;
+  position: relative;
+  width: min(22rem, 48vw);
+}
+
+.csl-topbar-search input {
+  width: 100%;
+  border: 1px solid rgba(228, 207, 150, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.48rem 0.95rem 0.48rem 2.2rem;
+  outline: none;
+}
+
+.csl-topbar-search input::placeholder {
+  color: #9aa3b2;
+}
+
+.csl-topbar-search input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(196, 163, 90, 0.18);
+}
+
+.csl-topbar-search svg {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: #c9b27a;
+  pointer-events: none;
+}
+
+.csl-hero {
+  position: relative;
+  min-height: min(72vh, 38rem);
+  display: grid;
+  place-items: end stretch;
+  color: #fff;
+  overflow: hidden;
+}
+
+.csl-hero-media,
+.csl-hero-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.csl-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.csl-hero-shade {
+  background:
+    linear-gradient(180deg, rgba(12, 18, 34, 0.25) 0%, rgba(12, 18, 34, 0.42) 38%, rgba(12, 18, 34, 0.92) 100%),
+    radial-gradient(circle at 78% 16%, rgba(196, 163, 90, 0.22), transparent 36%);
+}
+
+.csl-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 2.4rem));
+  margin: 0 auto 2.4rem;
+}
+
+.csl-hero h1 {
+  margin: 0.45rem 0 0.35rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  font-weight: 700;
+  font-family: "Noto Serif TC", serif;
+}
+
+.csl-hero h1 em {
+  display: block;
+  margin-top: 0.2rem;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.46em;
+  color: var(--gold-2);
+  font-family: "Cormorant Garamond", serif;
+}
+
+.csl-hero-lead {
+  max-width: 44rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #e8e2d4;
+}
+
+.csl-hero-verse {
+  margin-top: 1.1rem;
+  max-width: 38rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--gold);
+  color: #d7cba8;
+  font-style: italic;
+}
+
+.csl-hero-verse cite {
+  display: block;
+  margin-top: 0.35rem;
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-2);
+}
+
+.csl-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1.4rem;
+}
+
+.csl-hero-stats div {
+  min-width: 5.5rem;
+}
+
+.csl-hero-stats strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: var(--gold-2);
+}
+
+.csl-hero-stats span {
+  font-size: 0.82rem;
+  color: #c9c2b0;
+}
+
+.csl-wrap {
+  width: min(1120px, calc(100% - 2.4rem));
+  margin: 0 auto;
+}
+
+.csl-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.3rem 0 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.csl-crumb a {
+  color: var(--gold-text);
+  text-decoration: none;
+}
+
+.csl-crumb a:hover {
+  text-decoration: underline;
+}
+
+.csl-stance {
+  margin: 2rem 0 0.2rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.csl-stance h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.15rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.csl-stance p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.csl-limits {
+  margin: 1rem 0 0;
+  padding: 1rem 1.15rem;
+  border-radius: 1rem;
+  background: #fff7ed;
+  border: 1px solid rgba(154, 52, 18, 0.2);
+}
+
+.csl-limits h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.98rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.csl-limits p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
+
+.csl-intro {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2.2rem;
+  align-items: start;
+  padding: 2.2rem 0 0.6rem;
+}
+
+.csl-intro h2 {
+  margin: 0.4rem 0 0.7rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-family: "Noto Serif TC", serif;
+}
+
+.csl-intro p {
+  color: var(--muted);
+  line-height: 1.85;
+  margin: 0 0 0.85rem;
+}
+
+.csl-panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.csl-panel ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.csl-panel li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.8rem;
+}
+
+.csl-num {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #f3ead4;
+  color: #8a6d28;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.csl-section-head {
+  padding: 1.6rem 0 0.8rem;
+}
+
+.csl-section-head h2 {
+  margin: 0.35rem 0 0.4rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.csl-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.55rem 0 1.1rem;
+}
+
+.csl-chip {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.csl-chip:hover,
+.csl-chip.is-on {
+  background: var(--ink);
+  color: var(--gold-2);
+  border-color: var(--ink);
+}
+
+.csl-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.csl-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(12, 18, 34, 0.08);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 28px -22px rgba(12, 18, 34, 0.5);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.csl-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(196, 163, 90, 0.55);
+  box-shadow: 0 24px 40px -24px rgba(12, 18, 34, 0.55);
+}
+
+.csl-card-media {
+  position: relative;
+  height: 5.4rem;
+  overflow: hidden;
+  background: var(--card-tone, #1b2436);
+}
+
+.csl-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(12, 18, 34, 0.28));
+}
+
+.csl-card-body {
+  padding: 1rem 1.05rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.csl-card h3 {
+  margin: 0;
+  font-size: 1.18rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.csl-card:hover h3 {
+  color: var(--gold-text);
+}
+
+.csl-en {
+  margin: 0.15rem 0 0.5rem;
+  color: #8b7350;
+  font-size: 0.86rem;
+  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.csl-excerpt {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+.csl-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-text);
+  font-weight: 600;
+}
+
+.csl-read {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: #3f6212;
+}
+
+.csl-empty {
+  display: none;
+  text-align: center;
+  padding: 2.4rem 1rem;
+  color: var(--muted);
+}
+
+.csl-empty.is-on {
+  display: block;
+}
+
+.csl-loading {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.csl-sister {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1.6rem 0 2.2rem;
+}
+
+.csl-sister a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.csl-sister a:hover {
+  border-color: var(--gold);
+  color: var(--gold-text);
+}
+
+.csl-layout {
+  display: grid;
+  grid-template-columns: 15.5rem minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+  padding-bottom: 2rem;
+}
+
+.csl-toc {
+  position: sticky;
+  top: 4.6rem;
+  padding: 1rem 0 2rem;
+}
+
+.csl-toc h2 {
+  margin: 0 0 0.7rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+}
+
+.csl-toc ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.csl-toc a {
+  display: block;
+  padding: 0.38rem 0.55rem;
+  border-radius: 0.45rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.csl-toc a:hover,
+.csl-toc a:focus,
+.csl-toc a.is-on {
+  background: #f3ead4;
+  color: var(--ink);
+}
+
+.csl-article {
+  min-width: 0;
+  padding-bottom: 2rem;
+}
+
+.csl-chapter-hero {
+  margin: 0.4rem 0 1.4rem;
+}
+
+.csl-chapter-hero h1 {
+  margin: 0.25rem 0 0.2rem;
+  font-size: clamp(1.7rem, 3.4vw, 2.35rem);
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.25;
+}
+
+.csl-goals,
+.csl-box,
+.csl-mistakes,
+.csl-pastoral,
+.csl-refer,
+.csl-practicum {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  padding: 1.15rem 1.25rem;
+  margin: 0 0 1.25rem;
+  box-shadow: 0 10px 28px -22px rgba(12, 18, 34, 0.45);
+}
+
+.csl-goals h2,
+.csl-box h2,
+.csl-section h2,
+.csl-highlights h2,
+.csl-verses h2,
+.csl-pastoral h2,
+.csl-mistakes h2,
+.csl-refer h2,
+.csl-practicum h2 {
+  margin: 0 0 0.7rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.28rem;
+}
+
+.csl-goals ul,
+.csl-highlights ul,
+.csl-refer ul,
+.csl-practicum ol {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.csl-goals li,
+.csl-highlights li,
+.csl-refer li,
+.csl-practicum li {
+  margin: 0.35rem 0;
+}
+
+.csl-section {
+  margin: 0 0 1.8rem;
+  scroll-margin-top: 5.4rem;
+}
+
+.csl-section > p,
+.csl-pastoral p,
+.csl-voice {
+  color: var(--ink-soft);
+  line-height: 1.9;
+  font-size: 1.02rem;
+  margin: 0 0 0.95rem;
+}
+
+.csl-section .csl-latin {
+  margin: -0.35rem 0 0.7rem;
+  color: #8b7350;
+  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.csl-section ul {
+  margin: 0.2rem 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.csl-callout {
+  margin: 1rem 0 1.15rem;
+  padding: 0.95rem 1.05rem;
+  border-radius: 0.85rem;
+  border-left: 3px solid var(--gold);
+  background: #f8f3e7;
+}
+
+.csl-callout h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-family: "Noto Serif TC", serif;
+}
+
+.csl-callout p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  font-size: 0.96rem;
+}
+
+.csl-callout--judge {
+  border-left-color: #8a6d28;
+  background: #f3ead4;
+}
+
+.csl-callout--debate {
+  border-left-color: #1e3a5f;
+  background: #eef3f7;
+}
+
+.csl-callout--warn {
+  border-left-color: #9a3412;
+  background: #f8ece6;
+}
+
+.csl-callout--grace {
+  border-left-color: #3f6212;
+  background: #eef3e6;
+}
+
+.csl-alert {
+  margin: 0 0 1.25rem;
+  padding: 1.05rem 1.15rem;
+  border-radius: 1rem;
+  background: #fff7ed;
+  border: 1px solid rgba(154, 52, 18, 0.28);
+}
+
+.csl-alert h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-family: "Noto Serif TC", serif;
+  color: #9a3412;
+}
+
+.csl-alert p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.csl-table-wrap {
+  overflow-x: auto;
+  margin: 0.8rem 0 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: #fff;
+}
+
+.csl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 36rem;
+}
+
+.csl-table caption {
+  caption-side: top;
+  text-align: left;
+  padding: 0.7rem 0.85rem 0.35rem;
+  color: var(--gold-text);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.csl-table th,
+.csl-table td {
+  padding: 0.65rem 0.8rem;
+  border-top: 1px solid rgba(12, 18, 34, 0.06);
+  vertical-align: top;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.csl-table th {
+  background: #f8f3e7;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.csl-table td {
+  color: var(--ink-soft);
+}
+
+.csl-verse,
+blockquote.csl-verse {
+  margin: 0.9rem 0 1.1rem;
+  padding: 0.85rem 1rem 0.9rem 1.1rem;
+  border-left: 2px solid var(--gold);
+  background: linear-gradient(90deg, #f3ead4, #fff);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.csl-verse cite {
+  display: block;
+  margin-top: 0.4rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--gold-text);
+}
+
+.csl-verse .csl-note {
+  display: block;
+  margin-top: 0.45rem;
+  font-style: normal;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.csl-highlights {
+  margin: 0 0 1.4rem;
+}
+
+.csl-mistakes dl,
+.csl-refer dl {
+  margin: 0;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.csl-mistakes dt,
+.csl-refer dt {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.csl-mistakes dd,
+.csl-refer dd {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.csl-refer {
+  border-color: rgba(154, 52, 18, 0.18);
+  background: #fffaf5;
+}
+
+.csl-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.6rem 0 0.4rem;
+}
+
+.csl-pager a {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 0.95rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  min-width: min(16rem, 100%);
+}
+
+.csl-pager a:hover {
+  border-color: rgba(196, 163, 90, 0.55);
+}
+
+.csl-pager span {
+  font-size: 0.75rem;
+  color: var(--gold-text);
+  letter-spacing: 0.06em;
+}
+
+.csl-pager strong {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+}
+
+.csl-pager a.is-next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.csl-prose-link {
+  color: var(--gold-text);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+@media (max-width: 900px) {
+  .csl-intro,
+  .csl-grid,
+  .csl-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .csl-topbar-search {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .csl-toc {
+    position: static;
+    padding: 0.2rem 0 1rem;
+  }
+
+  .csl-toc ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .csl-hero {
+    min-height: min(62vh, 28rem);
+  }
+
+  .csl-table {
+    min-width: 28rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .csl-card,
+  .csl-card:hover {
+    transition: none;
+    transform: none;
+  }
+}

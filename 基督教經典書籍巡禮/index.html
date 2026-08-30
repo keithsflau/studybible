@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-HK" class="site-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基督教經典書籍巡禮｜聖經研讀</title>
+    <meta
+      name="description"
+      content="福音派視角精選一百本最值得一讀的基督教經典：從使徒教父、宗教改革、清教徒到當代，含《天路歷程》專題巡禮、封面、詳細介紹與金句。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif+TC:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../shared/tailwind-theme.js"></script>
+    <link rel="stylesheet" href="../shared/site.css" />
+    <link rel="stylesheet" href="app/app.css" />
+  </head>
+  <body>
+    <a class="site-skip" href="#chapters">跳到篇章</a>
+
+    <header class="site-topbar">
+      <a class="site-topbar-back" href="../index.html">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        主頁
+      </a>
+      <span class="site-topbar-sep">/</span>
+      <a href="#/">經典巡禮</a>
+      <div class="site-topbar-title">基督教經典書籍巡禮</div>
+      <label class="clx-topbar-search">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 110-15 7.5 7.5 0 010 15z" />
+        </svg>
+        <input id="classics-search" type="search" placeholder="搜尋書名、作者或關鍵字…" autocomplete="off" />
+      </label>
+    </header>
+
+    <div id="classics-app" class="clx-app">
+      <p class="clx-loading">正在展開巡禮書單…</p>
+    </div>
+
+    <script src="data/catalog.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>
